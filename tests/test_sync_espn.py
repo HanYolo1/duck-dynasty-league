@@ -128,6 +128,29 @@ class SettingsTests(unittest.TestCase):
         self.assertEqual([x["slot"] for x in summary["lineup"]], ["QB", "Bench"])
 
 
+class PlayerInfoTests(unittest.TestCase):
+    def entry(self, status):
+        player = {"id": 7, "fullName": "Test Player", "defaultPositionId": 2, "proTeamId": 12,
+                  "stats": [{"seasonId": 2026, "scoringPeriodId": 0, "statSourceId": 0, "statSplitTypeId": 0, "appliedTotal": 101.234}]}
+        if status is not None:
+            player["injuryStatus"] = status
+        return {"player": player, "onTeamId": 3, "keeperValueFuture": 9}
+
+    def test_injury_kept_only_when_not_healthy(self):
+        self.assertEqual(s.player_info(self.entry("OUT"), 2026)["injury"], "OUT")
+        self.assertEqual(s.player_info(self.entry("QUESTIONABLE"), 2026)["injury"], "QUESTIONABLE")
+        for healthy in ("ACTIVE", None, "NORMAL"):
+            self.assertNotIn("injury", s.player_info(self.entry(healthy), 2026))
+
+    def test_basic_fields(self):
+        info = s.player_info(self.entry(None), 2026)
+        self.assertEqual(info, {"name": "Test Player", "pos": "RB", "pts": 101.23, "team": 3, "keeperCost": 9, "nfl": 12})
+
+    def test_pro_team_byes(self):
+        data = {"settings": {"proTeams": [{"id": 0, "abbrev": "FA", "byeWeek": 0}, {"id": 12, "abbrev": "KC", "byeWeek": 5}]}}
+        self.assertEqual(s.pro_team_byes(data), {"12": {"abbrev": "KC", "bye": 5}})
+
+
 class SeasonWrapUpTests(unittest.TestCase):
     HISTORY = os.path.join(os.path.dirname(__file__), "..", "data", "history.json")
 

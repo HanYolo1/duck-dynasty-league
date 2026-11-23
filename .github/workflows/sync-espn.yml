@@ -11,6 +11,8 @@ on:
     - cron: "*/30 0-4 * * 2,5"
     # Tuesday morning finalization after MNF (~7:00 AM ET)
     - cron: "0 11,12 * * 2"
+    # Injury news during the week (practice reports): ~10 AM and ~6 PM ET, Wed-Sat
+    - cron: "0 14,22 * * 3,4,5,6"
   workflow_dispatch:
     inputs:
       season:
