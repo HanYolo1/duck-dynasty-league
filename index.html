@@ -107,7 +107,8 @@
   .matchup-score { font-size: 1.05rem; font-weight: 800; font-variant-numeric: tabular-nums; }
   .proj-sub { font-size: 0.76rem; color: var(--muted); }
 
-  .matchups-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 14px; }
+  .matchups-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 14px; align-items: start; }
+  .mu-card.open { grid-column: 1 / -1; }
   .week-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 16px; }
   .week-summary:empty { display: none; }
   .mu-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
@@ -132,8 +133,37 @@
     #weekPills { flex-wrap: nowrap; overflow-x: auto; max-width: 100%; padding-bottom: 4px; scrollbar-width: none; }
     #weekPills .pill { flex-shrink: 0; }
     .week-summary { grid-template-columns: 1fr 1fr; }
+    .grid-4 { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .grid-4 .record-card { padding: 10px 12px; }
+    .grid-4 .record-val { font-size: 1rem; }
     .week-summary .record-card { padding: 10px 12px; }
   }
+  .lu-toggle { background: none; border: 1px solid var(--border); color: var(--blue); border-radius: 999px; padding: 3px 10px; font-size: 0.74rem; font-weight: 600; cursor: pointer; }
+  .lu-toggle:hover { border-color: var(--blue); }
+  .lu-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 14px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
+  .lu-head { font-weight: 700; font-size: 0.84rem; margin-bottom: 4px; }
+  .lu-row { display: grid; grid-template-columns: 40px 1fr auto; gap: 6px; font-size: 0.8rem; padding: 2px 0; align-items: baseline; }
+  .lu-row.bench { opacity: 0.62; }
+  .lu-row.bench.hot { opacity: 1; color: var(--gold); }
+  .lu-slot { color: var(--muted); font-size: 0.68rem; font-weight: 700; }
+  .lu-player { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .lu-pts { font-variant-numeric: tabular-nums; font-weight: 600; }
+  .lu-sep { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-top: 6px; padding-top: 4px; border-top: 1px dashed var(--border); }
+  .lu-foot { font-size: 0.75rem; color: var(--gold); margin-top: 6px; }
+  .lu-foot.ok { color: var(--green); }
+  .note { font-size: 0.8rem; color: var(--muted); margin-top: 12px; }
+  .trade-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr)); gap: 12px; }
+  .trade-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+  .trade-sides { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px; }
+  .trade-side h4 { font-size: 0.84rem; margin-bottom: 4px; }
+  .trade-side li { list-style: none; font-size: 0.8rem; padding: 2px 0; display: flex; justify-content: space-between; gap: 8px; }
+  .trade-total { font-size: 0.78rem; color: var(--muted); margin-top: 6px; border-top: 1px dashed var(--border); padding-top: 4px; }
+  .trade-total.win { color: var(--green); font-weight: 700; }
+  .list-row { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 0.82rem; }
+  .list-row:last-child { border-bottom: none; }
+  .keeper-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; }
+  .keeper-card .lu-row { grid-template-columns: 14px 1fr 44px 52px; }
+  .empty-state { color: var(--muted); font-size: 0.88rem; padding: 12px 0; }
   .champ-card {
     background: linear-gradient(145deg, rgba(245,158,11,0.14), rgba(17,24,39,0.9));
     border: 1px solid rgba(245,158,11,0.35); border-radius: 12px; padding: 16px;
@@ -198,17 +228,20 @@
   <nav class="tabs">
     <button class="tab-btn active" data-tab="current">Current Standings</button>
     <button class="tab-btn" data-tab="matchups">Matchups</button>
+    <button class="tab-btn" data-tab="lineups">Lineup IQ</button>
+    <button class="tab-btn" data-tab="draft">Draft &amp; Keepers</button>
+    <button class="tab-btn" data-tab="activity">Trades &amp; Waivers</button>
     <button class="tab-btn" data-tab="alltime">All-Time Standings</button>
     <button class="tab-btn" data-tab="rivalry">Rivalry Matrix</button>
     <button class="tab-btn" data-tab="seasons">Season-by-Season</button>
-    <button class="tab-btn" data-tab="rules">2026 Rulebook</button>
+    <button class="tab-btn" data-tab="rules"><span class="cur-season">2026</span> Rulebook</button>
   </nav>
 
   <!-- TAB 1: CURRENT STANDINGS -->
   <section id="tab-current" class="panel active">
     <div class="card">
       <div class="card-title">
-        <span id="currentStandingsTitle">2026 Standings & Playoff Picture</span>
+        <span id="currentStandingsTitle">Standings & Playoff Picture</span>
         <span style="font-size:0.8rem;color:var(--muted);">Top 6 make playoffs · Top 2 earn Week 15 BYE · Tiebreaker: Total PF</span>
       </div>
       <div class="table-wrap">
@@ -247,17 +280,99 @@
     </div>
   </section>
 
+  <!-- TAB: LINEUP IQ -->
+  <section id="tab-lineups" class="panel">
+    <div class="card">
+      <div class="card-title">
+        <span>🧠 Lineup IQ: Points Left on the Bench</span>
+        <div class="pill-group" id="iqPills"></div>
+      </div>
+      <div class="grid-4" id="iqRecords" style="margin-bottom:16px;"></div>
+      <div class="table-wrap">
+        <table id="iqTable">
+          <thead><tr><th>#</th><th>Manager</th><th>Weeks</th><th>Points Scored</th><th>Best Possible</th><th>Left on Bench</th><th>Per Week</th><th>Efficiency</th><th>Perfect Weeks</th><th title="Losses where the best possible lineup would have beaten the opponent">Losses a Best Lineup Wins</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="note">“Best possible” is the highest-scoring legal lineup from the players on that team’s roster that week (IR excluded). Regular-season games only; the live week counts once it’s final. Open any game on the Matchups tab to see both lineups.</p>
+    </div>
+  </section>
+
+  <!-- TAB: DRAFT & KEEPERS -->
+  <section id="tab-draft" class="panel">
+    <div class="card">
+      <div class="card-title">
+        <span id="draftTitle">💰 Auction Draft</span>
+        <div class="pill-group" id="draftPills"></div>
+      </div>
+      <div class="grid-4" id="draftRecords" style="margin-bottom:16px;"></div>
+      <div class="table-wrap" style="margin-bottom:18px;">
+        <table id="draftTeamTable">
+          <thead><tr><th>Manager</th><th>Spent</th><th>Keepers</th><th>Players</th><th>Points From Draft</th><th>Points per $</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="card-title" style="margin-bottom:10px;">
+        <span>📋 Draft Board</span>
+        <select id="draftTeamFilter" class="search-input" style="max-width:220px;" onchange="draftTeam=this.value;draftShowAll=false;renderDraft();"></select>
+      </div>
+      <div class="table-wrap">
+        <table id="draftBoard">
+          <thead><tr>
+            <th class="sortable" data-dsort="pick">Nom. #</th><th class="sortable" data-dsort="manager">Manager</th><th class="sortable" data-dsort="name">Player</th>
+            <th class="sortable" data-dsort="pos">Pos</th><th class="sortable" data-dsort="bid">Price</th><th class="sortable" data-dsort="pts">Season Pts</th><th class="sortable" data-dsort="ppd">Pts per $</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="note" id="draftNote"></p>
+    </div>
+    <div class="card" id="keeperCard">
+      <div class="card-title">
+        <span>🔒 Keeper Watch: Next Season’s Prices</span>
+        <span style="font-size:0.8rem;color:var(--muted);" id="keeperSub"></span>
+      </div>
+      <div class="grid-3" id="keeperGrid"></div>
+      <p class="note">Prices are ESPN’s listed keeper cost for next season (your auction price, or ESPN’s default for players added in-season). ★ marks each team’s three best values: the most points above what that price usually buys in this league. Check the house rules before deciding.</p>
+    </div>
+  </section>
+
+  <!-- TAB: TRADES & WAIVERS -->
+  <section id="tab-activity" class="panel">
+    <div class="card">
+      <div class="card-title">
+        <span>🤝 Trades</span>
+        <div class="pill-group" id="activityPills"></div>
+      </div>
+      <div id="tradeList" class="trade-list"></div>
+      <p class="note">ESPN doesn’t publish accepted trades without a login, so trades are worked out from week-to-week rosters (shown in the first week the players appeared on their new team). “Started pts” counts only points scored in the new team’s starting lineup from then on.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">💸 FAAB Spending</div>
+        <div id="faabTable"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">
+          <span>📰 Waiver Claims</span>
+          <select id="activityTeamFilter" class="search-input" style="max-width:200px;" onchange="activityTeam=this.value;activityShowAll=false;renderActivity();"></select>
+        </div>
+        <div id="waiverList"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- TAB 2: ALL-TIME STANDINGS -->
   <section id="tab-alltime" class="panel">
     <div class="card">
-      <div class="card-title">🏆 Championship Roll Call (2023–2025)</div>
+      <div class="card-title">🏆 Championship Roll Call <span id="champYears"></span></div>
       <div class="grid-3" id="champRollCall"></div>
     </div>
 
     <div class="card">
       <div class="card-title">
-        <span>📊 All-Time Regular Season Standings (2023–2026)</span>
-        <span style="font-size:0.8rem;color:var(--muted);">Click column headers to sort · Auto-includes completed 2026 weeks</span>
+        <span>📊 All-Time Regular Season Standings <span id="allTimeYears"></span></span>
+        <span style="font-size:0.8rem;color:var(--muted);">Click column headers to sort · Auto-includes completed <span class="cur-season">2026</span> weeks</span>
       </div>
       <div class="table-wrap">
         <table id="allTimeTable">
@@ -328,7 +443,7 @@
     </div>
   </section>
 
-  <!-- TAB 5: 2026 RULEBOOK -->
+  <!-- TAB 5: RULEBOOK -->
   <section id="tab-rules" class="panel">
     <div class="house-banner">
       <h2 style="font-size:1.15rem;color:var(--gold);margin-bottom:8px;">⚖️ Core House Rules & League Bylaws</h2>
@@ -343,7 +458,7 @@
     <div class="grid-3">
       <div class="card">
         <div class="card-title">📝 Draft & Keepers</div>
-        <ul style="padding-left:18px;font-size:0.88rem;color:var(--muted);display:grid;gap:6px;">
+        <ul id="rulesDraft" style="padding-left:18px;font-size:0.88rem;color:var(--muted);display:grid;gap:6px;">
           <li><strong style="color:var(--text);">Format:</strong> $200 Auction (90s timer)</li>
           <li><strong style="color:var(--text);">Keepers:</strong> 3 per team (Traditional order)</li>
           <li><strong style="color:var(--text);">Draft Pick Trading:</strong> Disabled</li>
@@ -352,7 +467,7 @@
       </div>
       <div class="card">
         <div class="card-title">🏈 Rosters & Waivers</div>
-        <ul style="padding-left:18px;font-size:0.88rem;color:var(--muted);display:grid;gap:6px;">
+        <ul id="rulesRoster" style="padding-left:18px;font-size:0.88rem;color:var(--muted);display:grid;gap:6px;">
           <li><strong style="color:var(--text);">Starters (9):</strong> 1 QB, 2 RB, 2 WR, 1 TE, 1 FLEX, 1 D/ST, 1 K</li>
           <li><strong style="color:var(--text);">Bench / IR:</strong> 6 Bench · 0 IR · Individual game lock</li>
           <li><strong style="color:var(--text);">Caps:</strong> 4 QB, 8 RB, 8 WR, 4 TE, 3 K, 3 D/ST</li>
@@ -361,7 +476,7 @@
       </div>
       <div class="card">
         <div class="card-title">🤝 Trades & Playoffs</div>
-        <ul style="padding-left:18px;font-size:0.88rem;color:var(--muted);display:grid;gap:6px;">
+        <ul id="rulesTrades" style="padding-left:18px;font-size:0.88rem;color:var(--muted);display:grid;gap:6px;">
           <li><strong style="color:var(--text);">Trade Deadline:</strong> Dec 2, 2026 · 12:00 PM EST</li>
           <li><strong style="color:var(--text);">Trade Review:</strong> 24 hrs · LM review (0 veto votes)</li>
           <li><strong style="color:var(--text);">Regular Season:</strong> Weeks 1–14 (14 matchups)</li>
@@ -372,7 +487,7 @@
 
     <div class="card">
       <div class="card-title">
-        <span>📐 Custom Scoring Rules (Full PPR + Big-Play Bonuses)</span>
+        <span>📐 Custom Scoring Rules (Full PPR + Big-Play Bonuses) <span id="scoringSource" class="proj-sub"></span></span>
         <input type="text" id="scoringSearch" class="search-input" placeholder="Filter scoring rules (e.g., 400, TD, sack)…" oninput="renderScoring()" />
       </div>
       <div class="table-wrap">
@@ -388,8 +503,11 @@
 
 <script>
 const LEAGUE_ID = 52568337;
-const CURRENT_SEASON = 2026;
-const ESPN_PUBLIC_URL = `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${CURRENT_SEASON}/segments/0/leagues/${LEAGUE_ID}?view=mTeam&view=mStandings&view=mMatchupScore`;
+// The current season comes from data/manifest.json (written by the sync
+// script from ESPN_SEASON_ID); this is only the fallback.
+let CURRENT_SEASON = 2026;
+const espnPublicUrl = () => `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${CURRENT_SEASON}/segments/0/leagues/${LEAGUE_ID}?view=mTeam&view=mStandings&view=mMatchupScore`;
+const EXTRAS = {};   // season -> { lineups, league } from data/<season>-lineups.json / -league.json
 
 const SCORING_RULES = [
   ["Passing", "Passing Completion", "+0.25"],
@@ -437,7 +555,7 @@ let HISTORY = null;
 let CURRENT = null;
 let rivalryMode = 'reg';
 let allTimeSort = { key: 'wins', dir: -1 };
-let selectedSeason = '2026';
+let selectedSeason = String(CURRENT_SEASON);
 
 // Tab switching
 document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -471,14 +589,30 @@ function formatDate(iso) {
   return isNaN(d) ? iso : d.toLocaleString(undefined, { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
 }
 
+async function getJSON(url) {
+  const res = await fetch(url + '?t=' + Date.now());
+  if (!res.ok) throw new Error(`${url}: ${res.status}`);
+  return res.json();
+}
+
 async function loadInitialData() {
   try {
-    const [histRes, currRes] = await Promise.all([
-      fetch('data/history.json?t=' + Date.now()),
-      fetch('data/2026.json?t=' + Date.now())
+    const manifest = await getJSON('data/manifest.json').catch(() => null);
+    if (manifest && manifest.currentSeason) CURRENT_SEASON = manifest.currentSeason;
+    selectedSeason = String(CURRENT_SEASON);
+    const extraSeasons = (manifest && manifest.extras) || [];
+    const [hist, curr, ...extras] = await Promise.all([
+      getJSON('data/history.json'),
+      getJSON(`data/${CURRENT_SEASON}.json`),
+      ...extraSeasons.flatMap(y => [
+        getJSON(`data/${y}-lineups.json`).catch(() => null),
+        getJSON(`data/${y}-league.json`).catch(() => null)
+      ])
     ]);
-    HISTORY = await histRes.json();
-    CURRENT = await currRes.json();
+    HISTORY = hist;
+    CURRENT = curr;
+    extraSeasons.forEach((y, i) => { EXTRAS[y] = { lineups: extras[2 * i], league: extras[2 * i + 1] }; });
+    applySeasonLabels();
     document.getElementById('syncStatus').textContent = `Synced: ${formatDate(CURRENT.syncedAt)}`;
     renderAll();
   } catch (err) {
@@ -546,17 +680,17 @@ async function syncLiveFromESPN() {
   btn.disabled = true;
   btn.textContent = 'Syncing…';
   try {
-    const res = await fetch(ESPN_PUBLIC_URL);
+    const res = await fetch(espnPublicUrl());
     if (!res.ok) throw new Error('ESPN returned ' + res.status);
     const raw = await res.json();
     CURRENT = transformRawESPN(raw);
     document.getElementById('syncStatus').textContent = `Live ESPN: ${formatDate(CURRENT.syncedAt)}`;
     document.getElementById('syncDot').style.background = 'var(--green)';
     renderAll();
-    showToast('Live 2026 data synced from ESPN!');
+    showToast(`Live ${CURRENT_SEASON} data synced from ESPN!`);
   } catch (e) {
     console.warn('Direct browser fetch blocked/failed, using GitHub-synced snapshot.', e);
-    showToast('Using GitHub auto-synced data (browser blocked direct ESPN CORS).');
+    showToast('Couldn’t reach ESPN; showing the last auto-synced data.');
   } finally {
     btn.disabled = false;
     btn.textContent = '↻ Sync Live';
@@ -571,9 +705,9 @@ function getAllMatchups() {
 }
 
 function renderCurrentStandings() {
-  const sorted = [...CURRENT.teams].sort((a, b) => (b.wins - a.wins) || (b.pf - a.pf));
+  const sorted = standingsOrder(CURRENT.teams);
   const completedWeeks = Math.max(0, CURRENT.currentMatchupPeriod - 1);
-  document.getElementById('currentStandingsTitle').textContent = `2026 Standings (Through Week ${completedWeeks} · Week ${CURRENT.currentMatchupPeriod} Live)`;
+  document.getElementById('currentStandingsTitle').textContent = `${CURRENT_SEASON} Standings (Through Week ${completedWeeks} · Week ${CURRENT.currentMatchupPeriod} Live)`;
 
   const tbody = document.querySelector('#currentStandingsTable tbody');
   tbody.innerHTML = sorted.map((t, idx) => {
@@ -589,7 +723,7 @@ function renderCurrentStandings() {
       <td><strong>#${seed}</strong></td>
       <td>${statusBadge}</td>
       <td><strong>${esc(t.manager)}</strong><div style="font-size:0.78rem;color:var(--muted);">${esc(t.name)}</div></td>
-      <td><strong>${t.wins}–${t.losses}</strong></td>
+      <td><strong>${rec(t.wins, t.losses, t.ties)}</strong></td>
       <td>${t.pf.toFixed(2)}</td>
       <td>${t.pa.toFixed(2)}</td>
       <td style="color:${diffColor};font-weight:600;">${Number(diff) >= 0 ? '+' : ''}${diff}</td>
@@ -642,13 +776,14 @@ function renderCurrentStandings() {
 function computeAllTimeStats() {
   const stats = {};
   Object.entries(HISTORY.managers).forEach(([id, name]) => {
-    stats[id] = { id: Number(id), manager: name, wins: 0, losses: 0, pf: 0, pa: 0, titles: 0, seconds: 0, thirds: 0 };
+    stats[id] = { id: Number(id), manager: name, wins: 0, losses: 0, ties: 0, pf: 0, pa: 0, titles: 0, seconds: 0, thirds: 0 };
   });
   [...Object.values(HISTORY.seasons), CURRENT].forEach(s => {
     s.teams.forEach(t => {
       const st = stats[String(t.id)];
       st.wins += t.wins;
       st.losses += t.losses;
+      st.ties += t.ties || 0;
       st.pf += t.pf;
       st.pa += t.pa;
     });
@@ -659,8 +794,8 @@ function computeAllTimeStats() {
     stats[String(c.thirdId)].thirds += 1;
   });
   return Object.values(stats).map(s => {
-    const gp = s.wins + s.losses;
-    return { ...s, winPct: gp ? s.wins / gp : 0, ppg: gp ? s.pf / gp : 0 };
+    const gp = s.wins + s.losses + s.ties;
+    return { ...s, winPct: gp ? (s.wins + s.ties / 2) / gp : 0, ppg: gp ? s.pf / gp : 0 };
   });
 }
 
@@ -690,7 +825,7 @@ function renderAllTime() {
     return `<tr>
       <td><strong>${i + 1}</strong></td>
       <td><strong>${esc(r.manager)}</strong></td>
-      <td><strong>${r.wins}–${r.losses}</strong></td>
+      <td><strong>${rec(r.wins, r.losses, r.ties)}</strong></td>
       <td>${r.winPct.toFixed(3)}</td>
       <td>${r.pf.toFixed(2)}</td>
       <td>${r.pa.toFixed(2)}</td>
@@ -743,20 +878,22 @@ function buildH2H() {
   const h2h = {};
   ids.forEach(a => {
     h2h[a] = {};
-    ids.forEach(b => { h2h[a][b] = { w: 0, l: 0, pf: 0, pa: 0, games: [] }; });
+    ids.forEach(b => { h2h[a][b] = { w: 0, l: 0, t: 0, pf: 0, pa: 0, games: [] }; });
   });
   getAllMatchups().forEach(g => {
     if (g.winner === 'UNDECIDED') return;
     if (rivalryMode === 'reg' && g.playoffTier !== 'NONE') return;
     const h = g.homeId, a = g.awayId;
     if (!h2h[h] || !h2h[h][a]) return;
+    const tie = g.winner === 'TIE';
     const hWin = g.winner === 'HOME';
-    h2h[h][a].w += hWin ? 1 : 0; h2h[h][a].l += hWin ? 0 : 1;
+    const tally = (r, won) => { if (tie) r.t += 1; else if (won) r.w += 1; else r.l += 1; };
+    tally(h2h[h][a], hWin);
     h2h[h][a].pf += g.homePts; h2h[h][a].pa += g.awayPts;
-    h2h[h][a].games.push({ season: g.season, week: g.week, myPts: g.homePts, oppPts: g.awayPts, win: hWin, tier: g.playoffTier });
-    h2h[a][h].w += hWin ? 0 : 1; h2h[a][h].l += hWin ? 1 : 0;
+    h2h[h][a].games.push({ season: g.season, week: g.week, myPts: g.homePts, oppPts: g.awayPts, win: hWin, tie, tier: g.playoffTier });
+    tally(h2h[a][h], !hWin);
     h2h[a][h].pf += g.awayPts; h2h[a][h].pa += g.homePts;
-    h2h[a][h].games.push({ season: g.season, week: g.week, myPts: g.awayPts, oppPts: g.homePts, win: !hWin, tier: g.playoffTier });
+    h2h[a][h].games.push({ season: g.season, week: g.week, myPts: g.awayPts, oppPts: g.homePts, win: !hWin, tie, tier: g.playoffTier });
   });
   return { ids, h2h };
 }
@@ -772,12 +909,12 @@ function renderRivalryMatrix() {
     ids.forEach(b => {
       if (a === b) { html += '<td class="matrix-diag">—</td>'; return; }
       const r = h2h[a][b];
-      const tot = r.w + r.l;
-      const pct = tot ? r.w / tot : 0.5;
+      const tot = r.w + r.l + r.t;
+      const pct = tot ? (r.w + r.t / 2) / tot : 0.5;
       const bg = pct > 0.5 ? `rgba(16,185,129,${0.12 + (pct - 0.5) * 0.7})`
                : pct < 0.5 ? `rgba(239,68,68,${0.12 + (0.5 - pct) * 0.7})`
                : 'rgba(148,163,184,0.12)';
-      html += `<td class="matrix-cell" style="background:${bg};" onclick="showSpotlight(${a},${b})">${r.w}–${r.l}</td>`;
+      html += `<td class="matrix-cell" style="background:${bg};" onclick="showSpotlight(${a},${b})">${rec(r.w, r.l, r.t)}</td>`;
     });
     html += '</tr>';
   });
@@ -817,13 +954,13 @@ function showSpotlight(a, b) {
   const rows = [...r.games].reverse().map(g => `
     <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--border);font-size:0.84rem;">
       <span>${g.season} Wk ${g.week} ${g.tier !== 'NONE' ? '<span class="badge badge-bye">PO</span>' : ''}</span>
-      <span style="color:${g.win?'var(--green)':'var(--red)'};font-weight:700;">${g.win?'W':'L'} ${g.myPts.toFixed(2)} – ${g.oppPts.toFixed(2)}</span>
+      <span style="color:${g.tie?'var(--muted)':g.win?'var(--green)':'var(--red)'};font-weight:700;">${g.tie?'T':g.win?'W':'L'} ${g.myPts.toFixed(2)} – ${g.oppPts.toFixed(2)}</span>
     </div>
   `).join('');
   document.getElementById('rivalrySpotlight').innerHTML = `
     <div style="font-size:1.1rem;font-weight:800;color:var(--text);margin-bottom:6px;">${esc(getManager(a))} vs. ${esc(getManager(b))}</div>
     <div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:12px;font-size:0.86rem;">
-      <span>Record: <strong style="color:var(--gold);">${r.w}–${r.l}</strong></span>
+      <span>Record: <strong style="color:var(--gold);">${rec(r.w, r.l, r.t)}</strong></span>
       <span>Total Pts: <strong>${r.pf.toFixed(1)} – ${r.pa.toFixed(1)}</strong></span>
       <span>Avg Margin: <strong>${Number(avgMargin)>=0?'+':''}${avgMargin}</strong></span>
     </div>
@@ -832,15 +969,16 @@ function showSpotlight(a, b) {
 }
 
 function renderSeasons() {
-  const years = ['2026', '2025', '2024', '2023'];
+  const cur = String(CURRENT_SEASON);
+  const years = allSeasons().map(String);
   document.getElementById('seasonPills').innerHTML = years.map(y =>
-    `<button class="pill ${selectedSeason===y?'active':''}" onclick="selectedSeason='${y}';renderSeasons();">${y}${y==='2026'?' (Live)':''}</button>`
+    `<button class="pill ${selectedSeason===y?'active':''}" onclick="selectedSeason='${y}';renderSeasons();">${y}${y===cur?' (Live)':''}</button>`
   ).join('');
 
-  const data = selectedSeason === '2026' ? CURRENT : HISTORY.seasons[selectedSeason];
+  const data = seasonData(selectedSeason);
   const champObj = HISTORY.champions.find(c => String(c.year) === selectedSeason);
-  const teams = [...data.teams].sort((a, b) => {
-    if (selectedSeason !== '2026' && a.rankCalculatedFinal && b.rankCalculatedFinal) return a.rankCalculatedFinal - b.rankCalculatedFinal;
+  const teams = selectedSeason === cur ? standingsOrder(data.teams) : [...data.teams].sort((a, b) => {
+    if (a.rankCalculatedFinal && b.rankCalculatedFinal) return a.rankCalculatedFinal - b.rankCalculatedFinal;
     return (b.wins - a.wins) || (b.pf - a.pf);
   });
   document.querySelector('#seasonTable tbody').innerHTML = teams.map((t, i) => {
@@ -848,12 +986,12 @@ function renderSeasons() {
     if (champObj && champObj.champId === t.id) note = '<span class="badge badge-champ">🏆 Champion</span>';
     else if (champObj && champObj.runnerUpId === t.id) note = '<span class="badge badge-out">🥈 2nd Place</span>';
     else if (champObj && champObj.thirdId === t.id) note = '<span class="badge badge-out">🥉 3rd Place</span>';
-    else if (selectedSeason === '2026' && i < 6) note = i < 2 ? '<span class="badge badge-bye">BYE</span>' : '<span class="badge badge-in">Playoff Spot</span>';
+    else if (selectedSeason === cur && i < 6) note = i < 2 ? '<span class="badge badge-bye">BYE</span>' : '<span class="badge badge-in">Playoff Spot</span>';
     return `<tr>
       <td><strong>#${i + 1}</strong> ${t.playoffSeed ? `<span class="proj-sub">(Seed #${t.playoffSeed})</span>` : ''}</td>
       <td><strong>${esc(t.manager)}</strong></td>
       <td>${esc(t.name)}</td>
-      <td><strong>${t.wins}–${t.losses}</strong></td>
+      <td><strong>${rec(t.wins, t.losses, t.ties)}</strong></td>
       <td>${t.pf.toFixed(2)}</td>
       <td>${t.pa.toFixed(2)}</td>
       <td>${note || '—'}</td>
@@ -861,19 +999,36 @@ function renderSeasons() {
   }).join('');
 }
 
+function formatRulePoints(label, pts) {
+  const sign = pts > 0 ? '+' : '';
+  if (/Yards$/.test(label) && Math.abs(pts) < 1) return `${sign}${pts} / yd (1 pt per ${Math.round(1 / Math.abs(pts))} yds)`;
+  return `${sign}${pts}`;
+}
+
+function scoringRules() {
+  // Prefer the live ESPN settings; fall back to the hand-written table.
+  const settings = EXTRAS[CURRENT_SEASON] && EXTRAS[CURRENT_SEASON].league && EXTRAS[CURRENT_SEASON].league.settings;
+  if (settings && settings.scoring && settings.scoring.length) {
+    return { source: 'espn', rules: settings.scoring.map(r => [r.cat, r.label, formatRulePoints(r.label, r.pts)]) };
+  }
+  return { source: 'manual', rules: SCORING_RULES };
+}
+
 function renderScoring() {
   const q = (document.getElementById('scoringSearch').value || '').toLowerCase();
-  const filtered = SCORING_RULES.filter(r => r.join(' ').toLowerCase().includes(q));
+  const { source, rules } = scoringRules();
+  document.getElementById('scoringSource').textContent = source === 'espn' ? `· from ESPN league settings (${rules.length} rules)` : '';
+  const filtered = rules.filter(r => r.join(' ').toLowerCase().includes(q));
   document.querySelector('#scoringTable tbody').innerHTML = filtered.map(r =>
-    `<tr><td><span class="badge badge-out">${r[0]}</span></td><td>${r[1]}</td><td><strong>${r[2]}</strong></td></tr>`
+    `<tr><td><span class="badge badge-out">${esc(r[0])}</span></td><td>${esc(r[1])}</td><td><strong>${esc(r[2])}</strong></td></tr>`
   ).join('');
 }
 
 function copyShareSummary() {
   if (!CURRENT) return;
-  const sorted = [...CURRENT.teams].sort((a, b) => (b.wins - a.wins) || (b.pf - a.pf));
+  const sorted = standingsOrder(CURRENT.teams);
   const lines = [
-    `🦆 Duck Dynasty Fantasy League — 2026 Standings (Wk ${CURRENT.currentMatchupPeriod})`,
+    `🦆 Duck Dynasty Fantasy League — ${CURRENT_SEASON} Standings (Wk ${CURRENT.currentMatchupPeriod})`,
     ...sorted.map((t, i) => `${i+1}. ${t.manager} (${t.wins}-${t.losses}, ${t.pf.toFixed(1)} PF)${i<2?' [BYE]':i<6?' [IN]':''}`),
     `Link: ${window.location.href}`
   ];
@@ -976,27 +1131,476 @@ function renderMatchups() {
     const probBar = gStatus === 'live' && g.awayWinProb != null && g.homeWinProb != null
       ? `<div class="mu-prob" title="ESPN win probability"><span style="width:${g.awayWinProb}%;background:var(--gold);"></span><span style="width:${g.homeWinProb}%;background:var(--blue);"></span></div>`
       : '';
+    const lu = lineupBlock(CURRENT_SEASON, wk, g, gStatus === 'live');
     const s = seriesRecord(g.awayId, g.homeId);
     const series = s.aw === s.bw
       ? (s.aw ? `All-time series tied ${s.aw}–${s.bw}` : 'First all-time meeting')
       : `All-time: ${esc(getManager(s.aw > s.bw ? g.awayId : g.homeId))} leads ${Math.max(s.aw, s.bw)}–${Math.min(s.aw, s.bw)}`;
     const statusText = { live: 'Live', final: 'Final', upcoming: 'Upcoming' }[gStatus];
-    return `<div class="mu-card">
+    return `<div class="mu-card ${lu.body ? 'open' : ''}">
       <div class="mu-head"><span class="mu-status ${gStatus}">${gStatus === 'live' ? '● ' : ''}${statusText}</span><span>Away · Home</span></div>
       ${row(a, aCls, g.aScore, g.awayProj, g.awayWinProb)}
       ${probBar}
       ${row(h, hCls, g.hScore, g.homeProj, g.homeWinProb)}
-      <div class="mu-foot"><span>${series}</span></div>
+      <div class="mu-foot"><span>${series}</span>${lu.button}</div>
+      ${lu.body}
     </div>`;
   }).join('') || '<div class="proj-sub">No matchups scheduled for this week.</div>';
+}
+
+// --------------------------------------------------------------------------
+// Shared helpers
+// --------------------------------------------------------------------------
+function rec(w, l, t) {
+  return `${w}–${l}${t ? '–' + t : ''}`;
+}
+
+function standingsOrder(teams) {
+  // ESPN's own seeds apply the league tiebreakers; fall back to W then PF.
+  const seeded = teams.every(t => t.playoffSeed > 0);
+  return [...teams].sort((a, b) => seeded ? a.playoffSeed - b.playoffSeed : (b.wins - a.wins) || (b.pf - a.pf));
+}
+
+function seasonData(y) {
+  return Number(y) === CURRENT_SEASON ? CURRENT : HISTORY.seasons[String(y)];
+}
+
+function allSeasons() {
+  return [...new Set([...Object.keys(HISTORY.seasons).map(Number), CURRENT_SEASON])].sort((a, b) => b - a);
+}
+
+function extrasSeasons(kind, test) {
+  return Object.keys(EXTRAS).map(Number)
+    .filter(y => EXTRAS[y][kind] && (!test || test(EXTRAS[y][kind])))
+    .sort((a, b) => b - a);
+}
+
+function regularSeasonWeeks(y) {
+  const lg = EXTRAS[y] && EXTRAS[y].league;
+  return (lg && lg.settings && lg.settings.regularSeasonWeeks) || 14;
+}
+
+function applySeasonLabels() {
+  document.querySelectorAll('.cur-season').forEach(el => { el.textContent = CURRENT_SEASON; });
+  const champYears = HISTORY.champions.map(c => c.year);
+  if (champYears.length) {
+    document.getElementById('champYears').textContent = `(${Math.min(...champYears)}–${Math.max(...champYears)})`;
+  }
+  const seasons = allSeasons();
+  document.getElementById('allTimeYears').textContent = `(${Math.min(...seasons)}–${Math.max(...seasons)})`;
+}
+
+function seasonPills(seasons, active, handler, extra) {
+  const pills = (extra ? [extra] : []).concat(seasons.map(y => ({ value: y, label: String(y) })));
+  return pills.map(p =>
+    `<button class="pill ${String(p.value) === String(active) ? 'active' : ''}" onclick="${handler}('${p.value}')">${esc(p.label)}</button>`
+  ).join('');
+}
+
+function shortDate(ms) {
+  return ms ? new Date(ms).toLocaleDateString(undefined, { month: 'short', day: 'numeric' }) : '';
+}
+
+function noData(msg) {
+  return `<div class="empty-state">${esc(msg)}</div>`;
+}
+
+// --------------------------------------------------------------------------
+// Lineups on matchup cards
+// --------------------------------------------------------------------------
+const OPEN_LINEUPS = new Set();
+const BENCH_SLOT = 20, IR_SLOT = 21;
+
+function weekLineups(season, week) {
+  const L = EXTRAS[season] && EXTRAS[season].lineups;
+  return L && L.weeks && L.weeks[String(week)];
+}
+
+function slotLabel(season, slot) {
+  const slots = (EXTRAS[season] && EXTRAS[season].lineups && EXTRAS[season].lineups.slots) || {};
+  return Object.keys(slots).find(k => slots[k] === slot) || String(slot);
+}
+
+function toggleLineup(key) {
+  if (OPEN_LINEUPS.has(key)) OPEN_LINEUPS.delete(key); else OPEN_LINEUPS.add(key);
+  renderMatchups();
+}
+
+function lineupColumn(season, manager, entry, live) {
+  const starters = entry.players.filter(p => p.slot !== BENCH_SLOT && p.slot !== IR_SLOT);
+  const bench = entry.players.filter(p => p.slot === BENCH_SLOT || p.slot === IR_SLOT);
+  // Gold = a benched player who belonged in the best possible lineup.
+  const row = (p, benchRow) => `<div class="lu-row ${benchRow ? 'bench' : ''} ${benchRow && p.opt ? 'hot' : ''}" ${benchRow && p.opt ? 'title="Should have started"' : ''}>
+      <span class="lu-slot">${esc(slotLabel(season, p.slot))}</span>
+      <span class="lu-player">${esc(p.name)} <span class="proj-sub">${esc(p.pos)}</span></span>
+      <span class="lu-pts">${p.pts.toFixed(1)}</span>
+    </div>`;
+  const left = entry.best - entry.actual;
+  const foot = left > 0.005
+    ? `<div class="lu-foot">${live ? 'So far: ' : ''}${left.toFixed(2)} pts left on the bench (best possible ${entry.best.toFixed(2)})</div>`
+    : `<div class="lu-foot ok">✅ ${live ? 'Optimal so far' : 'Perfect lineup'}</div>`;
+  const adj = entry.adj ? `<div class="proj-sub">Commissioner adjustment: ${entry.adj > 0 ? '+' : ''}${entry.adj}</div>` : '';
+  return `<div><div class="lu-head">${esc(manager)}</div>
+    ${starters.map(p => row(p, false)).join('')}
+    <div class="lu-sep">Bench</div>
+    ${bench.map(p => row(p, true)).join('') || '<div class="proj-sub">—</div>'}
+    ${adj}${foot}</div>`;
+}
+
+function lineupBlock(season, week, game, live) {
+  const wk = weekLineups(season, week);
+  if (!wk || !wk[game.awayId] || !wk[game.homeId]) return { button: '', body: '' };
+  const key = `${season}-${week}-${game.awayId}-${game.homeId}`;
+  const open = OPEN_LINEUPS.has(key);
+  const button = `<button class="lu-toggle" onclick="toggleLineup('${key}')">${open ? 'Hide lineups ▴' : 'Lineups ▾'}</button>`;
+  const body = open ? `<div class="lu-pair">
+      ${lineupColumn(season, getManager(game.awayId), wk[game.awayId], live)}
+      ${lineupColumn(season, getManager(game.homeId), wk[game.homeId], live)}
+    </div>${live ? `<p class="note" style="margin-top:6px;">Lineups as of the last auto-sync (${esc(formatDate(EXTRAS[season].lineups.syncedAt))}).</p>` : ''}` : '';
+  return { button, body };
+}
+
+// --------------------------------------------------------------------------
+// Lineup IQ tab
+// --------------------------------------------------------------------------
+let iqSeason = 'all';
+function setIqSeason(v) { iqSeason = v; renderLineupIQ(); }
+
+function lineupStats(seasons) {
+  const stats = {};
+  Object.keys(HISTORY.managers).forEach(id => {
+    stats[id] = { id: Number(id), weeks: 0, actual: 0, best: 0, perfect: 0, lostWins: 0 };
+  });
+  let blunder = null, benchBomb = null, perfectRun = null;
+  seasons.forEach(y => {
+    const L = EXTRAS[y] && EXTRAS[y].lineups;
+    const data = seasonData(y);
+    if (!L || !data) return;
+    const lastReg = regularSeasonWeeks(y);
+    data.schedule.forEach(g => {
+      if (g.week > lastReg || g.winner === 'UNDECIDED') return;
+      const wk = L.weeks[String(g.week)];
+      if (!wk) return;
+      [[g.homeId, g.awayId, g.homePts, g.awayPts], [g.awayId, g.homeId, g.awayPts, g.homePts]].forEach(([me, opp, myScore, oppScore]) => {
+        const e = wk[me], s = stats[me];
+        if (!e || !s) return;
+        const left = e.best - e.actual;
+        s.weeks += 1;
+        s.actual += e.actual;
+        s.best += e.best;
+        if (left < 0.005) s.perfect += 1;
+        if (myScore < oppScore && e.best + (e.adj || 0) > oppScore) s.lostWins += 1;
+        if (!blunder || left > blunder.left) blunder = { left, id: me, opp, season: y, week: g.week, lost: myScore < oppScore };
+        e.players.forEach(p => {
+          if (p.slot === BENCH_SLOT && (!benchBomb || p.pts > benchBomb.pts)) benchBomb = { ...p, id: me, season: y, week: g.week };
+        });
+      });
+    });
+  });
+  const rows = Object.values(stats).filter(s => s.weeks).map(s => ({
+    ...s, left: s.best - s.actual, perWeek: (s.best - s.actual) / s.weeks, eff: s.best ? s.actual / s.best : 0
+  }));
+  rows.forEach(r => { if (!perfectRun || r.perfect > perfectRun.perfect) perfectRun = r; });
+  return { rows, blunder, benchBomb, perfectRun };
+}
+
+function renderLineupIQ() {
+  const seasons = extrasSeasons('lineups');
+  if (!seasons.length) {
+    document.getElementById('iqRecords').innerHTML = noData('Lineup data hasn’t been synced yet.');
+    return;
+  }
+  const label = y => Number(y) === CURRENT_SEASON ? `${y} (so far)` : String(y);
+  document.getElementById('iqPills').innerHTML = seasonPills(seasons.map(y => y), iqSeason, 'setIqSeason', { value: 'all', label: 'All-Time' })
+    .replace(new RegExp(`>${CURRENT_SEASON}<`), `>${label(CURRENT_SEASON)}<`);
+  const picked = iqSeason === 'all' ? seasons : [Number(iqSeason)];
+  const { rows, blunder, benchBomb, perfectRun } = lineupStats(picked);
+  rows.sort((a, b) => b.eff - a.eff);
+
+  const where = x => `${picked.length > 1 ? x.season + ' ' : ''}Wk ${x.week}`;
+  const top = rows[0], mostLeft = [...rows].sort((a, b) => b.left - a.left)[0];
+  document.getElementById('iqRecords').innerHTML = rows.length ? `
+    <div class="record-card"><div class="record-label">Lineup Genius</div><div class="record-val">${esc(getManager(top.id))}</div><div class="record-sub">${(top.eff * 100).toFixed(1)}% of best possible points</div></div>
+    <div class="record-card"><div class="record-label">Most Points Benched</div><div class="record-val">${esc(getManager(mostLeft.id))}</div><div class="record-sub">${mostLeft.left.toFixed(1)} pts left on the bench</div></div>
+    <div class="record-card"><div class="record-label">Worst Single Week</div><div class="record-val">${blunder.left.toFixed(2)} pts</div><div class="record-sub">${esc(getManager(blunder.id))} vs ${esc(getManager(blunder.opp))} (${where(blunder)})${blunder.lost ? ' · lost' : ''}</div></div>
+    <div class="record-card"><div class="record-label">Biggest Bench Bomb</div><div class="record-val">${benchBomb.pts.toFixed(1)} pts</div><div class="record-sub">${esc(benchBomb.name)} on ${esc(getManager(benchBomb.id))}’s bench (${where(benchBomb)})</div></div>
+  ` : noData('No completed regular-season weeks yet.');
+
+  document.querySelector('#iqTable tbody').innerHTML = rows.map((r, i) => `<tr>
+      <td><strong>${i + 1}</strong></td>
+      <td><strong>${esc(getManager(r.id))}</strong></td>
+      <td>${r.weeks}</td>
+      <td>${r.actual.toFixed(2)}</td>
+      <td>${r.best.toFixed(2)}</td>
+      <td style="color:var(--gold);font-weight:600;">${r.left.toFixed(2)}</td>
+      <td>${r.perWeek.toFixed(2)}</td>
+      <td style="white-space:nowrap;"><span class="odds-bar"><span class="odds-fill" style="width:${Math.max(0, (r.eff - 0.75) / 0.25 * 100).toFixed(0)}%;"></span></span>${(r.eff * 100).toFixed(1)}%</td>
+      <td>${r.perfect}</td>
+      <td>${r.lostWins || '—'}</td>
+    </tr>`).join('');
+}
+
+// --------------------------------------------------------------------------
+// Draft & Keepers tab
+// --------------------------------------------------------------------------
+let draftSeason = null, draftTeam = 'all', draftSort = { key: 'pick', dir: 1 }, draftShowAll = false;
+function setDraftSeason(v) { draftSeason = Number(v); draftTeam = 'all'; draftShowAll = false; renderDraft(); }
+
+function draftPicks(season) {
+  const G = EXTRAS[season].league;
+  return G.draft.map(p => {
+    const pl = G.players[String(p.playerId)] || { name: 'Unknown player', pos: '?', pts: 0 };
+    return { ...p, manager: getManager(p.teamId), name: pl.name, pos: pl.pos, pts: pl.pts || 0, ppd: p.bid ? (pl.pts || 0) / p.bid : 0 };
+  });
+}
+
+function renderDraft() {
+  const seasons = extrasSeasons('league', G => G.draft && G.draft.length);
+  if (!seasons.length) {
+    document.getElementById('draftRecords').innerHTML = noData('Draft data hasn’t been synced yet.');
+    document.getElementById('keeperCard').style.display = 'none';
+    return;
+  }
+  if (!seasons.includes(draftSeason)) draftSeason = seasons[0];
+  const live = draftSeason === CURRENT_SEASON;
+  document.getElementById('draftPills').innerHTML = seasonPills(seasons, draftSeason, 'setDraftSeason');
+  document.getElementById('draftTitle').textContent = `💰 ${draftSeason} Auction Draft`;
+  const picks = draftPicks(draftSeason);
+  const ptsLabel = live ? 'season-to-date points' : 'season points';
+
+  const by = (arr, f) => arr.reduce((m, x) => (f(x) > f(m) ? x : m), arr[0]);
+  const priciest = by(picks, p => p.bid);
+  const bargains = picks.filter(p => p.bid <= 5);
+  const bargain = bargains.length ? by(bargains, p => p.pts) : null;
+  const pricey = picks.filter(p => p.bid >= 25);
+  const bust = pricey.length ? by(pricey, p => -p.ppd) : null;
+  const topScorer = by(picks, p => p.pts);
+  const card = (label, val, sub) => `<div class="record-card"><div class="record-label">${label}</div><div class="record-val">${val}</div><div class="record-sub">${sub}</div></div>`;
+  document.getElementById('draftRecords').innerHTML = [
+    card('Most Expensive', `$${priciest.bid}`, `${esc(priciest.name)} · ${esc(priciest.manager)} · ${priciest.pts.toFixed(1)} pts`),
+    bargain ? card('Best Bargain ($5 or less)', esc(bargain.name), `$${bargain.bid} · ${esc(bargain.manager)} · ${bargain.pts.toFixed(1)} pts`) : '',
+    bust ? card('Biggest Bust ($25+)', esc(bust.name), `$${bust.bid} · ${esc(bust.manager)} · ${bust.pts.toFixed(1)} pts (${bust.ppd.toFixed(2)}/$)`) : '',
+    card('Top Scorer Drafted', esc(topScorer.name), `$${topScorer.bid} · ${esc(topScorer.manager)} · ${topScorer.pts.toFixed(1)} pts`)
+  ].join('');
+
+  const teams = {};
+  picks.forEach(p => {
+    const t = teams[p.teamId] || (teams[p.teamId] = { id: p.teamId, spent: 0, keepers: 0, players: 0, pts: 0 });
+    t.spent += p.bid; t.keepers += p.keeper ? 1 : 0; t.players += 1; t.pts += p.pts;
+  });
+  document.querySelector('#draftTeamTable tbody').innerHTML = Object.values(teams)
+    .sort((a, b) => b.pts - a.pts)
+    .map(t => `<tr>
+      <td><strong>${esc(getManager(t.id))}</strong></td>
+      <td>$${t.spent}</td>
+      <td>${t.keepers || '—'}</td>
+      <td>${t.players}</td>
+      <td>${t.pts.toFixed(1)}</td>
+      <td>${t.spent ? (t.pts / t.spent).toFixed(2) : '—'}</td>
+    </tr>`).join('');
+
+  const filter = document.getElementById('draftTeamFilter');
+  filter.innerHTML = `<option value="all">All managers</option>` + Object.keys(teams)
+    .sort((a, b) => getManager(a).localeCompare(getManager(b)))
+    .map(id => `<option value="${id}" ${String(draftTeam) === id ? 'selected' : ''}>${esc(getManager(id))}</option>`).join('');
+
+  const k = draftSort.key;
+  const rows = picks.filter(p => draftTeam === 'all' || String(p.teamId) === String(draftTeam)).sort((a, b) => {
+    const av = a[k], bv = b[k];
+    return (typeof av === 'string' ? av.localeCompare(bv) : av - bv) * draftSort.dir || a.pick - b.pick;
+  });
+  const shownRows = draftShowAll ? rows : rows.slice(0, 30);
+  document.querySelector('#draftBoard tbody').innerHTML = shownRows.map(p => `<tr>
+      <td>${p.pick}</td>
+      <td><strong>${esc(p.manager)}</strong></td>
+      <td>${esc(p.name)} ${p.keeper ? '<span class="badge badge-bye">Keeper</span>' : ''}</td>
+      <td>${esc(p.pos)}</td>
+      <td>$${p.bid}</td>
+      <td>${p.pts.toFixed(1)}</td>
+      <td>${p.bid ? p.ppd.toFixed(2) : '—'}</td>
+    </tr>`).join('') + (rows.length > shownRows.length
+      ? `<tr><td colspan="7"><button class="lu-toggle" onclick="draftShowAll=true;renderDraft();">Show all ${rows.length} picks</button></td></tr>` : '');
+  document.getElementById('draftNote').textContent = `Points are each player’s ${ptsLabel} for any team, including weeks on someone else’s roster or the bench. Nom. # is the order players were nominated in the auction.`;
+
+  renderKeepers(picks);
+}
+
+function renderKeepers(picks) {
+  const G = EXTRAS[CURRENT_SEASON] && EXTRAS[CURRENT_SEASON].league;
+  const card = document.getElementById('keeperCard');
+  if (draftSeason !== CURRENT_SEASON || !G || !G.rosters) { card.style.display = 'none'; return; }
+  card.style.display = '';
+  // League going rate: points scored per auction dollar across the draft.
+  const spent = picks.reduce((s, p) => s + p.bid, 0);
+  const rate = spent ? picks.reduce((s, p) => s + p.pts, 0) / spent : 0;
+  const keepCount = (G.settings && G.settings.keeperCount) || 3;
+  document.getElementById('keeperSub').textContent = `${keepCount} keepers per team · league rate ${rate.toFixed(2)} pts per $`;
+  const teamIds = Object.keys(G.rosters).sort((a, b) => getManager(a).localeCompare(getManager(b)));
+  document.getElementById('keeperGrid').innerHTML = teamIds.map(id => {
+    const players = G.rosters[id].map(pid => ({ id: pid, ...(G.players[String(pid)] || { name: 'Unknown', pos: '?', pts: 0 }) }))
+      .filter(p => p.keeperCost != null)
+      .map(p => ({ ...p, surplus: p.pts - p.keeperCost * rate }));
+    const best = new Set([...players].sort((a, b) => b.surplus - a.surplus).slice(0, keepCount).map(p => p.id));
+    players.sort((a, b) => b.surplus - a.surplus);
+    return `<div class="keeper-card"><div class="lu-head">${esc(getManager(id))}</div>
+      <div class="lu-row proj-sub"><span></span><span>Player</span><span>Cost</span><span>Pts</span></div>
+      ${players.map(p => `<div class="lu-row ${best.has(p.id) ? '' : 'bench'}">
+        <span>${best.has(p.id) ? '★' : ''}</span>
+        <span class="lu-player">${esc(p.name)} <span class="proj-sub">${esc(p.pos)}</span></span>
+        <span class="lu-pts">$${p.keeperCost}</span>
+        <span class="lu-pts">${(p.pts || 0).toFixed(1)}</span>
+      </div>`).join('')}
+    </div>`;
+  }).join('');
+}
+
+document.querySelectorAll('#draftBoard th.sortable').forEach(th => {
+  th.addEventListener('click', () => {
+    const key = th.dataset.dsort;
+    if (draftSort.key === key) draftSort.dir *= -1;
+    else draftSort = { key, dir: ['pick', 'manager', 'name', 'pos'].includes(key) ? 1 : -1 };
+    renderDraft();
+  });
+});
+
+// --------------------------------------------------------------------------
+// Trades & Waivers tab
+// --------------------------------------------------------------------------
+let activitySeason = null, activityTeam = 'all', activityShowAll = false;
+function setActivitySeason(v) { activitySeason = Number(v); activityTeam = 'all'; activityShowAll = false; renderActivity(); }
+
+function startedPointsAfter(season, playerId, teamId, fromWeek) {
+  const L = EXTRAS[season] && EXTRAS[season].lineups;
+  if (!L) return 0;
+  let total = 0;
+  Object.entries(L.weeks).forEach(([w, teams]) => {
+    if (Number(w) < fromWeek) return;
+    const e = teams[teamId];
+    const p = e && e.players.find(x => x.id === playerId);
+    if (p && p.slot !== BENCH_SLOT && p.slot !== IR_SLOT) total += p.pts;
+  });
+  return total;
+}
+
+function renderActivity() {
+  const seasons = extrasSeasons('league');
+  if (!seasons.length) {
+    document.getElementById('tradeList').innerHTML = noData('Transaction data hasn’t been synced yet.');
+    return;
+  }
+  if (!seasons.includes(activitySeason)) activitySeason = seasons[0];
+  document.getElementById('activityPills').innerHTML = seasonPills(seasons, activitySeason, 'setActivitySeason');
+  const G = EXTRAS[activitySeason].league;
+  const P = G.players || {};
+  const playerName = id => (P[String(id)] && P[String(id)].name) || 'Unknown player';
+
+  // Trades
+  const trades = [...(G.trades || [])].reverse();
+  document.getElementById('tradeList').innerHTML = trades.map(t => {
+    const sides = t.teams.map(tid => {
+      const gets = t.moves.filter(m => m.to === tid).map(m => ({ ...m, started: startedPointsAfter(activitySeason, m.playerId, String(tid), t.week) }));
+      return { tid, gets, total: gets.reduce((s, m) => s + m.started, 0) };
+    });
+    const leader = sides[0].total === sides[1].total ? null : (sides[0].total > sides[1].total ? sides[0].tid : sides[1].tid);
+    return `<div class="trade-card">
+      <div class="mu-head"><span class="mu-status upcoming">Week ${t.week}</span><span>${esc(getManager(t.teams[0]))} ⇄ ${esc(getManager(t.teams[1]))}</span></div>
+      <div class="trade-sides">${sides.map(s => `<div class="trade-side">
+        <h4>${esc(getManager(s.tid))} gets</h4>
+        <ul>${s.gets.map(m => `<li><span>${esc(m.name)} <span class="proj-sub">${esc(m.pos)}</span></span><span class="proj-sub">${m.started.toFixed(1)}</span></li>`).join('') || '<li class="proj-sub">Nothing still on a roster</li>'}</ul>
+        <div class="trade-total ${leader === s.tid ? 'win' : ''}">Started pts: ${s.total.toFixed(1)}</div>
+      </div>`).join('')}</div>
+    </div>`;
+  }).join('') || noData(`No trades found for ${activitySeason}.`);
+
+  // FAAB
+  const claims = (G.transactions || []).filter(t => t.type === 'WAIVER');
+  const budget = G.settings && G.settings.faabBudget;
+  const spend = {};
+  Object.keys(HISTORY.managers).forEach(id => { spend[id] = { id, spent: 0, claims: 0, top: null }; });
+  claims.forEach(t => {
+    const s = spend[t.teamId];
+    if (!s) return;
+    s.spent += t.bid || 0;
+    s.claims += 1;
+    if (!s.top || (t.bid || 0) > s.top.bid) s.top = t;
+  });
+  const spendRows = Object.values(spend).sort((a, b) => b.spent - a.spent);
+  document.getElementById('faabTable').innerHTML = spendRows.map(s => {
+    const addId = s.top && (s.top.items.find(i => i.type === 'ADD') || {}).playerId;
+    const pct = budget ? Math.min(100, s.spent / budget * 100) : 0;
+    return `<div class="list-row">
+      <div><strong>${esc(getManager(s.id))}</strong>
+        <div class="proj-sub">${s.claims} claim${s.claims === 1 ? '' : 's'}${s.top && s.top.bid ? ` · biggest: $${s.top.bid} on ${esc(playerName(addId))}` : ''}</div></div>
+      <div style="text-align:right;white-space:nowrap;">
+        ${budget ? `<span class="odds-bar"><span class="odds-fill" style="width:${pct.toFixed(0)}%;background:var(--gold);"></span></span>` : ''}
+        <strong>$${s.spent}</strong>${budget ? `<span class="proj-sub"> / $${budget}</span>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+
+  // Claims list
+  const filter = document.getElementById('activityTeamFilter');
+  filter.innerHTML = `<option value="all">All managers</option>` + Object.keys(HISTORY.managers)
+    .sort((a, b) => getManager(a).localeCompare(getManager(b)))
+    .map(id => `<option value="${id}" ${String(activityTeam) === id ? 'selected' : ''}>${esc(getManager(id))}</option>`).join('');
+  const list = (G.transactions || []).filter(t => activityTeam === 'all' || String(t.teamId) === String(activityTeam));
+  const shown = activityShowAll ? list : list.slice(0, 30);
+  document.getElementById('waiverList').innerHTML = shown.map(t => {
+    const add = t.items.find(i => i.type === 'ADD'), drop = t.items.find(i => i.type === 'DROP');
+    return `<div class="list-row">
+      <div><strong>${esc(getManager(t.teamId))}</strong>
+        <div class="proj-sub">${add ? `+ ${esc(playerName(add.playerId))}` : ''}${add && drop ? ' · ' : ''}${drop ? `− ${esc(playerName(drop.playerId))}` : ''}</div></div>
+      <div style="text-align:right;white-space:nowrap;">${t.type === 'WAIVER' ? `<strong>$${t.bid || 0}</strong>` : '<span class="badge badge-out">Drop</span>'}
+        <div class="proj-sub">Wk ${t.week} · ${shortDate(t.date)}</div></div>
+    </div>`;
+  }).join('') + (list.length > shown.length
+    ? `<button class="lu-toggle" style="margin-top:10px;" onclick="activityShowAll=true;renderActivity();">Show all ${list.length}</button>` : '')
+    || noData('No waiver claims.');
+}
+
+// --------------------------------------------------------------------------
+// Rulebook settings from ESPN
+// --------------------------------------------------------------------------
+function renderRulesSettings() {
+  const G = EXTRAS[CURRENT_SEASON] && EXTRAS[CURRENT_SEASON].league;
+  const s = G && G.settings;
+  if (!s) return; // keep the hand-written fallback text
+  const li = (k, v) => `<li><strong style="color:var(--text);">${k}:</strong> ${v}</li>`;
+  const when = ms => ms ? new Date(ms).toLocaleString(undefined, { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' }) : '—';
+  const starters = s.lineup.filter(x => x.slot !== 'Bench' && x.slot !== 'IR');
+  const nStart = starters.reduce((n, x) => n + x.count, 0);
+  const benchN = (s.lineup.find(x => x.slot === 'Bench') || {}).count || 0;
+  const irN = (s.lineup.find(x => x.slot === 'IR') || {}).count || 0;
+  const tiebreak = { TOTAL_POINTS_SCORED: 'Total PF', H2H_RECORD: 'Head-to-head' }[s.seedingTiebreak] || s.seedingTiebreak || '—';
+  document.getElementById('rulesDraft').innerHTML = [
+    li('Format', s.draftType === 'AUCTION' ? `$${s.auctionBudget} Auction` : esc(s.draftType || '—')),
+    li('Keepers', `${s.keeperCount} per team`),
+    li(`${CURRENT_SEASON} Draft Date`, esc(when(s.draftDate)))
+  ].join('');
+  document.getElementById('rulesRoster').innerHTML = [
+    li(`Starters (${nStart})`, esc(starters.map(x => `${x.count} ${x.slot}`).join(', '))),
+    li('Bench / IR', `${benchN} Bench · ${irN} IR`),
+    li('Caps', esc(Object.entries(s.positionCaps || {}).map(([p, n]) => `${n} ${p}`).join(', ') || 'None')),
+    s.faabBudget ? li('FAAB', `$${s.faabBudget} budget ($${s.minBid} min) · ${s.waiverHours}-hr waivers`) : ''
+  ].join('');
+  document.getElementById('rulesTrades').innerHTML = [
+    li('Trade Deadline', esc(when(s.tradeDeadline))),
+    li('Trade Review', `${s.tradeReviewHours} hrs · ${s.vetoVotesRequired ? s.vetoVotesRequired + ' veto votes' : 'LM review (0 veto votes)'}`),
+    li('Regular Season', `Weeks 1–${s.regularSeasonWeeks} (${s.regularSeasonWeeks} matchups)`),
+    li('Playoffs', `${s.playoffTeams} teams · Tiebreaker: ${esc(tiebreak)}`)
+  ].join('');
 }
 
 function renderAll() {
   renderCurrentStandings();
   renderMatchups();
+  renderLineupIQ();
+  renderDraft();
+  renderActivity();
   renderAllTime();
   renderRivalryMatrix();
   renderSeasons();
+  renderRulesSettings();
   renderScoring();
 }
 
