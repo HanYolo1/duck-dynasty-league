@@ -17,16 +17,16 @@ SEASON_ID = int(os.environ.get("ESPN_SEASON_ID", "2026"))
 OUTPUT_PATH = os.environ.get("OUTPUT_PATH", f"data/{SEASON_ID}.json")
 
 MANAGERS = {
-    1: "Cody MacPhee",
-    2: "Nick Bis",
-    3: "Patrick O'Brien",
-    4: "Jaret Grisamer",
-    5: "Erik Kurczewski",
-    6: "Jon Van Hulle",
-    7: "Adam Hukkala",
-    8: "Rory Spence",
-    9: "Kiana Bis",
-    10: "Zachary Lowes",
+    1: "Cody",
+    2: "Nick",
+    3: "Patrick",
+    4: "Jaret",
+    5: "Erik",
+    6: "Jon",
+    7: "Adam",
+    8: "Rory",
+    9: "Kiana",
+    10: "Zachary",
 }
 
 def fetch_espn_data():

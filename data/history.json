@@ -2,16 +2,16 @@
   "leagueId": 52568337,
   "leagueName": "Duck Dynasty Fantasy League",
   "managers": {
-    "1": "Cody MacPhee",
-    "2": "Nick Bis",
-    "3": "Patrick O'Brien",
-    "4": "Jaret Grisamer",
-    "5": "Erik Kurczewski",
-    "6": "Jon Van Hulle",
-    "7": "Adam Hukkala",
-    "8": "Rory Spence",
-    "9": "Kiana Bis",
-    "10": "Zachary Lowes"
+    "1": "Cody",
+    "2": "Nick",
+    "3": "Patrick",
+    "4": "Jaret",
+    "5": "Erik",
+    "6": "Jon",
+    "7": "Adam",
+    "8": "Rory",
+    "9": "Kiana",
+    "10": "Zachary"
   },
   "champions": [
     {
@@ -50,7 +50,7 @@
       "teams": [
         {
           "id": 1,
-          "manager": "Cody MacPhee",
+          "manager": "Cody",
           "name": "Kim Jong-un's Fear Bone-er",
           "abbrev": "KJU",
           "wins": 10,
@@ -66,7 +66,7 @@
         },
         {
           "id": 2,
-          "manager": "Nick Bis",
+          "manager": "Nick",
           "name": "Rory 4 CJ",
           "abbrev": "NB",
           "wins": 3,
@@ -82,7 +82,7 @@
         },
         {
           "id": 3,
-          "manager": "Patrick O'Brien",
+          "manager": "Patrick",
           "name": "Poverty Pat",
           "abbrev": "PCXP",
           "wins": 5,
@@ -98,7 +98,7 @@
         },
         {
           "id": 4,
-          "manager": "Jaret Grisamer",
+          "manager": "Jaret",
           "name": "Your Favorite Stripper Beige",
           "abbrev": "CHUM",
           "wins": 4,
@@ -114,7 +114,7 @@
         },
         {
           "id": 5,
-          "manager": "Erik Kurczewski",
+          "manager": "Erik",
           "name": "Train-Reek",
           "abbrev": "RIK",
           "wins": 8,
@@ -130,7 +130,7 @@
         },
         {
           "id": 6,
-          "manager": "Jon Van Hulle",
+          "manager": "Jon",
           "name": "Gesicki Griddy Instructor",
           "abbrev": "JVH",
           "wins": 10,
@@ -146,7 +146,7 @@
         },
         {
           "id": 7,
-          "manager": "Adam Hukkala",
+          "manager": "Adam",
           "name": "Mr. Cosmopolitan",
           "abbrev": "CJ",
           "wins": 7,
@@ -162,7 +162,7 @@
         },
         {
           "id": 8,
-          "manager": "Rory Spence",
+          "manager": "Rory",
           "name": "Planting the Seed",
           "abbrev": "USSR",
           "wins": 6,
@@ -178,7 +178,7 @@
         },
         {
           "id": 9,
-          "manager": "Kiana Bis",
+          "manager": "Kiana",
           "name": "Je Ne Saquon",
           "abbrev": "THOM",
           "wins": 8,
@@ -194,7 +194,7 @@
         },
         {
           "id": 10,
-          "manager": "Zachary Lowes",
+          "manager": "Zachary",
           "name": "Born on the BAiyuk",
           "abbrev": "BIRD",
           "wins": 9,
@@ -1563,7 +1563,7 @@
       "teams": [
         {
           "id": 1,
-          "manager": "Cody MacPhee",
+          "manager": "Cody",
           "name": "General Hospital",
           "abbrev": "KJU",
           "wins": 8,
@@ -1579,7 +1579,7 @@
         },
         {
           "id": 2,
-          "manager": "Nick Bis",
+          "manager": "Nick",
           "name": "Sketch's Only Fan",
           "abbrev": "OOF",
           "wins": 8,
@@ -1595,7 +1595,7 @@
         },
         {
           "id": 3,
-          "manager": "Patrick O'Brien",
+          "manager": "Patrick",
           "name": "Jill's Anatomy",
           "abbrev": "MAGA",
           "wins": 9,
@@ -1611,7 +1611,7 @@
         },
         {
           "id": 4,
-          "manager": "Jaret Grisamer",
+          "manager": "Jaret",
           "name": "Your Favorite Stripper Beige",
           "abbrev": "CHUM",
           "wins": 7,
@@ -1627,7 +1627,7 @@
         },
         {
           "id": 5,
-          "manager": "Erik Kurczewski",
+          "manager": "Erik",
           "name": "Link's College Fund",
           "abbrev": "RIK",
           "wins": 8,
@@ -1643,7 +1643,7 @@
         },
         {
           "id": 6,
-          "manager": "Jon Van Hulle",
+          "manager": "Jon",
           "name": "Joey B Take My Knees",
           "abbrev": "JVH",
           "wins": 5,
@@ -1659,7 +1659,7 @@
         },
         {
           "id": 7,
-          "manager": "Adam Hukkala",
+          "manager": "Adam",
           "name": "Throwing my heart out for Elon",
           "abbrev": "BEEP",
           "wins": 5,
@@ -1675,7 +1675,7 @@
         },
         {
           "id": 8,
-          "manager": "Rory Spence",
+          "manager": "Rory",
           "name": "Cowboy Jillian",
           "abbrev": "JILL",
           "wins": 6,
@@ -1691,7 +1691,7 @@
         },
         {
           "id": 9,
-          "manager": "Kiana Bis",
+          "manager": "Kiana",
           "name": "Lights Kamara Action",
           "abbrev": "GIRL",
           "wins": 10,
@@ -1707,7 +1707,7 @@
         },
         {
           "id": 10,
-          "manager": "Zachary Lowes",
+          "manager": "Zachary",
           "name": "Born on the BAiyuk",
           "abbrev": "BIRD",
           "wins": 4,
@@ -3076,7 +3076,7 @@
       "teams": [
         {
           "id": 1,
-          "manager": "Cody MacPhee",
+          "manager": "Cody",
           "name": "General Hospital",
           "abbrev": "KJU",
           "wins": 6,
@@ -3092,7 +3092,7 @@
         },
         {
           "id": 2,
-          "manager": "Nick Bis",
+          "manager": "Nick",
           "name": "Christian Mingle",
           "abbrev": "CMC",
           "wins": 10,
@@ -3108,7 +3108,7 @@
         },
         {
           "id": 3,
-          "manager": "Patrick O'Brien",
+          "manager": "Patrick",
           "name": "Amon Drugs",
           "abbrev": "MAGA",
           "wins": 4,
@@ -3124,7 +3124,7 @@
         },
         {
           "id": 4,
-          "manager": "Jaret Grisamer",
+          "manager": "Jaret",
           "name": "Your Favorite Stripper Beige",
           "abbrev": "CHUM",
           "wins": 6,
@@ -3140,7 +3140,7 @@
         },
         {
           "id": 5,
-          "manager": "Erik Kurczewski",
+          "manager": "Erik",
           "name": "Sutton Death",
           "abbrev": "RIK",
           "wins": 10,
@@ -3156,7 +3156,7 @@
         },
         {
           "id": 6,
-          "manager": "Jon Van Hulle",
+          "manager": "Jon",
           "name": "Achane Reaction",
           "abbrev": "JVH",
           "wins": 8,
@@ -3172,7 +3172,7 @@
         },
         {
           "id": 7,
-          "manager": "Adam Hukkala",
+          "manager": "Adam",
           "name": "RIP Skattebo",
           "abbrev": "BEEP",
           "wins": 5,
@@ -3188,7 +3188,7 @@
         },
         {
           "id": 8,
-          "manager": "Rory Spence",
+          "manager": "Rory",
           "name": "Quinshon Jillkins",
           "abbrev": "THUG",
           "wins": 8,
@@ -3204,7 +3204,7 @@
         },
         {
           "id": 9,
-          "manager": "Kiana Bis",
+          "manager": "Kiana",
           "name": "I'm Just A Girl",
           "abbrev": "GIRL",
           "wins": 6,
@@ -3220,7 +3220,7 @@
         },
         {
           "id": 10,
-          "manager": "Zachary Lowes",
+          "manager": "Zachary",
           "name": "TWO MOMS",
           "abbrev": "2Mom",
           "wins": 7,
