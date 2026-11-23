@@ -107,6 +107,33 @@
   .matchup-score { font-size: 1.05rem; font-weight: 800; font-variant-numeric: tabular-nums; }
   .proj-sub { font-size: 0.76rem; color: var(--muted); }
 
+  .matchups-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 14px; }
+  .week-summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 16px; }
+  .week-summary:empty { display: none; }
+  .mu-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+  .mu-head { display: flex; justify-content: space-between; align-items: center; font-size: 0.74rem; color: var(--muted); margin-bottom: 6px; }
+  .mu-status { font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+  .mu-status.live { color: var(--red); }
+  .mu-status.final { color: var(--muted); }
+  .mu-status.upcoming { color: var(--blue); }
+  .mu-team { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 8px 0; }
+  .mu-team + .mu-team { border-top: 1px solid var(--border); }
+  .mu-name { min-width: 0; }
+  .mu-name strong { display: block; }
+  .mu-name .proj-sub { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .mu-score { text-align: right; flex-shrink: 0; }
+  .mu-score .matchup-score { font-size: 1.4rem; }
+  .mu-team.winner .matchup-score { color: var(--green); }
+  .mu-team.loser { opacity: 0.7; }
+  .mu-prob { display: flex; height: 6px; border-radius: 999px; overflow: hidden; background: var(--surface); margin: 8px 0 4px; }
+  .mu-prob span { height: 100%; }
+  .mu-foot { display: flex; justify-content: space-between; gap: 10px; font-size: 0.76rem; color: var(--muted); margin-top: 6px; flex-wrap: wrap; }
+  @media (max-width: 640px) {
+    #weekPills { flex-wrap: nowrap; overflow-x: auto; max-width: 100%; padding-bottom: 4px; scrollbar-width: none; }
+    #weekPills .pill { flex-shrink: 0; }
+    .week-summary { grid-template-columns: 1fr 1fr; }
+    .week-summary .record-card { padding: 10px 12px; }
+  }
   .champ-card {
     background: linear-gradient(145deg, rgba(245,158,11,0.14), rgba(17,24,39,0.9));
     border: 1px solid rgba(245,158,11,0.35); border-radius: 12px; padding: 16px;
@@ -170,6 +197,7 @@
 
   <nav class="tabs">
     <button class="tab-btn active" data-tab="current">Current Standings</button>
+    <button class="tab-btn" data-tab="matchups">Matchups</button>
     <button class="tab-btn" data-tab="alltime">All-Time Standings</button>
     <button class="tab-btn" data-tab="rivalry">Rivalry Matrix</button>
     <button class="tab-btn" data-tab="seasons">Season-by-Season</button>
@@ -204,6 +232,18 @@
         <div class="card-title"><span id="liveWeekTitle">Live Week Matchups</span></div>
         <div id="liveMatchups" style="display:grid;gap:10px;"></div>
       </div>
+    </div>
+  </section>
+
+  <!-- TAB: MATCHUPS -->
+  <section id="tab-matchups" class="panel">
+    <div class="card">
+      <div class="card-title">
+        <span id="matchupsTitle">🏈 Matchups</span>
+        <div class="pill-group" id="weekPills"></div>
+      </div>
+      <div id="weekSummary" class="week-summary"></div>
+      <div id="matchupsGrid" class="matchups-grid"></div>
     </div>
   </section>
 
@@ -406,6 +446,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    if (btn.dataset.tab === 'matchups') centerActiveWeek();
   });
 });
 
@@ -839,8 +880,120 @@ function copyShareSummary() {
   navigator.clipboard.writeText(lines.join('\n')).then(() => showToast('Standings summary copied for group chat!'));
 }
 
+let selectedWeek = null;
+
+function centerActiveWeek() {
+  // On phones the week pills scroll sideways; keep the selected week visible.
+  const pillRow = document.getElementById('weekPills');
+  const activePill = pillRow.querySelector('.pill.active');
+  if (activePill && pillRow.scrollWidth > pillRow.clientWidth) {
+    const delta = activePill.getBoundingClientRect().left - pillRow.getBoundingClientRect().left;
+    pillRow.scrollLeft += delta - (pillRow.clientWidth - activePill.offsetWidth) / 2;
+  }
+}
+
+function weekStatus(week) {
+  const games = CURRENT.schedule.filter(g => g.week === week);
+  if (games.length && games.every(g => g.winner !== 'UNDECIDED')) return 'final';
+  if (week === CURRENT.currentMatchupPeriod) return 'live';
+  return week < CURRENT.currentMatchupPeriod ? 'final' : 'upcoming';
+}
+
+function seriesRecord(aId, bId) {
+  // All-time record between two managers (all seasons, playoffs included).
+  let aw = 0, bw = 0;
+  getAllMatchups().forEach(g => {
+    if (g.winner !== 'HOME' && g.winner !== 'AWAY') return;
+    const ids = [g.homeId, g.awayId];
+    if (!ids.includes(aId) || !ids.includes(bId)) return;
+    const winId = g.winner === 'HOME' ? g.homeId : g.awayId;
+    if (winId === aId) aw++; else bw++;
+  });
+  return { aw, bw };
+}
+
+function renderMatchups() {
+  const weeks = [...new Set(CURRENT.schedule.map(g => g.week))].sort((a, b) => a - b);
+  if (!weeks.length) return;
+  if (selectedWeek == null || !weeks.includes(selectedWeek)) {
+    selectedWeek = weeks.includes(CURRENT.currentMatchupPeriod) ? CURRENT.currentMatchupPeriod : weeks[weeks.length - 1];
+  }
+  const wk = selectedWeek;
+  const status = weekStatus(wk);
+  const statusLabel = { live: 'Live', final: 'Final', upcoming: 'Upcoming' }[status];
+
+  document.getElementById('weekPills').innerHTML = weeks.map(w =>
+    `<button class="pill ${w === wk ? 'active' : ''}" onclick="selectedWeek=${w};renderMatchups();">Wk ${w}${w === CURRENT.currentMatchupPeriod ? ' ●' : ''}</button>`
+  ).join('');
+  centerActiveWeek();
+  document.getElementById('matchupsTitle').textContent = `🏈 Week ${wk} Matchups · ${statusLabel}`;
+
+  const teamMap = Object.fromEntries(CURRENT.teams.map(t => [t.id, t]));
+  const games = CURRENT.schedule.filter(g => g.week === wk).map(g => {
+    const done = g.winner !== 'UNDECIDED';
+    return {
+      ...g, done,
+      aScore: done ? g.awayPts : g.awayLive,
+      hScore: done ? g.homePts : g.homeLive
+    };
+  });
+
+  // Week summary (only once points are on the board)
+  const scored = games.filter(g => g.aScore || g.hScore);
+  let summary = '';
+  if (scored.length) {
+    const scores = scored.flatMap(g => [{ id: g.awayId, pts: g.aScore }, { id: g.homeId, pts: g.hScore }]);
+    const hi = scores.reduce((m, x) => x.pts > m.pts ? x : m);
+    const lo = scores.reduce((m, x) => x.pts < m.pts ? x : m);
+    const margin = g => Math.abs(g.aScore - g.hScore);
+    const close = scored.reduce((m, g) => margin(g) < margin(m) ? g : m);
+    const blow = scored.reduce((m, g) => margin(g) > margin(m) ? g : m);
+    const vs = g => `${esc(getManager(g.awayId))} vs ${esc(getManager(g.homeId))}`;
+    const pre = status === 'final' ? '' : 'Current ';
+    summary = `
+      <div class="record-card"><div class="record-label">${pre}Top Score</div><div class="record-val">${hi.pts.toFixed(2)}</div><div class="record-sub">${esc(getManager(hi.id))}</div></div>
+      <div class="record-card"><div class="record-label">${pre}Low Score</div><div class="record-val">${lo.pts.toFixed(2)}</div><div class="record-sub">${esc(getManager(lo.id))}</div></div>
+      <div class="record-card"><div class="record-label">${pre}Closest Game</div><div class="record-val">${margin(close).toFixed(2)} pts</div><div class="record-sub">${vs(close)}</div></div>
+      <div class="record-card"><div class="record-label">${pre}Biggest Margin</div><div class="record-val">${margin(blow).toFixed(2)} pts</div><div class="record-sub">${vs(blow)}</div></div>`;
+  }
+  document.getElementById('weekSummary').innerHTML = summary;
+
+  document.getElementById('matchupsGrid').innerHTML = games.map(g => {
+    const a = teamMap[g.awayId] || { manager: getManager(g.awayId), name: '', wins: 0, losses: 0 };
+    const h = teamMap[g.homeId] || { manager: getManager(g.homeId), name: '', wins: 0, losses: 0 };
+    const gStatus = g.done ? 'final' : status;
+    const showScores = gStatus !== 'upcoming';
+    const aCls = g.done ? (g.winner === 'AWAY' ? 'winner' : g.winner === 'HOME' ? 'loser' : '') : '';
+    const hCls = g.done ? (g.winner === 'HOME' ? 'winner' : g.winner === 'AWAY' ? 'loser' : '') : '';
+    const row = (t, cls, score, proj, prob) => `
+      <div class="mu-team ${cls}">
+        <div class="mu-name"><strong>${esc(t.manager)}</strong><span class="proj-sub">${esc(t.name)} · ${t.wins}–${t.losses}</span></div>
+        <div class="mu-score">
+          ${showScores ? `<span class="matchup-score">${score.toFixed(2)}</span>` : '<span class="proj-sub">—</span>'}
+          ${gStatus === 'live' && proj ? `<div class="proj-sub">Proj ${proj.toFixed(1)}${prob != null ? ` · ${prob.toFixed(0)}%` : ''}</div>` : ''}
+        </div>
+      </div>`;
+    const probBar = gStatus === 'live' && g.awayWinProb != null && g.homeWinProb != null
+      ? `<div class="mu-prob" title="ESPN win probability"><span style="width:${g.awayWinProb}%;background:var(--gold);"></span><span style="width:${g.homeWinProb}%;background:var(--blue);"></span></div>`
+      : '';
+    const s = seriesRecord(g.awayId, g.homeId);
+    const series = s.aw === s.bw
+      ? (s.aw ? `All-time series tied ${s.aw}–${s.bw}` : 'First all-time meeting')
+      : `All-time: ${esc(getManager(s.aw > s.bw ? g.awayId : g.homeId))} leads ${Math.max(s.aw, s.bw)}–${Math.min(s.aw, s.bw)}`;
+    const statusText = { live: 'Live', final: 'Final', upcoming: 'Upcoming' }[gStatus];
+    return `<div class="mu-card">
+      <div class="mu-head"><span class="mu-status ${gStatus}">${gStatus === 'live' ? '● ' : ''}${statusText}</span><span>Away · Home</span></div>
+      ${row(a, aCls, g.aScore, g.awayProj, g.awayWinProb)}
+      ${probBar}
+      ${row(h, hCls, g.hScore, g.homeProj, g.homeWinProb)}
+      <div class="mu-foot"><span>${series}</span></div>
+    </div>`;
+  }).join('') || '<div class="proj-sub">No matchups scheduled for this week.</div>';
+}
+
 function renderAll() {
   renderCurrentStandings();
+  renderMatchups();
   renderAllTime();
   renderRivalryMatrix();
   renderSeasons();
