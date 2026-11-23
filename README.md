@@ -3,14 +3,17 @@
 An interactive, self-updating league dashboard hosted on **GitHub Pages** featuring:
 - **Current Standings & Playoff Picture** (ESPN seeds, live playoff odds, BYE/IN cutoff, projected bracket) plus a **Playoff Race** that checks every remaining outcome to show who has clinched, who is out, and how many wins each team needs
 - **Matchups** for every week: live scores, projections and win probability, all-time series, both starting lineups with player points, and previews of upcoming games (form, key players, last meeting). For the current week, players show injury and bye badges (Q / D / O / IR / BYE), and a **Lineup Alerts** card flags empty starting slots and starters who won't play
-- **Playoffs**: the bracket for every season, projected from the current seeds until Week 15, then filled in with real games and live scores, plus all consolation games
+- **Playoffs**: the bracket for every season, projected from the current seeds until Week 15, then filled in with real games and live scores, plus all consolation games and a **playoff odds by week** chart (simulated for every season)
 - **Weekly Recap**: awards for every completed week (top score, luckiest win, bench blunder, waiver pickup of the week…) with a copy-for-group-chat button
 - **Power Rankings**: all-play records, recent form, expected wins and luck, by season and career
 - **Lineup IQ**: points left on the bench, lineup efficiency, and losses a better lineup would have won (by season and all-time)
 - **Draft & Keepers**: the auction draft board with prices and points per dollar, team spending, and next season's keeper prices
 - **Trades & Waivers**: every trade with points each side has started since, FAAB spending, and all waiver claims
 - **Manager profiles**: career record, finishes, rivalries, draft hits and misses, every trade and waiver spending (click any manager's name)
+- **Season Awards**: champion, MVP, draft steal and bust, waiver wire hero, trade of the year, lineup genius, luckiest/unluckiest and more, for every season, with a copy-for-group-chat button
 - **Player Records**: top single-week scores, best weeks and seasons by position, and the most-drafted players
+- **Lineup Log**: a record of full-lineup-rule violations by manager (empty starting slots, starters on bye, and injured starters who didn't play)
+- **Shareable links**: the address follows the page you're on (e.g. `#recap/2026/10`, `#managers/rory`), so any page can be shared directly
 - **All-Time Standings & Records**, the **Rivalry Matrix**, and **Season-by-Season Archives**
 - **Official Rulebook**: house rules plus league settings and scoring pulled straight from ESPN
 
