@@ -31,8 +31,9 @@ concurrency:
 
 env:
   ESPN_LEAGUE_ID: "52568337"
-  # The current season. Bump this (and nothing else) when rolling over.
-  ESPN_SEASON_ID: "2026"
+  # The current season comes from data/manifest.json. After the championship
+  # the sync archives the season into data/history.json and switches to the
+  # next season on its own once ESPN opens it (checked every Tuesday run).
 
 jobs:
   sync:

@@ -2,7 +2,8 @@
 
 An interactive, self-updating league dashboard hosted on **GitHub Pages** featuring:
 - **Current Standings & Playoff Picture** (ESPN seeds, live playoff odds, BYE/IN cutoff, projected bracket) plus a **Playoff Race** that checks every remaining outcome to show who has clinched, who is out, and how many wins each team needs
-- **Matchups** for every week: live scores, projections and win probability, all-time series, and both starting lineups with player points
+- **Matchups** for every week: live scores, projections and win probability, all-time series, both starting lineups with player points, and previews of upcoming games (form, key players, last meeting)
+- **Playoffs**: the bracket for every season, projected from the current seeds until Week 15, then filled in with real games and live scores, plus all consolation games
 - **Weekly Recap**: awards for every completed week (top score, luckiest win, bench blunder, waiver pickup of the week…) with a copy-for-group-chat button
 - **Power Rankings**: all-play records, recent form, expected wins and luck, by season and career
 - **Lineup IQ**: points left on the bench, lineup efficiency, and losses a better lineup would have won (by season and all-time)
@@ -65,7 +66,7 @@ python -m unittest discover tests
 2. In the repo, go to **Settings → Secrets and variables → Actions** and add them as secrets named `ESPN_S2` and `SWID`.
 3. **Actions** → **Sync ESPN Fantasy League Data** → **Run workflow**, enter season `2025` and tick **backfill**.
 
-## Rolling Over to 2027 Next Season
-1. Copy the finished `data/2026.json` into `data/history.json` under `"seasons": { "2026": ... }` and add the 2026 Champion to `"champions"`.
-2. Change `ESPN_SEASON_ID` to `"2027"` in `.github/workflows/sync-espn.yml`. The next sync writes `data/2027*.json` and updates `data/manifest.json`, and the site follows automatically.
-3. Optional: update the default `ESPN_SEASON_ID` in `scripts/sync_espn.py` and the fallback `CURRENT_SEASON` in `index.html` (only used if `manifest.json` is missing).
+## End of Season & Rollover (automatic)
+- **After the championship:** once the final and the 3rd-place game are over, the sync adds the season to `data/history.json` (standings, schedule, champion, runner-up and 3rd place) on its own.
+- **New season:** every Tuesday run then checks whether ESPN has opened next season's league (this happens when the league is renewed). As soon as it has, the sync switches `data/manifest.json` to the new season and the site follows. Nothing needs editing.
+- **Manual override:** to sync a specific season, run the workflow with a season entered, or set `ESPN_SEASON_ID` in the workflow's `env`.

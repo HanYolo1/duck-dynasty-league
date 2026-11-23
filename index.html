@@ -166,6 +166,30 @@
   .empty-state { color: var(--muted); font-size: 0.88rem; padding: 12px 0; }
   .profile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(480px, 100%), 1fr)); gap: 18px; align-items: start; }
   .profile-grid .card { margin-bottom: 0; }
+  .bracket { display: grid; grid-template-columns: repeat(3, minmax(200px, 1fr)); gap: 18px; align-items: center; }
+  .br-col { display: grid; gap: 12px; }
+  .br-col-title { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 700; }
+  .br-game { background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px; }
+  .br-game.br-final { border-color: rgba(245,158,11,0.5); box-shadow: 0 0 0 1px rgba(245,158,11,0.15); }
+  .br-game.br-bye { opacity: 0.85; }
+  .br-head { display: flex; justify-content: space-between; font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; margin-bottom: 4px; }
+  .br-team { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 4px 0; font-size: 0.88rem; }
+  .br-team + .br-team { border-top: 1px solid var(--border); }
+  .br-team.won .br-score { color: var(--green); font-weight: 800; }
+  .br-team.lost { opacity: 0.55; }
+  .br-team.tbd { color: var(--muted); font-style: italic; font-size: 0.8rem; }
+  .br-seed { display: inline-block; min-width: 18px; color: var(--muted); font-size: 0.72rem; font-weight: 700; }
+  .br-score { font-variant-numeric: tabular-nums; font-weight: 700; }
+  @media (max-width: 760px) { .bracket { grid-template-columns: 1fr; } }
+  .preview { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--border); font-size: 0.8rem; }
+  .pv-grid { display: grid; grid-template-columns: 80px 1fr 1fr; gap: 4px 10px; align-items: baseline; }
+  .pv-h { font-weight: 700; font-size: 0.76rem; color: var(--muted); }
+  .pv-l { color: var(--muted); font-size: 0.72rem; }
+  .pv-up { color: var(--green); font-weight: 700; }
+  .pv-keys { display: grid; gap: 2px; font-size: 0.76rem; }
+  .pv-res { display: inline-block; width: 16px; text-align: center; font-weight: 800; font-size: 0.7rem; }
+  .pv-res.W { color: var(--green); } .pv-res.L { color: var(--red); } .pv-res.T { color: var(--muted); }
+  .pv-note { margin-top: 8px; color: var(--muted); font-size: 0.78rem; }
   .mgr-link { color: inherit; font-weight: 700; text-decoration: none; border-bottom: 1px dotted var(--muted); }
   .mgr-link:hover { color: var(--blue); border-bottom-color: var(--blue); }
   .badge-alive { background: var(--blue-bg); color: var(--blue); border: 1px solid rgba(56,189,248,0.35); }
@@ -255,6 +279,7 @@
   <nav class="tabs">
     <button class="tab-btn active" data-tab="current">Current Standings</button>
     <button class="tab-btn" data-tab="matchups">Matchups</button>
+    <button class="tab-btn" data-tab="playoffs">Playoffs</button>
     <button class="tab-btn" data-tab="recap">Weekly Recap</button>
     <button class="tab-btn" data-tab="power">Power Rankings</button>
     <button class="tab-btn" data-tab="lineups">Lineup IQ</button>
@@ -289,7 +314,7 @@
 
     <div class="grid-2">
       <div class="card">
-        <div class="card-title">🏆 Projected Playoff Bracket (If Season Ended Today)</div>
+        <div class="card-title"><span>🏆 Projected Playoff Bracket (If Season Ended Today)</span><a class="mgr-link" style="font-size:0.8rem;" href="#" onclick="switchTab('playoffs');return false;">Full bracket →</a></div>
         <div id="projectedBracket"></div>
       </div>
       <div class="card">
@@ -317,6 +342,21 @@
       </div>
       <div id="weekSummary" class="week-summary"></div>
       <div id="matchupsGrid" class="matchups-grid"></div>
+    </div>
+  </section>
+
+  <!-- TAB: PLAYOFFS -->
+  <section id="tab-playoffs" class="panel">
+    <div class="card">
+      <div class="card-title">
+        <span id="bracketTitle">🏆 Playoffs</span>
+        <div class="pill-group" id="bracketPills"></div>
+      </div>
+      <div id="bracketBody"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🎗️ Consolation Games</div>
+      <div id="consolationList"></div>
     </div>
   </section>
 
@@ -828,9 +868,15 @@ async function syncLiveFromESPN() {
   }
 }
 
+function pastSeasons() {
+  // History minus the current season (a finished season is archived into
+  // history.json before the site moves on to the next one).
+  return Object.entries(HISTORY.seasons).filter(([y]) => Number(y) !== CURRENT_SEASON).map(([, s]) => s);
+}
+
 function getAllMatchups() {
   const list = [];
-  Object.values(HISTORY.seasons).forEach(s => list.push(...s.schedule));
+  pastSeasons().forEach(s => list.push(...s.schedule));
   list.push(...CURRENT.schedule);
   return list;
 }
@@ -909,7 +955,7 @@ function computeAllTimeStats() {
   Object.entries(HISTORY.managers).forEach(([id, name]) => {
     stats[id] = { id: Number(id), manager: name, wins: 0, losses: 0, ties: 0, pf: 0, pa: 0, titles: 0, seconds: 0, thirds: 0 };
   });
-  [...Object.values(HISTORY.seasons), CURRENT].forEach(s => {
+  [...pastSeasons(), CURRENT].forEach(s => {
     s.teams.forEach(t => {
       const st = stats[String(t.id)];
       st.wins += t.wins;
@@ -1274,6 +1320,7 @@ function renderMatchups() {
       ${probBar}
       ${row(h, hCls, g.hScore, g.homeProj, g.homeWinProb)}
       <div class="mu-foot"><span>${series}</span>${lu.button}</div>
+      ${gStatus === 'upcoming' ? matchupPreview(g) : ''}
       ${lu.body}
     </div>`;
   }).join('') || '<div class="proj-sub">No matchups scheduled for this week.</div>';
@@ -2283,10 +2330,196 @@ function yearsKept(playerId, teamId) {
   return years;
 }
 
+// --------------------------------------------------------------------------
+// Playoffs tab: live bracket
+// --------------------------------------------------------------------------
+let bracketSeason = null;
+function setBracketSeason(v) { bracketSeason = Number(v); renderPlayoffs(); }
+
+const TIER_LABEL = {
+  WINNERS_CONSOLATION_LADDER: 'Consolation (winners side)',
+  LOSERS_CONSOLATION_LADDER: 'Losers’ bracket'
+};
+
+function bracketModel(season) {
+  // The league's fixed 6-team bracket (no reseeding): #1 and #2 have byes,
+  // #4 v #5 and #3 v #6 in round 1, #1 plays the 4/5 winner and #2 the 3/6
+  // winner, then the final and a 3rd-place game between the semifinal losers.
+  const d = seasonData(season);
+  const lastReg = regularSeasonWeeks(season);
+  const isCurrent = season === CURRENT_SEASON;
+  const ordered = isCurrent ? standingsOrder(d.teams)
+    : [...d.teams].sort((a, b) => (a.playoffSeed || 99) - (b.playoffSeed || 99));
+  const seedOf = {};
+  ordered.forEach((t, i) => { seedOf[t.id] = i + 1; });
+  const seed = n => ordered[n - 1] && ordered[n - 1].id;
+  const find = (week, a, b) => d.schedule.find(g => g.week === week &&
+    ((g.homeId === a && g.awayId === b) || (g.homeId === b && g.awayId === a)));
+  const slot = (week, a, b, aLabel, bLabel, title) => {
+    const s = { week, a, b, aLabel, bLabel, title };
+    if (a && b) {
+      s.game = find(week, a, b);
+      if (s.game && (s.game.winner === 'HOME' || s.game.winner === 'AWAY')) {
+        s.winner = s.game.winner === 'HOME' ? s.game.homeId : s.game.awayId;
+        s.loser = s.winner === s.game.homeId ? s.game.awayId : s.game.homeId;
+      }
+    }
+    return s;
+  };
+  const r1 = lastReg + 1, r2 = lastReg + 2, r3 = lastReg + 3;
+  const qf1 = slot(r1, seed(4), seed(5), '', '', 'Quarterfinal');
+  const qf2 = slot(r1, seed(3), seed(6), '', '', 'Quarterfinal');
+  const sf1 = slot(r2, seed(1), qf1.winner, '', 'Winner of #4 / #5', 'Semifinal');
+  const sf2 = slot(r2, seed(2), qf2.winner, '', 'Winner of #3 / #6', 'Semifinal');
+  const final = slot(r3, sf1.winner, sf2.winner, 'Winner of semifinal 1', 'Winner of semifinal 2', 'Championship');
+  const third = slot(r3, sf1.loser, sf2.loser, 'Loser of semifinal 1', 'Loser of semifinal 2', '3rd Place');
+  const slots = [qf1, qf2, sf1, sf2, final, third];
+
+  const used = new Set(slots.filter(s => s.game).map(s => s.game));
+  const playoffGames = d.schedule.filter(g => g.playoffTier && g.playoffTier !== 'NONE');
+  // If ESPN's games don't fit this shape (a format change), fall back to a plain list.
+  const fits = playoffGames.filter(g => g.playoffTier === 'WINNERS_BRACKET').every(g => used.has(g));
+  const others = playoffGames.filter(g => !used.has(g)).sort((a, b) => a.week - b.week);
+  const started = playoffGames.length > 0;
+  const champion = final.winner || null;
+  return { seedOf, seed, rounds: [[qf1, qf2], [sf1, sf2], [final, third]], weeks: [r1, r2, r3], others, fits, started, champion, isCurrent, lastReg, playoffGames };
+}
+
+function bracketGame(season, s, model) {
+  const g = s.game;
+  const live = g && g.winner === 'UNDECIDED';
+  const score = id => {
+    if (!g) return '';
+    const home = g.homeId === id;
+    const pts = live ? (home ? g.homeLive : g.awayLive) : (home ? g.homePts : g.awayPts);
+    return (live && !pts) ? '' : pts.toFixed(2);
+  };
+  const line = (id, label) => {
+    if (!id) return `<div class="br-team tbd"><span>${esc(label || 'TBD')}</span><span></span></div>`;
+    const cls = s.winner ? (s.winner === id ? 'won' : 'lost') : '';
+    return `<div class="br-team ${cls}"><span><span class="br-seed">${model.seedOf[id] || ''}</span>${managerLink(id)}</span><span class="br-score">${score(id)}</span></div>`;
+  };
+  const tag = s.winner ? 'Final' : live ? '● Live' : (model.started || !model.isCurrent ? `Wk ${s.week}` : 'Projected');
+  return `<div class="br-game ${s.title === 'Championship' ? 'br-final' : ''}">
+    <div class="br-head"><span>${esc(s.title)}</span><span class="${live ? 'mu-status live' : ''}">${tag}</span></div>
+    ${line(s.a, s.aLabel)}${line(s.b, s.bLabel)}
+  </div>`;
+}
+
+function renderPlayoffs() {
+  const seasons = allSeasons().filter(y => seasonData(y) && seasonData(y).teams.length >= 6);
+  if (!seasons.includes(bracketSeason)) bracketSeason = seasons[0];
+  document.getElementById('bracketPills').innerHTML = seasonPills(seasons, bracketSeason, 'setBracketSeason');
+  const m = bracketModel(bracketSeason);
+  const projected = m.isCurrent && !m.started;
+  document.getElementById('bracketTitle').textContent = `🏆 ${bracketSeason} Playoffs${projected ? ' (Projected)' : ''}`;
+
+  const champ = m.champion
+    ? `<div class="champ-card" style="margin-bottom:16px;"><div style="font-size:0.78rem;color:var(--gold);font-weight:700;">${bracketSeason} CHAMPION</div><div style="font-size:1.2rem;font-weight:800;margin-top:4px;">🏆 ${managerLink(m.champion)}</div></div>`
+    : '';
+  const note = projected
+    ? `<p class="note" style="margin-top:0;margin-bottom:12px;">If the season ended today. The bracket fills in with real games and live scores from Week ${m.weeks[0]}.</p>`
+    : '';
+
+  let body;
+  if (m.fits) {
+    const byes = [1, 2].map(n => m.seed(n)).filter(Boolean).map(id =>
+      `<div class="br-game br-bye"><div class="br-head"><span>First-round bye</span></div><div class="br-team"><span><span class="br-seed">${m.seedOf[id]}</span>${managerLink(id)}</span><span class="br-score">BYE</span></div></div>`).join('');
+    const names = ['Quarterfinals', 'Semifinals', 'Championship'];
+    body = `<div class="bracket">${m.rounds.map((round, i) => `<div class="br-col">
+        <div class="br-col-title">${names[i]} · Wk ${m.weeks[i]}</div>
+        ${i === 0 ? byes : ''}${round.map(s => bracketGame(bracketSeason, s, m)).join('')}
+      </div>`).join('')}</div>`;
+  } else {
+    body = noData('This season’s playoff format doesn’t match the usual bracket; all playoff games are listed below.');
+  }
+
+  const consolation = (m.fits ? m.others : m.playoffGames).map(g => {
+    const decided = g.winner === 'HOME' || g.winner === 'AWAY';
+    const [w, l] = g.winner === 'AWAY' ? [[g.awayId, g.awayPts], [g.homeId, g.homePts]] : [[g.homeId, g.homePts], [g.awayId, g.awayPts]];
+    return `<div class="list-row"><div><span class="proj-sub">Wk ${g.week} · ${esc(TIER_LABEL[g.playoffTier] || 'Playoffs')}</span>
+      <div>${managerLink(w[0])} ${decided ? 'def.' : 'vs'} ${managerLink(l[0])}</div></div>
+      <div style="white-space:nowrap;font-variant-numeric:tabular-nums;">${decided ? `<strong style="color:var(--green);">${w[1].toFixed(2)}</strong> – ${l[1].toFixed(2)}` : '<span class="proj-sub">Upcoming</span>'}</div></div>`;
+  }).join('');
+
+  document.getElementById('bracketBody').innerHTML = champ + note + body;
+  document.getElementById('consolationList').innerHTML = consolation || noData(projected ? 'Consolation games appear once the playoffs start.' : 'No consolation games.');
+}
+
+// --------------------------------------------------------------------------
+// Matchup previews (upcoming games)
+// --------------------------------------------------------------------------
+function teamForm(id) {
+  const games = CURRENT.schedule
+    .filter(g => g.winner !== 'UNDECIDED' && (g.homeId === id || g.awayId === id))
+    .sort((a, b) => a.week - b.week);
+  const pts = games.map(g => g.homeId === id ? g.homePts : g.awayPts);
+  const res = games.map(g => g.winner === 'TIE' ? 'T' : ((g.winner === 'HOME') === (g.homeId === id) ? 'W' : 'L'));
+  const avg = a => a.length ? a.reduce((s, x) => s + x, 0) / a.length : 0;
+  return { ppg: avg(pts), last3: avg(pts.slice(-3)), streak: res.slice(-3) };
+}
+
+function lastMeeting(a, b) {
+  const games = getAllMatchups().filter(g => g.winner !== 'UNDECIDED' &&
+    ((g.homeId === a && g.awayId === b) || (g.homeId === b && g.awayId === a)));
+  return games.sort((x, y) => (y.season - x.season) || (y.week - x.week))[0];
+}
+
+function keyPlayers(id, count) {
+  // Best current starters by average points over the last 3 synced weeks.
+  const L = EXTRAS[CURRENT_SEASON] && EXTRAS[CURRENT_SEASON].lineups;
+  if (!L) return [];
+  const weeks = Object.keys(L.weeks).map(Number).sort((a, b) => a - b);
+  const latest = L.weeks[String(weeks[weeks.length - 1])];
+  const team = latest && latest[id];
+  if (!team) return [];
+  const recent = weeks.slice(-3);
+  return team.players.filter(p => p.slot !== IR_SLOT).map(p => {
+    const scores = recent.map(w => {
+      const t = L.weeks[String(w)];
+      for (const tid in t) {
+        const q = t[tid].players.find(x => x.id === p.id);
+        if (q) return q.pts;
+      }
+      return null;
+    }).filter(x => x !== null);
+    return { ...p, avg: scores.length ? scores.reduce((s, x) => s + x, 0) / scores.length : 0 };
+  }).sort((a, b) => b.avg - a.avg).slice(0, count);
+}
+
+function matchupPreview(g) {
+  const fa = teamForm(g.awayId), fh = teamForm(g.homeId);
+  const ka = keyPlayers(g.awayId, 2), kh = keyPlayers(g.homeId, 2);
+  const streak = f => f.streak.map(r => `<span class="pv-res ${r}">${r}</span>`).join('') || '—';
+  const keys = list => list.map(p => `<div>${esc(p.name)} <span class="proj-sub">${esc(p.pos)} · ${p.avg.toFixed(1)}</span></div>`).join('') || '<span class="proj-sub">—</span>';
+  const better = (x, y) => x > y + 0.005 ? 'pv-up' : '';
+  const last = lastMeeting(g.awayId, g.homeId);
+  let lastText = 'First meeting.';
+  if (last) {
+    const [w, l] = last.winner === 'AWAY' ? [[last.awayId, last.awayPts], [last.homeId, last.homePts]] : [[last.homeId, last.homePts], [last.awayId, last.awayPts]];
+    lastText = `Last meeting (${last.season} Wk ${last.week}): ${esc(getManager(w[0]))} ${last.winner === 'TIE' ? 'tied' : 'won'} ${w[1].toFixed(2)}–${l[1].toFixed(2)}.`;
+  }
+  const edge = fa.last3 === fh.last3 ? '' : (() => {
+    const [hot, gap] = fa.last3 > fh.last3 ? [g.awayId, fa.last3 - fh.last3] : [g.homeId, fh.last3 - fa.last3];
+    return ` Recent form favors <strong>${esc(getManager(hot))}</strong> by ${gap.toFixed(1)} pts a week.`;
+  })();
+  return `<div class="preview">
+    <div class="pv-grid">
+      <span></span><span class="pv-h">${esc(getManager(g.awayId))}</span><span class="pv-h">${esc(getManager(g.homeId))}</span>
+      <span class="pv-l">Season PPG</span><span class="${better(fa.ppg, fh.ppg)}">${fa.ppg.toFixed(1)}</span><span class="${better(fh.ppg, fa.ppg)}">${fh.ppg.toFixed(1)}</span>
+      <span class="pv-l">Last 3 avg</span><span class="${better(fa.last3, fh.last3)}">${fa.last3.toFixed(1)}</span><span class="${better(fh.last3, fa.last3)}">${fh.last3.toFixed(1)}</span>
+      <span class="pv-l">Last 3</span><span>${streak(fa)}</span><span>${streak(fh)}</span>
+      <span class="pv-l">Key players</span><span class="pv-keys">${keys(ka)}</span><span class="pv-keys">${keys(kh)}</span>
+    </div>
+    <div class="pv-note">${lastText}${edge}</div>
+  </div>`;
+}
+
 function renderAll() {
   renderCurrentStandings();
   renderPlayoffRace();
   renderMatchups();
+  renderPlayoffs();
   renderRecap();
   renderPower();
   renderManagers();

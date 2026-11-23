@@ -128,5 +128,57 @@ class SettingsTests(unittest.TestCase):
         self.assertEqual([x["slot"] for x in summary["lineup"]], ["QB", "Bench"])
 
 
+class SeasonWrapUpTests(unittest.TestCase):
+    HISTORY = os.path.join(os.path.dirname(__file__), "..", "data", "history.json")
+
+    def history(self):
+        with open(self.HISTORY, encoding="utf-8") as f:
+            return json.load(f)
+
+    def test_champion_matches_every_recorded_season(self):
+        h = self.history()
+        for year, season in h["seasons"].items():
+            want = next(c for c in h["champions"] if c["year"] == int(year))
+            self.assertEqual(s.champion_entry(season), want, year)
+
+    def test_unfinished_season_has_no_champion(self):
+        season = self.history()["seasons"]["2023"]
+        final_week = max(m["week"] for m in season["schedule"])
+        for target in ("WINNERS_BRACKET", "WINNERS_CONSOLATION_LADDER"):
+            sched = json.loads(json.dumps(season["schedule"]))
+            for m in sched:
+                if m["week"] == final_week and m["playoffTier"] == target:
+                    m["winner"] = "UNDECIDED"
+            self.assertIsNone(s.champion_entry({**season, "schedule": sched}), target)
+
+    def test_archive_adds_season_once(self):
+        h = self.history()
+        season = h["seasons"].pop("2025")
+        h["champions"] = [c for c in h["champions"] if c["year"] != 2025]
+        self.assertTrue(s.archive_season(h, {**season, "syncedAt": "x"}))
+        self.assertIn("2025", h["seasons"])
+        self.assertNotIn("syncedAt", h["seasons"]["2025"])
+        self.assertEqual([c["year"] for c in h["champions"]], [2023, 2024, 2025])
+        self.assertFalse(s.archive_season(h, season))           # second run: no change
+        self.assertEqual(len(h["champions"]), 3)
+
+    def test_current_season_prefers_env_then_manifest(self):
+        with tempfile.TemporaryDirectory() as d:
+            old_dir, old_env = s.DATA_DIR, os.environ.pop("ESPN_SEASON_ID", None)
+            try:
+                s.DATA_DIR = d
+                self.assertEqual(s.current_season(), s.FALLBACK_SEASON)
+                with open(os.path.join(d, "manifest.json"), "w") as f:
+                    json.dump({"currentSeason": 2031}, f)
+                self.assertEqual(s.current_season(), 2031)
+                os.environ["ESPN_SEASON_ID"] = "2032"
+                self.assertEqual(s.current_season(), 2032)
+            finally:
+                s.DATA_DIR = old_dir
+                os.environ.pop("ESPN_SEASON_ID", None)
+                if old_env is not None:
+                    os.environ["ESPN_SEASON_ID"] = old_env
+
+
 if __name__ == "__main__":
     unittest.main()
