@@ -416,6 +416,10 @@ function showToast(msg) {
   setTimeout(() => el.classList.remove('show'), 2600);
 }
 
+function esc(s) {
+  return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
 function getManager(id) {
   return (HISTORY && HISTORY.managers && HISTORY.managers[String(id)]) || `Team ${id}`;
 }
@@ -543,7 +547,7 @@ function renderCurrentStandings() {
     return `<tr class="${seed === 6 ? 'cutoff-row' : ''}">
       <td><strong>#${seed}</strong></td>
       <td>${statusBadge}</td>
-      <td><strong>${t.manager}</strong><div style="font-size:0.78rem;color:var(--muted);">${t.name}</div></td>
+      <td><strong>${esc(t.manager)}</strong><div style="font-size:0.78rem;color:var(--muted);">${esc(t.name)}</div></td>
       <td><strong>${t.wins}–${t.losses}</strong></td>
       <td>${t.pf.toFixed(2)}</td>
       <td>${t.pa.toFixed(2)}</td>
@@ -557,16 +561,16 @@ function renderCurrentStandings() {
   document.getElementById('projectedBracket').innerHTML = `
     <div class="bracket-box">
       <div style="font-size:0.76rem;color:var(--gold);font-weight:700;margin-bottom:6px;">WEEK 15 FIRST-ROUND BYES</div>
-      <div>🥇 <strong>#1 ${sorted[0].manager}</strong> (${sorted[0].wins}–${sorted[0].losses})</div>
-      <div>🥈 <strong>#2 ${sorted[1].manager}</strong> (${sorted[1].wins}–${sorted[1].losses})</div>
+      <div>🥇 <strong>#1 ${esc(sorted[0].manager)}</strong> (${sorted[0].wins}–${sorted[0].losses})</div>
+      <div>🥈 <strong>#2 ${esc(sorted[1].manager)}</strong> (${sorted[1].wins}–${sorted[1].losses})</div>
     </div>
     <div class="bracket-box">
       <div style="font-size:0.76rem;color:var(--blue);font-weight:700;margin-bottom:6px;">WEEK 15 QUARTERFINALS</div>
-      <div style="margin-bottom:4px;"><strong>#3 ${sorted[2].manager}</strong> (${sorted[2].wins}–${sorted[2].losses}) vs. <strong>#6 ${sorted[5].manager}</strong> (${sorted[5].wins}–${sorted[5].losses})</div>
-      <div><strong>#4 ${sorted[3].manager}</strong> (${sorted[3].wins}–${sorted[3].losses}) vs. <strong>#5 ${sorted[4].manager}</strong> (${sorted[4].wins}–${sorted[4].losses})</div>
+      <div style="margin-bottom:4px;"><strong>#3 ${esc(sorted[2].manager)}</strong> (${sorted[2].wins}–${sorted[2].losses}) vs. <strong>#6 ${esc(sorted[5].manager)}</strong> (${sorted[5].wins}–${sorted[5].losses})</div>
+      <div><strong>#4 ${esc(sorted[3].manager)}</strong> (${sorted[3].wins}–${sorted[3].losses}) vs. <strong>#5 ${esc(sorted[4].manager)}</strong> (${sorted[4].wins}–${sorted[4].losses})</div>
     </div>
     <div style="font-size:0.82rem;color:var(--muted);margin-top:8px;">
-      <strong>First Team Out:</strong> #7 ${sorted[6].manager} (${sorted[6].wins}–${sorted[6].losses}, ${sorted[6].pf.toFixed(2)} PF) — ${(sorted[5].pf - sorted[6].pf).toFixed(2)} PF behind #6 ${sorted[5].manager}.
+      <strong>First Team Out:</strong> #7 ${esc(sorted[6].manager)} (${sorted[6].wins}–${sorted[6].losses}, ${sorted[6].pf.toFixed(2)} PF) — ${(sorted[5].pf - sorted[6].pf).toFixed(2)} PF behind #6 ${esc(sorted[5].manager)}.
     </div>
   `;
 
@@ -581,12 +585,12 @@ function renderCurrentStandings() {
     const hScore = g.winner === 'UNDECIDED' ? g.homeLive : g.homePts;
     return `<div class="matchup-card">
       <div class="matchup-row">
-        <div><strong>${a.manager}</strong> <span class="proj-sub">(${a.wins}–${a.losses})</span></div>
+        <div><strong>${esc(a.manager)}</strong> <span class="proj-sub">(${a.wins}–${a.losses})</span></div>
         <div style="text-align:right;"><span class="matchup-score" style="color:${aScore>=hScore?'var(--green)':'var(--text)'}">${aScore.toFixed(2)}</span>
         ${g.awayProj ? `<div class="proj-sub">Proj: ${g.awayProj.toFixed(1)} (${g.awayWinProb ?? 50}%)</div>` : ''}</div>
       </div>
       <div class="matchup-row">
-        <div><strong>${h.manager}</strong> <span class="proj-sub">(${h.wins}–${h.losses})</span></div>
+        <div><strong>${esc(h.manager)}</strong> <span class="proj-sub">(${h.wins}–${h.losses})</span></div>
         <div style="text-align:right;"><span class="matchup-score" style="color:${hScore>=aScore?'var(--green)':'var(--text)'}">${hScore.toFixed(2)}</span>
         ${g.homeProj ? `<div class="proj-sub">Proj: ${g.homeProj.toFixed(1)} (${g.homeWinProb ?? 50}%)</div>` : ''}</div>
       </div>
@@ -624,10 +628,10 @@ function renderAllTime() {
   document.getElementById('champRollCall').innerHTML = HISTORY.champions.map(c => `
     <div class="champ-card">
       <div style="font-size:0.78rem;color:var(--gold);font-weight:700;">${c.year} CHAMPION</div>
-      <div style="font-size:1.2rem;font-weight:800;margin:4px 0;">🏆 ${getManager(c.champId)}</div>
-      <div style="font-size:0.84rem;color:var(--muted);">${c.champTeam}</div>
-      <div style="font-size:0.82rem;margin-top:8px;">def. ${getManager(c.runnerUpId)} (<strong>${c.score}</strong>)</div>
-      <div style="font-size:0.78rem;color:var(--muted);margin-top:2px;">3rd Place: ${getManager(c.thirdId)}</div>
+      <div style="font-size:1.2rem;font-weight:800;margin:4px 0;">🏆 ${esc(getManager(c.champId))}</div>
+      <div style="font-size:0.84rem;color:var(--muted);">${esc(c.champTeam)}</div>
+      <div style="font-size:0.82rem;margin-top:8px;">def. ${esc(getManager(c.runnerUpId))} (<strong>${esc(c.score)}</strong>)</div>
+      <div style="font-size:0.78rem;color:var(--muted);margin-top:2px;">3rd Place: ${esc(getManager(c.thirdId))}</div>
     </div>
   `).join('');
 
@@ -644,7 +648,7 @@ function renderAllTime() {
     if (r.thirds) medals.push(`<span class="badge badge-out">🥉 ${r.thirds}× 3rd</span>`);
     return `<tr>
       <td><strong>${i + 1}</strong></td>
-      <td><strong>${r.manager}</strong></td>
+      <td><strong>${esc(r.manager)}</strong></td>
       <td><strong>${r.wins}–${r.losses}</strong></td>
       <td>${r.winPct.toFixed(3)}</td>
       <td>${r.pf.toFixed(2)}</td>
@@ -670,10 +674,10 @@ function renderAllTime() {
   const pfLeader = [...rows].sort((a, b) => b.pf - a.pf)[0];
   const paLeader = [...rows].sort((a, b) => b.pa - a.pa)[0];
   document.getElementById('recordsGrid').innerHTML = `
-    <div class="record-card"><div class="record-label">All-Time Points Leader</div><div class="record-val">${pfLeader.manager}</div><div class="record-sub">${pfLeader.pf.toFixed(2)} PF (${pfLeader.ppg.toFixed(2)} PPG)</div></div>
-    <div class="record-card"><div class="record-label">Highest Single-Week Score</div><div class="record-val">${highWeek.pts.toFixed(2)} pts</div><div class="record-sub">${getManager(highWeek.id)} (${highWeek.season} Wk ${highWeek.week} vs ${getManager(highWeek.opp)})</div></div>
-    <div class="record-card"><div class="record-label">Biggest Blowout</div><div class="record-val">+${blowout.diff.toFixed(2)} pts</div><div class="record-sub">${getManager(blowout.winId)} def. ${getManager(blowout.losId)} (${blowout.wPts.toFixed(2)}–${blowout.lPts.toFixed(2)}, ${blowout.season} Wk ${blowout.week})</div></div>
-    <div class="record-card"><div class="record-label">Toughest Schedule (Most PA)</div><div class="record-val">${paLeader.manager}</div><div class="record-sub">${paLeader.pa.toFixed(2)} Points Against</div></div>
+    <div class="record-card"><div class="record-label">All-Time Points Leader</div><div class="record-val">${esc(pfLeader.manager)}</div><div class="record-sub">${pfLeader.pf.toFixed(2)} PF (${pfLeader.ppg.toFixed(2)} PPG)</div></div>
+    <div class="record-card"><div class="record-label">Highest Single-Week Score</div><div class="record-val">${highWeek.pts.toFixed(2)} pts</div><div class="record-sub">${esc(getManager(highWeek.id))} (${highWeek.season} Wk ${highWeek.week} vs ${esc(getManager(highWeek.opp))})</div></div>
+    <div class="record-card"><div class="record-label">Biggest Blowout</div><div class="record-val">+${blowout.diff.toFixed(2)} pts</div><div class="record-sub">${esc(getManager(blowout.winId))} def. ${esc(getManager(blowout.losId))} (${blowout.wPts.toFixed(2)}–${blowout.lPts.toFixed(2)}, ${blowout.season} Wk ${blowout.week})</div></div>
+    <div class="record-card"><div class="record-label">Toughest Schedule (Most PA)</div><div class="record-val">${esc(paLeader.manager)}</div><div class="record-sub">${paLeader.pa.toFixed(2)} Points Against</div></div>
   `;
 }
 
@@ -719,11 +723,11 @@ function buildH2H() {
 function renderRivalryMatrix() {
   const { ids, h2h } = buildH2H();
   let html = '<table class="matrix-table"><thead><tr><th class="row-hdr">Manager vs.</th>';
-  ids.forEach(id => { html += `<th>${getManager(id).split(' ')[0]}</th>`; });
+  ids.forEach(id => { html += `<th>${esc(getManager(id).split(' ')[0])}</th>`; });
   html += '</tr></thead><tbody>';
 
   ids.forEach(a => {
-    html += `<tr><th class="row-hdr">${getManager(a)}</th>`;
+    html += `<tr><th class="row-hdr">${esc(getManager(a))}</th>`;
     ids.forEach(b => {
       if (a === b) { html += '<td class="matrix-diag">—</td>'; return; }
       const r = h2h[a][b];
@@ -757,7 +761,7 @@ function renderRivalryMatrix() {
   document.getElementById('lopsidedList').innerHTML = pairs.slice(0, 5).map(p => `
     <div class="matchup-card" style="cursor:pointer;" onclick="showSpotlight(${p.dom},${p.sub})">
       <div style="display:flex;justify-content:space-between;align-items:center;">
-        <div><strong>${getManager(p.dom)}</strong> over ${getManager(p.sub)}</div>
+        <div><strong>${esc(getManager(p.dom))}</strong> over ${esc(getManager(p.sub))}</div>
         <span class="badge badge-in">${p.w}–${p.l}</span>
       </div>
       <div class="proj-sub" style="margin-top:4px;">Point Differential: ${p.ptDiff >= 0 ? '+' : ''}${p.ptDiff.toFixed(2)} pts</div>
@@ -776,7 +780,7 @@ function showSpotlight(a, b) {
     </div>
   `).join('');
   document.getElementById('rivalrySpotlight').innerHTML = `
-    <div style="font-size:1.1rem;font-weight:800;color:var(--text);margin-bottom:6px;">${getManager(a)} vs. ${getManager(b)}</div>
+    <div style="font-size:1.1rem;font-weight:800;color:var(--text);margin-bottom:6px;">${esc(getManager(a))} vs. ${esc(getManager(b))}</div>
     <div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:12px;font-size:0.86rem;">
       <span>Record: <strong style="color:var(--gold);">${r.w}–${r.l}</strong></span>
       <span>Total Pts: <strong>${r.pf.toFixed(1)} – ${r.pa.toFixed(1)}</strong></span>
@@ -806,8 +810,8 @@ function renderSeasons() {
     else if (selectedSeason === '2026' && i < 6) note = i < 2 ? '<span class="badge badge-bye">BYE</span>' : '<span class="badge badge-in">Playoff Spot</span>';
     return `<tr>
       <td><strong>#${i + 1}</strong> ${t.playoffSeed ? `<span class="proj-sub">(Seed #${t.playoffSeed})</span>` : ''}</td>
-      <td><strong>${t.manager}</strong></td>
-      <td>${t.name}</td>
+      <td><strong>${esc(t.manager)}</strong></td>
+      <td>${esc(t.name)}</td>
       <td><strong>${t.wins}–${t.losses}</strong></td>
       <td>${t.pf.toFixed(2)}</td>
       <td>${t.pa.toFixed(2)}</td>
