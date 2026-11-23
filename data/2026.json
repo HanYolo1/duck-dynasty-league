@@ -6,7 +6,7 @@
   "teams": [
     {
       "id": 1,
-      "manager": "Cody MacPhee",
+      "manager": "Cody",
       "name": "Kim Jong Goon",
       "abbrev": "KJU",
       "wins": 5,
@@ -22,7 +22,7 @@
     },
     {
       "id": 2,
-      "manager": "Nick Bis",
+      "manager": "Nick",
       "name": "All the King's Nabers",
       "abbrev": "BIS",
       "wins": 8,
@@ -38,7 +38,7 @@
     },
     {
       "id": 3,
-      "manager": "Patrick O'Brien",
+      "manager": "Patrick",
       "name": "Rees Jefferson",
       "abbrev": "Jill",
       "wins": 5,
@@ -54,7 +54,7 @@
     },
     {
       "id": 4,
-      "manager": "Jaret Grisamer",
+      "manager": "Jaret",
       "name": "Your Favorite Stripper Beige",
       "abbrev": "CHUM",
       "wins": 5,
@@ -70,7 +70,7 @@
     },
     {
       "id": 5,
-      "manager": "Erik Kurczewski",
+      "manager": "Erik",
       "name": "Last Place Rik",
       "abbrev": "RIK",
       "wins": 2,
@@ -86,7 +86,7 @@
     },
     {
       "id": 6,
-      "manager": "Jon Van Hulle",
+      "manager": "Jon",
       "name": "Achane Reaction",
       "abbrev": "JVH",
       "wins": 4,
@@ -102,7 +102,7 @@
     },
     {
       "id": 7,
-      "manager": "Adam Hukkala",
+      "manager": "Adam",
       "name": "Jillmiyah Love",
       "abbrev": "\ud83d\ude40",
       "wins": 5,
@@ -118,7 +118,7 @@
     },
     {
       "id": 8,
-      "manager": "Rory Spence",
+      "manager": "Rory",
       "name": "Jillmyr",
       "abbrev": "\ud83c\udf46",
       "wins": 5,
@@ -134,7 +134,7 @@
     },
     {
       "id": 9,
-      "manager": "Kiana Bis",
+      "manager": "Kiana",
       "name": "Marshawn Lynch",
       "abbrev": "GIRL",
       "wins": 3,
@@ -150,7 +150,7 @@
     },
     {
       "id": 10,
-      "manager": "Zachary Lowes",
+      "manager": "Zachary",
       "name": "TWO MOMS",
       "abbrev": "2Mom",
       "wins": 8,
