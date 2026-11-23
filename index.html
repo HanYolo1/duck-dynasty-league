@@ -3,7 +3,16 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Duck Dynasty Fantasy League Hub</title>
+<title>Duck Dynasty FF</title>
+<meta name="description" content="Duck Dynasty fantasy football league hub: live matchups, standings, playoffs and league history." />
+<meta name="theme-color" content="#0b1120" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png" />
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="Duck Dynasty FF" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <style>
   :root {
     --bg: #0b1120;
@@ -214,6 +223,10 @@
   .alerts-card h4 { font-size: 0.9rem; margin-bottom: 6px; }
   .alert-row { display: flex; gap: 10px; padding: 3px 0; flex-wrap: wrap; }
   .alert-row strong { min-width: 70px; }
+  .ytp { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+  .ytp.done { color: var(--muted); opacity: 0.7; }
+  .ytp-live { color: var(--red); font-weight: 700; }
+  .past-loading { position: fixed; top: 12px; left: 50%; transform: translateX(-50%); z-index: 50; background: var(--surface-2); border: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; padding: 6px 14px; border-radius: 999px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); }
   .mgr-link { color: inherit; font-weight: 700; text-decoration: none; border-bottom: 1px dotted var(--muted); }
   .mgr-link:hover { color: var(--blue); border-bottom-color: var(--blue); }
   .badge-alive { background: var(--blue-bg); color: var(--blue); border: 1px solid rgba(56,189,248,0.35); }
@@ -306,6 +319,7 @@
     <button class="group-btn" data-group="history">📚 History</button>
     <button class="group-btn" data-group="rules">📜 Rules</button>
   </nav>
+  <div id="pastLoading" class="past-loading" hidden>Loading past seasons…</div>
   <nav class="tabs" aria-label="Pages">
     <button class="tab-btn active" data-group="season" data-tab="matchups">Matchups</button>
     <button class="tab-btn" data-group="season" data-tab="current">Standings</button>
@@ -787,6 +801,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     showGroup(btn.dataset.group);
     document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
     if (btn.dataset.tab === 'matchups') centerActiveWeek();
+    if (NEEDS_PAST_SEASONS.has(btn.dataset.tab)) loadPastSeasons();
   });
 });
 showGroup('season');
@@ -818,26 +833,67 @@ async function getJSON(url) {
   return res.json();
 }
 
+function showConnectionStatus() {
+  // With no signal the page runs from the copy saved on this device.
+  if (!CURRENT) return;
+  const offline = navigator.onLine === false;
+  document.getElementById('syncStatus').textContent = `${offline ? 'Offline · last synced' : 'Synced:'} ${formatDate(CURRENT.syncedAt)}`;
+  document.getElementById('syncDot').style.background = offline ? 'var(--gold)' : 'var(--green)';
+}
+window.addEventListener('online', showConnectionStatus);
+window.addEventListener('offline', showConnectionStatus);
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(err => console.warn('Offline support unavailable', err)));
+}
+
+// Pages that use past seasons' lineup/league files.
+const NEEDS_PAST_SEASONS = new Set(['recap', 'lineups', 'draft', 'activity', 'managers', 'players']);
+let pastExtrasPending = [], pastExtrasLoading = null;
+
+function loadExtras(y) {
+  return Promise.all([
+    getJSON(`data/${y}-lineups.json`).catch(() => null),
+    getJSON(`data/${y}-league.json`).catch(() => null)
+  ]).then(([lineups, league]) => { EXTRAS[y] = { lineups, league }; });
+}
+
+function loadPastSeasons() {
+  if (pastExtrasLoading || !pastExtrasPending.length) return pastExtrasLoading || Promise.resolve();
+  const note = document.getElementById('pastLoading');
+  note.hidden = false;
+  pastExtrasLoading = Promise.all(pastExtrasPending.map(loadExtras)).then(() => {
+    pastExtrasPending = [];
+    note.hidden = true;
+    if (CURRENT) renderAll();
+  }).catch(err => {
+    note.hidden = true;
+    pastExtrasLoading = null;
+    console.error(err);
+  });
+  return pastExtrasLoading;
+}
+
 async function loadInitialData() {
   try {
     const manifest = await getJSON('data/manifest.json').catch(() => null);
     if (manifest && manifest.currentSeason) CURRENT_SEASON = manifest.currentSeason;
     selectedSeason = String(CURRENT_SEASON);
+    // Only the current season's detail files load up front; past seasons'
+    // lineups/draft/transactions (most of the data) load when a page needs them.
     const extraSeasons = (manifest && manifest.extras) || [];
-    const [hist, curr, ...extras] = await Promise.all([
+    const loadNow = extraSeasons.filter(y => y === CURRENT_SEASON);
+    pastExtrasPending = extraSeasons.filter(y => y !== CURRENT_SEASON);
+    const [hist, curr] = await Promise.all([
       getJSON('data/history.json'),
       getJSON(`data/${CURRENT_SEASON}.json`),
-      ...extraSeasons.flatMap(y => [
-        getJSON(`data/${y}-lineups.json`).catch(() => null),
-        getJSON(`data/${y}-league.json`).catch(() => null)
-      ])
+      ...loadNow.map(loadExtras)
     ]);
     HISTORY = hist;
     CURRENT = curr;
-    extraSeasons.forEach((y, i) => { EXTRAS[y] = { lineups: extras[2 * i], league: extras[2 * i + 1] }; });
     applySeasonLabels();
-    document.getElementById('syncStatus').textContent = `Synced: ${formatDate(CURRENT.syncedAt)}`;
+    showConnectionStatus();
     renderAll();
+    startLiveUpdates();
   } catch (err) {
     document.getElementById('syncStatus').textContent = 'Error loading local JSON';
     document.getElementById('syncDot').style.background = 'var(--red)';
@@ -903,17 +959,7 @@ async function syncLiveFromESPN() {
   btn.disabled = true;
   btn.textContent = 'Syncing…';
   try {
-    const res = await fetch(espnPublicUrl());
-    if (!res.ok) throw new Error('ESPN returned ' + res.status);
-    const raw = await res.json();
-    CURRENT = transformRawESPN(raw);
-    document.getElementById('syncStatus').textContent = `Live ESPN: ${formatDate(CURRENT.syncedAt)}`;
-    document.getElementById('syncDot').style.background = 'var(--green)';
-    renderAll();
-    showToast(`Live ${CURRENT_SEASON} data synced from ESPN!`);
-  } catch (e) {
-    console.warn('Direct browser fetch blocked/failed, using GitHub-synced snapshot.', e);
-    showToast('Couldn’t reach ESPN; showing the last auto-synced data.');
+    if (await refreshLive()) showToast('Live scores and lineups updated from ESPN!');
   } finally {
     btn.disabled = false;
     btn.textContent = '↻ Sync Live';
@@ -1350,9 +1396,17 @@ function renderMatchups() {
     const showScores = gStatus !== 'upcoming';
     const aCls = g.done ? (g.winner === 'AWAY' ? 'winner' : g.winner === 'HOME' ? 'loser' : '') : '';
     const hCls = g.done ? (g.winner === 'HOME' ? 'winner' : g.winner === 'AWAY' ? 'loser' : '') : '';
-    const row = (t, cls, score, proj, prob) => `
+    const wkLu = gStatus === 'live' ? weekLineups(CURRENT_SEASON, wk) : null;
+    const leftText = teamId => {
+      const e = wkLu && wkLu[teamId];
+      if (!e) return '';
+      const { pre, live } = playersLeft(e, wk);
+      if (!pre && !live) return '<div class="ytp done">All players done</div>';
+      return `<div class="ytp">${live ? `<span class="ytp-live">● ${live} playing</span>` : ''}${live && pre ? ' · ' : ''}${pre ? `${pre} yet to play` : ''}</div>`;
+    };
+    const row = (t, cls, score, proj, prob, teamId) => `
       <div class="mu-team ${cls}">
-        <div class="mu-name"><strong>${esc(t.manager)}</strong><span class="proj-sub">${esc(t.name)} · ${t.wins}–${t.losses}</span></div>
+        <div class="mu-name"><strong>${esc(t.manager)}</strong><span class="proj-sub">${esc(t.name)} · ${t.wins}–${t.losses}</span>${leftText(teamId)}</div>
         <div class="mu-score">
           ${showScores ? `<span class="matchup-score">${score.toFixed(2)}</span>` : '<span class="proj-sub">—</span>'}
           ${gStatus === 'live' && proj ? `<div class="proj-sub">Proj ${proj.toFixed(1)}${prob != null ? ` · ${prob.toFixed(0)}%` : ''}</div>` : ''}
@@ -1369,9 +1423,9 @@ function renderMatchups() {
     const statusText = { live: 'Live', final: 'Final', upcoming: 'Upcoming' }[gStatus];
     return `<div class="mu-card ${lu.body ? 'open' : ''}">
       <div class="mu-head"><span class="mu-status ${gStatus}">${gStatus === 'live' ? '● ' : ''}${statusText}</span><span>Away · Home</span></div>
-      ${row(a, aCls, g.aScore, g.awayProj, g.awayWinProb)}
+      ${row(a, aCls, g.aScore, g.awayProj, g.awayWinProb, g.awayId)}
       ${probBar}
-      ${row(h, hCls, g.hScore, g.homeProj, g.homeWinProb)}
+      ${row(h, hCls, g.hScore, g.homeProj, g.homeWinProb, g.homeId)}
       <div class="mu-foot"><span>${series}</span>${lu.button}</div>
       ${gStatus === 'upcoming' ? matchupPreview(g) : ''}
       ${lu.body}
@@ -1525,6 +1579,11 @@ function renderLineupAlerts(week) {
 }
 
 function lineupColumn(season, manager, entry, live, week) {
+  const ptsCell = p => {
+    const st = live && season === CURRENT_SEASON ? gameState(nflTeamOf(p), week) : null;
+    if (st === 'pre' && !p.pts) return `<span class="lu-pts proj-sub" title="Kickoff">${esc(kickoffLabel(nflTeamOf(p), week))}</span>`;
+    return `<span class="lu-pts">${st === 'live' ? '<span class="ytp-live" title="Playing now">●</span> ' : ''}${p.pts.toFixed(1)}</span>`;
+  };
   const starters = entry.players.filter(p => p.slot !== BENCH_SLOT && p.slot !== IR_SLOT);
   const bench = entry.players.filter(p => p.slot === BENCH_SLOT || p.slot === IR_SLOT);
   // Gold = a benched player who belonged in the best possible lineup.
@@ -1532,7 +1591,7 @@ function lineupColumn(season, manager, entry, live, week) {
   const row = (p, benchRow) => `<div class="lu-row ${benchRow ? 'bench' : ''} ${benchRow && shouldStart(p) ? 'hot' : ''}" ${benchRow && shouldStart(p) ? 'title="Should have started"' : ''}>
       <span class="lu-slot">${esc(slotLabel(season, p.slot))}</span>
       <span class="lu-player">${esc(p.name)} <span class="proj-sub">${esc(p.pos)}</span>${season === CURRENT_SEASON ? availBadge(p.id, week) : ''}</span>
-      <span class="lu-pts">${p.pts.toFixed(1)}</span>
+      ${ptsCell(p)}
     </div>`;
   const empties = emptySlots(season, entry).map(slot => `<div class="lu-row" style="color:var(--red);">
       <span class="lu-slot" style="color:var(--red);">${esc(slot)}</span><span class="lu-player"><em>Empty slot</em></span><span class="lu-pts">0.0</span>
@@ -1558,7 +1617,7 @@ function lineupBlock(season, week, game, live) {
   const body = open ? `<div class="lu-pair">
       ${lineupColumn(season, getManager(game.awayId), wk[game.awayId], live, week)}
       ${lineupColumn(season, getManager(game.homeId), wk[game.homeId], live, week)}
-    </div>${live ? `<p class="note" style="margin-top:6px;">Lineups as of the last auto-sync (${esc(formatDate(EXTRAS[season].lineups.syncedAt))}).</p>` : ''}` : '';
+    </div>${live ? `<p class="note" style="margin-top:6px;">${liveUpdatedAt ? 'Live from ESPN' : 'As of the last auto-sync'} (${esc(formatDate(EXTRAS[season].lineups.syncedAt))}). Scores refresh every 2 minutes while games are on.</p>` : ''}` : '';
   return { button, body };
 }
 
@@ -2638,6 +2697,162 @@ function matchupPreview(g) {
     </div>
     <div class="pv-note">${lastText}${edge}</div>
   </div>`;
+}
+
+// --------------------------------------------------------------------------
+// Live game-day updates: player scores straight from ESPN
+// --------------------------------------------------------------------------
+const LIVE_REFRESH_MS = 2 * 60 * 1000;
+const GAME_LENGTH_MS = 3.75 * 60 * 60 * 1000;
+const POSITION_NAMES = { 1: 'QB', 2: 'RB', 3: 'WR', 4: 'TE', 5: 'K', 16: 'D/ST' };
+let liveTimer = null, liveBusy = false, liveUpdatedAt = null;
+
+function proTeams() {
+  const lg = EXTRAS[CURRENT_SEASON] && EXTRAS[CURRENT_SEASON].league;
+  return (lg && lg.proTeams) || {};
+}
+
+function nflTeamOf(p) {
+  if (p.nfl != null) return p.nfl;
+  const lg = EXTRAS[CURRENT_SEASON] && EXTRAS[CURRENT_SEASON].league;
+  const info = lg && lg.players && lg.players[String(p.id)];
+  return info ? info.nfl : null;
+}
+
+function gameState(nfl, week, now = Date.now()) {
+  // 'pre' (not kicked off), 'live', 'done', or null (bye / unknown).
+  const t = proTeams()[String(nfl)];
+  const kick = t && t.games && t.games[String(week)];
+  if (!kick) return null;
+  if (now < kick) return 'pre';
+  return now < kick + GAME_LENGTH_MS ? 'live' : 'done';
+}
+
+function kickoffLabel(nfl, week) {
+  const t = proTeams()[String(nfl)];
+  const kick = t && t.games && t.games[String(week)];
+  return kick ? new Date(kick).toLocaleString(undefined, { weekday: 'short', hour: 'numeric', minute: '2-digit' }) : '';
+}
+
+function playersLeft(entry, week) {
+  // Starters who haven't kicked off yet / are playing right now.
+  let pre = 0, live = 0;
+  entry.players.forEach(p => {
+    if (p.slot === BENCH_SLOT || p.slot === IR_SLOT) return;
+    const st = gameState(nflTeamOf(p), week);
+    if (st === 'pre') pre += 1; else if (st === 'live') live += 1;
+  });
+  return { pre, live };
+}
+
+function gamesOnNow(week, now = Date.now()) {
+  // True from 5 minutes before any NFL kickoff this week until that game ends.
+  return Object.values(proTeams()).some(t => {
+    const kick = t.games && t.games[String(week)];
+    return kick && now >= kick - 5 * 60 * 1000 && now < kick + GAME_LENGTH_MS;
+  });
+}
+
+function bestLineupJS(players, slotCounts) {
+  // Same method as the sync script: fill the most restrictive slots first.
+  const pool = players.filter(p => p.slot !== IR_SLOT).sort((a, b) => b.pts - a.pts);
+  const slots = [];
+  Object.entries(slotCounts).forEach(([slot, n]) => {
+    const id = Number(slot);
+    if (id === BENCH_SLOT || id === IR_SLOT) return;
+    for (let i = 0; i < n; i++) slots.push(id);
+  });
+  slots.sort((a, b) => pool.filter(p => p.elig.includes(a)).length - pool.filter(p => p.elig.includes(b)).length);
+  const used = new Set();
+  let total = 0;
+  slots.forEach(slot => {
+    const p = pool.find(x => !used.has(x.id) && x.elig.includes(slot));
+    if (p) { used.add(p.id); total += p.pts; }
+  });
+  return { total: Math.round(total * 100) / 100, used };
+}
+
+function liveLineupsFromBox(raw, week) {
+  const lg = EXTRAS[CURRENT_SEASON] && EXTRAS[CURRENT_SEASON].league;
+  const L = EXTRAS[CURRENT_SEASON] && EXTRAS[CURRENT_SEASON].lineups;
+  const slotIds = (L && L.slots) || {};
+  const slotCounts = {};
+  ((lg && lg.settings && lg.settings.lineup) || []).forEach(x => {
+    if (slotIds[x.slot] !== undefined) slotCounts[slotIds[x.slot]] = x.count;
+  });
+  const round2 = x => Math.round((x || 0) * 100) / 100;
+  const teams = {};
+  (raw.schedule || []).forEach(m => ['home', 'away'].forEach(side => {
+    const t = m[side];
+    const roster = t && t.rosterForCurrentScoringPeriod;
+    if (!roster) return;
+    const players = (roster.entries || []).map(e => {
+      const pe = e.playerPoolEntry || {};
+      const pl = pe.player || {};
+      const proj = (pl.stats || []).find(x => x.scoringPeriodId === week && x.statSourceId === 1);
+      return {
+        id: pl.id != null ? pl.id : e.playerId, name: pl.fullName || 'Unknown',
+        pos: POSITION_NAMES[pl.defaultPositionId] || '?', slot: e.lineupSlotId,
+        pts: round2(pe.appliedStatTotal), proj: round2(proj && proj.appliedTotal),
+        elig: pl.eligibleSlots || [], nfl: pl.proTeamId
+      };
+    });
+    const actual = round2(players.filter(p => p.slot !== BENCH_SLOT && p.slot !== IR_SLOT).reduce((a, p) => a + p.pts, 0));
+    const best = bestLineupJS(players, slotCounts);
+    players.forEach(p => { if (best.used.has(p.id)) p.opt = 1; delete p.elig; });
+    players.sort((a, b) => ((a.slot === BENCH_SLOT || a.slot === IR_SLOT) - (b.slot === BENCH_SLOT || b.slot === IR_SLOT)) || (a.slot - b.slot) || (b.pts - a.pts));
+    const entry = { actual, best: Math.max(best.total, actual), players };
+    if (t.adjustment) entry.adj = round2(t.adjustment);
+    teams[String(t.teamId)] = entry;
+  }));
+  return teams;
+}
+
+async function refreshLive({ quiet } = {}) {
+  // Pull standings/scores and this week's box scores from ESPN.
+  if (liveBusy) return false;
+  liveBusy = true;
+  try {
+    const week = CURRENT.currentMatchupPeriod;
+    const base = `https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/${CURRENT_SEASON}/segments/0/leagues/${LEAGUE_ID}`;
+    const [mainRes, boxRes] = await Promise.all([
+      fetch(espnPublicUrl()),
+      fetch(`${base}?view=mMatchupScore&view=mBoxscore&scoringPeriodId=${week}`)
+    ]);
+    if (!mainRes.ok || !boxRes.ok) throw new Error(`ESPN returned ${mainRes.status}/${boxRes.status}`);
+    const [main, box] = await Promise.all([mainRes.json(), boxRes.json()]);
+    CURRENT = transformRawESPN(main);
+    const L = EXTRAS[CURRENT_SEASON] && EXTRAS[CURRENT_SEASON].lineups;
+    const live = liveLineupsFromBox(box, week);
+    if (L && Object.keys(live).length) {
+      L.weeks[String(week)] = live;
+      L.syncedAt = new Date().toISOString();
+    }
+    liveUpdatedAt = new Date();
+    document.getElementById('syncStatus').textContent = `Live ESPN: ${formatDate(liveUpdatedAt.toISOString())}`;
+    document.getElementById('syncDot').style.background = 'var(--green)';
+    renderAll();
+    return true;
+  } catch (e) {
+    console.warn('Live ESPN update failed; keeping the last synced data.', e);
+    if (!quiet) showToast('Couldn’t reach ESPN; showing the last auto-synced data.');
+    return false;
+  } finally {
+    liveBusy = false;
+  }
+}
+
+function liveTick() {
+  // Auto-refresh only while the page is visible and NFL games are on.
+  if (document.visibilityState !== 'visible' || !CURRENT) return;
+  if (gamesOnNow(CURRENT.currentMatchupPeriod)) refreshLive({ quiet: true });
+}
+
+function startLiveUpdates() {
+  if (liveTimer) return;
+  liveTimer = setInterval(liveTick, LIVE_REFRESH_MS);
+  document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') liveTick(); });
+  liveTick();
 }
 
 function renderAll() {
