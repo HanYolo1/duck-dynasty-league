@@ -3,7 +3,16 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Duck Dynasty Fantasy League Hub</title>
+<title>Duck Dynasty FF</title>
+<meta name="description" content="Duck Dynasty fantasy football league hub: live matchups, standings, playoffs and league history." />
+<meta name="theme-color" content="#0b1120" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png" />
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="Duck Dynasty FF" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <style>
   :root {
     --bg: #0b1120;
@@ -824,6 +833,19 @@ async function getJSON(url) {
   return res.json();
 }
 
+function showConnectionStatus() {
+  // With no signal the page runs from the copy saved on this device.
+  if (!CURRENT) return;
+  const offline = navigator.onLine === false;
+  document.getElementById('syncStatus').textContent = `${offline ? 'Offline · last synced' : 'Synced:'} ${formatDate(CURRENT.syncedAt)}`;
+  document.getElementById('syncDot').style.background = offline ? 'var(--gold)' : 'var(--green)';
+}
+window.addEventListener('online', showConnectionStatus);
+window.addEventListener('offline', showConnectionStatus);
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(err => console.warn('Offline support unavailable', err)));
+}
+
 // Pages that use past seasons' lineup/league files.
 const NEEDS_PAST_SEASONS = new Set(['recap', 'lineups', 'draft', 'activity', 'managers', 'players']);
 let pastExtrasPending = [], pastExtrasLoading = null;
@@ -869,7 +891,7 @@ async function loadInitialData() {
     HISTORY = hist;
     CURRENT = curr;
     applySeasonLabels();
-    document.getElementById('syncStatus').textContent = `Synced: ${formatDate(CURRENT.syncedAt)}`;
+    showConnectionStatus();
     renderAll();
     startLiveUpdates();
   } catch (err) {

@@ -1,4 +1,4 @@
-# Duck Dynasty Fantasy League Hub (ESPN League #52568337)
+# Duck Dynasty FF: Fantasy League Hub (ESPN League #52568337)
 
 An interactive, self-updating league dashboard hosted on **GitHub Pages** featuring:
 - **Current Standings & Playoff Picture** (ESPN seeds, live playoff odds, BYE/IN cutoff, projected bracket) plus a **Playoff Race** that checks every remaining outcome to show who has clinched, who is out, and how many wins each team needs
@@ -29,7 +29,9 @@ An interactive, self-updating league dashboard hosted on **GitHub Pages** featur
 ## How Automatic Updates Work
 - **Automated GitHub Actions:** `.github/workflows/sync-espn.yml` runs `scripts/sync_espn.py` every 30 minutes during NFL game windows (Sunday, Monday and Thursday nights) and on Tuesday mornings. It also runs twice a day Wednesday through Saturday to pick up injury news. It only commits when something actually changed.
 - **Manual Refresh Anytime:** **Actions** tab → **Sync ESPN Fantasy League Data** → **Run workflow**.
-- **Sync Live button:** pulls the latest standings and scores straight from ESPN in your browser. Lineups, the draft and transactions update with the next automatic sync.
+- **Live game days:** while the site is open and NFL games are on, it pulls scores and lineups straight from ESPN every 2 minutes (player points, best-lineup math, who's playing and who's yet to play). The **Sync Live** button does the same on demand. Draft and transaction data update with the automatic sync.
+- **Home-screen app:** on a phone, Share → **Add to Home Screen** installs it as **Duck Dynasty FF** with its own icon. The last-loaded data still shows with a weak or no signal (`sw.js`, `manifest.webmanifest`, `icons/`).
+- **Fast first load:** only the current season loads up front; past seasons load the first time a page needs them.
 
 ### What the sync writes (`data/`)
 | File | Contents |
