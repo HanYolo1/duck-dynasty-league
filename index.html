@@ -217,6 +217,7 @@
   .ytp { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
   .ytp.done { color: var(--muted); opacity: 0.7; }
   .ytp-live { color: var(--red); font-weight: 700; }
+  .past-loading { position: fixed; top: 12px; left: 50%; transform: translateX(-50%); z-index: 50; background: var(--surface-2); border: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; padding: 6px 14px; border-radius: 999px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); }
   .mgr-link { color: inherit; font-weight: 700; text-decoration: none; border-bottom: 1px dotted var(--muted); }
   .mgr-link:hover { color: var(--blue); border-bottom-color: var(--blue); }
   .badge-alive { background: var(--blue-bg); color: var(--blue); border: 1px solid rgba(56,189,248,0.35); }
@@ -309,6 +310,7 @@
     <button class="group-btn" data-group="history">📚 History</button>
     <button class="group-btn" data-group="rules">📜 Rules</button>
   </nav>
+  <div id="pastLoading" class="past-loading" hidden>Loading past seasons…</div>
   <nav class="tabs" aria-label="Pages">
     <button class="tab-btn active" data-group="season" data-tab="matchups">Matchups</button>
     <button class="tab-btn" data-group="season" data-tab="current">Standings</button>
@@ -790,6 +792,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     showGroup(btn.dataset.group);
     document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
     if (btn.dataset.tab === 'matchups') centerActiveWeek();
+    if (NEEDS_PAST_SEASONS.has(btn.dataset.tab)) loadPastSeasons();
   });
 });
 showGroup('season');
@@ -821,23 +824,50 @@ async function getJSON(url) {
   return res.json();
 }
 
+// Pages that use past seasons' lineup/league files.
+const NEEDS_PAST_SEASONS = new Set(['recap', 'lineups', 'draft', 'activity', 'managers', 'players']);
+let pastExtrasPending = [], pastExtrasLoading = null;
+
+function loadExtras(y) {
+  return Promise.all([
+    getJSON(`data/${y}-lineups.json`).catch(() => null),
+    getJSON(`data/${y}-league.json`).catch(() => null)
+  ]).then(([lineups, league]) => { EXTRAS[y] = { lineups, league }; });
+}
+
+function loadPastSeasons() {
+  if (pastExtrasLoading || !pastExtrasPending.length) return pastExtrasLoading || Promise.resolve();
+  const note = document.getElementById('pastLoading');
+  note.hidden = false;
+  pastExtrasLoading = Promise.all(pastExtrasPending.map(loadExtras)).then(() => {
+    pastExtrasPending = [];
+    note.hidden = true;
+    if (CURRENT) renderAll();
+  }).catch(err => {
+    note.hidden = true;
+    pastExtrasLoading = null;
+    console.error(err);
+  });
+  return pastExtrasLoading;
+}
+
 async function loadInitialData() {
   try {
     const manifest = await getJSON('data/manifest.json').catch(() => null);
     if (manifest && manifest.currentSeason) CURRENT_SEASON = manifest.currentSeason;
     selectedSeason = String(CURRENT_SEASON);
+    // Only the current season's detail files load up front; past seasons'
+    // lineups/draft/transactions (most of the data) load when a page needs them.
     const extraSeasons = (manifest && manifest.extras) || [];
-    const [hist, curr, ...extras] = await Promise.all([
+    const loadNow = extraSeasons.filter(y => y === CURRENT_SEASON);
+    pastExtrasPending = extraSeasons.filter(y => y !== CURRENT_SEASON);
+    const [hist, curr] = await Promise.all([
       getJSON('data/history.json'),
       getJSON(`data/${CURRENT_SEASON}.json`),
-      ...extraSeasons.flatMap(y => [
-        getJSON(`data/${y}-lineups.json`).catch(() => null),
-        getJSON(`data/${y}-league.json`).catch(() => null)
-      ])
+      ...loadNow.map(loadExtras)
     ]);
     HISTORY = hist;
     CURRENT = curr;
-    extraSeasons.forEach((y, i) => { EXTRAS[y] = { lineups: extras[2 * i], league: extras[2 * i + 1] }; });
     applySeasonLabels();
     document.getElementById('syncStatus').textContent = `Synced: ${formatDate(CURRENT.syncedAt)}`;
     renderAll();
