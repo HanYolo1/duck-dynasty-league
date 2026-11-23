@@ -2,6 +2,7 @@
   "seasonId": 2026,
   "scoringPeriodId": 11,
   "currentMatchupPeriod": 11,
+  "syncedAt": "2026-11-23T03:59:41Z",
   "teams": [
     {
       "id": 1,
@@ -975,9 +976,9 @@
       "homePts": 0.0,
       "awayPts": 0.0,
       "homeLive": 73.61,
-      "awayLive": 98.4,
+      "awayLive": 104.4,
       "homeProj": 73.61,
-      "awayProj": 134.74,
+      "awayProj": 134.28,
       "homeWinProb": 1.0,
       "awayWinProb": 99.0
     },
@@ -991,11 +992,11 @@
       "homePts": 0.0,
       "awayPts": 0.0,
       "homeLive": 115.71,
-      "awayLive": 108.34,
+      "awayLive": 119.02,
       "homeProj": 175.87,
-      "awayProj": 126.24,
-      "homeWinProb": 96.0,
-      "awayWinProb": 4.0
+      "awayProj": 125.98,
+      "homeWinProb": 97.0,
+      "awayWinProb": 3.0
     },
     {
       "season": 2026,
@@ -1007,9 +1008,9 @@
       "homePts": 0.0,
       "awayPts": 0.0,
       "homeLive": 136.9,
-      "awayLive": 94.13,
-      "homeProj": 141.33,
-      "awayProj": 105.96,
+      "awayLive": 96.03,
+      "homeProj": 138.62,
+      "awayProj": 103.7,
       "homeWinProb": 99.0,
       "awayWinProb": 1.0
     },
@@ -1023,9 +1024,9 @@
       "homePts": 0.0,
       "awayPts": 0.0,
       "homeLive": 99.19,
-      "awayLive": 145.01,
+      "awayLive": 149.61,
       "homeProj": 99.19,
-      "awayProj": 155.22,
+      "awayProj": 153.58,
       "homeWinProb": 1.0,
       "awayWinProb": 99.0
     },
@@ -1038,12 +1039,12 @@
       "awayId": 6,
       "homePts": 0.0,
       "awayPts": 0.0,
-      "homeLive": 108.2,
-      "awayLive": 129.66,
-      "homeProj": 149.51,
-      "awayProj": 138.18,
-      "homeWinProb": 75.0,
-      "awayWinProb": 25.0
+      "homeLive": 117.4,
+      "awayLive": 130.66,
+      "homeProj": 152.54,
+      "awayProj": 141.92,
+      "homeWinProb": 79.0,
+      "awayWinProb": 21.0
     },
     {
       "season": 2026,
@@ -1285,6 +1286,5 @@
       "homeWinProb": null,
       "awayWinProb": null
     }
-  ],
-  "syncedAt": "2026-11-22T22:40:00-05:00"
+  ]
 }
