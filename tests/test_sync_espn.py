@@ -155,6 +155,23 @@ class PlayerInfoTests(unittest.TestCase):
         self.assertEqual(s.pro_team_byes(data), {"12": {"abbrev": "KC", "bye": 5, "games": {"2": 1789000000000, "12": 1795742400000}}})
 
 
+class LineupFlagTests(unittest.TestCase):
+    def test_flags_unavailable_starters_without_points(self):
+        teams = {"3": {"players": [
+            {"id": 1, "name": "Out Starter", "slot": 6, "pts": 0},
+            {"id": 2, "name": "Out But Played", "slot": 2, "pts": 4.5},
+            {"id": 3, "name": "Out On Bench", "slot": 20, "pts": 0},
+            {"id": 4, "name": "Questionable Starter", "slot": 4, "pts": 0},
+        ]}}
+        players = {"1": {"injury": "OUT"}, "2": {"injury": "OUT"}, "3": {"injury": "INJURY_RESERVE"}, "4": {"injury": "QUESTIONABLE"}}
+        flags = s.update_lineup_flags({}, 11, teams, players)
+        self.assertEqual(flags, {"11": {"3": [{"playerId": 1, "name": "Out Starter", "status": "OUT"}]}})
+        # later runs keep earlier flags and don't duplicate
+        players["1"] = {}
+        self.assertEqual(s.update_lineup_flags(flags, 11, teams, players), flags)
+        self.assertEqual(s.update_lineup_flags(flags, 12, {}, players), flags)
+
+
 class SeasonWrapUpTests(unittest.TestCase):
     HISTORY = os.path.join(os.path.dirname(__file__), "..", "data", "history.json")
 

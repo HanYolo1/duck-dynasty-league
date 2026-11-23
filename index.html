@@ -337,6 +337,7 @@
     <button class="tab-btn" data-group="history" data-tab="seasons">Season-by-Season</button>
     <button class="tab-btn" data-group="history" data-tab="players">Player Records</button>
     <button class="tab-btn" data-group="rules" data-tab="rules"><span class="cur-season">2026</span> Rulebook</button>
+    <button class="tab-btn" data-group="rules" data-tab="violations">Lineup Log</button>
   </nav>
 
   <!-- TAB 1: CURRENT STANDINGS -->
@@ -578,6 +579,30 @@
       </div>
     </div>
     <p class="note">Weekly scores cover every player on a league roster that week, benched or not. Season totals are each player’s full NFL season for any team, among players who were drafted, picked up or rostered in this league.</p>
+  </section>
+
+  <!-- TAB: LINEUP LOG (full-lineup rule) -->
+  <section id="tab-violations" class="panel">
+    <div class="card">
+      <div class="card-title">
+        <span>📋 Lineup Log: Full-Lineup Rule</span>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <div class="pill-group" id="violPills"></div>
+          <div class="pill-group" id="violScope"></div>
+        </div>
+      </div>
+      <div class="grid-2" style="margin-bottom:6px;">
+        <div>
+          <div class="card-title" style="font-size:0.95rem;margin-bottom:6px;">By manager</div>
+          <div id="violSummary"></div>
+        </div>
+        <div>
+          <div class="card-title" style="font-size:0.95rem;margin-bottom:6px;">Every violation</div>
+          <div id="violList"></div>
+        </div>
+      </div>
+      <p class="note">House rule: every manager must always start a full, active lineup. A week counts once per team, however many problems it had. Detected automatically from finished weeks: <strong>empty starting slots</strong> (all seasons), <strong>starters on a bye</strong> who scored 0 (all seasons), and <strong>starters listed out, on IR or suspended</strong> who scored 0 (tracked from Week 11 of 2026 onward, because ESPN doesn’t keep past injury reports). This week’s problems show on the Matchups tab until the week is final.</p>
+    </div>
   </section>
 
   <!-- TAB 2: ALL-TIME STANDINGS -->
@@ -849,7 +874,7 @@ if ('serviceWorker' in navigator) {
 }
 
 // Pages that use past seasons' lineup/league files.
-const NEEDS_PAST_SEASONS = new Set(['recap', 'lineups', 'draft', 'activity', 'managers', 'players']);
+const NEEDS_PAST_SEASONS = new Set(['recap', 'lineups', 'draft', 'activity', 'managers', 'players', 'violations', 'awards']);
 let pastExtrasPending = [], pastExtrasLoading = null;
 
 function loadExtras(y) {
@@ -2866,6 +2891,84 @@ function startLiveUpdates() {
   liveTick();
 }
 
+// --------------------------------------------------------------------------
+// Lineup Log: full-lineup rule violations (no fines shown)
+// --------------------------------------------------------------------------
+let violSeason = 'all', violScope = 'all';
+function setViolSeason(v) { violSeason = v; renderViolations(); }
+function setViolScope(v) { violScope = v; renderViolations(); }
+
+function finishedWeeks(season) {
+  const d = seasonData(season);
+  const byWeek = {};
+  (d ? d.schedule : []).forEach(g => { (byWeek[g.week] = byWeek[g.week] || []).push(g); });
+  return new Set(Object.keys(byWeek).map(Number).filter(w => byWeek[w].every(g => g.winner !== 'UNDECIDED')));
+}
+
+function lineupViolations(season) {
+  const L = EXTRAS[season] && EXTRAS[season].lineups;
+  const G = EXTRAS[season] && EXTRAS[season].league;
+  if (!L || !seasonData(season)) return [];
+  const done = finishedWeeks(season);
+  const lastReg = regularSeasonWeeks(season);
+  const pro = (G && G.proTeams) || {};
+  const flags = (G && G.lineupFlags) || {};
+  const out = [];
+  Object.keys(L.weeks).map(Number).sort((a, b) => a - b).forEach(week => {
+    if (!done.has(week)) return;
+    Object.entries(L.weeks[String(week)]).forEach(([tid, e]) => {
+      const items = [];
+      const empty = emptySlots(season, e);
+      if (empty.length) {
+        const counts = {};
+        empty.forEach(x => { counts[x] = (counts[x] || 0) + 1; });
+        items.push(`Empty ${Object.entries(counts).map(([slot, n]) => n > 1 ? `${slot} ×${n}` : slot).join(', ')}${empty.length === 1 ? ' slot' : ' slots'}`);
+      }
+      const starters = e.players.filter(p => p.slot !== BENCH_SLOT && p.slot !== IR_SLOT);
+      const counted = new Set();
+      starters.forEach(p => {
+        const t = pro[String(p.nfl)];
+        if (!p.pts && t && t.bye === week) { items.push(`Started ${p.name} (on bye)`); counted.add(p.id); }
+      });
+      ((flags[String(week)] || {})[tid] || []).forEach(f => {
+        const p = starters.find(x => x.id === f.playerId);
+        if (p && !p.pts && !counted.has(p.id)) {
+          items.push(`Started ${p.name} (${(INJURY_LABEL[f.status] || [f.status, '', f.status])[2].toLowerCase()})`);
+        }
+      });
+      if (items.length) out.push({ season, week, team: Number(tid), items, playoff: week > lastReg });
+    });
+  });
+  return out;
+}
+
+function renderViolations() {
+  const seasons = extrasSeasons('lineups');
+  document.getElementById('violPills').innerHTML = seasonPills(seasons, violSeason, 'setViolSeason', { value: 'all', label: 'All-Time' });
+  document.getElementById('violScope').innerHTML = [['all', 'All weeks'], ['reg', 'Regular season']].map(([v, l]) =>
+    `<button class="pill ${violScope === v ? 'active' : ''}" onclick="setViolScope('${v}')">${l}</button>`).join('');
+  const picked = violSeason === 'all' ? seasons : [Number(violSeason)];
+  const all = picked.flatMap(lineupViolations).filter(v => violScope === 'all' || !v.playoff);
+
+  const by = {};
+  Object.keys(HISTORY.managers).forEach(id => { by[id] = { id: Number(id), reg: 0, po: 0 }; });
+  all.forEach(v => { const b = by[v.team]; if (b) { if (v.playoff) b.po += 1; else b.reg += 1; } });
+  const rows = Object.values(by).sort((a, b) => (b.reg + b.po) - (a.reg + a.po) || getManager(a.id).localeCompare(getManager(b.id)));
+  document.getElementById('violSummary').innerHTML = rows.map(r => `<div class="list-row">
+      <div>${managerLink(r.id)}</div>
+      <div style="text-align:right;white-space:nowrap;">${r.reg + r.po
+        ? `<strong>${r.reg + r.po}</strong> week${r.reg + r.po === 1 ? '' : 's'}${violScope === 'all' && r.po ? ` <span class="proj-sub">(${r.po} in playoffs/consolation)</span>` : ''}`
+        : '<span style="color:var(--green);">✓ Clean</span>'}</div>
+    </div>`).join('');
+
+  const list = [...all].sort((a, b) => b.season - a.season || b.week - a.week || getManager(a.team).localeCompare(getManager(b.team)));
+  document.getElementById('violList').innerHTML = list.map(v => `<div class="list-row">
+      <div><span class="proj-sub">${v.season} ${v.playoff ? 'PO ' : 'Wk '}${v.week}${v.playoff ? ' <span class="badge badge-out">Playoffs/consolation</span>' : ''}</span>
+        <div>${managerLink(v.team)}</div></div>
+      <div style="text-align:right;font-size:0.8rem;">${v.items.map(esc).join('<br>')}</div>
+    </div>`).join('') || noData('No violations found. Every lineup was full.');
+}
+
 function renderAll() {
   renderCurrentStandings();
   renderPlayoffRace();
@@ -2882,6 +2985,7 @@ function renderAll() {
   renderRivalryMatrix();
   renderSeasons();
   renderRulesSettings();
+  renderViolations();
   renderScoring();
 }
 
