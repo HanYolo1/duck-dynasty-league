@@ -227,6 +227,8 @@
   .ytp.done { color: var(--muted); opacity: 0.7; }
   .ytp-live { color: var(--red); font-weight: 700; }
   .past-loading { position: fixed; top: 12px; left: 50%; transform: translateX(-50%); z-index: 50; background: var(--surface-2); border: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; padding: 6px 14px; border-radius: 999px; box-shadow: 0 6px 18px rgba(0,0,0,0.35); }
+  .grid-5 { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+  @media (max-width: 640px) { .grid-5 { grid-template-columns: 1fr 1fr; gap: 10px; } .grid-5 .record-card { padding: 10px 12px; } .grid-5 .record-val { font-size: 1rem; } }
   .mgr-link { color: inherit; font-weight: 700; text-decoration: none; border-bottom: 1px dotted var(--muted); }
   .mgr-link:hover { color: var(--blue); border-bottom-color: var(--blue); }
   .badge-alive { background: var(--blue-bg); color: var(--blue); border: 1px solid rgba(56,189,248,0.35); }
@@ -451,10 +453,10 @@
         <span>🧠 Lineup IQ: Points Left on the Bench</span>
         <div class="pill-group" id="iqPills"></div>
       </div>
-      <div class="grid-4" id="iqRecords" style="margin-bottom:16px;"></div>
+      <div class="grid-5" id="iqRecords" style="margin-bottom:16px;"></div>
       <div class="table-wrap">
         <table id="iqTable">
-          <thead><tr><th>#</th><th>Manager</th><th>Weeks</th><th>Points Scored</th><th>Best Possible</th><th>Left on Bench</th><th>Per Week</th><th>Efficiency</th><th>Perfect Weeks</th><th title="Losses where the best possible lineup would have beaten the opponent">Losses a Best Lineup Wins</th></tr></thead>
+          <thead><tr><th>#</th><th>Manager</th><th>Weeks</th><th>Points Scored</th><th>Best Possible</th><th>Left on Bench</th><th>Per Week</th><th title="Points scored ÷ best possible points from that week's roster">Efficiency</th><th title="Weeks where the lineup started was the best possible one">Perfect Lineups</th><th title="Losses where the best possible lineup would have beaten the opponent">Losses a Best Lineup Wins</th></tr></thead>
           <tbody></tbody>
         </table>
       </div>
@@ -1630,7 +1632,7 @@ function setIqSeason(v) { iqSeason = v; renderLineupIQ(); }
 function lineupStats(seasons) {
   const stats = {};
   Object.keys(HISTORY.managers).forEach(id => {
-    stats[id] = { id: Number(id), weeks: 0, actual: 0, best: 0, perfect: 0, lostWins: 0 };
+    stats[id] = { id: Number(id), weeks: 0, actual: 0, best: 0, perfect: 0, perfectWeeks: [], lostWins: 0 };
   });
   let blunder = null, benchBomb = null, perfectRun = null;
   seasons.forEach(y => {
@@ -1649,7 +1651,7 @@ function lineupStats(seasons) {
         s.weeks += 1;
         s.actual += e.actual;
         s.best += e.best;
-        if (left < 0.005) s.perfect += 1;
+        if (left < 0.005) { s.perfect += 1; s.perfectWeeks.push({ season: y, week: g.week }); }
         if (myScore < oppScore && e.best + (e.adj || 0) > oppScore) s.lostWins += 1;
         if (!blunder || left > blunder.left) blunder = { left, id: me, opp, season: y, week: g.week, lost: myScore < oppScore };
         e.players.forEach(p => {
@@ -1680,7 +1682,16 @@ function renderLineupIQ() {
 
   const where = x => `${picked.length > 1 ? x.season + ' ' : ''}Wk ${x.week}`;
   const top = rows[0], mostLeft = [...rows].sort((a, b) => b.left - a.left)[0];
-  document.getElementById('iqRecords').innerHTML = rows.length ? `
+  const maxPerfect = Math.max(0, ...rows.map(r => r.perfect));
+  const perfectLeaders = rows.filter(r => r.perfect === maxPerfect && maxPerfect > 0);
+  const weeksOf = r => `Wk ${r.perfectWeeks.map(w => w.week).join(', ')}`;
+  const perfectWhen = picked.length > 1
+    ? perfectLeaders.map(r => `${perfectLeaders.length > 1 ? esc(getManager(r.id)) + ' ' : ''}${(r.perfect / r.weeks * 100).toFixed(0)}% of weeks`).join(' · ')
+    : perfectLeaders.map(r => `${perfectLeaders.length > 1 ? esc(getManager(r.id)) + ': ' : ''}${weeksOf(r)}`).join(' · ');
+  const perfectCard = `<div class="record-card"><div class="record-label">Most Perfect Lineups</div>
+      <div class="record-val">${perfectLeaders.length ? perfectLeaders.map(r => esc(getManager(r.id))).join(' & ') : '—'}</div>
+      <div class="record-sub">${maxPerfect ? `${maxPerfect} perfect week${maxPerfect === 1 ? '' : 's'} · ${perfectWhen}` : 'No perfect lineups yet'}</div></div>`;
+  document.getElementById('iqRecords').innerHTML = rows.length ? perfectCard + `
     <div class="record-card"><div class="record-label">Lineup Genius</div><div class="record-val">${esc(getManager(top.id))}</div><div class="record-sub">${(top.eff * 100).toFixed(1)}% of best possible points</div></div>
     <div class="record-card"><div class="record-label">Most Points Benched</div><div class="record-val">${esc(getManager(mostLeft.id))}</div><div class="record-sub">${mostLeft.left.toFixed(1)} pts left on the bench</div></div>
     <div class="record-card"><div class="record-label">Worst Single Week</div><div class="record-val">${blunder.left.toFixed(2)} pts</div><div class="record-sub">${esc(getManager(blunder.id))} vs ${esc(getManager(blunder.opp))} (${where(blunder)})${blunder.lost ? ' · lost' : ''}</div></div>
@@ -1696,7 +1707,7 @@ function renderLineupIQ() {
       <td style="color:var(--gold);font-weight:600;">${r.left.toFixed(2)}</td>
       <td>${r.perWeek.toFixed(2)}</td>
       <td style="white-space:nowrap;"><span class="odds-bar"><span class="odds-fill" style="width:${Math.max(0, (r.eff - 0.75) / 0.25 * 100).toFixed(0)}%;"></span></span>${(r.eff * 100).toFixed(1)}%</td>
-      <td>${r.perfect}</td>
+      <td title="${esc(r.perfectWeeks.map(w => (picked.length > 1 ? w.season + ' ' : '') + 'Wk ' + w.week).join(', '))}"><strong>${r.perfect}</strong> <span class="proj-sub">(${(r.perfect / r.weeks * 100).toFixed(0)}%)</span></td>
       <td>${r.lostWins || '—'}</td>
     </tr>`).join('');
 }
@@ -2370,7 +2381,7 @@ function renderManagers() {
     card('Career Record', rec(me.wins, me.losses, me.ties), `${me.winPct.toFixed(3)} · #${winRank} of ${career.length} in win %`),
     card('Hardware', medals.length ? medals.join('<br>') : '—', medals.length ? '' : 'Still chasing a podium'),
     card('Scoring', `${me.ppg.toFixed(2)} PPG`, `${me.pf.toFixed(0)} career points`),
-    myIq ? card('Lineup IQ', `${(myIq.eff * 100).toFixed(1)}%`, `#${iqRows.indexOf(myIq) + 1} of ${iqRows.length} · ${myIq.left.toFixed(0)} pts benched`) : ''
+    myIq ? card('Lineup IQ', `${(myIq.eff * 100).toFixed(1)}%`, `of best possible points · #${iqRows.indexOf(myIq) + 1} of ${iqRows.length}<br>${myIq.perfect} perfect lineup${myIq.perfect === 1 ? '' : 's'} · ${myIq.left.toFixed(0)} pts benched`) : ''
   ].join('');
 
   // Seasons
