@@ -9,14 +9,19 @@ Writes, per season:
                               plus the best lineup they could have set
   data/<season>-league.json   league settings and scoring rules, the auction
                               draft, waiver claims, trades and player info
-  data/manifest.json          which seasons have which files
+  data/manifest.json          the current season and which seasons have which files
+
+After the championship game is final, the season is archived into
+data/history.json (standings, schedule and champion / runner-up / third).
+From then on, each run checks whether ESPN has opened next season's league
+and, once it has, switches data/manifest.json over to it automatically.
 
 Zero dependencies. Works without login for seasons where the league is
 public. For private seasons, set ESPN_S2 and SWID (cookie values from a
 logged-in browser) as environment variables / GitHub secrets.
 
 Usage:
-  python scripts/sync_espn.py                         # current season (ESPN_SEASON_ID)
+  python scripts/sync_espn.py                         # current season (manifest, or ESPN_SEASON_ID)
   python scripts/sync_espn.py --season 2024 --backfill
       --backfill  refetch every week and skip data/<season>.json
 """
@@ -31,8 +36,8 @@ import urllib.request
 from datetime import datetime, timezone
 
 LEAGUE_ID = int(os.environ.get("ESPN_LEAGUE_ID", "52568337"))
-DEFAULT_SEASON = int(os.environ.get("ESPN_SEASON_ID", "2026"))
 DATA_DIR = os.environ.get("DATA_DIR", "data")
+FALLBACK_SEASON = 2026
 API = "https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons"
 
 MANAGERS = {
@@ -123,6 +128,10 @@ CATEGORY_ORDER = ["Passing", "Rushing", "Receiving", "Misc", "Kicking", "D/ST", 
 # --------------------------------------------------------------------------- #
 # HTTP
 # --------------------------------------------------------------------------- #
+class PrivateSeasonError(Exception):
+    """ESPN refused the request (401): the season is private."""
+
+
 def espn_get(season, params, fantasy_filter=None, path=""):
     url = f"{API}/{season}/segments/0/leagues/{LEAGUE_ID}{path}?{urllib.parse.urlencode(params, doseq=True)}"
     headers = {
@@ -143,7 +152,7 @@ def espn_get(season, params, fantasy_filter=None, path=""):
                 return json.loads(resp.read().decode("utf-8"))
         except urllib.error.HTTPError as exc:
             if exc.code == 401:
-                raise SystemExit(
+                raise PrivateSeasonError(
                     f"ESPN says season {season} is private (401). "
                     "Set ESPN_S2 and SWID to sync it."
                 )
@@ -515,6 +524,114 @@ def sync_league(season, main, lineups, backfill):
     write_if_changed(path, payload)
 
 
+# --------------------------------------------------------------------------- #
+# Season wrap-up (history.json) and rollover
+# --------------------------------------------------------------------------- #
+HISTORY_KEYS = ("seasonId", "scoringPeriodId", "currentMatchupPeriod", "teams", "schedule")
+
+
+def _decided(m):
+    return m["winner"] in ("HOME", "AWAY")
+
+
+def _winner_loser(m):
+    return (m["homeId"], m["awayId"]) if m["winner"] == "HOME" else (m["awayId"], m["homeId"])
+
+
+def champion_entry(standings):
+    """The champions-list entry for a finished season, or None while the
+    championship (or the 3rd-place game) is still to be played."""
+    sched = standings.get("schedule", [])
+    bracket = [m for m in sched if m.get("playoffTier") == "WINNERS_BRACKET"]
+    if not bracket:
+        return None
+    last = max(m["week"] for m in bracket)
+    finals = [m for m in bracket if m["week"] == last]
+    if len(finals) != 1 or not _decided(finals[0]):
+        return None
+    if any(m["winner"] == "UNDECIDED" for m in sched if m["week"] == last):
+        return None  # wait for the rest of the final week, incl. 3rd place
+    final = finals[0]
+    champ, runner = _winner_loser(final)
+    pts = {final["homeId"]: final["homePts"], final["awayId"]: final["awayPts"]}
+
+    semi_losers = {_winner_loser(m)[1] for m in bracket if m["week"] == last - 1 and _decided(m)}
+    third = None
+    for m in sched:
+        if m["week"] == last and {m["homeId"], m["awayId"]} == semi_losers and _decided(m):
+            third = _winner_loser(m)[0]
+    if third is None:
+        third = next((t["id"] for t in standings.get("teams", []) if t.get("rankCalculatedFinal") == 3), None)
+
+    names = {t["id"]: t["name"] for t in standings.get("teams", [])}
+    return {
+        "year": standings["seasonId"],
+        "champId": champ,
+        "champTeam": names.get(champ, f"Team {champ}"),
+        "runnerUpId": runner,
+        "runnerUpTeam": names.get(runner, f"Team {runner}"),
+        "score": f"{pts[champ]:.2f} \u2013 {pts[runner]:.2f}",
+        "thirdId": third,
+    }
+
+
+def archive_season(history, standings):
+    """Add a finished season and its champion to history (in place).
+    Returns True if anything changed."""
+    champ = champion_entry(standings)
+    if champ is None:
+        return False
+    season = standings["seasonId"]
+    changed = False
+    seasons = history.setdefault("seasons", {})
+    if str(season) not in seasons:
+        seasons[str(season)] = {k: standings[k] for k in HISTORY_KEYS if k in standings}
+        history["seasons"] = dict(sorted(seasons.items(), key=lambda kv: int(kv[0])))
+        changed = True
+    champions = history.setdefault("champions", [])
+    if not any(c.get("year") == season for c in champions):
+        champions.append(champ)
+        champions.sort(key=lambda c: c["year"])
+        changed = True
+    return changed
+
+
+def wrap_up_season(season, standings):
+    """Archive a finished season into history.json. Returns True once the
+    season is complete (whether archived now or earlier)."""
+    if champion_entry(standings) is None:
+        return False
+    path = path_for("history.json")
+    history = read_json(path)
+    if history is None:
+        print("  history.json missing; can't archive the season")
+        return False
+    if archive_season(history, standings):
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(history, f, indent=2)
+        print(f"  archived season {season} into {path} (champion: {MANAGERS.get(champion_entry(standings)['champId'])})")
+    return True
+
+
+def next_season_ready(season):
+    """True once ESPN has opened the league for `season` (it does this when
+    the league is renewed for the new year)."""
+    try:
+        data = espn_get(season, [("view", "mTeam")])
+    except (PrivateSeasonError, urllib.error.HTTPError, urllib.error.URLError) as exc:
+        print(f"  season {season} not available yet ({exc})")
+        return False
+    return bool(data.get("teams"))
+
+
+def current_season():
+    env = os.environ.get("ESPN_SEASON_ID", "").strip()
+    if env:
+        return int(env)
+    manifest = read_json(path_for("manifest.json")) or {}
+    return int(manifest.get("currentSeason") or FALLBACK_SEASON)
+
+
 def update_manifest(season, current):
     path = path_for("manifest.json")
     manifest = read_json(path) or {}
@@ -528,24 +645,36 @@ def update_manifest(season, current):
 
 
 # --------------------------------------------------------------------------- #
+def sync_season(season, backfill):
+    print(f"Syncing season {season} (league {LEAGUE_ID})")
+    main_data = espn_get(season, [("view", v) for v in
+                                  ("mTeam", "mStandings", "mMatchupScore", "mSettings", "mDraftDetail")])
+    standings = transform_standings(main_data)
+    if not backfill:
+        write_if_changed(path_for(f"{season}.json"), standings)
+
+    slot_counts = main_data.get("settings", {}).get("rosterSettings", {}).get("lineupSlotCounts", {})
+    lineups = sync_lineups(season, main_data.get("status", {}), slot_counts, backfill)
+    sync_league(season, main_data, lineups, backfill)
+    update_manifest(season, current=not backfill)
+    return standings
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--season", type=int, default=DEFAULT_SEASON)
+    ap.add_argument("--season", type=int, default=None,
+                    help="season to sync (default: the current season from data/manifest.json)")
     ap.add_argument("--backfill", action="store_true",
                     help="past season: refetch everything and don't write data/<season>.json")
     args = ap.parse_args()
-    season = args.season
-    print(f"Syncing season {season} (league {LEAGUE_ID})")
+    season = args.season or current_season()
+    standings = sync_season(season, args.backfill)
 
-    main_data = espn_get(season, [("view", v) for v in
-                                  ("mTeam", "mStandings", "mMatchupScore", "mSettings", "mDraftDetail")])
-    if not args.backfill:
-        write_if_changed(path_for(f"{season}.json"), transform_standings(main_data))
-
-    slot_counts = main_data.get("settings", {}).get("rosterSettings", {}).get("lineupSlotCounts", {})
-    lineups = sync_lineups(season, main_data.get("status", {}), slot_counts, args.backfill)
-    sync_league(season, main_data, lineups, args.backfill)
-    update_manifest(season, current=not args.backfill)
+    if not args.backfill and wrap_up_season(season, standings):
+        print(f"Season {season} is complete; checking whether ESPN has opened {season + 1}...")
+        if next_season_ready(season + 1):
+            print(f"Rolling over to {season + 1}.")
+            sync_season(season + 1, backfill=False)
     print("Done.")
 
 
@@ -554,6 +683,9 @@ if __name__ == "__main__":
         main()
     except SystemExit:
         raise
+    except PrivateSeasonError as exc:
+        print(str(exc), file=sys.stderr)
+        sys.exit(1)
     except Exception as exc:
         print(f"Sync failed: {exc}", file=sys.stderr)
         sys.exit(1)
