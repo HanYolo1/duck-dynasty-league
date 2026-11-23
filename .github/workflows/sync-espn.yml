@@ -2,14 +2,25 @@ name: Sync ESPN Fantasy League Data
 
 on:
   schedule:
-    # Sundays during NFL games (every 30 mins, 1:00 PM - 11:30 PM ET)
-    - cron: "*/30 18-23 * * 0"
+    # Cron runs in UTC; windows are wide enough for both EDT (Sep–early Nov)
+    # and EST. Runs that change nothing make no commit.
+    # Sunday games: 1:00 PM ET kickoff through the end of Sunday Night Football
+    - cron: "*/30 17-23 * * 0"
     - cron: "*/30 0-4 * * 1"
-    # Monday Night Football & Thursday Night Football (every 30 mins, 8:00 PM - 11:30 PM ET)
-    - cron: "*/30 1-4 * * 2,5"
-    # Tuesday morning finalization after MNF (7:00 AM ET)
-    - cron: "0 12 * * 2"
+    # Monday & Thursday night games (8:15 PM ET kickoffs)
+    - cron: "*/30 0-4 * * 2,5"
+    # Tuesday morning finalization after MNF (~7:00 AM ET)
+    - cron: "0 11,12 * * 2"
   workflow_dispatch:
+    inputs:
+      season:
+        description: "Season to sync (leave blank for the current season)"
+        required: false
+        default: ""
+      backfill:
+        description: "Past season: refetch every week (standings stay in history.json)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -17,6 +28,11 @@ permissions:
 concurrency:
   group: sync-espn
   cancel-in-progress: false
+
+env:
+  ESPN_LEAGUE_ID: "52568337"
+  # The current season. Bump this (and nothing else) when rolling over.
+  ESPN_SEASON_ID: "2026"
 
 jobs:
   sync:
@@ -30,22 +46,27 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Fetch latest 2026 ESPN data
+      - name: Fetch ESPN data
         env:
-          ESPN_LEAGUE_ID: "52568337"
-          ESPN_SEASON_ID: "2026"
           ESPN_S2: ${{ secrets.ESPN_S2 }}
           SWID: ${{ secrets.SWID }}
-        run: python scripts/sync_espn.py
+          SEASON_INPUT: ${{ inputs.season }}
+          BACKFILL_INPUT: ${{ inputs.backfill }}
+        run: |
+          args=()
+          if [ -n "$SEASON_INPUT" ]; then args+=(--season "$SEASON_INPUT"); fi
+          if [ "$BACKFILL_INPUT" = "true" ]; then args+=(--backfill); fi
+          python scripts/sync_espn.py "${args[@]}"
 
-      - name: Commit & push updated standings
+      - name: Commit & push updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/2026.json
+          git add data/
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "chore: auto-sync 2026 ESPN standings & matchups"
+            git commit -m "chore: auto-sync ESPN league data"
+            git pull --rebase
             git push
           fi

@@ -1,0 +1,8421 @@
+{
+ "seasonId": 2023,
+ "syncedAt": "2026-11-23T04:21:04Z",
+ "settings": {
+  "teams": 10,
+  "draftType": "AUCTION",
+  "auctionBudget": 200,
+  "keeperCount": 0,
+  "draftDate": 1693156500000,
+  "faabBudget": 100,
+  "minBid": 1,
+  "waiverHours": 24,
+  "tradeDeadline": 1701277200000,
+  "tradeReviewHours": 24,
+  "vetoVotesRequired": 0,
+  "regularSeasonWeeks": 14,
+  "playoffTeams": 6,
+  "seedingTiebreak": "TOTAL_POINTS_SCORED",
+  "lineup": [
+   {
+    "slot": "QB",
+    "count": 1
+   },
+   {
+    "slot": "RB",
+    "count": 2
+   },
+   {
+    "slot": "WR",
+    "count": 2
+   },
+   {
+    "slot": "TE",
+    "count": 1
+   },
+   {
+    "slot": "D/ST",
+    "count": 1
+   },
+   {
+    "slot": "K",
+    "count": 1
+   },
+   {
+    "slot": "Bench",
+    "count": 6
+   },
+   {
+    "slot": "FLEX",
+    "count": 1
+   }
+  ],
+  "positionCaps": {
+   "QB": 4,
+   "RB": 8,
+   "WR": 8,
+   "TE": 4,
+   "K": 3,
+   "D/ST": 3
+  },
+  "scoring": [
+   {
+    "statId": 1,
+    "cat": "Passing",
+    "label": "Each Pass Completed",
+    "pts": 0.25
+   },
+   {
+    "statId": 3,
+    "cat": "Passing",
+    "label": "Passing Yards",
+    "pts": 0.04
+   },
+   {
+    "statId": 4,
+    "cat": "Passing",
+    "label": "TD Pass",
+    "pts": 4.0
+   },
+   {
+    "statId": 15,
+    "cat": "Passing",
+    "label": "40+ Yard TD Pass Bonus",
+    "pts": 1.0
+   },
+   {
+    "statId": 16,
+    "cat": "Passing",
+    "label": "50+ Yard TD Pass Bonus",
+    "pts": 1.0
+   },
+   {
+    "statId": 17,
+    "cat": "Passing",
+    "label": "300–399 Yard Passing Game",
+    "pts": 1.0
+   },
+   {
+    "statId": 18,
+    "cat": "Passing",
+    "label": "400+ Yard Passing Game",
+    "pts": 7.0
+   },
+   {
+    "statId": 19,
+    "cat": "Passing",
+    "label": "2-Pt Passing Conversion",
+    "pts": 2.0
+   },
+   {
+    "statId": 20,
+    "cat": "Passing",
+    "label": "Interception Thrown",
+    "pts": -2.0
+   },
+   {
+    "statId": 24,
+    "cat": "Rushing",
+    "label": "Rushing Yards",
+    "pts": 0.1
+   },
+   {
+    "statId": 25,
+    "cat": "Rushing",
+    "label": "TD Rush",
+    "pts": 6.0
+   },
+   {
+    "statId": 26,
+    "cat": "Rushing",
+    "label": "2-Pt Rushing Conversion",
+    "pts": 2.0
+   },
+   {
+    "statId": 35,
+    "cat": "Rushing",
+    "label": "40+ Yard TD Rush Bonus",
+    "pts": 1.0
+   },
+   {
+    "statId": 36,
+    "cat": "Rushing",
+    "label": "50+ Yard TD Rush Bonus",
+    "pts": 1.0
+   },
+   {
+    "statId": 37,
+    "cat": "Rushing",
+    "label": "100–199 Yard Rushing Game",
+    "pts": 1.0
+   },
+   {
+    "statId": 38,
+    "cat": "Rushing",
+    "label": "200+ Yard Rushing Game",
+    "pts": 2.0
+   },
+   {
+    "statId": 42,
+    "cat": "Receiving",
+    "label": "Receiving Yards",
+    "pts": 0.1
+   },
+   {
+    "statId": 43,
+    "cat": "Receiving",
+    "label": "TD Reception",
+    "pts": 6.0
+   },
+   {
+    "statId": 44,
+    "cat": "Receiving",
+    "label": "2-Pt Receiving Conversion",
+    "pts": 2.0
+   },
+   {
+    "statId": 45,
+    "cat": "Receiving",
+    "label": "40+ Yard TD Reception Bonus",
+    "pts": 1.0
+   },
+   {
+    "statId": 46,
+    "cat": "Receiving",
+    "label": "50+ Yard TD Reception Bonus",
+    "pts": 1.0
+   },
+   {
+    "statId": 53,
+    "cat": "Receiving",
+    "label": "Each Reception",
+    "pts": 1.0
+   },
+   {
+    "statId": 56,
+    "cat": "Receiving",
+    "label": "100–199 Yard Receiving Game",
+    "pts": 3.0
+   },
+   {
+    "statId": 57,
+    "cat": "Receiving",
+    "label": "200+ Yard Receiving Game",
+    "pts": 4.0
+   },
+   {
+    "statId": 63,
+    "cat": "Misc",
+    "label": "Fumble Recovered for TD",
+    "pts": 6.0
+   },
+   {
+    "statId": 72,
+    "cat": "Misc",
+    "label": "Fumble Lost",
+    "pts": -2.0
+   },
+   {
+    "statId": 79,
+    "cat": "Kicking",
+    "label": "FG Missed (40–49 yds)",
+    "pts": -1.0
+   },
+   {
+    "statId": 82,
+    "cat": "Kicking",
+    "label": "FG Missed (0–39 yds)",
+    "pts": -1.0
+   },
+   {
+    "statId": 83,
+    "cat": "Kicking",
+    "label": "FG Made",
+    "pts": 3.0
+   },
+   {
+    "statId": 85,
+    "cat": "Kicking",
+    "label": "FG Missed",
+    "pts": -1.0
+   },
+   {
+    "statId": 86,
+    "cat": "Kicking",
+    "label": "PAT Made",
+    "pts": 1.0
+   },
+   {
+    "statId": 88,
+    "cat": "Kicking",
+    "label": "PAT Missed",
+    "pts": -1.0
+   },
+   {
+    "statId": 198,
+    "cat": "Kicking",
+    "label": "FG Made (50–59 yds) Bonus",
+    "pts": 1.0
+   },
+   {
+    "statId": 201,
+    "cat": "Kicking",
+    "label": "FG Made (60+ yds) Bonus",
+    "pts": 2.0
+   },
+   {
+    "statId": 89,
+    "cat": "D/ST",
+    "label": "0 Points Allowed",
+    "pts": 5.0
+   },
+   {
+    "statId": 90,
+    "cat": "D/ST",
+    "label": "1–6 Points Allowed",
+    "pts": 4.0
+   },
+   {
+    "statId": 91,
+    "cat": "D/ST",
+    "label": "7–13 Points Allowed",
+    "pts": 3.0
+   },
+   {
+    "statId": 92,
+    "cat": "D/ST",
+    "label": "14–17 Points Allowed",
+    "pts": 1.0
+   },
+   {
+    "statId": 93,
+    "cat": "D/ST",
+    "label": "Blocked Punt/FG Return TD",
+    "pts": 6.0
+   },
+   {
+    "statId": 95,
+    "cat": "D/ST",
+    "label": "Interception",
+    "pts": 2.0
+   },
+   {
+    "statId": 96,
+    "cat": "D/ST",
+    "label": "Fumble Recovered",
+    "pts": 2.0
+   },
+   {
+    "statId": 97,
+    "cat": "D/ST",
+    "label": "Blocked Punt, PAT or FG",
+    "pts": 2.0
+   },
+   {
+    "statId": 98,
+    "cat": "D/ST",
+    "label": "Safety",
+    "pts": 2.0
+   },
+   {
+    "statId": 99,
+    "cat": "D/ST",
+    "label": "Sack",
+    "pts": 1.0
+   },
+   {
+    "statId": 101,
+    "cat": "D/ST",
+    "label": "Kickoff Return TD",
+    "pts": 6.0
+   },
+   {
+    "statId": 102,
+    "cat": "D/ST",
+    "label": "Punt Return TD",
+    "pts": 6.0
+   },
+   {
+    "statId": 103,
+    "cat": "D/ST",
+    "label": "Interception Return TD",
+    "pts": 6.0
+   },
+   {
+    "statId": 104,
+    "cat": "D/ST",
+    "label": "Fumble Return TD",
+    "pts": 6.0
+   },
+   {
+    "statId": 123,
+    "cat": "D/ST",
+    "label": "28–34 Points Allowed",
+    "pts": -1.0
+   },
+   {
+    "statId": 124,
+    "cat": "D/ST",
+    "label": "35–45 Points Allowed",
+    "pts": -3.0
+   },
+   {
+    "statId": 125,
+    "cat": "D/ST",
+    "label": "46+ Points Allowed",
+    "pts": -5.0
+   },
+   {
+    "statId": 128,
+    "cat": "D/ST",
+    "label": "Under 100 Yards Allowed",
+    "pts": 5.0
+   },
+   {
+    "statId": 129,
+    "cat": "D/ST",
+    "label": "100–199 Yards Allowed",
+    "pts": 3.0
+   },
+   {
+    "statId": 130,
+    "cat": "D/ST",
+    "label": "200–299 Yards Allowed",
+    "pts": 2.0
+   },
+   {
+    "statId": 132,
+    "cat": "D/ST",
+    "label": "350–399 Yards Allowed",
+    "pts": -1.0
+   },
+   {
+    "statId": 133,
+    "cat": "D/ST",
+    "label": "400–449 Yards Allowed",
+    "pts": -3.0
+   },
+   {
+    "statId": 134,
+    "cat": "D/ST",
+    "label": "450–499 Yards Allowed",
+    "pts": -5.0
+   },
+   {
+    "statId": 135,
+    "cat": "D/ST",
+    "label": "500–549 Yards Allowed",
+    "pts": -6.0
+   },
+   {
+    "statId": 136,
+    "cat": "D/ST",
+    "label": "550+ Yards Allowed",
+    "pts": -7.0
+   },
+   {
+    "statId": 206,
+    "cat": "D/ST",
+    "label": "2-Pt Return",
+    "pts": 2.0
+   },
+   {
+    "statId": 209,
+    "cat": "D/ST",
+    "label": "1-Pt Safety",
+    "pts": 1.0
+   }
+  ]
+ },
+ "draft": [
+  {
+   "pick": 1,
+   "teamId": 10,
+   "playerId": 4262921,
+   "bid": 59,
+   "keeper": false
+  },
+  {
+   "pick": 2,
+   "teamId": 5,
+   "playerId": 4362628,
+   "bid": 54,
+   "keeper": false
+  },
+  {
+   "pick": 3,
+   "teamId": 7,
+   "playerId": 3068267,
+   "bid": 55,
+   "keeper": false
+  },
+  {
+   "pick": 4,
+   "teamId": 8,
+   "playerId": 3116406,
+   "bid": 56,
+   "keeper": false
+  },
+  {
+   "pick": 5,
+   "teamId": 1,
+   "playerId": 15847,
+   "bid": 58,
+   "keeper": false
+  },
+  {
+   "pick": 6,
+   "teamId": 4,
+   "playerId": 3117251,
+   "bid": 58,
+   "keeper": false
+  },
+  {
+   "pick": 7,
+   "teamId": 3,
+   "playerId": 4048244,
+   "bid": 45,
+   "keeper": false
+  },
+  {
+   "pick": 8,
+   "teamId": 6,
+   "playerId": 3043078,
+   "bid": 51,
+   "keeper": false
+  },
+  {
+   "pick": 9,
+   "teamId": 10,
+   "playerId": 3128720,
+   "bid": 49,
+   "keeper": false
+  },
+  {
+   "pick": 10,
+   "teamId": 5,
+   "playerId": 3916148,
+   "bid": 48,
+   "keeper": false
+  },
+  {
+   "pick": 11,
+   "teamId": 9,
+   "playerId": 3929630,
+   "bid": 48,
+   "keeper": false
+  },
+  {
+   "pick": 12,
+   "teamId": 10,
+   "playerId": 4038941,
+   "bid": 14,
+   "keeper": false
+  },
+  {
+   "pick": 13,
+   "teamId": 2,
+   "playerId": 4430807,
+   "bid": 50,
+   "keeper": false
+  },
+  {
+   "pick": 14,
+   "teamId": 8,
+   "playerId": 16800,
+   "bid": 41,
+   "keeper": false
+  },
+  {
+   "pick": 15,
+   "teamId": 3,
+   "playerId": 3139477,
+   "bid": 39,
+   "keeper": false
+  },
+  {
+   "pick": 16,
+   "teamId": 9,
+   "playerId": 2977187,
+   "bid": 47,
+   "keeper": false
+  },
+  {
+   "pick": 17,
+   "teamId": 1,
+   "playerId": 4374302,
+   "bid": 50,
+   "keeper": false
+  },
+  {
+   "pick": 18,
+   "teamId": 5,
+   "playerId": 4040715,
+   "bid": 37,
+   "keeper": false
+  },
+  {
+   "pick": 19,
+   "teamId": 6,
+   "playerId": 4360310,
+   "bid": 10,
+   "keeper": false
+  },
+  {
+   "pick": 20,
+   "teamId": 5,
+   "playerId": 14881,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 21,
+   "teamId": 4,
+   "playerId": 4569618,
+   "bid": 41,
+   "keeper": false
+  },
+  {
+   "pick": 22,
+   "teamId": 3,
+   "playerId": 2577327,
+   "bid": 16,
+   "keeper": false
+  },
+  {
+   "pick": 23,
+   "teamId": 6,
+   "playerId": 4047365,
+   "bid": 36,
+   "keeper": false
+  },
+  {
+   "pick": 24,
+   "teamId": 4,
+   "playerId": 3040151,
+   "bid": 15,
+   "keeper": false
+  },
+  {
+   "pick": 25,
+   "teamId": 2,
+   "playerId": 2976212,
+   "bid": 48,
+   "keeper": false
+  },
+  {
+   "pick": 26,
+   "teamId": 2,
+   "playerId": 4241389,
+   "bid": 35,
+   "keeper": false
+  },
+  {
+   "pick": 27,
+   "teamId": 6,
+   "playerId": 4239993,
+   "bid": 33,
+   "keeper": false
+  },
+  {
+   "pick": 28,
+   "teamId": 7,
+   "playerId": 3916387,
+   "bid": 20,
+   "keeper": false
+  },
+  {
+   "pick": 29,
+   "teamId": 1,
+   "playerId": 4047646,
+   "bid": 33,
+   "keeper": false
+  },
+  {
+   "pick": 30,
+   "teamId": 4,
+   "playerId": 3116385,
+   "bid": 29,
+   "keeper": false
+  },
+  {
+   "pick": 31,
+   "teamId": 6,
+   "playerId": 3126486,
+   "bid": 19,
+   "keeper": false
+  },
+  {
+   "pick": 32,
+   "teamId": 10,
+   "playerId": 4427366,
+   "bid": 20,
+   "keeper": false
+  },
+  {
+   "pick": 33,
+   "teamId": 1,
+   "playerId": 3918298,
+   "bid": 47,
+   "keeper": false
+  },
+  {
+   "pick": 34,
+   "teamId": 7,
+   "playerId": 4429795,
+   "bid": 29,
+   "keeper": false
+  },
+  {
+   "pick": 35,
+   "teamId": 2,
+   "playerId": 4361370,
+   "bid": 33,
+   "keeper": false
+  },
+  {
+   "pick": 36,
+   "teamId": 5,
+   "playerId": 4242335,
+   "bid": 25,
+   "keeper": false
+  },
+  {
+   "pick": 37,
+   "teamId": 8,
+   "playerId": 3042519,
+   "bid": 28,
+   "keeper": false
+  },
+  {
+   "pick": 38,
+   "teamId": 8,
+   "playerId": 4372016,
+   "bid": 25,
+   "keeper": false
+  },
+  {
+   "pick": 39,
+   "teamId": 6,
+   "playerId": 3116365,
+   "bid": 22,
+   "keeper": false
+  },
+  {
+   "pick": 40,
+   "teamId": 9,
+   "playerId": 3121023,
+   "bid": 13,
+   "keeper": false
+  },
+  {
+   "pick": 41,
+   "teamId": 7,
+   "playerId": 4047650,
+   "bid": 20,
+   "keeper": false
+  },
+  {
+   "pick": 42,
+   "teamId": 10,
+   "playerId": 15795,
+   "bid": 20,
+   "keeper": false
+  },
+  {
+   "pick": 43,
+   "teamId": 4,
+   "playerId": 4241478,
+   "bid": 24,
+   "keeper": false
+  },
+  {
+   "pick": 44,
+   "teamId": 8,
+   "playerId": 4241457,
+   "bid": 25,
+   "keeper": false
+  },
+  {
+   "pick": 45,
+   "teamId": 7,
+   "playerId": 4036133,
+   "bid": 13,
+   "keeper": false
+  },
+  {
+   "pick": 46,
+   "teamId": 2,
+   "playerId": 4569173,
+   "bid": 18,
+   "keeper": false
+  },
+  {
+   "pick": 47,
+   "teamId": 3,
+   "playerId": 4239996,
+   "bid": 23,
+   "keeper": false
+  },
+  {
+   "pick": 48,
+   "teamId": 4,
+   "playerId": 3915511,
+   "bid": 17,
+   "keeper": false
+  },
+  {
+   "pick": 49,
+   "teamId": 6,
+   "playerId": 4430878,
+   "bid": 12,
+   "keeper": false
+  },
+  {
+   "pick": 50,
+   "teamId": 7,
+   "playerId": 4248528,
+   "bid": 20,
+   "keeper": false
+  },
+  {
+   "pick": 51,
+   "teamId": 9,
+   "playerId": 3054850,
+   "bid": 11,
+   "keeper": false
+  },
+  {
+   "pick": 52,
+   "teamId": 5,
+   "playerId": 4385690,
+   "bid": 5,
+   "keeper": false
+  },
+  {
+   "pick": 53,
+   "teamId": 3,
+   "playerId": 4697815,
+   "bid": 9,
+   "keeper": false
+  },
+  {
+   "pick": 54,
+   "teamId": 10,
+   "playerId": 2576925,
+   "bid": 9,
+   "keeper": false
+  },
+  {
+   "pick": 55,
+   "teamId": 7,
+   "playerId": 3925357,
+   "bid": 13,
+   "keeper": false
+  },
+  {
+   "pick": 56,
+   "teamId": 9,
+   "playerId": 4362887,
+   "bid": 10,
+   "keeper": false
+  },
+  {
+   "pick": 57,
+   "teamId": 7,
+   "playerId": 2976499,
+   "bid": 19,
+   "keeper": false
+  },
+  {
+   "pick": 58,
+   "teamId": 9,
+   "playerId": 15818,
+   "bid": 16,
+   "keeper": false
+  },
+  {
+   "pick": 59,
+   "teamId": 3,
+   "playerId": 4567048,
+   "bid": 9,
+   "keeper": false
+  },
+  {
+   "pick": 60,
+   "teamId": 9,
+   "playerId": 3116165,
+   "bid": 10,
+   "keeper": false
+  },
+  {
+   "pick": 61,
+   "teamId": 5,
+   "playerId": 3932905,
+   "bid": 7,
+   "keeper": false
+  },
+  {
+   "pick": 62,
+   "teamId": 3,
+   "playerId": 2976316,
+   "bid": 5,
+   "keeper": false
+  },
+  {
+   "pick": 63,
+   "teamId": 3,
+   "playerId": 3045138,
+   "bid": 6,
+   "keeper": false
+  },
+  {
+   "pick": 64,
+   "teamId": 3,
+   "playerId": 3123076,
+   "bid": 4,
+   "keeper": false
+  },
+  {
+   "pick": 65,
+   "teamId": 9,
+   "playerId": 15683,
+   "bid": 6,
+   "keeper": false
+  },
+  {
+   "pick": 66,
+   "teamId": 3,
+   "playerId": 3122840,
+   "bid": 8,
+   "keeper": false
+  },
+  {
+   "pick": 67,
+   "teamId": 3,
+   "playerId": 4035538,
+   "bid": 7,
+   "keeper": false
+  },
+  {
+   "pick": 68,
+   "teamId": 4,
+   "playerId": -16025,
+   "bid": 6,
+   "keeper": false
+  },
+  {
+   "pick": 69,
+   "teamId": 6,
+   "playerId": 4045163,
+   "bid": 8,
+   "keeper": false
+  },
+  {
+   "pick": 70,
+   "teamId": 3,
+   "playerId": 3050478,
+   "bid": 3,
+   "keeper": false
+  },
+  {
+   "pick": 71,
+   "teamId": 8,
+   "playerId": 4426502,
+   "bid": 5,
+   "keeper": false
+  },
+  {
+   "pick": 72,
+   "teamId": 3,
+   "playerId": 3895856,
+   "bid": 7,
+   "keeper": false
+  },
+  {
+   "pick": 73,
+   "teamId": 5,
+   "playerId": 4360238,
+   "bid": 7,
+   "keeper": false
+  },
+  {
+   "pick": 74,
+   "teamId": 8,
+   "playerId": 8439,
+   "bid": 6,
+   "keeper": false
+  },
+  {
+   "pick": 75,
+   "teamId": 8,
+   "playerId": 4429084,
+   "bid": 3,
+   "keeper": false
+  },
+  {
+   "pick": 76,
+   "teamId": 2,
+   "playerId": 2577417,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 77,
+   "teamId": 3,
+   "playerId": -16023,
+   "bid": 4,
+   "keeper": false
+  },
+  {
+   "pick": 78,
+   "teamId": 3,
+   "playerId": -16002,
+   "bid": 4,
+   "keeper": false
+  },
+  {
+   "pick": 79,
+   "teamId": 10,
+   "playerId": 4361529,
+   "bid": 5,
+   "keeper": false
+  },
+  {
+   "pick": 80,
+   "teamId": 7,
+   "playerId": 3915416,
+   "bid": 4,
+   "keeper": false
+  },
+  {
+   "pick": 81,
+   "teamId": 2,
+   "playerId": 3045147,
+   "bid": 6,
+   "keeper": false
+  },
+  {
+   "pick": 82,
+   "teamId": 10,
+   "playerId": 4360438,
+   "bid": 4,
+   "keeper": false
+  },
+  {
+   "pick": 83,
+   "teamId": 10,
+   "playerId": 3121422,
+   "bid": 5,
+   "keeper": false
+  },
+  {
+   "pick": 84,
+   "teamId": 9,
+   "playerId": 4241474,
+   "bid": 4,
+   "keeper": false
+  },
+  {
+   "pick": 85,
+   "teamId": 8,
+   "playerId": -16008,
+   "bid": 2,
+   "keeper": false
+  },
+  {
+   "pick": 86,
+   "teamId": 5,
+   "playerId": 4035687,
+   "bid": 4,
+   "keeper": false
+  },
+  {
+   "pick": 87,
+   "teamId": 9,
+   "playerId": 16737,
+   "bid": 5,
+   "keeper": false
+  },
+  {
+   "pick": 88,
+   "teamId": 9,
+   "playerId": 4426354,
+   "bid": 5,
+   "keeper": false
+  },
+  {
+   "pick": 89,
+   "teamId": 6,
+   "playerId": -16021,
+   "bid": 3,
+   "keeper": false
+  },
+  {
+   "pick": 90,
+   "teamId": 5,
+   "playerId": 4379399,
+   "bid": 3,
+   "keeper": false
+  },
+  {
+   "pick": 91,
+   "teamId": 5,
+   "playerId": 3055899,
+   "bid": 2,
+   "keeper": false
+  },
+  {
+   "pick": 92,
+   "teamId": 4,
+   "playerId": 4430191,
+   "bid": 3,
+   "keeper": false
+  },
+  {
+   "pick": 93,
+   "teamId": 5,
+   "playerId": 3918639,
+   "bid": 2,
+   "keeper": false
+  },
+  {
+   "pick": 94,
+   "teamId": 9,
+   "playerId": -16020,
+   "bid": 3,
+   "keeper": false
+  },
+  {
+   "pick": 95,
+   "teamId": 10,
+   "playerId": 4361411,
+   "bid": 3,
+   "keeper": false
+  },
+  {
+   "pick": 96,
+   "teamId": 9,
+   "playerId": 4240021,
+   "bid": 3,
+   "keeper": false
+  },
+  {
+   "pick": 97,
+   "teamId": 10,
+   "playerId": 4361579,
+   "bid": 3,
+   "keeper": false
+  },
+  {
+   "pick": 98,
+   "teamId": 10,
+   "playerId": -16006,
+   "bid": 3,
+   "keeper": false
+  },
+  {
+   "pick": 99,
+   "teamId": 9,
+   "playerId": 4360294,
+   "bid": 3,
+   "keeper": false
+  },
+  {
+   "pick": 100,
+   "teamId": 10,
+   "playerId": 4360234,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 101,
+   "teamId": 5,
+   "playerId": 4243537,
+   "bid": 3,
+   "keeper": false
+  },
+  {
+   "pick": 102,
+   "teamId": 8,
+   "playerId": 4241985,
+   "bid": 3,
+   "keeper": false
+  },
+  {
+   "pick": 103,
+   "teamId": 1,
+   "playerId": 2980453,
+   "bid": 2,
+   "keeper": false
+  },
+  {
+   "pick": 104,
+   "teamId": 10,
+   "playerId": 4241463,
+   "bid": 2,
+   "keeper": false
+  },
+  {
+   "pick": 105,
+   "teamId": 9,
+   "playerId": 4258173,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 106,
+   "teamId": 6,
+   "playerId": 4241372,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 107,
+   "teamId": 5,
+   "playerId": -16012,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 108,
+   "teamId": 1,
+   "playerId": 3116593,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 109,
+   "teamId": 10,
+   "playerId": 16757,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 110,
+   "teamId": 4,
+   "playerId": 4239934,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 111,
+   "teamId": 8,
+   "playerId": 3051876,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 112,
+   "teamId": 7,
+   "playerId": 3046779,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 113,
+   "teamId": 7,
+   "playerId": 4360248,
+   "bid": 2,
+   "keeper": false
+  },
+  {
+   "pick": 114,
+   "teamId": 2,
+   "playerId": 4429205,
+   "bid": 2,
+   "keeper": false
+  },
+  {
+   "pick": 115,
+   "teamId": 8,
+   "playerId": 4035886,
+   "bid": 2,
+   "keeper": false
+  },
+  {
+   "pick": 116,
+   "teamId": 1,
+   "playerId": 4259545,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 117,
+   "teamId": 4,
+   "playerId": 3917232,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 118,
+   "teamId": 8,
+   "playerId": 3120348,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 119,
+   "teamId": 7,
+   "playerId": 3049899,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 120,
+   "teamId": 2,
+   "playerId": 4361409,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 121,
+   "teamId": 6,
+   "playerId": 4429615,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 122,
+   "teamId": 5,
+   "playerId": 16731,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 123,
+   "teamId": 1,
+   "playerId": 3116389,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 124,
+   "teamId": 4,
+   "playerId": 3117256,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 125,
+   "teamId": 8,
+   "playerId": 16733,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 126,
+   "teamId": 7,
+   "playerId": 3051392,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 127,
+   "teamId": 2,
+   "playerId": 4258595,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 128,
+   "teamId": 6,
+   "playerId": 3051909,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 129,
+   "teamId": 1,
+   "playerId": 4429025,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 130,
+   "teamId": 4,
+   "playerId": 3139925,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 131,
+   "teamId": 8,
+   "playerId": 4362081,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 132,
+   "teamId": 7,
+   "playerId": -16018,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 133,
+   "teamId": 2,
+   "playerId": 4567156,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 134,
+   "teamId": 6,
+   "playerId": 3916433,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 135,
+   "teamId": 1,
+   "playerId": 16460,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 136,
+   "teamId": 4,
+   "playerId": 15864,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 137,
+   "teamId": 7,
+   "playerId": 3128429,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 138,
+   "teamId": 2,
+   "playerId": 4241479,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 139,
+   "teamId": 6,
+   "playerId": 3122976,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 140,
+   "teamId": 1,
+   "playerId": 4426385,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 141,
+   "teamId": 4,
+   "playerId": 3916566,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 142,
+   "teamId": 2,
+   "playerId": 16782,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 143,
+   "teamId": 6,
+   "playerId": 14880,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 144,
+   "teamId": 1,
+   "playerId": 4240600,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 145,
+   "teamId": 4,
+   "playerId": 4373626,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 146,
+   "teamId": 2,
+   "playerId": 16486,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 147,
+   "teamId": 1,
+   "playerId": -16015,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 148,
+   "teamId": 2,
+   "playerId": -16005,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 149,
+   "teamId": 1,
+   "playerId": 4372066,
+   "bid": 1,
+   "keeper": false
+  },
+  {
+   "pick": 150,
+   "teamId": 1,
+   "playerId": 4372414,
+   "bid": 1,
+   "keeper": false
+  }
+ ],
+ "rosters": {
+  "6": [
+   12483,
+   3116385,
+   4040761,
+   4241389,
+   3126486,
+   4258595,
+   -16002,
+   3953687,
+   4429615,
+   4372019,
+   3918639,
+   4362628,
+   4429205,
+   4360310,
+   3116365
+  ],
+  "9": [
+   3886812,
+   3929630,
+   3054850,
+   4258173,
+   16737,
+   3123076,
+   -16033,
+   15683,
+   4426515,
+   4426354,
+   4569987,
+   3046779,
+   2977187,
+   4361579,
+   15818
+  ],
+  "1": [
+   3918298,
+   4361529,
+   4241416,
+   4374302,
+   4047646,
+   15847,
+   -16011,
+   4362081,
+   4429160,
+   3051926,
+   4426502,
+   4426388,
+   4430878,
+   4361432,
+   4366031
+  ],
+  "7": [
+   2577417,
+   4697815,
+   4259545,
+   15795,
+   3916433,
+   4430027,
+   -16034,
+   4372066,
+   3925357,
+   4361411,
+   3116389,
+   3128429,
+   4241372,
+   3128720,
+   4372016
+  ],
+  "10": [
+   3916387,
+   4427366,
+   4430807,
+   4360438,
+   4262921,
+   4361307,
+   -16021,
+   4360234,
+   4047650,
+   3052587,
+   3116165,
+   4426385,
+   3068267,
+   4036133,
+   4038941
+  ],
+  "5": [
+   4040715,
+   4430737,
+   4361777,
+   3116406,
+   4035687,
+   4242355,
+   -16003,
+   3055899,
+   4362249,
+   4432577,
+   3121023,
+   3916148,
+   4239993,
+   2976499,
+   4047365
+  ],
+  "4": [
+   4362887,
+   3045147,
+   3117251,
+   4428331,
+   4569618,
+   3040151,
+   -16005,
+   3049899,
+   4242431,
+   4036378,
+   -16012,
+   4048244,
+   4432620,
+   3915511,
+   3059722
+  ],
+  "2": [
+   3917315,
+   3042519,
+   3043078,
+   2976212,
+   4361370,
+   3051876,
+   -16025,
+   3123052,
+   3915416,
+   4241479,
+   4241474,
+   2576925,
+   2577327,
+   4569173,
+   4429084
+  ],
+  "8": [
+   -16020,
+   16800,
+   4239996,
+   4241457,
+   4361050,
+   4242335,
+   3139477,
+   3121422,
+   2468609,
+   4427095,
+   4429795,
+   10621,
+   3121409,
+   4035676,
+   4248528
+  ],
+  "3": [
+   -16030,
+   4361741,
+   3929645,
+   4567048,
+   4035538,
+   16460,
+   3050478,
+   4241478,
+   4379399,
+   4045163,
+   4243537,
+   3117256,
+   -16023,
+   3895856,
+   2576414
+  ]
+ },
+ "transactions": [
+  {
+   "id": "561a9756-5a7f-496b-aa26-023d44ef41bc",
+   "week": 18,
+   "date": 1704302308993,
+   "type": "ADD",
+   "teamId": 10,
+   "bid": 0,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16021
+    }
+   ]
+  },
+  {
+   "id": "e559ebe9-9bd6-4339-8493-2dda1b87c89b",
+   "week": 18,
+   "date": 1704302305519,
+   "type": "ADD",
+   "teamId": 10,
+   "bid": 0,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3052587
+    }
+   ]
+  },
+  {
+   "id": "dde13316-7480-485f-be0d-cd208fbc2cc0",
+   "week": 18,
+   "date": 1704302298767,
+   "type": "ADD",
+   "teamId": 10,
+   "bid": 0,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4360234
+    }
+   ]
+  },
+  {
+   "id": "8632bf9e-a42a-40bb-a7d9-8b63c6e7267f",
+   "week": 18,
+   "date": 1704301820416,
+   "type": "DROP",
+   "teamId": 10,
+   "bid": 0,
+   "items": [
+    {
+     "type": "DROP",
+     "playerId": 3932905
+    },
+    {
+     "type": "DROP",
+     "playerId": 4385690
+    },
+    {
+     "type": "DROP",
+     "playerId": 4426386
+    }
+   ]
+  },
+  {
+   "id": "54d63fc8-dcee-456a-9b17-cc6bb7bf8df2",
+   "week": 18,
+   "date": 1704301256013,
+   "type": "DROP",
+   "teamId": 8,
+   "bid": 0,
+   "items": [
+    {
+     "type": "DROP",
+     "playerId": 4248528
+    }
+   ]
+  },
+  {
+   "id": "51facbef-eda3-411a-b183-8bfcb899907e",
+   "week": 18,
+   "date": 1704301220371,
+   "type": "DROP",
+   "teamId": 8,
+   "bid": 0,
+   "items": [
+    {
+     "type": "DROP",
+     "playerId": 4427095
+    }
+   ]
+  },
+  {
+   "id": "14cc67b2-e361-4a7d-a4b3-67c190b44cbc",
+   "week": 18,
+   "date": 1704301215424,
+   "type": "WAIVER",
+   "teamId": 10,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4426386
+    },
+    {
+     "type": "DROP",
+     "playerId": 4360234
+    }
+   ]
+  },
+  {
+   "id": "6180300b-0ff0-4553-9496-6debf49fef30",
+   "week": 18,
+   "date": 1704301215423,
+   "type": "WAIVER",
+   "teamId": 10,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3932905
+    },
+    {
+     "type": "DROP",
+     "playerId": -16021
+    }
+   ]
+  },
+  {
+   "id": "56799467-ccc7-402c-8213-720b96788ff5",
+   "week": 18,
+   "date": 1704301215422,
+   "type": "WAIVER",
+   "teamId": 10,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4385690
+    },
+    {
+     "type": "DROP",
+     "playerId": 3052587
+    }
+   ]
+  },
+  {
+   "id": "adf1a634-e988-40c0-b13f-f2e8cffc1810",
+   "week": 17,
+   "date": 1704042023457,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3918639
+    },
+    {
+     "type": "DROP",
+     "playerId": 4428557
+    }
+   ]
+  },
+  {
+   "id": "dcdca21d-3c0e-4839-80ff-d94d7b589edd",
+   "week": 17,
+   "date": 1703955620209,
+   "type": "WAIVER",
+   "teamId": 5,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4361777
+    },
+    {
+     "type": "DROP",
+     "playerId": -16018
+    }
+   ]
+  },
+  {
+   "id": "33bf27e9-4ca1-4a22-a57f-2d77e6315004",
+   "week": 17,
+   "date": 1703782811777,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 3,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 12483
+    },
+    {
+     "type": "DROP",
+     "playerId": 14881
+    }
+   ]
+  },
+  {
+   "id": "b13fa84e-5d34-45e8-ae10-d0209544fb55",
+   "week": 17,
+   "date": 1703782811776,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 13,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3116365
+    },
+    {
+     "type": "DROP",
+     "playerId": 4239934
+    }
+   ]
+  },
+  {
+   "id": "314901bb-32a5-4936-9824-062081d32595",
+   "week": 17,
+   "date": 1703696432656,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4428557
+    },
+    {
+     "type": "DROP",
+     "playerId": 3116365
+    }
+   ]
+  },
+  {
+   "id": "250533c1-9af3-4c89-8146-55b9edf55520",
+   "week": 17,
+   "date": 1703696432655,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 14881
+    },
+    {
+     "type": "DROP",
+     "playerId": 15864
+    }
+   ]
+  },
+  {
+   "id": "d0614d72-000c-4340-832f-379f621342b5",
+   "week": 17,
+   "date": 1703696432655,
+   "type": "WAIVER",
+   "teamId": 1,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4362081
+    },
+    {
+     "type": "DROP",
+     "playerId": 15965
+    }
+   ]
+  },
+  {
+   "id": "d78b1abd-a1c2-44d8-b629-fb0d5ead7a00",
+   "week": 17,
+   "date": 1703696432654,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16025
+    },
+    {
+     "type": "DROP",
+     "playerId": -16007
+    }
+   ]
+  },
+  {
+   "id": "c887350d-5a1b-481a-806b-870ac1bc6dbc",
+   "week": 16,
+   "date": 1703264422782,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3123052
+    },
+    {
+     "type": "DROP",
+     "playerId": 4249087
+    }
+   ]
+  },
+  {
+   "id": "e38c4334-6b38-4083-b497-8259edae331e",
+   "week": 16,
+   "date": 1703264422781,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4242431
+    },
+    {
+     "type": "DROP",
+     "playerId": 4688813
+    }
+   ]
+  },
+  {
+   "id": "5ced79f7-b168-4170-a8ac-acedf237b35b",
+   "week": 16,
+   "date": 1703178012130,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4429084
+    },
+    {
+     "type": "DROP",
+     "playerId": -16001
+    }
+   ]
+  },
+  {
+   "id": "a6324c84-7e51-4b1c-8b5c-d3d30ada15d5",
+   "week": 16,
+   "date": 1703178012129,
+   "type": "WAIVER",
+   "teamId": 1,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16011
+    },
+    {
+     "type": "DROP",
+     "playerId": -16015
+    }
+   ]
+  },
+  {
+   "id": "0b620e7c-6f0b-494f-9a0a-b20f4e3a5827",
+   "week": 16,
+   "date": 1703178012128,
+   "type": "WAIVER",
+   "teamId": 5,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16003
+    },
+    {
+     "type": "DROP",
+     "playerId": 11252
+    }
+   ]
+  },
+  {
+   "id": "73d51945-5dc6-49bf-835f-f55fdd679d6f",
+   "week": 16,
+   "date": 1703091626976,
+   "type": "WAIVER",
+   "teamId": 10,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4426385
+    },
+    {
+     "type": "DROP",
+     "playerId": -16025
+    }
+   ]
+  },
+  {
+   "id": "2c5984e1-6a0c-43ba-a7af-b076abdc4c61",
+   "week": 16,
+   "date": 1703091626976,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 15864
+    },
+    {
+     "type": "DROP",
+     "playerId": 4426875
+    }
+   ]
+  },
+  {
+   "id": "fbb4ba6a-a209-4d8f-97d7-200440f39284",
+   "week": 16,
+   "date": 1703091626975,
+   "type": "WAIVER",
+   "teamId": 10,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4038941
+    },
+    {
+     "type": "DROP",
+     "playerId": 16339
+    }
+   ]
+  },
+  {
+   "id": "f63c6935-c680-481c-842a-45196bb70ad5",
+   "week": 16,
+   "date": 1703091626975,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4432620
+    },
+    {
+     "type": "DROP",
+     "playerId": 4385690
+    }
+   ]
+  },
+  {
+   "id": "af944e9c-7133-4a26-a145-b064e3a7bda2",
+   "week": 16,
+   "date": 1703091626974,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 2576925
+    },
+    {
+     "type": "DROP",
+     "playerId": 3051392
+    }
+   ]
+  },
+  {
+   "id": "402de177-2339-4066-a18d-42c93db79871",
+   "week": 15,
+   "date": 1702832421904,
+   "type": "WAIVER",
+   "teamId": 5,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 11252
+    },
+    {
+     "type": "DROP",
+     "playerId": 16731
+    }
+   ]
+  },
+  {
+   "id": "a5a18ad0-2eea-423d-9f47-240ff01664c2",
+   "week": 15,
+   "date": 1702746034293,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16007
+    },
+    {
+     "type": "DROP",
+     "playerId": -16009
+    }
+   ]
+  },
+  {
+   "id": "1294b0ba-333c-4f4a-b5e9-f57a4fc07dab",
+   "week": 15,
+   "date": 1702573203789,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4036378
+    },
+    {
+     "type": "DROP",
+     "playerId": 15864
+    }
+   ]
+  },
+  {
+   "id": "f4108d68-02ea-4b96-9529-a98fbd772bab",
+   "week": 15,
+   "date": 1702486843849,
+   "type": "WAIVER",
+   "teamId": 10,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3052587
+    },
+    {
+     "type": "DROP",
+     "playerId": 4038941
+    }
+   ]
+  },
+  {
+   "id": "73eda122-fbac-43d0-a754-9bb7e4f8aeef",
+   "week": 15,
+   "date": 1702486843849,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4239934
+    },
+    {
+     "type": "DROP",
+     "playerId": 4036378
+    }
+   ]
+  },
+  {
+   "id": "ede81a65-582d-47cb-9221-86aac439e7cd",
+   "week": 15,
+   "date": 1702486843848,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4569173
+    },
+    {
+     "type": "DROP",
+     "playerId": 3932905
+    }
+   ]
+  },
+  {
+   "id": "1b265843-60c9-4989-a351-9f6ca06b3e0a",
+   "week": 15,
+   "date": 1702486843848,
+   "type": "WAIVER",
+   "teamId": 9,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3886812
+    }
+   ]
+  },
+  {
+   "id": "8fbdec4a-bd26-4c2b-ad38-22cd019eb244",
+   "week": 14,
+   "date": 1702227612487,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4361050
+    },
+    {
+     "type": "DROP",
+     "playerId": 8439
+    }
+   ]
+  },
+  {
+   "id": "222d54cc-c5be-4359-9942-6a5f4ed4eafb",
+   "week": 14,
+   "date": 1702141219935,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4362887
+    },
+    {
+     "type": "DROP",
+     "playerId": 3052587
+    }
+   ]
+  },
+  {
+   "id": "c91eb25e-1858-47e2-9420-0725d23f83d3",
+   "week": 14,
+   "date": 1701968413966,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3932905
+    },
+    {
+     "type": "DROP",
+     "playerId": 4569173
+    }
+   ]
+  },
+  {
+   "id": "e33a679d-3aab-4f0d-8e99-d5f8cb326793",
+   "week": 14,
+   "date": 1701968413965,
+   "type": "WAIVER",
+   "teamId": 7,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16034
+    },
+    {
+     "type": "DROP",
+     "playerId": -16006
+    }
+   ]
+  },
+  {
+   "id": "2588a4c2-b5ea-442e-b60d-e886fee39821",
+   "week": 14,
+   "date": 1701968413965,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16009
+    },
+    {
+     "type": "DROP",
+     "playerId": -16008
+    }
+   ]
+  },
+  {
+   "id": "ed13d6e5-52af-418c-a466-7fa1809b639d",
+   "week": 14,
+   "date": 1701968413964,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3059722
+    },
+    {
+     "type": "DROP",
+     "playerId": 3122976
+    }
+   ]
+  },
+  {
+   "id": "72fb6ca7-1718-4f89-94fe-1ce31b7904f1",
+   "week": 14,
+   "date": 1701882025984,
+   "type": "WAIVER",
+   "teamId": 1,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4361432
+    },
+    {
+     "type": "DROP",
+     "playerId": 14881
+    }
+   ]
+  },
+  {
+   "id": "c93921a8-add9-4548-b7f1-d0a11eb12a96",
+   "week": 14,
+   "date": 1701882025983,
+   "type": "WAIVER",
+   "teamId": 9,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 15683
+    },
+    {
+     "type": "DROP",
+     "playerId": 2985659
+    },
+    {
+     "type": "DROP",
+     "playerId": -16011
+    }
+   ]
+  },
+  {
+   "id": "87147b23-da65-40f6-85a0-310d1369769e",
+   "week": 14,
+   "date": 1701882025982,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16002
+    },
+    {
+     "type": "DROP",
+     "playerId": -16027
+    }
+   ]
+  },
+  {
+   "id": "788e888f-518b-4be8-be52-74f33ef09b1b",
+   "week": 14,
+   "date": 1701882025982,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3051392
+    },
+    {
+     "type": "DROP",
+     "playerId": 3121427
+    }
+   ]
+  },
+  {
+   "id": "2853e406-f2bc-438d-a992-7891bdbbff16",
+   "week": 14,
+   "date": 1701882025981,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 4,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4429205
+    },
+    {
+     "type": "DROP",
+     "playerId": 16813
+    }
+   ]
+  },
+  {
+   "id": "aead9771-fd94-45a2-8d5d-b6cceaec0e07",
+   "week": 14,
+   "date": 1701882025980,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 5,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4036378
+    },
+    {
+     "type": "DROP",
+     "playerId": 3932905
+    }
+   ]
+  },
+  {
+   "id": "64627f60-8780-4374-8824-f1a31bc3646e",
+   "week": 13,
+   "date": 1701622816143,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4248528
+    },
+    {
+     "type": "DROP",
+     "playerId": 4362019
+    }
+   ]
+  },
+  {
+   "id": "74777a75-d168-4fea-8038-f7ce8ea0e2b3",
+   "week": 13,
+   "date": 1701622816142,
+   "type": "WAIVER",
+   "teamId": 5,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3121023
+    },
+    {
+     "type": "DROP",
+     "playerId": -16017
+    }
+   ]
+  },
+  {
+   "id": "d16d63e2-2ff7-469b-9112-55fc97e227f5",
+   "week": 13,
+   "date": 1701622816141,
+   "type": "WAIVER",
+   "teamId": 3,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3929645
+    },
+    {
+     "type": "DROP",
+     "playerId": 4362081
+    }
+   ]
+  },
+  {
+   "id": "ba97ca46-eaaa-44d4-aace-b7bab5f42e72",
+   "week": 13,
+   "date": 1701622816141,
+   "type": "WAIVER",
+   "teamId": 1,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4426388
+    },
+    {
+     "type": "DROP",
+     "playerId": 3059915
+    }
+   ]
+  },
+  {
+   "id": "7b219636-853a-4eab-8011-b0d203296743",
+   "week": 13,
+   "date": 1701536419066,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 8439
+    },
+    {
+     "type": "DROP",
+     "playerId": 3044720
+    }
+   ]
+  },
+  {
+   "id": "660ba337-fedd-45f7-9459-859ed405bfe3",
+   "week": 13,
+   "date": 1701536419065,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4362019
+    },
+    {
+     "type": "DROP",
+     "playerId": 4426388
+    }
+   ]
+  },
+  {
+   "id": "c1166a90-b806-4fca-a67c-dd767216ee36",
+   "week": 13,
+   "date": 1701450011691,
+   "type": "WAIVER",
+   "teamId": 5,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16018
+    },
+    {
+     "type": "DROP",
+     "playerId": 4361432
+    }
+   ]
+  },
+  {
+   "id": "6205f8b7-09c2-4ca3-8faa-4af06dfda5b7",
+   "week": 13,
+   "date": 1701450011690,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 15,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 16813
+    }
+   ]
+  },
+  {
+   "id": "9d389eb4-7f3f-49a3-bda7-af3f91219900",
+   "week": 13,
+   "date": 1701363613791,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3121427
+    },
+    {
+     "type": "DROP",
+     "playerId": 4426385
+    }
+   ]
+  },
+  {
+   "id": "ab65af20-ca8f-41ad-9d84-6c318e76615d",
+   "week": 13,
+   "date": 1701363613791,
+   "type": "WAIVER",
+   "teamId": 3,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4045163
+    },
+    {
+     "type": "DROP",
+     "playerId": 2976316
+    }
+   ]
+  },
+  {
+   "id": "008e64fb-8c6f-4026-8eb4-0a7b72f2e627",
+   "week": 13,
+   "date": 1701363613790,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16027
+    },
+    {
+     "type": "DROP",
+     "playerId": -16018
+    }
+   ]
+  },
+  {
+   "id": "c5edb842-6e1c-4a50-bc37-4c2988d28938",
+   "week": 13,
+   "date": 1701363613789,
+   "type": "WAIVER",
+   "teamId": 9,
+   "bid": 41,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3123076
+    },
+    {
+     "type": "DROP",
+     "playerId": 4243331
+    }
+   ]
+  },
+  {
+   "id": "c2327bae-35c4-42cf-bd50-40dcc4181532",
+   "week": 13,
+   "date": 1701277541477,
+   "type": "WAIVER",
+   "teamId": 9,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 2985659
+    },
+    {
+     "type": "DROP",
+     "playerId": 15683
+    }
+   ]
+  },
+  {
+   "id": "3b725056-b41c-4874-8320-02f624be8f7b",
+   "week": 13,
+   "date": 1701277541477,
+   "type": "WAIVER",
+   "teamId": 7,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3116389
+    },
+    {
+     "type": "DROP",
+     "playerId": 4248528
+    }
+   ]
+  },
+  {
+   "id": "85a7dc47-47a0-4b44-8497-dd0efed52c62",
+   "week": 13,
+   "date": 1701277541476,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3049899
+    },
+    {
+     "type": "DROP",
+     "playerId": 3917232
+    }
+   ]
+  },
+  {
+   "id": "36e9bed4-4a81-4af2-92d3-80fa9aea0ba6",
+   "week": 13,
+   "date": 1701277541476,
+   "type": "WAIVER",
+   "teamId": 9,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16011
+    },
+    {
+     "type": "DROP",
+     "playerId": 3121023
+    }
+   ]
+  },
+  {
+   "id": "66fcff33-c88b-43a8-adb0-62f9a73d594e",
+   "week": 13,
+   "date": 1701277541475,
+   "type": "WAIVER",
+   "teamId": 1,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 14881
+    },
+    {
+     "type": "DROP",
+     "playerId": 4362887
+    }
+   ]
+  },
+  {
+   "id": "3b6abcb5-4a2c-4c46-8f77-a5a8ff9fe07c",
+   "week": 13,
+   "date": 1701277541474,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 3,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16001
+    },
+    {
+     "type": "DROP",
+     "playerId": -16016
+    }
+   ]
+  },
+  {
+   "id": "5e03c466-3759-44fa-b8be-8f1b932c1841",
+   "week": 13,
+   "date": 1701277541474,
+   "type": "WAIVER",
+   "teamId": 7,
+   "bid": 3,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4361411
+    },
+    {
+     "type": "DROP",
+     "playerId": 4429205
+    }
+   ]
+  },
+  {
+   "id": "3b01cd74-2694-4918-b0b3-bc4ea2bf4fb2",
+   "week": 13,
+   "date": 1701277541473,
+   "type": "WAIVER",
+   "teamId": 10,
+   "bid": 5,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16021
+    },
+    {
+     "type": "DROP",
+     "playerId": 3123076
+    }
+   ]
+  },
+  {
+   "id": "f720ec89-1518-45a2-b775-c131d6c597a3",
+   "week": 12,
+   "date": 1700845212544,
+   "type": "WAIVER",
+   "teamId": 5,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16017
+    },
+    {
+     "type": "DROP",
+     "playerId": -16002
+    }
+   ]
+  },
+  {
+   "id": "fa5068f6-37f0-4633-9fc5-4ea6e42bd264",
+   "week": 12,
+   "date": 1700758815802,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3122976
+    },
+    {
+     "type": "DROP",
+     "playerId": 3045144
+    }
+   ]
+  },
+  {
+   "id": "e6d976c3-f118-4773-9437-075b66552cbd",
+   "week": 12,
+   "date": 1700672422304,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16016
+    },
+    {
+     "type": "DROP",
+     "playerId": 4035886
+    }
+   ]
+  },
+  {
+   "id": "e7804cbe-9614-41fa-b94e-bb1099e05d85",
+   "week": 12,
+   "date": 1700672422304,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4239934
+    },
+    {
+     "type": "DROP",
+     "playerId": 4241463
+    }
+   ]
+  },
+  {
+   "id": "77d93bac-fc2c-4306-b8e2-cdef176651ee",
+   "week": 12,
+   "date": 1700672422303,
+   "type": "WAIVER",
+   "teamId": 5,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4362249
+    },
+    {
+     "type": "DROP",
+     "playerId": 4429025
+    }
+   ]
+  },
+  {
+   "id": "43833ce6-c8a7-4385-9749-03b0d248dc91",
+   "week": 12,
+   "date": 1700672422302,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3052587
+    },
+    {
+     "type": "DROP",
+     "playerId": 3916566
+    }
+   ]
+  },
+  {
+   "id": "4c1b59a6-63d0-4a6c-b4bb-d199f39e817a",
+   "week": 12,
+   "date": 1700672422302,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4426388
+    },
+    {
+     "type": "DROP",
+     "playerId": 3125116
+    }
+   ]
+  },
+  {
+   "id": "0ec286d5-70fc-4ada-9a4e-bcb30e57396e",
+   "week": 12,
+   "date": 1700672422301,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16018
+    },
+    {
+     "type": "DROP",
+     "playerId": -16026
+    }
+   ]
+  },
+  {
+   "id": "58750b94-3329-4562-b08d-f4cfddf2f88d",
+   "week": 12,
+   "date": 1700672422300,
+   "type": "WAIVER",
+   "teamId": 7,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3128720
+    },
+    {
+     "type": "DROP",
+     "playerId": 4360248
+    }
+   ]
+  },
+  {
+   "id": "120ae6ca-900d-45a6-b3e2-a4cfde29974b",
+   "week": 12,
+   "date": 1700672422299,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 3,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4426385
+    },
+    {
+     "type": "DROP",
+     "playerId": 11122
+    }
+   ]
+  },
+  {
+   "id": "1883da3e-9c3a-4ab6-b852-ca605bf7d2cf",
+   "week": 11,
+   "date": 1700326839341,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 8,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4040761
+    },
+    {
+     "type": "DROP",
+     "playerId": 4239934
+    }
+   ]
+  },
+  {
+   "id": "68f5f9fc-b95a-40bb-9fe2-cbca69af1abd",
+   "week": 11,
+   "date": 1700326839341,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16012
+    },
+    {
+     "type": "DROP",
+     "playerId": 4373626
+    }
+   ]
+  },
+  {
+   "id": "b031ebd6-4324-4571-af90-82c8b08dc631",
+   "week": 11,
+   "date": 1700154011116,
+   "type": "WAIVER",
+   "teamId": 1,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16015
+    },
+    {
+     "type": "DROP",
+     "playerId": -16011
+    }
+   ]
+  },
+  {
+   "id": "fdacde84-1455-41c6-8f55-2ed43e7c13ba",
+   "week": 11,
+   "date": 1700154011115,
+   "type": "WAIVER",
+   "teamId": 1,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4362887
+    },
+    {
+     "type": "DROP",
+     "playerId": 16813
+    }
+   ]
+  },
+  {
+   "id": "f487cba0-bf4e-4d48-8175-b69173cea217",
+   "week": 11,
+   "date": 1700154011114,
+   "type": "WAIVER",
+   "teamId": 5,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 16731
+    },
+    {
+     "type": "DROP",
+     "playerId": 4243371
+    }
+   ]
+  },
+  {
+   "id": "23327a34-136c-4cba-87b5-319dee43e16e",
+   "week": 11,
+   "date": 1700067611220,
+   "type": "WAIVER",
+   "teamId": 10,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 16339
+    },
+    {
+     "type": "DROP",
+     "playerId": 3124679
+    }
+   ]
+  },
+  {
+   "id": "b7fe39f1-a753-478d-9a8f-09489eab2b4a",
+   "week": 11,
+   "date": 1700067611220,
+   "type": "WAIVER",
+   "teamId": 10,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16025
+    },
+    {
+     "type": "DROP",
+     "playerId": -16018
+    }
+   ]
+  },
+  {
+   "id": "f3321074-f60e-4b75-9805-af24f1bd120f",
+   "week": 11,
+   "date": 1700067611219,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3045144
+    },
+    {
+     "type": "DROP",
+     "playerId": 4361409
+    }
+   ]
+  },
+  {
+   "id": "e57524f5-e0fa-4fe9-ae78-8cf757939eff",
+   "week": 11,
+   "date": 1700067611219,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 11122
+    },
+    {
+     "type": "DROP",
+     "playerId": -16013
+    }
+   ]
+  },
+  {
+   "id": "7fa47a2b-ab56-4303-ab1e-9bbd714f38b9",
+   "week": 11,
+   "date": 1700067611218,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3121409
+    },
+    {
+     "type": "DROP",
+     "playerId": 4361418
+    }
+   ]
+  },
+  {
+   "id": "5617b7bd-2bd6-44fe-adf3-33a90e533428",
+   "week": 11,
+   "date": 1700067611217,
+   "type": "WAIVER",
+   "teamId": 7,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4372066
+    },
+    {
+     "type": "DROP",
+     "playerId": 3049899
+    }
+   ]
+  },
+  {
+   "id": "5dd06f24-63bc-4acf-9338-4df3aec2eeba",
+   "week": 10,
+   "date": 1699722038921,
+   "type": "WAIVER",
+   "teamId": 1,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16011
+    },
+    {
+     "type": "DROP",
+     "playerId": -16019
+    }
+   ]
+  },
+  {
+   "id": "78c44164-036b-406e-ba66-20c61d98a04a",
+   "week": 10,
+   "date": 1699635644641,
+   "type": "WAIVER",
+   "teamId": 10,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4361307
+    },
+    {
+     "type": "DROP",
+     "playerId": 2576925
+    }
+   ]
+  },
+  {
+   "id": "33b9ee41-8045-49bc-9b5b-4d2771d7c62c",
+   "week": 10,
+   "date": 1699549212630,
+   "type": "WAIVER",
+   "teamId": 5,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4243371
+    },
+    {
+     "type": "DROP",
+     "playerId": 4039359
+    }
+   ]
+  },
+  {
+   "id": "d3f12006-9ada-49c1-9f41-385712bfda50",
+   "week": 10,
+   "date": 1699549212630,
+   "type": "WAIVER",
+   "teamId": 3,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4362081
+    },
+    {
+     "type": "DROP",
+     "playerId": 3054212
+    }
+   ]
+  },
+  {
+   "id": "847c4f2a-e649-4247-b79b-100e728b7571",
+   "week": 10,
+   "date": 1699549212629,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16026
+    },
+    {
+     "type": "DROP",
+     "playerId": -16021
+    }
+   ]
+  },
+  {
+   "id": "1ff13b36-8ea4-4d09-b57b-17ae567c8061",
+   "week": 10,
+   "date": 1699549212629,
+   "type": "WAIVER",
+   "teamId": 3,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4361741
+    },
+    {
+     "type": "DROP",
+     "playerId": 15920
+    }
+   ]
+  },
+  {
+   "id": "3042e17a-c5c8-4f60-a663-5f771a294175",
+   "week": 10,
+   "date": 1699462817972,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 10621
+    },
+    {
+     "type": "DROP",
+     "playerId": 2971573
+    }
+   ]
+  },
+  {
+   "id": "191268e8-6cb1-452b-a05a-637ceaafff41",
+   "week": 10,
+   "date": 1699462817971,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4427095
+    },
+    {
+     "type": "DROP",
+     "playerId": 3115306
+    }
+   ]
+  },
+  {
+   "id": "4c2788a4-bf57-423f-bced-2648c9127c86",
+   "week": 10,
+   "date": 1699462817971,
+   "type": "WAIVER",
+   "teamId": 9,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4243331
+    },
+    {
+     "type": "DROP",
+     "playerId": 16757
+    }
+   ]
+  },
+  {
+   "id": "852292e9-61ae-45b1-bfaa-a514db1a5d82",
+   "week": 10,
+   "date": 1699462817970,
+   "type": "WAIVER",
+   "teamId": 10,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4360234
+    },
+    {
+     "type": "DROP",
+     "playerId": 4258195
+    }
+   ]
+  },
+  {
+   "id": "8c253d47-3c69-4c08-a0b0-b19e0206d41a",
+   "week": 10,
+   "date": 1699462817969,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4035886
+    },
+    {
+     "type": "DROP",
+     "playerId": 4361307
+    }
+   ]
+  },
+  {
+   "id": "8cae41a9-68b0-4880-970b-191ac93f46d8",
+   "week": 10,
+   "date": 1699462817969,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4361409
+    },
+    {
+     "type": "DROP",
+     "playerId": 4040761
+    }
+   ]
+  },
+  {
+   "id": "d314f556-5f36-4b1c-872c-36d947f8b004",
+   "week": 10,
+   "date": 1699462817968,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3044720
+    },
+    {
+     "type": "DROP",
+     "playerId": 3122976
+    }
+   ]
+  },
+  {
+   "id": "c0e4cf54-cccd-4ce8-83bc-a8d63f18d6e7",
+   "week": 9,
+   "date": 1699290023645,
+   "type": "WAIVER",
+   "teamId": 5,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4429025
+    },
+    {
+     "type": "DROP",
+     "playerId": 4242433
+    }
+   ]
+  },
+  {
+   "id": "731f7e58-f4a2-4435-855f-59bbb7526571",
+   "week": 9,
+   "date": 1699113633776,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4040761
+    },
+    {
+     "type": "DROP",
+     "playerId": 4362478
+    }
+   ]
+  },
+  {
+   "id": "ddf3a119-03bf-4a8a-a1f3-e7cdca324599",
+   "week": 9,
+   "date": 1698940811579,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3045147
+    },
+    {
+     "type": "DROP",
+     "playerId": 4360238
+    }
+   ]
+  },
+  {
+   "id": "6501915b-0033-4463-9a52-e655a4d7cce0",
+   "week": 9,
+   "date": 1698940811578,
+   "type": "WAIVER",
+   "teamId": 10,
+   "bid": 3,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3123076
+    }
+   ]
+  },
+  {
+   "id": "ccc98917-599b-463a-babb-da215f352288",
+   "week": 9,
+   "date": 1698854421492,
+   "type": "WAIVER",
+   "teamId": 1,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 15965
+    },
+    {
+     "type": "DROP",
+     "playerId": 4372066
+    }
+   ]
+  },
+  {
+   "id": "61885e36-d76d-4c9e-9443-443cdaffc546",
+   "week": 9,
+   "date": 1698854421491,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16013
+    },
+    {
+     "type": "DROP",
+     "playerId": -16026
+    }
+   ]
+  },
+  {
+   "id": "303f95c0-be29-43ea-99ce-625c4bfa75ab",
+   "week": 9,
+   "date": 1698854421491,
+   "type": "WAIVER",
+   "teamId": 1,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16019
+    },
+    {
+     "type": "DROP",
+     "playerId": -16012
+    }
+   ]
+  },
+  {
+   "id": "d36fc451-f4b1-4e8b-9687-546d12b97085",
+   "week": 9,
+   "date": 1698854421490,
+   "type": "WAIVER",
+   "teamId": 9,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 16757
+    },
+    {
+     "type": "DROP",
+     "playerId": 4362887
+    }
+   ]
+  },
+  {
+   "id": "89ac3a3c-a82d-4227-bed1-7c1fba8d2828",
+   "week": 9,
+   "date": 1698854421490,
+   "type": "WAIVER",
+   "teamId": 10,
+   "bid": 3,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4258195
+    },
+    {
+     "type": "DROP",
+     "playerId": 2473037
+    }
+   ]
+  },
+  {
+   "id": "a6cad057-5c8f-4d75-96d1-e6d402322727",
+   "week": 9,
+   "date": 1698854421490,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4361418
+    },
+    {
+     "type": "DROP",
+     "playerId": 14880
+    }
+   ]
+  },
+  {
+   "id": "9e491cae-ee0d-444b-946b-10df0015b9e1",
+   "week": 9,
+   "date": 1698854421489,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 3,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4361307
+    },
+    {
+     "type": "DROP",
+     "playerId": 4428085
+    }
+   ]
+  },
+  {
+   "id": "27101838-d968-4cf3-8799-7ffc45abf1a0",
+   "week": 9,
+   "date": 1698854421488,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 5,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4239934
+    },
+    {
+     "type": "DROP",
+     "playerId": 4045163
+    }
+   ]
+  },
+  {
+   "id": "c59c1704-e75b-49cc-8063-553e05a0ab86",
+   "week": 8,
+   "date": 1698508845658,
+   "type": "WAIVER",
+   "teamId": 1,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4366031
+    },
+    {
+     "type": "DROP",
+     "playerId": 4372414
+    }
+   ]
+  },
+  {
+   "id": "4d53d875-5ff4-4328-b48e-6d5e23bb057a",
+   "week": 8,
+   "date": 1698422428671,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4360238
+    },
+    {
+     "type": "DROP",
+     "playerId": 3121427
+    }
+   ]
+  },
+  {
+   "id": "2f7ed1eb-e7bf-409e-921a-f88434ff75c9",
+   "week": 8,
+   "date": 1698336021613,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16026
+    },
+    {
+     "type": "DROP",
+     "playerId": -16025
+    }
+   ]
+  },
+  {
+   "id": "d81c1b36-378c-47d1-a8ce-a002cc1e615a",
+   "week": 8,
+   "date": 1698336021612,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4428085
+    },
+    {
+     "type": "DROP",
+     "playerId": 15835
+    }
+   ]
+  },
+  {
+   "id": "01870048-b2e3-42c8-96d6-d7c0038d7d93",
+   "week": 8,
+   "date": 1698336021612,
+   "type": "WAIVER",
+   "teamId": 10,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 2473037
+    }
+   ]
+  },
+  {
+   "id": "cf180cc9-977e-499d-9004-caa4f83df466",
+   "week": 8,
+   "date": 1698336021611,
+   "type": "WAIVER",
+   "teamId": 1,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16012
+    },
+    {
+     "type": "DROP",
+     "playerId": -16027
+    }
+   ]
+  },
+  {
+   "id": "1d720dda-8d3e-4dcc-9fbf-598efcff511b",
+   "week": 8,
+   "date": 1698336021611,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3953687
+    },
+    {
+     "type": "DROP",
+     "playerId": 3051909
+    }
+   ]
+  },
+  {
+   "id": "68416620-dd06-4ce5-a4ae-09816fa8bdc7",
+   "week": 8,
+   "date": 1698249619823,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3917315
+    },
+    {
+     "type": "DROP",
+     "playerId": 4038441
+    }
+   ]
+  },
+  {
+   "id": "df867c36-9576-417a-bef1-3a2b73f3e7d5",
+   "week": 8,
+   "date": 1698249619823,
+   "type": "WAIVER",
+   "teamId": 1,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4430878
+    },
+    {
+     "type": "DROP",
+     "playerId": 4240600
+    }
+   ]
+  },
+  {
+   "id": "4a2984cd-0da9-41f0-9201-a91c3d37b265",
+   "week": 8,
+   "date": 1698249619822,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4241457
+    },
+    {
+     "type": "DROP",
+     "playerId": -16026
+    }
+   ]
+  },
+  {
+   "id": "6a8cf6aa-77b7-4cec-981f-28ed57961308",
+   "week": 8,
+   "date": 1698249619822,
+   "type": "WAIVER",
+   "teamId": 5,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4039359
+    },
+    {
+     "type": "DROP",
+     "playerId": 4428085
+    }
+   ]
+  },
+  {
+   "id": "977b8076-4100-4aee-8763-891853854225",
+   "week": 8,
+   "date": 1698249619821,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 3,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 2971573
+    },
+    {
+     "type": "DROP",
+     "playerId": 16486
+    }
+   ]
+  },
+  {
+   "id": "5811ae91-0eb4-450a-b948-60aeffa3f5fa",
+   "week": 8,
+   "date": 1698249619820,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 3,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 2468609
+    },
+    {
+     "type": "DROP",
+     "playerId": 4361741
+    }
+   ]
+  },
+  {
+   "id": "69c5867a-1f85-4876-8737-80b970e4781d",
+   "week": 8,
+   "date": 1698249619819,
+   "type": "WAIVER",
+   "teamId": 7,
+   "bid": 5,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 2577417
+    },
+    {
+     "type": "DROP",
+     "playerId": -16012
+    }
+   ]
+  },
+  {
+   "id": "c68ced12-4ed2-451b-a12a-a8eb32f9b74d",
+   "week": 8,
+   "date": 1698249619819,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 5,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16020
+    },
+    {
+     "type": "DROP",
+     "playerId": -16028
+    }
+   ]
+  },
+  {
+   "id": "2be03bf6-916d-41e4-a874-76cd6f30233d",
+   "week": 8,
+   "date": 1698249619818,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 11,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4385690
+    },
+    {
+     "type": "DROP",
+     "playerId": 4362087
+    }
+   ]
+  },
+  {
+   "id": "6bc328e8-ef7a-4a53-a177-ab615cc68ff3",
+   "week": 7,
+   "date": 1697990413477,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3125116
+    },
+    {
+     "type": "DROP",
+     "playerId": 4685035
+    }
+   ]
+  },
+  {
+   "id": "22d037fc-c5e4-47a8-bdf5-be0879ce578f",
+   "week": 7,
+   "date": 1697731210162,
+   "type": "WAIVER",
+   "teamId": 5,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4428085
+    },
+    {
+     "type": "DROP",
+     "playerId": 2573401
+    }
+   ]
+  },
+  {
+   "id": "56a1a1f5-ac12-4c45-b975-91ade22ce3cf",
+   "week": 7,
+   "date": 1697731210161,
+   "type": "WAIVER",
+   "teamId": 5,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4361432
+    },
+    {
+     "type": "DROP",
+     "playerId": 4366031
+    }
+   ]
+  },
+  {
+   "id": "30beb246-d0ad-4006-9c94-2f610309f6f1",
+   "week": 7,
+   "date": 1697731210161,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4361741
+    },
+    {
+     "type": "DROP",
+     "playerId": 4722893
+    }
+   ]
+  },
+  {
+   "id": "1300048f-ec87-47cc-b8dc-72b14f7dc164",
+   "week": 7,
+   "date": 1697731210160,
+   "type": "WAIVER",
+   "teamId": 3,
+   "bid": 7,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 15920
+    },
+    {
+     "type": "DROP",
+     "playerId": 12483
+    }
+   ]
+  },
+  {
+   "id": "51fa3a27-f0e5-4937-ac32-b9cf135c0532",
+   "week": 7,
+   "date": 1697731210159,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 10,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3932905
+    },
+    {
+     "type": "DROP",
+     "playerId": 4430878
+    }
+   ]
+  },
+  {
+   "id": "bd15eda2-ddae-4e2a-a1fe-56486e14ed7d",
+   "week": 7,
+   "date": 1697644827134,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 16486
+    },
+    {
+     "type": "DROP",
+     "playerId": 2971573
+    }
+   ]
+  },
+  {
+   "id": "d2e0b2ef-274a-49ee-ab14-6928ae3e9b94",
+   "week": 7,
+   "date": 1697644827133,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16026
+    },
+    {
+     "type": "DROP",
+     "playerId": 4360238
+    }
+   ]
+  },
+  {
+   "id": "2f9b9a19-8497-4d54-ae3b-ab8f8218ea95",
+   "week": 7,
+   "date": 1697644827133,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16028
+    },
+    {
+     "type": "DROP",
+     "playerId": -16013
+    }
+   ]
+  },
+  {
+   "id": "720e9313-84db-4c89-adf6-e91493b74c2f",
+   "week": 7,
+   "date": 1697644827132,
+   "type": "WAIVER",
+   "teamId": 7,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16012
+    },
+    {
+     "type": "DROP",
+     "playerId": 4035886
+    }
+   ]
+  },
+  {
+   "id": "686b8fa8-5e07-445f-8c6b-9f177d388cf4",
+   "week": 7,
+   "date": 1697644827132,
+   "type": "WAIVER",
+   "teamId": 1,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3059915
+    },
+    {
+     "type": "DROP",
+     "playerId": 3116389
+    }
+   ]
+  },
+  {
+   "id": "4a7617f6-7f2a-4cd0-ada2-86fa05eca000",
+   "week": 7,
+   "date": 1697644827131,
+   "type": "WAIVER",
+   "teamId": 1,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16027
+    },
+    {
+     "type": "DROP",
+     "playerId": -16004
+    }
+   ]
+  },
+  {
+   "id": "424052d9-b1b0-4464-87a7-3ba0625ff746",
+   "week": 7,
+   "date": 1697644827131,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4241463
+    },
+    {
+     "type": "DROP",
+     "playerId": 4361432
+    }
+   ]
+  },
+  {
+   "id": "0f4b3a41-5a86-49c3-b39c-32f667f7e63f",
+   "week": 7,
+   "date": 1697644827130,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4685035
+    },
+    {
+     "type": "DROP",
+     "playerId": 4428557
+    }
+   ]
+  },
+  {
+   "id": "4604bd60-30e9-4d56-967a-3a2951f542ea",
+   "week": 7,
+   "date": 1697644827129,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 6,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3121427
+    },
+    {
+     "type": "DROP",
+     "playerId": -16015
+    }
+   ]
+  },
+  {
+   "id": "f66c0f57-969e-42fc-a0ff-de04f80d831f",
+   "week": 7,
+   "date": 1697644827129,
+   "type": "WAIVER",
+   "teamId": 3,
+   "bid": 4,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3054212
+    },
+    {
+     "type": "DROP",
+     "playerId": 4360797
+    }
+   ]
+  },
+  {
+   "id": "1eec7e64-d274-4204-b4a7-0fbd55071982",
+   "week": 7,
+   "date": 1697644827128,
+   "type": "WAIVER",
+   "teamId": 9,
+   "bid": 10,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3046779
+    },
+    {
+     "type": "DROP",
+     "playerId": 3125116
+    }
+   ]
+  },
+  {
+   "id": "1687cd66-7f8b-46df-a961-3484b8ad77ff",
+   "week": 6,
+   "date": 1697385610668,
+   "type": "WAIVER",
+   "teamId": 9,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3125116
+    },
+    {
+     "type": "DROP",
+     "playerId": 4036378
+    }
+   ]
+  },
+  {
+   "id": "0a40b2ea-73aa-4347-b2b9-ab9c7e8156d0",
+   "week": 6,
+   "date": 1697299208106,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4038441
+    },
+    {
+     "type": "DROP",
+     "playerId": 4428085
+    }
+   ]
+  },
+  {
+   "id": "414ad402-0b96-4235-b7b0-91d71c90de9b",
+   "week": 6,
+   "date": 1697212805125,
+   "type": "WAIVER",
+   "teamId": 10,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 16813
+    },
+    {
+     "type": "DROP",
+     "playerId": 4361411
+    }
+   ]
+  },
+  {
+   "id": "af2ffe68-5869-4902-a9e2-ea640ea96fda",
+   "week": 6,
+   "date": 1697212805124,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 15835
+    },
+    {
+     "type": "DROP",
+     "playerId": 3046439
+    }
+   ]
+  },
+  {
+   "id": "89c414a4-0f71-46e9-b29e-529b62ab34bc",
+   "week": 6,
+   "date": 1697126420475,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4362087
+    },
+    {
+     "type": "DROP",
+     "playerId": 4362249
+    }
+   ]
+  },
+  {
+   "id": "2d974eaa-fa4d-45f3-bd64-dd3681678392",
+   "week": 6,
+   "date": 1697126420475,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 2971573
+    },
+    {
+     "type": "DROP",
+     "playerId": 4243371
+    }
+   ]
+  },
+  {
+   "id": "7ae1fc39-8255-4390-922e-a9dcb494d61c",
+   "week": 6,
+   "date": 1697126420474,
+   "type": "WAIVER",
+   "teamId": 5,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 2573401
+    },
+    {
+     "type": "DROP",
+     "playerId": 4385690
+    }
+   ]
+  },
+  {
+   "id": "86ca9f94-b053-4b3c-a5c7-e86c550c59fd",
+   "week": 6,
+   "date": 1697126420474,
+   "type": "WAIVER",
+   "teamId": 3,
+   "bid": 6,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3117256
+    },
+    {
+     "type": "DROP",
+     "playerId": 15835
+    }
+   ]
+  },
+  {
+   "id": "af40fa2a-9be5-4016-ba78-effb9d9cd472",
+   "week": 6,
+   "date": 1697040019487,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16013
+    },
+    {
+     "type": "DROP",
+     "playerId": -16017
+    }
+   ]
+  },
+  {
+   "id": "35dd9284-cdf7-42ab-8cdf-e5c6705a20bd",
+   "week": 6,
+   "date": 1697040019486,
+   "type": "WAIVER",
+   "teamId": 1,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4241416
+    },
+    {
+     "type": "DROP",
+     "playerId": 3116593
+    }
+   ]
+  },
+  {
+   "id": "368d3612-0f91-4275-93c2-56f821ad9edd",
+   "week": 6,
+   "date": 1697040019486,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 5,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3122976
+    },
+    {
+     "type": "DROP",
+     "playerId": 4240021
+    }
+   ]
+  },
+  {
+   "id": "0164b84e-1129-4500-a2dd-b0f4d1275fb4",
+   "week": 6,
+   "date": 1697040019485,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 5,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4258595
+    },
+    {
+     "type": "DROP",
+     "playerId": 4429084
+    }
+   ]
+  },
+  {
+   "id": "29a90f3f-334c-40f7-be24-1aa942d528fc",
+   "week": 6,
+   "date": 1697040019484,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 5,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4428557
+    },
+    {
+     "type": "DROP",
+     "playerId": 4241457
+    }
+   ]
+  },
+  {
+   "id": "4dedfdca-0dd0-4a1b-ba23-dd64299d0ebb",
+   "week": 6,
+   "date": 1697040019483,
+   "type": "WAIVER",
+   "teamId": 10,
+   "bid": 21,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4429205
+    },
+    {
+     "type": "DROP",
+     "playerId": 4241463
+    }
+   ]
+  },
+  {
+   "id": "24fab27a-d42b-4167-9ae4-6ba9a1d6e245",
+   "week": 6,
+   "date": 1697040019483,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 45,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4362478
+    },
+    {
+     "type": "DROP",
+     "playerId": 3045147
+    }
+   ]
+  },
+  {
+   "id": "8a954909-f1ca-46c0-8b31-81c778e3bb1b",
+   "week": 5,
+   "date": 1696694428740,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16017
+    },
+    {
+     "type": "DROP",
+     "playerId": -16012
+    }
+   ]
+  },
+  {
+   "id": "78c35559-f161-414e-bc93-b62ec1c6d5e2",
+   "week": 5,
+   "date": 1696694428739,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4722893
+    },
+    {
+     "type": "DROP",
+     "playerId": 4686472
+    }
+   ]
+  },
+  {
+   "id": "7e39b4f5-7ef9-43d5-844d-5d3d2b8a4f67",
+   "week": 5,
+   "date": 1696608019977,
+   "type": "WAIVER",
+   "teamId": 10,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3124679
+    },
+    {
+     "type": "DROP",
+     "playerId": 4360234
+    }
+   ]
+  },
+  {
+   "id": "22bd28d9-47b2-4ca7-b05c-a19bcb46c9f2",
+   "week": 5,
+   "date": 1696521608017,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 5,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4426875
+    },
+    {
+     "type": "DROP",
+     "playerId": 3059915
+    }
+   ]
+  },
+  {
+   "id": "097c0a8e-8158-48cf-81e9-c9b91d2d494d",
+   "week": 5,
+   "date": 1696521608017,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 5,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3046439
+    },
+    {
+     "type": "DROP",
+     "playerId": 4429205
+    }
+   ]
+  },
+  {
+   "id": "4bf0f4e7-91ac-45d8-a608-ad72809ce0be",
+   "week": 5,
+   "date": 1696521608015,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 15,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3915416
+    },
+    {
+     "type": "DROP",
+     "playerId": 4361409
+    }
+   ]
+  },
+  {
+   "id": "072bcca4-22c1-4622-8479-fe09c01ddaac",
+   "week": 5,
+   "date": 1696435209894,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4243371
+    },
+    {
+     "type": "DROP",
+     "playerId": 4362081
+    }
+   ]
+  },
+  {
+   "id": "dade77b8-07aa-41a8-bcb9-e8747a1b3d47",
+   "week": 5,
+   "date": 1696435209894,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4428331
+    },
+    {
+     "type": "DROP",
+     "playerId": 4430191
+    }
+   ]
+  },
+  {
+   "id": "c880f0bb-b306-4559-a4f8-f1702febe751",
+   "week": 5,
+   "date": 1696435209893,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 5,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4361432
+    },
+    {
+     "type": "DROP",
+     "playerId": 3051392
+    }
+   ]
+  },
+  {
+   "id": "48493a56-7119-44a4-9f7c-60b8b6e6a313",
+   "week": 5,
+   "date": 1696435209892,
+   "type": "WAIVER",
+   "teamId": 1,
+   "bid": 5,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4426502
+    },
+    {
+     "type": "DROP",
+     "playerId": 4429025
+    }
+   ]
+  },
+  {
+   "id": "fd657ec3-d123-44f4-8a34-d58a1626a7c5",
+   "week": 5,
+   "date": 1696435209892,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 5,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16008
+    },
+    {
+     "type": "DROP",
+     "playerId": 2577417
+    }
+   ]
+  },
+  {
+   "id": "09dd412b-714d-4c06-abab-f51815440688",
+   "week": 5,
+   "date": 1696435209891,
+   "type": "WAIVER",
+   "teamId": 7,
+   "bid": 10,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4035886
+    },
+    {
+     "type": "DROP",
+     "playerId": 3046779
+    }
+   ]
+  },
+  {
+   "id": "fb4f4de9-4d2d-431b-a0fd-0723b2885a0a",
+   "week": 5,
+   "date": 1696435209891,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 10,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16015
+    },
+    {
+     "type": "DROP",
+     "playerId": 3115394
+    }
+   ]
+  },
+  {
+   "id": "abcae8bd-4be9-4f53-9bd2-94e63314e7fd",
+   "week": 5,
+   "date": 1696435209890,
+   "type": "WAIVER",
+   "teamId": 3,
+   "bid": 16,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 12483
+    },
+    {
+     "type": "DROP",
+     "playerId": 3122840
+    }
+   ]
+  },
+  {
+   "id": "d4455324-0c0f-46d0-a09b-0d4cb6bdfb9a",
+   "week": 5,
+   "date": 1696435209890,
+   "type": "WAIVER",
+   "teamId": 3,
+   "bid": 15,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 15835
+    },
+    {
+     "type": "DROP",
+     "playerId": 3046439
+    }
+   ]
+  },
+  {
+   "id": "d1b0ca94-5688-4049-91ab-bf8505185c43",
+   "week": 5,
+   "date": 1696435209889,
+   "type": "WAIVER",
+   "teamId": 7,
+   "bid": 25,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4426388
+    },
+    {
+     "type": "DROP",
+     "playerId": 3915416
+    }
+   ]
+  },
+  {
+   "id": "9036e805-6abe-405b-9a5a-3093ffa139c7",
+   "week": 4,
+   "date": 1695916812685,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4686472
+    },
+    {
+     "type": "DROP",
+     "playerId": 4426502
+    }
+   ]
+  },
+  {
+   "id": "9805a9d1-855a-4a00-9642-2e0b9c53e333",
+   "week": 4,
+   "date": 1695916812684,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4688813
+    },
+    {
+     "type": "DROP",
+     "playerId": 4239934
+    }
+   ]
+  },
+  {
+   "id": "338ff2f6-569f-4d0a-91ab-b75432c1edb3",
+   "week": 4,
+   "date": 1695916812684,
+   "type": "WAIVER",
+   "teamId": 9,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16033
+    },
+    {
+     "type": "DROP",
+     "playerId": -16020
+    }
+   ]
+  },
+  {
+   "id": "cf7708ad-4468-4fe0-a9ec-33bc5444696f",
+   "week": 4,
+   "date": 1695916812683,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4249087
+    },
+    {
+     "type": "DROP",
+     "playerId": 3953687
+    }
+   ]
+  },
+  {
+   "id": "f4163464-77a7-4af0-b0cc-a2519026ffbe",
+   "week": 4,
+   "date": 1695916812683,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3051392
+    },
+    {
+     "type": "DROP",
+     "playerId": 3910544
+    }
+   ]
+  },
+  {
+   "id": "779390cf-5d10-47f3-a88b-358153a604f7",
+   "week": 4,
+   "date": 1695916812682,
+   "type": "WAIVER",
+   "teamId": 10,
+   "bid": 6,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4362887
+    },
+    {
+     "type": "DROP",
+     "playerId": 3917792
+    }
+   ]
+  },
+  {
+   "id": "7d3a5d39-0ac7-4f65-a952-0c4d7b15a15d",
+   "week": 4,
+   "date": 1695916812682,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3115394
+    },
+    {
+     "type": "DROP",
+     "playerId": 3123075
+    }
+   ]
+  },
+  {
+   "id": "adccec4d-af9b-4abf-ab97-265afd65b19a",
+   "week": 4,
+   "date": 1695830429201,
+   "type": "WAIVER",
+   "teamId": 5,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4432577
+    },
+    {
+     "type": "DROP",
+     "playerId": 3120348
+    }
+   ]
+  },
+  {
+   "id": "893d6f1a-7f8d-43ef-9689-12aa61e72c69",
+   "week": 4,
+   "date": 1695830429201,
+   "type": "WAIVER",
+   "teamId": 9,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4036378
+    },
+    {
+     "type": "DROP",
+     "playerId": 4362887
+    }
+   ]
+  },
+  {
+   "id": "0baa9403-4b8c-47cf-83ef-da86ad783d38",
+   "week": 4,
+   "date": 1695830429200,
+   "type": "WAIVER",
+   "teamId": 1,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16004
+    },
+    {
+     "type": "DROP",
+     "playerId": -16015
+    }
+   ]
+  },
+  {
+   "id": "563f6b66-59df-4025-8670-02910374e30b",
+   "week": 4,
+   "date": 1695830429200,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4240021
+    },
+    {
+     "type": "DROP",
+     "playerId": 4035886
+    }
+   ]
+  },
+  {
+   "id": "01f1f547-ee65-4a3c-b497-51ac9a6e5c77",
+   "week": 4,
+   "date": 1695830429199,
+   "type": "WAIVER",
+   "teamId": 5,
+   "bid": 3,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4242433
+    },
+    {
+     "type": "DROP",
+     "playerId": 3059722
+    }
+   ]
+  },
+  {
+   "id": "8c452cb2-430d-4356-a7c5-652b8ef8f7af",
+   "week": 4,
+   "date": 1695830429197,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 15,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4428085
+    },
+    {
+     "type": "DROP",
+     "playerId": 4258595
+    }
+   ]
+  },
+  {
+   "id": "d1840396-d9bc-4648-b9e6-6c92fd14910a",
+   "week": 4,
+   "date": 1695830429196,
+   "type": "WAIVER",
+   "teamId": 3,
+   "bid": 35,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 16460
+    },
+    {
+     "type": "DROP",
+     "playerId": 3045138
+    }
+   ]
+  },
+  {
+   "id": "0cadfbde-e35b-4044-855a-8acee2e891dc",
+   "week": 4,
+   "date": 1695830429195,
+   "type": "WAIVER",
+   "teamId": 1,
+   "bid": 65,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4429160
+    },
+    {
+     "type": "DROP",
+     "playerId": 4046676
+    }
+   ]
+  },
+  {
+   "id": "a8224b95-35a9-4b8d-9309-f115514966b1",
+   "week": 3,
+   "date": 1695571211360,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4362249
+    },
+    {
+     "type": "DROP",
+     "playerId": 3117256
+    }
+   ]
+  },
+  {
+   "id": "7898d489-659a-4e7c-92f0-b5f03e1a727d",
+   "week": 3,
+   "date": 1695571211359,
+   "type": "WAIVER",
+   "teamId": 1,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4046676
+    },
+    {
+     "type": "DROP",
+     "playerId": 2980453
+    }
+   ]
+  },
+  {
+   "id": "d7c8522c-d66f-44ec-abc3-6c293da7d4f9",
+   "week": 3,
+   "date": 1695484806638,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4361409
+    },
+    {
+     "type": "DROP",
+     "playerId": 3045523
+    }
+   ]
+  },
+  {
+   "id": "e896fd14-bd2d-44fb-b259-a8ebdd11f2fe",
+   "week": 3,
+   "date": 1695312011538,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3123075
+    },
+    {
+     "type": "DROP",
+     "playerId": 3139925
+    }
+   ]
+  },
+  {
+   "id": "e3afade6-928e-4d4c-bf9e-dae7afb0afba",
+   "week": 3,
+   "date": 1695312011537,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4360238
+    },
+    {
+     "type": "DROP",
+     "playerId": 2573401
+    }
+   ]
+  },
+  {
+   "id": "c1c5972d-8423-4f20-8f01-ae15db45c778",
+   "week": 3,
+   "date": 1695312011537,
+   "type": "WAIVER",
+   "teamId": 9,
+   "bid": 10,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4569987
+    },
+    {
+     "type": "DROP",
+     "playerId": 4240021
+    }
+   ]
+  },
+  {
+   "id": "35a4eb87-b38d-46e9-9fc2-dae46b83167c",
+   "week": 3,
+   "date": 1695225630559,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3953687
+    },
+    {
+     "type": "DROP",
+     "playerId": 2473037
+    }
+   ]
+  },
+  {
+   "id": "263abaac-d460-4c4f-b535-6ac798cef8ec",
+   "week": 3,
+   "date": 1695225630559,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 3,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16012
+    },
+    {
+     "type": "DROP",
+     "playerId": -16027
+    }
+   ]
+  },
+  {
+   "id": "85b2b889-7e37-4406-8300-307de51cb203",
+   "week": 3,
+   "date": 1695225630558,
+   "type": "WAIVER",
+   "teamId": 5,
+   "bid": 6,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4366031
+    },
+    {
+     "type": "DROP",
+     "playerId": 16731
+    }
+   ]
+  },
+  {
+   "id": "b548d82e-c132-4be4-922e-e3d316ab2b20",
+   "week": 3,
+   "date": 1695225630557,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 11,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4035676
+    },
+    {
+     "type": "DROP",
+     "playerId": 4360238
+    }
+   ]
+  },
+  {
+   "id": "d40cb10b-cb75-4022-89e7-27200b00ccf1",
+   "week": 3,
+   "date": 1695225630557,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 10,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3059915
+    },
+    {
+     "type": "DROP",
+     "playerId": 4361409
+    }
+   ]
+  },
+  {
+   "id": "a44d1f6b-e3e6-401e-bd75-5fc4e1fa9e64",
+   "week": 3,
+   "date": 1695225630556,
+   "type": "WAIVER",
+   "teamId": 3,
+   "bid": 12,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3046439
+    },
+    {
+     "type": "DROP",
+     "playerId": 3123076
+    }
+   ]
+  },
+  {
+   "id": "1b0bd749-e4b9-457c-a299-7b513190ea92",
+   "week": 3,
+   "date": 1695225630554,
+   "type": "WAIVER",
+   "teamId": 10,
+   "bid": 41,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4372019
+    },
+    {
+     "type": "DROP",
+     "playerId": 3128720
+    }
+   ]
+  },
+  {
+   "id": "78874c64-7763-4ec1-81ab-c57947741051",
+   "week": 3,
+   "date": 1695225630553,
+   "type": "WAIVER",
+   "teamId": 7,
+   "bid": 50,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4259545
+    },
+    {
+     "type": "DROP",
+     "playerId": 3051392
+    }
+   ]
+  },
+  {
+   "id": "76f43130-d2c8-4234-8ebc-36fd973184c4",
+   "week": 3,
+   "date": 1695225630552,
+   "type": "WAIVER",
+   "teamId": 5,
+   "bid": 64,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4430737
+    },
+    {
+     "type": "DROP",
+     "playerId": 4429013
+    }
+   ]
+  },
+  {
+   "id": "6ccaadb1-dc95-4ade-be5c-c86bab3c8ac9",
+   "week": 2,
+   "date": 1694966416973,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 7,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3910544
+    },
+    {
+     "type": "DROP",
+     "playerId": 4430737
+    }
+   ]
+  },
+  {
+   "id": "4c2aa3c4-c65e-45c4-bbd8-8b18fa7502cd",
+   "week": 2,
+   "date": 1694793611995,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 3,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3115306
+    },
+    {
+     "type": "DROP",
+     "playerId": 16733
+    }
+   ]
+  },
+  {
+   "id": "672423ba-5fe1-4244-88d2-2ef11012f602",
+   "week": 2,
+   "date": 1694793611994,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 10,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 2577327
+    },
+    {
+     "type": "DROP",
+     "playerId": 4032473
+    }
+   ]
+  },
+  {
+   "id": "c240feb8-7dd3-4e6f-a553-f15357951459",
+   "week": 2,
+   "date": 1694707207141,
+   "type": "WAIVER",
+   "teamId": 10,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3917792
+    },
+    {
+     "type": "DROP",
+     "playerId": 16757
+    }
+   ]
+  },
+  {
+   "id": "f4b5e45d-1d4f-4f00-b45c-93d0360f756c",
+   "week": 2,
+   "date": 1694707207141,
+   "type": "WAIVER",
+   "teamId": 3,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4360797
+    },
+    {
+     "type": "DROP",
+     "playerId": 2577327
+    }
+   ]
+  },
+  {
+   "id": "c16223a1-fa9e-4c27-9cde-abe0ddf14fc0",
+   "week": 2,
+   "date": 1694707207140,
+   "type": "WAIVER",
+   "teamId": 1,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3051926
+    },
+    {
+     "type": "DROP",
+     "playerId": 16460
+    }
+   ]
+  },
+  {
+   "id": "890d1a0a-056b-4c85-a0c7-55cf6ff0fae9",
+   "week": 2,
+   "date": 1694707207139,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 4,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4430737
+    },
+    {
+     "type": "DROP",
+     "playerId": 4241985
+    }
+   ]
+  },
+  {
+   "id": "8b3ac5b1-413f-48cf-8b75-e2aeef974456",
+   "week": 2,
+   "date": 1694620818304,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4032473
+    },
+    {
+     "type": "DROP",
+     "playerId": 4567156
+    }
+   ]
+  },
+  {
+   "id": "b603adf1-0849-472c-a55a-2dfd56727063",
+   "week": 2,
+   "date": 1694620818303,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3045523
+    },
+    {
+     "type": "DROP",
+     "playerId": 16782
+    }
+   ]
+  },
+  {
+   "id": "e8c84a62-df26-4874-a782-cda9cdd8dbea",
+   "week": 2,
+   "date": 1694620818303,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16027
+    },
+    {
+     "type": "DROP",
+     "playerId": -16028
+    }
+   ]
+  },
+  {
+   "id": "3dfb1239-cc6e-41c1-aa6e-02a28c9762e5",
+   "week": 2,
+   "date": 1694620818302,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 14880
+    },
+    {
+     "type": "DROP",
+     "playerId": 8439
+    }
+   ]
+  },
+  {
+   "id": "2fc9dfb2-cc8c-4063-a57f-85216312eaad",
+   "week": 2,
+   "date": 1694620818302,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16005
+    },
+    {
+     "type": "DROP",
+     "playerId": -16033
+    }
+   ]
+  },
+  {
+   "id": "61b0de2a-c7d9-445f-b78c-ea9f95183989",
+   "week": 2,
+   "date": 1694620818301,
+   "type": "WAIVER",
+   "teamId": 5,
+   "bid": 3,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4242355
+    },
+    {
+     "type": "DROP",
+     "playerId": 3932905
+    }
+   ]
+  },
+  {
+   "id": "fd48785c-77fa-4690-9d9c-3c92700d0573",
+   "week": 2,
+   "date": 1694620818300,
+   "type": "WAIVER",
+   "teamId": 9,
+   "bid": 3,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4426515
+    },
+    {
+     "type": "DROP",
+     "playerId": 4360294
+    }
+   ]
+  },
+  {
+   "id": "7ff84516-b363-40c9-89ea-bda8f63a0f5d",
+   "week": 2,
+   "date": 1694620818300,
+   "type": "WAIVER",
+   "teamId": 1,
+   "bid": 3,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4371733
+    },
+    {
+     "type": "DROP",
+     "playerId": 4259545
+    }
+   ]
+  },
+  {
+   "id": "cbb79db1-9908-4b53-a979-24198452ae64",
+   "week": 2,
+   "date": 1694620818299,
+   "type": "WAIVER",
+   "teamId": 5,
+   "bid": 5,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3059722
+    },
+    {
+     "type": "DROP",
+     "playerId": 3918639
+    }
+   ]
+  },
+  {
+   "id": "d0fda850-e5d6-446f-8d67-308a656d9f36",
+   "week": 1,
+   "date": 1694361606068,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 2573401
+    },
+    {
+     "type": "DROP",
+     "playerId": 3122976
+    }
+   ]
+  },
+  {
+   "id": "c4a42293-b35b-4334-8b18-9329fa8a7214",
+   "week": 1,
+   "date": 1693584018392,
+   "type": "WAIVER",
+   "teamId": 5,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4429013
+    },
+    {
+     "type": "DROP",
+     "playerId": 14881
+    }
+   ]
+  },
+  {
+   "id": "2eacb48a-1f71-4670-b39e-5ce1d0889352",
+   "week": 1,
+   "date": 1693584018391,
+   "type": "WAIVER",
+   "teamId": 5,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16030
+    },
+    {
+     "type": "DROP",
+     "playerId": -16012
+    }
+   ]
+  },
+  {
+   "id": "c1f99080-8c73-4f81-9813-53b9fe2a1e52",
+   "week": 1,
+   "date": 1693497607973,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 2576414
+    },
+    {
+     "type": "DROP",
+     "playerId": 14880
+    }
+   ]
+  },
+  {
+   "id": "ec56be05-6071-4f7a-b82c-7330a738209a",
+   "week": 1,
+   "date": 1693411204241,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 2473037
+    },
+    {
+     "type": "DROP",
+     "playerId": 16486
+    }
+   ]
+  },
+  {
+   "id": "73622c61-3efd-426a-8a20-e07a855740cc",
+   "week": 1,
+   "date": 1693411204241,
+   "type": "WAIVER",
+   "teamId": 1,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4430027
+    },
+    {
+     "type": "DROP",
+     "playerId": 4426385
+    }
+   ]
+  },
+  {
+   "id": "27567638-7571-4470-8528-56a35a73ec6d",
+   "week": 1,
+   "date": 1693411204239,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16028
+    },
+    {
+     "type": "DROP",
+     "playerId": -16008
+    }
+   ]
+  },
+  {
+   "id": "c0b62058-acdc-403a-ba34-c0ecd195f134",
+   "week": 1,
+   "date": 1693238422928,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16033
+    },
+    {
+     "type": "DROP",
+     "playerId": -16005
+    }
+   ]
+  }
+ ],
+ "txPeriodsFetched": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19
+ ],
+ "trades": [
+  {
+   "week": 2,
+   "teams": [
+    3,
+    5
+   ],
+   "moves": [
+    {
+     "playerId": -16030,
+     "name": "Jaguars D/ST",
+     "pos": "D/ST",
+     "from": 5,
+     "to": 3
+    },
+    {
+     "playerId": -16002,
+     "name": "Bills D/ST",
+     "pos": "D/ST",
+     "from": 3,
+     "to": 5
+    }
+   ]
+  },
+  {
+   "week": 2,
+   "teams": [
+    5,
+    8
+   ],
+   "moves": [
+    {
+     "playerId": 4360238,
+     "name": "Dameon Pierce",
+     "pos": "RB",
+     "from": 5,
+     "to": 8
+    },
+    {
+     "playerId": 3120348,
+     "name": "JuJu Smith-Schuster",
+     "pos": "WR",
+     "from": 8,
+     "to": 5
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "teams": [
+    2,
+    4
+   ],
+   "moves": [
+    {
+     "playerId": -16025,
+     "name": "49ers D/ST",
+     "pos": "D/ST",
+     "from": 4,
+     "to": 2
+    },
+    {
+     "playerId": 3116385,
+     "name": "Joe Mixon",
+     "pos": "RB",
+     "from": 4,
+     "to": 2
+    },
+    {
+     "playerId": 3045147,
+     "name": "James Conner",
+     "pos": "RB",
+     "from": 2,
+     "to": 4
+    },
+    {
+     "playerId": -16005,
+     "name": "Browns D/ST",
+     "pos": "D/ST",
+     "from": 2,
+     "to": 4
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "teams": [
+    2,
+    6
+   ],
+   "moves": [
+    {
+     "playerId": 4241389,
+     "name": "CeeDee Lamb",
+     "pos": "WR",
+     "from": 2,
+     "to": 6
+    },
+    {
+     "playerId": 3059915,
+     "name": "Kareem Hunt",
+     "pos": "RB",
+     "from": 2,
+     "to": 6
+    },
+    {
+     "playerId": 3043078,
+     "name": "Derrick Henry",
+     "pos": "RB",
+     "from": 6,
+     "to": 2
+    },
+    {
+     "playerId": 3916433,
+     "name": "Jakobi Meyers",
+     "pos": "WR",
+     "from": 6,
+     "to": 2
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "teams": [
+    6,
+    7
+   ],
+   "moves": [
+    {
+     "playerId": 3925357,
+     "name": "Calvin Ridley",
+     "pos": "WR",
+     "from": 7,
+     "to": 6
+    },
+    {
+     "playerId": 4241372,
+     "name": "Marquise Brown",
+     "pos": "WR",
+     "from": 6,
+     "to": 7
+    }
+   ]
+  },
+  {
+   "week": 4,
+   "teams": [
+    7,
+    8
+   ],
+   "moves": [
+    {
+     "playerId": 4047650,
+     "name": "DK Metcalf",
+     "pos": "WR",
+     "from": 7,
+     "to": 8
+    },
+    {
+     "playerId": 4372016,
+     "name": "Jaylen Waddle",
+     "pos": "WR",
+     "from": 8,
+     "to": 7
+    }
+   ]
+  },
+  {
+   "week": 5,
+   "teams": [
+    3,
+    5
+   ],
+   "moves": [
+    {
+     "playerId": 4239996,
+     "name": "Travis Etienne Jr.",
+     "pos": "RB",
+     "from": 3,
+     "to": 5
+    },
+    {
+     "playerId": 2976499,
+     "name": "Amari Cooper",
+     "pos": "WR",
+     "from": 3,
+     "to": 5
+    },
+    {
+     "playerId": 4379399,
+     "name": "James Cook",
+     "pos": "RB",
+     "from": 5,
+     "to": 3
+    },
+    {
+     "playerId": 4243537,
+     "name": "Gabe Davis",
+     "pos": "WR",
+     "from": 5,
+     "to": 3
+    }
+   ]
+  },
+  {
+   "week": 5,
+   "teams": [
+    7,
+    10
+   ],
+   "moves": [
+    {
+     "playerId": 4372016,
+     "name": "Jaylen Waddle",
+     "pos": "WR",
+     "from": 7,
+     "to": 10
+    },
+    {
+     "playerId": -16018,
+     "name": "Saints D/ST",
+     "pos": "D/ST",
+     "from": 7,
+     "to": 10
+    },
+    {
+     "playerId": 4429795,
+     "name": "Jahmyr Gibbs",
+     "pos": "RB",
+     "from": 7,
+     "to": 10
+    },
+    {
+     "playerId": 3121422,
+     "name": "Terry McLaurin",
+     "pos": "WR",
+     "from": 10,
+     "to": 7
+    },
+    {
+     "playerId": -16006,
+     "name": "Cowboys D/ST",
+     "pos": "D/ST",
+     "from": 10,
+     "to": 7
+    },
+    {
+     "playerId": 4372019,
+     "name": "Jerome Ford",
+     "pos": "RB",
+     "from": 10,
+     "to": 7
+    }
+   ]
+  },
+  {
+   "week": 6,
+   "teams": [
+    2,
+    8
+   ],
+   "moves": [
+    {
+     "playerId": 3116385,
+     "name": "Joe Mixon",
+     "pos": "RB",
+     "from": 2,
+     "to": 8
+    },
+    {
+     "playerId": 3916433,
+     "name": "Jakobi Meyers",
+     "pos": "WR",
+     "from": 2,
+     "to": 8
+    },
+    {
+     "playerId": 3043078,
+     "name": "Derrick Henry",
+     "pos": "RB",
+     "from": 2,
+     "to": 8
+    },
+    {
+     "playerId": 16800,
+     "name": "Davante Adams",
+     "pos": "WR",
+     "from": 8,
+     "to": 2
+    },
+    {
+     "playerId": 3051876,
+     "name": "Evan Engram",
+     "pos": "TE",
+     "from": 8,
+     "to": 2
+    },
+    {
+     "playerId": 3042519,
+     "name": "Aaron Jones",
+     "pos": "RB",
+     "from": 8,
+     "to": 2
+    }
+   ]
+  },
+  {
+   "week": 6,
+   "teams": [
+    3,
+    4
+   ],
+   "moves": [
+    {
+     "playerId": 4048244,
+     "name": "Alexander Mattison",
+     "pos": "RB",
+     "from": 3,
+     "to": 4
+    },
+    {
+     "playerId": 4241478,
+     "name": "DeVonta Smith",
+     "pos": "WR",
+     "from": 4,
+     "to": 3
+    }
+   ]
+  },
+  {
+   "week": 6,
+   "teams": [
+    9,
+    10
+   ],
+   "moves": [
+    {
+     "playerId": 4362887,
+     "name": "Justin Fields",
+     "pos": "QB",
+     "from": 10,
+     "to": 9
+    },
+    {
+     "playerId": 4361579,
+     "name": "Javonte Williams",
+     "pos": "RB",
+     "from": 10,
+     "to": 9
+    },
+    {
+     "playerId": 3116165,
+     "name": "Chris Godwin",
+     "pos": "WR",
+     "from": 9,
+     "to": 10
+    },
+    {
+     "playerId": 4241474,
+     "name": "Brian Robinson Jr.",
+     "pos": "RB",
+     "from": 9,
+     "to": 10
+    }
+   ]
+  },
+  {
+   "week": 7,
+   "teams": [
+    2,
+    5
+   ],
+   "moves": [
+    {
+     "playerId": 16800,
+     "name": "Davante Adams",
+     "pos": "WR",
+     "from": 2,
+     "to": 5
+    },
+    {
+     "playerId": 4569173,
+     "name": "Rhamondre Stevenson",
+     "pos": "RB",
+     "from": 2,
+     "to": 5
+    },
+    {
+     "playerId": 2976499,
+     "name": "Amari Cooper",
+     "pos": "WR",
+     "from": 5,
+     "to": 2
+    },
+    {
+     "playerId": 3916148,
+     "name": "Tony Pollard",
+     "pos": "RB",
+     "from": 5,
+     "to": 2
+    }
+   ]
+  },
+  {
+   "week": 7,
+   "teams": [
+    7,
+    10
+   ],
+   "moves": [
+    {
+     "playerId": 4259545,
+     "name": "D'Andre Swift",
+     "pos": "RB",
+     "from": 7,
+     "to": 10
+    },
+    {
+     "playerId": 3068267,
+     "name": "Austin Ekeler",
+     "pos": "RB",
+     "from": 7,
+     "to": 10
+    },
+    {
+     "playerId": 4248528,
+     "name": "Christian Watson",
+     "pos": "WR",
+     "from": 7,
+     "to": 10
+    },
+    {
+     "playerId": 4429795,
+     "name": "Jahmyr Gibbs",
+     "pos": "RB",
+     "from": 10,
+     "to": 7
+    },
+    {
+     "playerId": 4262921,
+     "name": "Justin Jefferson",
+     "pos": "WR",
+     "from": 10,
+     "to": 7
+    },
+    {
+     "playerId": 15795,
+     "name": "DeAndre Hopkins",
+     "pos": "WR",
+     "from": 10,
+     "to": 7
+    }
+   ]
+  },
+  {
+   "week": 8,
+   "teams": [
+    1,
+    7
+   ],
+   "moves": [
+    {
+     "playerId": 4430027,
+     "name": "Sam LaPorta",
+     "pos": "TE",
+     "from": 1,
+     "to": 7
+    }
+   ]
+  },
+  {
+   "week": 8,
+   "teams": [
+    1,
+    10
+   ],
+   "moves": [
+    {
+     "playerId": 4361529,
+     "name": "Isiah Pacheco",
+     "pos": "RB",
+     "from": 10,
+     "to": 1
+    },
+    {
+     "playerId": 16813,
+     "name": "Logan Thomas",
+     "pos": "TE",
+     "from": 10,
+     "to": 1
+    }
+   ]
+  },
+  {
+   "week": 8,
+   "teams": [
+    7,
+    10
+   ],
+   "moves": [
+    {
+     "playerId": 4262921,
+     "name": "Justin Jefferson",
+     "pos": "WR",
+     "from": 7,
+     "to": 10
+    },
+    {
+     "playerId": 4429205,
+     "name": "Jordan Addison",
+     "pos": "WR",
+     "from": 10,
+     "to": 7
+    }
+   ]
+  },
+  {
+   "week": 9,
+   "teams": [
+    7,
+    8
+   ],
+   "moves": [
+    {
+     "playerId": 4036133,
+     "name": "T.J. Hockenson",
+     "pos": "TE",
+     "from": 7,
+     "to": 8
+    },
+    {
+     "playerId": 4429795,
+     "name": "Jahmyr Gibbs",
+     "pos": "RB",
+     "from": 7,
+     "to": 8
+    },
+    {
+     "playerId": 3043078,
+     "name": "Derrick Henry",
+     "pos": "RB",
+     "from": 8,
+     "to": 7
+    },
+    {
+     "playerId": 4047650,
+     "name": "DK Metcalf",
+     "pos": "WR",
+     "from": 8,
+     "to": 7
+    }
+   ]
+  },
+  {
+   "week": 10,
+   "teams": [
+    2,
+    5
+   ],
+   "moves": [
+    {
+     "playerId": 16800,
+     "name": "Davante Adams",
+     "pos": "WR",
+     "from": 5,
+     "to": 2
+    },
+    {
+     "playerId": 4569173,
+     "name": "Rhamondre Stevenson",
+     "pos": "RB",
+     "from": 5,
+     "to": 2
+    },
+    {
+     "playerId": 3916148,
+     "name": "Tony Pollard",
+     "pos": "RB",
+     "from": 2,
+     "to": 5
+    },
+    {
+     "playerId": 2976499,
+     "name": "Amari Cooper",
+     "pos": "WR",
+     "from": 2,
+     "to": 5
+    }
+   ]
+  },
+  {
+   "week": 11,
+   "teams": [
+    2,
+    10
+   ],
+   "moves": [
+    {
+     "playerId": 4241474,
+     "name": "Brian Robinson Jr.",
+     "pos": "RB",
+     "from": 10,
+     "to": 2
+    },
+    {
+     "playerId": 4430807,
+     "name": "Bijan Robinson",
+     "pos": "RB",
+     "from": 2,
+     "to": 10
+    }
+   ]
+  },
+  {
+   "week": 12,
+   "teams": [
+    6,
+    8
+   ],
+   "moves": [
+    {
+     "playerId": 2576414,
+     "name": "Raheem Mostert",
+     "pos": "RB",
+     "from": 6,
+     "to": 8
+    },
+    {
+     "playerId": 4241457,
+     "name": "Najee Harris",
+     "pos": "RB",
+     "from": 6,
+     "to": 8
+    },
+    {
+     "playerId": 3116385,
+     "name": "Joe Mixon",
+     "pos": "RB",
+     "from": 8,
+     "to": 6
+    },
+    {
+     "playerId": 4258595,
+     "name": "Cole Kmet",
+     "pos": "TE",
+     "from": 8,
+     "to": 6
+    }
+   ]
+  },
+  {
+   "week": 13,
+   "teams": [
+    2,
+    7
+   ],
+   "moves": [
+    {
+     "playerId": 3043078,
+     "name": "Derrick Henry",
+     "pos": "RB",
+     "from": 7,
+     "to": 2
+    }
+   ]
+  },
+  {
+   "week": 13,
+   "teams": [
+    2,
+    8
+   ],
+   "moves": [
+    {
+     "playerId": 16800,
+     "name": "Davante Adams",
+     "pos": "WR",
+     "from": 2,
+     "to": 8
+    }
+   ]
+  },
+  {
+   "week": 13,
+   "teams": [
+    3,
+    8
+   ],
+   "moves": [
+    {
+     "playerId": 3139477,
+     "name": "Patrick Mahomes",
+     "pos": "QB",
+     "from": 3,
+     "to": 8
+    },
+    {
+     "playerId": 2576414,
+     "name": "Raheem Mostert",
+     "pos": "RB",
+     "from": 8,
+     "to": 3
+    }
+   ]
+  },
+  {
+   "week": 13,
+   "teams": [
+    5,
+    6
+   ],
+   "moves": [
+    {
+     "playerId": 4362628,
+     "name": "Ja'Marr Chase",
+     "pos": "WR",
+     "from": 5,
+     "to": 6
+    },
+    {
+     "playerId": 4239993,
+     "name": "Tee Higgins",
+     "pos": "WR",
+     "from": 6,
+     "to": 5
+    },
+    {
+     "playerId": 4047365,
+     "name": "Josh Jacobs",
+     "pos": "RB",
+     "from": 6,
+     "to": 5
+    }
+   ]
+  },
+  {
+   "week": 13,
+   "teams": [
+    5,
+    8
+   ],
+   "moves": [
+    {
+     "playerId": 4239996,
+     "name": "Travis Etienne Jr.",
+     "pos": "RB",
+     "from": 5,
+     "to": 8
+    },
+    {
+     "playerId": 4242335,
+     "name": "Jonathan Taylor",
+     "pos": "RB",
+     "from": 5,
+     "to": 8
+    },
+    {
+     "playerId": 3116406,
+     "name": "Tyreek Hill",
+     "pos": "WR",
+     "from": 8,
+     "to": 5
+    }
+   ]
+  },
+  {
+   "week": 13,
+   "teams": [
+    6,
+    7
+   ],
+   "moves": [
+    {
+     "playerId": 4372019,
+     "name": "Jerome Ford",
+     "pos": "RB",
+     "from": 7,
+     "to": 6
+    },
+    {
+     "playerId": 3925357,
+     "name": "Calvin Ridley",
+     "pos": "WR",
+     "from": 6,
+     "to": 7
+    }
+   ]
+  },
+  {
+   "week": 13,
+   "teams": [
+    7,
+    8
+   ],
+   "moves": [
+    {
+     "playerId": 3121422,
+     "name": "Terry McLaurin",
+     "pos": "WR",
+     "from": 7,
+     "to": 8
+    },
+    {
+     "playerId": 3916433,
+     "name": "Jakobi Meyers",
+     "pos": "WR",
+     "from": 8,
+     "to": 7
+    }
+   ]
+  },
+  {
+   "week": 13,
+   "teams": [
+    7,
+    10
+   ],
+   "moves": [
+    {
+     "playerId": 4259545,
+     "name": "D'Andre Swift",
+     "pos": "RB",
+     "from": 10,
+     "to": 7
+    },
+    {
+     "playerId": 4372016,
+     "name": "Jaylen Waddle",
+     "pos": "WR",
+     "from": 10,
+     "to": 7
+    },
+    {
+     "playerId": 4047650,
+     "name": "DK Metcalf",
+     "pos": "WR",
+     "from": 7,
+     "to": 10
+    },
+    {
+     "playerId": 3916387,
+     "name": "Lamar Jackson",
+     "pos": "QB",
+     "from": 7,
+     "to": 10
+    }
+   ]
+  },
+  {
+   "week": 13,
+   "teams": [
+    8,
+    10
+   ],
+   "moves": [
+    {
+     "playerId": 4036133,
+     "name": "T.J. Hockenson",
+     "pos": "TE",
+     "from": 8,
+     "to": 10
+    }
+   ]
+  }
+ ],
+ "players": {
+  "-16034": {
+   "name": "Texans D/ST",
+   "pos": "D/ST",
+   "pts": 118.0,
+   "team": 7,
+   "keeperCost": 1
+  },
+  "-16033": {
+   "name": "Ravens D/ST",
+   "pos": "D/ST",
+   "pts": 172.0,
+   "team": 9,
+   "keeperCost": 1
+  },
+  "-16030": {
+   "name": "Jaguars D/ST",
+   "pos": "D/ST",
+   "pts": 105.0,
+   "team": 3,
+   "keeperCost": 1
+  },
+  "-16028": {
+   "name": "Commanders D/ST",
+   "pos": "D/ST",
+   "pts": 30.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "-16027": {
+   "name": "Buccaneers D/ST",
+   "pos": "D/ST",
+   "pts": 108.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "-16026": {
+   "name": "Seahawks D/ST",
+   "pos": "D/ST",
+   "pts": 80.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "-16025": {
+   "name": "49ers D/ST",
+   "pos": "D/ST",
+   "pts": 136.0,
+   "team": 2,
+   "keeperCost": 2
+  },
+  "-16023": {
+   "name": "Steelers D/ST",
+   "pos": "D/ST",
+   "pts": 127.0,
+   "team": 3,
+   "keeperCost": 4
+  },
+  "-16021": {
+   "name": "Eagles D/ST",
+   "pos": "D/ST",
+   "pts": 80.0,
+   "team": 10,
+   "keeperCost": 0
+  },
+  "-16020": {
+   "name": "Jets D/ST",
+   "pos": "D/ST",
+   "pts": 159.0,
+   "team": 8,
+   "keeperCost": 5
+  },
+  "-16019": {
+   "name": "Giants D/ST",
+   "pos": "D/ST",
+   "pts": 114.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "-16018": {
+   "name": "Saints D/ST",
+   "pos": "D/ST",
+   "pts": 129.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "-16017": {
+   "name": "Patriots D/ST",
+   "pos": "D/ST",
+   "pts": 111.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "-16016": {
+   "name": "Vikings D/ST",
+   "pos": "D/ST",
+   "pts": 111.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "-16015": {
+   "name": "Dolphins D/ST",
+   "pos": "D/ST",
+   "pts": 139.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "-16013": {
+   "name": "Raiders D/ST",
+   "pos": "D/ST",
+   "pts": 135.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "-16012": {
+   "name": "Chiefs D/ST",
+   "pos": "D/ST",
+   "pts": 140.0,
+   "team": 4,
+   "keeperCost": 1
+  },
+  "-16011": {
+   "name": "Colts D/ST",
+   "pos": "D/ST",
+   "pts": 123.0,
+   "team": 1,
+   "keeperCost": 1
+  },
+  "-16009": {
+   "name": "Packers D/ST",
+   "pos": "D/ST",
+   "pts": 99.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "-16008": {
+   "name": "Lions D/ST",
+   "pos": "D/ST",
+   "pts": 93.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "-16007": {
+   "name": "Broncos D/ST",
+   "pos": "D/ST",
+   "pts": 98.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "-16006": {
+   "name": "Cowboys D/ST",
+   "pos": "D/ST",
+   "pts": 172.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "-16005": {
+   "name": "Browns D/ST",
+   "pos": "D/ST",
+   "pts": 166.0,
+   "team": 4,
+   "keeperCost": 2
+  },
+  "-16004": {
+   "name": "Bengals D/ST",
+   "pos": "D/ST",
+   "pts": 91.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "-16003": {
+   "name": "Bears D/ST",
+   "pos": "D/ST",
+   "pts": 110.0,
+   "team": 5,
+   "keeperCost": 1
+  },
+  "-16002": {
+   "name": "Bills D/ST",
+   "pos": "D/ST",
+   "pts": 158.0,
+   "team": 6,
+   "keeperCost": 2
+  },
+  "-16001": {
+   "name": "Falcons D/ST",
+   "pos": "D/ST",
+   "pts": 92.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "8439": {
+   "name": "Aaron Rodgers",
+   "pos": "QB",
+   "pts": 0.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "10621": {
+   "name": "Nick Folk",
+   "pos": "K",
+   "pts": 117.0,
+   "team": 8,
+   "keeperCost": 1
+  },
+  "11122": {
+   "name": "Matt Prater",
+   "pos": "K",
+   "pts": 108.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "11252": {
+   "name": "Joe Flacco",
+   "pos": "QB",
+   "pts": 142.59,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "12483": {
+   "name": "Matthew Stafford",
+   "pos": "QB",
+   "pts": 333.6,
+   "team": 6,
+   "keeperCost": 3
+  },
+  "14880": {
+   "name": "Kirk Cousins",
+   "pos": "QB",
+   "pts": 213.74,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "14881": {
+   "name": "Russell Wilson",
+   "pos": "QB",
+   "pts": 339.15,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "15683": {
+   "name": "Justin Tucker",
+   "pos": "K",
+   "pts": 141.0,
+   "team": 9,
+   "keeperCost": 1
+  },
+  "15795": {
+   "name": "DeAndre Hopkins",
+   "pos": "WR",
+   "pts": 236.6,
+   "team": 7,
+   "keeperCost": 20
+  },
+  "15818": {
+   "name": "Keenan Allen",
+   "pos": "WR",
+   "pts": 296.11,
+   "team": 9,
+   "keeperCost": 16
+  },
+  "15835": {
+   "name": "Zach Ertz",
+   "pos": "TE",
+   "pts": 51.7,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "15847": {
+   "name": "Travis Kelce",
+   "pos": "TE",
+   "pts": 225.4,
+   "team": 1,
+   "keeperCost": 58
+  },
+  "15864": {
+   "name": "Geno Smith",
+   "pos": "QB",
+   "pts": 316.01,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "15920": {
+   "name": "Latavius Murray",
+   "pos": "RB",
+   "pts": 82.9,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "15965": {
+   "name": "Dustin Hopkins",
+   "pos": "K",
+   "pts": 123.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "16339": {
+   "name": "Brandon McManus",
+   "pos": "K",
+   "pts": 121.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "16460": {
+   "name": "Adam Thielen",
+   "pos": "WR",
+   "pts": 240.0,
+   "team": 3,
+   "keeperCost": 35
+  },
+  "16486": {
+   "name": "Brett Maher",
+   "pos": "K",
+   "pts": 57.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "16731": {
+   "name": "Brandin Cooks",
+   "pos": "WR",
+   "pts": 176.2,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "16733": {
+   "name": "Odell Beckham Jr.",
+   "pos": "WR",
+   "pts": 112.5,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "16737": {
+   "name": "Mike Evans",
+   "pos": "WR",
+   "pts": 294.5,
+   "team": 9,
+   "keeperCost": 5
+  },
+  "16757": {
+   "name": "Derek Carr",
+   "pos": "QB",
+   "pts": 343.87,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "16782": {
+   "name": "Jerick McKinnon",
+   "pos": "RB",
+   "pts": 84.61,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "16800": {
+   "name": "Davante Adams",
+   "pos": "WR",
+   "pts": 275.4,
+   "team": 8,
+   "keeperCost": 41
+  },
+  "16813": {
+   "name": "Logan Thomas",
+   "pos": "TE",
+   "pts": 126.8,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "2468609": {
+   "name": "Taysom Hill",
+   "pos": "TE",
+   "pts": 145.02,
+   "team": 8,
+   "keeperCost": 3
+  },
+  "2473037": {
+   "name": "Jason Myers",
+   "pos": "K",
+   "pts": 132.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "2573401": {
+   "name": "Tyler Higbee",
+   "pos": "TE",
+   "pts": 108.5,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "2576414": {
+   "name": "Raheem Mostert",
+   "pos": "RB",
+   "pts": 270.7,
+   "team": 3,
+   "keeperCost": 1
+  },
+  "2576925": {
+   "name": "Darren Waller",
+   "pos": "TE",
+   "pts": 113.2,
+   "team": 2,
+   "keeperCost": 1
+  },
+  "2577327": {
+   "name": "Tyler Lockett",
+   "pos": "WR",
+   "pts": 202.4,
+   "team": 2,
+   "keeperCost": 10
+  },
+  "2577417": {
+   "name": "Dak Prescott",
+   "pos": "QB",
+   "pts": 460.34,
+   "team": 7,
+   "keeperCost": 5
+  },
+  "2971573": {
+   "name": "Ka'imi Fairbairn",
+   "pos": "K",
+   "pts": 105.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "2976212": {
+   "name": "Stefon Diggs",
+   "pos": "WR",
+   "pts": 290.8,
+   "team": 2,
+   "keeperCost": 48
+  },
+  "2976316": {
+   "name": "Michael Thomas",
+   "pos": "WR",
+   "pts": 89.8,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "2976499": {
+   "name": "Amari Cooper",
+   "pos": "WR",
+   "pts": 248.0,
+   "team": 5,
+   "keeperCost": 19
+  },
+  "2977187": {
+   "name": "Cooper Kupp",
+   "pos": "WR",
+   "pts": 178.4,
+   "team": 9,
+   "keeperCost": 47
+  },
+  "2980453": {
+   "name": "Jamaal Williams",
+   "pos": "RB",
+   "pts": 60.8,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "2985659": {
+   "name": "Wil Lutz",
+   "pos": "K",
+   "pts": 114.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3040151": {
+   "name": "George Kittle",
+   "pos": "TE",
+   "pts": 215.2,
+   "team": 4,
+   "keeperCost": 15
+  },
+  "3042519": {
+   "name": "Aaron Jones",
+   "pos": "RB",
+   "pts": 137.9,
+   "team": 2,
+   "keeperCost": 28
+  },
+  "3043078": {
+   "name": "Derrick Henry",
+   "pos": "RB",
+   "pts": 251.16,
+   "team": 2,
+   "keeperCost": 51
+  },
+  "3044720": {
+   "name": "Joshua Dobbs",
+   "pos": "QB",
+   "pts": 266.16,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3045138": {
+   "name": "Mike Williams",
+   "pos": "WR",
+   "pts": 54.2,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3045144": {
+   "name": "Tyler Boyd",
+   "pos": "WR",
+   "pts": 147.8,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3045147": {
+   "name": "James Conner",
+   "pos": "RB",
+   "pts": 205.5,
+   "team": 4,
+   "keeperCost": 1
+  },
+  "3045523": {
+   "name": "Kendrick Bourne",
+   "pos": "WR",
+   "pts": 100.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3046439": {
+   "name": "Hunter Henry",
+   "pos": "TE",
+   "pts": 119.9,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3046779": {
+   "name": "Jared Goff",
+   "pos": "QB",
+   "pts": 399.85,
+   "team": 9,
+   "keeperCost": 10
+  },
+  "3049899": {
+   "name": "Younghoe Koo",
+   "pos": "K",
+   "pts": 118.0,
+   "team": 4,
+   "keeperCost": 1
+  },
+  "3050478": {
+   "name": "Jake Elliott",
+   "pos": "K",
+   "pts": 139.0,
+   "team": 3,
+   "keeperCost": 3
+  },
+  "3051392": {
+   "name": "Ezekiel Elliott",
+   "pos": "RB",
+   "pts": 174.5,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3051876": {
+   "name": "Evan Engram",
+   "pos": "TE",
+   "pts": 230.3,
+   "team": 2,
+   "keeperCost": 1
+  },
+  "3051909": {
+   "name": "Daniel Carlson",
+   "pos": "K",
+   "pts": 105.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3051926": {
+   "name": "Gus Edwards",
+   "pos": "RB",
+   "pts": 187.0,
+   "team": 1,
+   "keeperCost": 2
+  },
+  "3052587": {
+   "name": "Baker Mayfield",
+   "pos": "QB",
+   "pts": 375.06,
+   "team": 10,
+   "keeperCost": 0
+  },
+  "3054212": {
+   "name": "Jonnu Smith",
+   "pos": "TE",
+   "pts": 129.2,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3054850": {
+   "name": "Alvin Kamara",
+   "pos": "RB",
+   "pts": 233.0,
+   "team": 9,
+   "keeperCost": 11
+  },
+  "3055899": {
+   "name": "Harrison Butker",
+   "pos": "K",
+   "pts": 139.0,
+   "team": 5,
+   "keeperCost": 2
+  },
+  "3059722": {
+   "name": "Zay Jones",
+   "pos": "WR",
+   "pts": 78.1,
+   "team": 4,
+   "keeperCost": 1
+  },
+  "3059915": {
+   "name": "Kareem Hunt",
+   "pos": "RB",
+   "pts": 118.5,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3068267": {
+   "name": "Austin Ekeler",
+   "pos": "RB",
+   "pts": 186.4,
+   "team": 10,
+   "keeperCost": 55
+  },
+  "3115306": {
+   "name": "Josh Reynolds",
+   "pos": "WR",
+   "pts": 128.8,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3115394": {
+   "name": "DJ Chark Jr.",
+   "pos": "WR",
+   "pts": 116.5,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3116165": {
+   "name": "Chris Godwin",
+   "pos": "WR",
+   "pts": 216.2,
+   "team": 10,
+   "keeperCost": 10
+  },
+  "3116365": {
+   "name": "Mark Andrews",
+   "pos": "TE",
+   "pts": 135.4,
+   "team": 6,
+   "keeperCost": 13
+  },
+  "3116385": {
+   "name": "Joe Mixon",
+   "pos": "RB",
+   "pts": 268.0,
+   "team": 6,
+   "keeperCost": 29
+  },
+  "3116389": {
+   "name": "Samaje Perine",
+   "pos": "RB",
+   "pts": 121.3,
+   "team": 7,
+   "keeperCost": 1
+  },
+  "3116406": {
+   "name": "Tyreek Hill",
+   "pos": "WR",
+   "pts": 411.4,
+   "team": 5,
+   "keeperCost": 56
+  },
+  "3116593": {
+   "name": "Dalvin Cook",
+   "pos": "RB",
+   "pts": 40.2,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3117251": {
+   "name": "Christian McCaffrey",
+   "pos": "RB",
+   "pts": 401.3,
+   "team": 4,
+   "keeperCost": 58
+  },
+  "3117256": {
+   "name": "Dalton Schultz",
+   "pos": "TE",
+   "pts": 153.5,
+   "team": 3,
+   "keeperCost": 6
+  },
+  "3120348": {
+   "name": "JuJu Smith-Schuster",
+   "pos": "WR",
+   "pts": 61.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3121023": {
+   "name": "Dallas Goedert",
+   "pos": "TE",
+   "pts": 139.3,
+   "team": 5,
+   "keeperCost": 1
+  },
+  "3121409": {
+   "name": "Noah Brown",
+   "pos": "WR",
+   "pts": 109.6,
+   "team": 8,
+   "keeperCost": 2
+  },
+  "3121422": {
+   "name": "Terry McLaurin",
+   "pos": "WR",
+   "pts": 212.2,
+   "team": 8,
+   "keeperCost": 5
+  },
+  "3121427": {
+   "name": "Curtis Samuel",
+   "pos": "WR",
+   "pts": 160.2,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3122840": {
+   "name": "Deshaun Watson",
+   "pos": "QB",
+   "pts": 114.05,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3122976": {
+   "name": "Jeff Wilson Jr.",
+   "pos": "RB",
+   "pts": 41.3,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3123052": {
+   "name": "Michael Badgley",
+   "pos": "K",
+   "pts": 23.0,
+   "team": 2,
+   "keeperCost": 1
+  },
+  "3123075": {
+   "name": "Braxton Berrios",
+   "pos": "WR",
+   "pts": 57.9,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3123076": {
+   "name": "David Njoku",
+   "pos": "TE",
+   "pts": 207.2,
+   "team": 9,
+   "keeperCost": 41
+  },
+  "3124679": {
+   "name": "Jason Sanders",
+   "pos": "K",
+   "pts": 128.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3125116": {
+   "name": "D'Onta Foreman",
+   "pos": "RB",
+   "pts": 91.2,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3126486": {
+   "name": "Deebo Samuel",
+   "pos": "WR",
+   "pts": 256.7,
+   "team": 6,
+   "keeperCost": 19
+  },
+  "3128429": {
+   "name": "Courtland Sutton",
+   "pos": "WR",
+   "pts": 192.2,
+   "team": 7,
+   "keeperCost": 1
+  },
+  "3128720": {
+   "name": "Nick Chubb",
+   "pos": "RB",
+   "pts": 24.1,
+   "team": 7,
+   "keeperCost": 2
+  },
+  "3139477": {
+   "name": "Patrick Mahomes",
+   "pos": "QB",
+   "pts": 391.47,
+   "team": 8,
+   "keeperCost": 39
+  },
+  "3139925": {
+   "name": "Rashaad Penny",
+   "pos": "RB",
+   "pts": 4.8,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3886812": {
+   "name": "Jake Browning",
+   "pos": "QB",
+   "pts": 196.19,
+   "team": 9,
+   "keeperCost": 1
+  },
+  "3895856": {
+   "name": "Christian Kirk",
+   "pos": "WR",
+   "pts": 157.51,
+   "team": 3,
+   "keeperCost": 7
+  },
+  "3910544": {
+   "name": "Joshua Kelley",
+   "pos": "RB",
+   "pts": 62.7,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3915416": {
+   "name": "DJ Moore",
+   "pos": "WR",
+   "pts": 304.5,
+   "team": 2,
+   "keeperCost": 15
+  },
+  "3915511": {
+   "name": "Joe Burrow",
+   "pos": "QB",
+   "pts": 215.16,
+   "team": 4,
+   "keeperCost": 17
+  },
+  "3916148": {
+   "name": "Tony Pollard",
+   "pos": "RB",
+   "pts": 223.6,
+   "team": 5,
+   "keeperCost": 48
+  },
+  "3916387": {
+   "name": "Lamar Jackson",
+   "pos": "QB",
+   "pts": 417.97,
+   "team": 10,
+   "keeperCost": 20
+  },
+  "3916433": {
+   "name": "Jakobi Meyers",
+   "pos": "WR",
+   "pts": 219.08,
+   "team": 7,
+   "keeperCost": 1
+  },
+  "3916566": {
+   "name": "K.J. Osborn",
+   "pos": "WR",
+   "pts": 120.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3917232": {
+   "name": "Tyler Bass",
+   "pos": "K",
+   "pts": 116.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3917315": {
+   "name": "Kyler Murray",
+   "pos": "QB",
+   "pts": 191.36,
+   "team": 2,
+   "keeperCost": 1
+  },
+  "3917792": {
+   "name": "Daniel Jones",
+   "pos": "QB",
+   "pts": 84.96,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3918298": {
+   "name": "Josh Allen",
+   "pos": "QB",
+   "pts": 499.89,
+   "team": 1,
+   "keeperCost": 47
+  },
+  "3918639": {
+   "name": "Gerald Everett",
+   "pos": "TE",
+   "pts": 111.1,
+   "team": 6,
+   "keeperCost": 1
+  },
+  "3925357": {
+   "name": "Calvin Ridley",
+   "pos": "WR",
+   "pts": 243.9,
+   "team": 7,
+   "keeperCost": 13
+  },
+  "3929630": {
+   "name": "Saquon Barkley",
+   "pos": "RB",
+   "pts": 224.2,
+   "team": 9,
+   "keeperCost": 48
+  },
+  "3929645": {
+   "name": "Juwan Johnson",
+   "pos": "TE",
+   "pts": 97.8,
+   "team": 3,
+   "keeperCost": 1
+  },
+  "3932905": {
+   "name": "Diontae Johnson",
+   "pos": "WR",
+   "pts": 154.7,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "3953687": {
+   "name": "Brandon Aubrey",
+   "pos": "K",
+   "pts": 161.0,
+   "team": 6,
+   "keeperCost": 2
+  },
+  "4032473": {
+   "name": "Rashid Shaheed",
+   "pos": "WR",
+   "pts": 161.6,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4035538": {
+   "name": "David Montgomery",
+   "pos": "RB",
+   "pts": 213.2,
+   "team": 3,
+   "keeperCost": 7
+  },
+  "4035676": {
+   "name": "Zack Moss",
+   "pos": "RB",
+   "pts": 173.6,
+   "team": 8,
+   "keeperCost": 11
+  },
+  "4035687": {
+   "name": "Michael Pittman Jr.",
+   "pos": "WR",
+   "pts": 261.2,
+   "team": 5,
+   "keeperCost": 4
+  },
+  "4035886": {
+   "name": "Khalil Herbert",
+   "pos": "RB",
+   "pts": 115.5,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4036133": {
+   "name": "T.J. Hockenson",
+   "pos": "TE",
+   "pts": 222.0,
+   "team": 10,
+   "keeperCost": 13
+  },
+  "4036378": {
+   "name": "Jordan Love",
+   "pos": "QB",
+   "pts": 414.06,
+   "team": 4,
+   "keeperCost": 1
+  },
+  "4038441": {
+   "name": "Justice Hill",
+   "pos": "RB",
+   "pts": 109.3,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4038941": {
+   "name": "Justin Herbert",
+   "pos": "QB",
+   "pts": 319.41,
+   "team": 10,
+   "keeperCost": 1
+  },
+  "4039359": {
+   "name": "Darrell Henderson Jr.",
+   "pos": "RB",
+   "pts": 43.5,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4040715": {
+   "name": "Jalen Hurts",
+   "pos": "QB",
+   "pts": 452.82,
+   "team": 5,
+   "keeperCost": 37
+  },
+  "4040761": {
+   "name": "Devin Singletary",
+   "pos": "RB",
+   "pts": 170.59,
+   "team": 6,
+   "keeperCost": 8
+  },
+  "4045163": {
+   "name": "Miles Sanders",
+   "pos": "RB",
+   "pts": 87.6,
+   "team": 3,
+   "keeperCost": 1
+  },
+  "4046676": {
+   "name": "Tony Jones Jr.",
+   "pos": "RB",
+   "pts": 32.2,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4047365": {
+   "name": "Josh Jacobs",
+   "pos": "RB",
+   "pts": 185.1,
+   "team": 5,
+   "keeperCost": 36
+  },
+  "4047646": {
+   "name": "A.J. Brown",
+   "pos": "WR",
+   "pts": 312.6,
+   "team": 1,
+   "keeperCost": 33
+  },
+  "4047650": {
+   "name": "DK Metcalf",
+   "pos": "WR",
+   "pts": 236.4,
+   "team": 10,
+   "keeperCost": 20
+  },
+  "4048244": {
+   "name": "Alexander Mattison",
+   "pos": "RB",
+   "pts": 133.2,
+   "team": 4,
+   "keeperCost": 45
+  },
+  "4239934": {
+   "name": "AJ Dillon",
+   "pos": "RB",
+   "pts": 117.6,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4239993": {
+   "name": "Tee Higgins",
+   "pos": "WR",
+   "pts": 145.6,
+   "team": 5,
+   "keeperCost": 33
+  },
+  "4239996": {
+   "name": "Travis Etienne Jr.",
+   "pos": "RB",
+   "pts": 288.4,
+   "team": 8,
+   "keeperCost": 23
+  },
+  "4240021": {
+   "name": "Cam Akers",
+   "pos": "RB",
+   "pts": 46.7,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4240600": {
+   "name": "Kadarius Toney",
+   "pos": "WR",
+   "pts": 53.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4241372": {
+   "name": "Marquise Brown",
+   "pos": "WR",
+   "pts": 134.7,
+   "team": 7,
+   "keeperCost": 1
+  },
+  "4241389": {
+   "name": "CeeDee Lamb",
+   "pos": "WR",
+   "pts": 431.2,
+   "team": 6,
+   "keeperCost": 35
+  },
+  "4241416": {
+   "name": "Chuba Hubbard",
+   "pos": "RB",
+   "pts": 183.5,
+   "team": 1,
+   "keeperCost": 1
+  },
+  "4241457": {
+   "name": "Najee Harris",
+   "pos": "RB",
+   "pts": 197.5,
+   "team": 8,
+   "keeperCost": 2
+  },
+  "4241463": {
+   "name": "Jerry Jeudy",
+   "pos": "WR",
+   "pts": 141.8,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4241474": {
+   "name": "Brian Robinson Jr.",
+   "pos": "RB",
+   "pts": 203.1,
+   "team": 2,
+   "keeperCost": 4
+  },
+  "4241478": {
+   "name": "DeVonta Smith",
+   "pos": "WR",
+   "pts": 235.6,
+   "team": 3,
+   "keeperCost": 24
+  },
+  "4241479": {
+   "name": "Tua Tagovailoa",
+   "pos": "QB",
+   "pts": 390.36,
+   "team": 2,
+   "keeperCost": 1
+  },
+  "4241985": {
+   "name": "J.K. Dobbins",
+   "pos": "RB",
+   "pts": 11.7,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4242335": {
+   "name": "Jonathan Taylor",
+   "pos": "RB",
+   "pts": 158.4,
+   "team": 8,
+   "keeperCost": 25
+  },
+  "4242355": {
+   "name": "Jake Ferguson",
+   "pos": "TE",
+   "pts": 177.1,
+   "team": 5,
+   "keeperCost": 3
+  },
+  "4242431": {
+   "name": "Ty Chandler",
+   "pos": "RB",
+   "pts": 102.0,
+   "team": 4,
+   "keeperCost": 1
+  },
+  "4242433": {
+   "name": "Joshua Palmer",
+   "pos": "WR",
+   "pts": 114.7,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4243331": {
+   "name": "Cade Otton",
+   "pos": "TE",
+   "pts": 116.5,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4243371": {
+   "name": "Riley Patterson",
+   "pos": "K",
+   "pts": 84.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4243537": {
+   "name": "Gabe Davis",
+   "pos": "WR",
+   "pts": 172.4,
+   "team": 3,
+   "keeperCost": 3
+  },
+  "4248528": {
+   "name": "Christian Watson",
+   "pos": "WR",
+   "pts": 101.3,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4249087": {
+   "name": "Matt Gay",
+   "pos": "K",
+   "pts": 130.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4258173": {
+   "name": "Nico Collins",
+   "pos": "WR",
+   "pts": 279.4,
+   "team": 9,
+   "keeperCost": 1
+  },
+  "4258195": {
+   "name": "Donovan Peoples-Jones",
+   "pos": "WR",
+   "pts": 28.5,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4258595": {
+   "name": "Cole Kmet",
+   "pos": "TE",
+   "pts": 184.1,
+   "team": 6,
+   "keeperCost": 5
+  },
+  "4259545": {
+   "name": "D'Andre Swift",
+   "pos": "RB",
+   "pts": 201.3,
+   "team": 7,
+   "keeperCost": 50
+  },
+  "4262921": {
+   "name": "Justin Jefferson",
+   "pos": "WR",
+   "pts": 219.2,
+   "team": 10,
+   "keeperCost": 59
+  },
+  "4360234": {
+   "name": "Evan McPherson",
+   "pos": "K",
+   "pts": 120.0,
+   "team": 10,
+   "keeperCost": 0
+  },
+  "4360238": {
+   "name": "Dameon Pierce",
+   "pos": "RB",
+   "pts": 82.7,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4360248": {
+   "name": "Kyle Pitts",
+   "pos": "TE",
+   "pts": 137.3,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4360294": {
+   "name": "Antonio Gibson",
+   "pos": "RB",
+   "pts": 127.4,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4360310": {
+   "name": "Trevor Lawrence",
+   "pos": "QB",
+   "pts": 364.04,
+   "team": 6,
+   "keeperCost": 10
+  },
+  "4360438": {
+   "name": "Brandon Aiyuk",
+   "pos": "WR",
+   "pts": 272.2,
+   "team": 10,
+   "keeperCost": 4
+  },
+  "4360797": {
+   "name": "Tutu Atwell",
+   "pos": "WR",
+   "pts": 115.4,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4361050": {
+   "name": "Isaiah Likely",
+   "pos": "TE",
+   "pts": 103.1,
+   "team": 8,
+   "keeperCost": 1
+  },
+  "4361307": {
+   "name": "Trey McBride",
+   "pos": "TE",
+   "pts": 187.5,
+   "team": 10,
+   "keeperCost": 1
+  },
+  "4361370": {
+   "name": "Chris Olave",
+   "pos": "WR",
+   "pts": 246.3,
+   "team": 2,
+   "keeperCost": 33
+  },
+  "4361409": {
+   "name": "Jahan Dotson",
+   "pos": "WR",
+   "pts": 127.8,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4361411": {
+   "name": "Pat Freiermuth",
+   "pos": "TE",
+   "pts": 79.8,
+   "team": 7,
+   "keeperCost": 3
+  },
+  "4361418": {
+   "name": "Will Levis",
+   "pos": "QB",
+   "pts": 144.27,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4361432": {
+   "name": "Romeo Doubs",
+   "pos": "WR",
+   "pts": 174.4,
+   "team": 1,
+   "keeperCost": 1
+  },
+  "4361529": {
+   "name": "Isiah Pacheco",
+   "pos": "RB",
+   "pts": 217.9,
+   "team": 1,
+   "keeperCost": 5
+  },
+  "4361579": {
+   "name": "Javonte Williams",
+   "pos": "RB",
+   "pts": 179.2,
+   "team": 9,
+   "keeperCost": 3
+  },
+  "4361741": {
+   "name": "Brock Purdy",
+   "pos": "QB",
+   "pts": 387.6,
+   "team": 3,
+   "keeperCost": 1
+  },
+  "4361777": {
+   "name": "Zamir White",
+   "pos": "RB",
+   "pts": 75.9,
+   "team": 5,
+   "keeperCost": 1
+  },
+  "4362019": {
+   "name": "A.T. Perry",
+   "pos": "WR",
+   "pts": 60.6,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4362081": {
+   "name": "Cameron Dicker",
+   "pos": "K",
+   "pts": 133.0,
+   "team": 1,
+   "keeperCost": 1
+  },
+  "4362087": {
+   "name": "Keaontay Ingram",
+   "pos": "RB",
+   "pts": 14.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4362249": {
+   "name": "Jayden Reed",
+   "pos": "WR",
+   "pts": 220.2,
+   "team": 5,
+   "keeperCost": 1
+  },
+  "4362478": {
+   "name": "Emari Demercado",
+   "pos": "RB",
+   "pts": 74.3,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4362628": {
+   "name": "Ja'Marr Chase",
+   "pos": "WR",
+   "pts": 283.97,
+   "team": 6,
+   "keeperCost": 54
+  },
+  "4362887": {
+   "name": "Justin Fields",
+   "pos": "QB",
+   "pts": 290.93,
+   "team": 4,
+   "keeperCost": 1
+  },
+  "4366031": {
+   "name": "Tank Dell",
+   "pos": "WR",
+   "pts": 177.0,
+   "team": 1,
+   "keeperCost": 1
+  },
+  "4371733": {
+   "name": "Kenneth Gainwell",
+   "pos": "RB",
+   "pts": 97.63,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4372016": {
+   "name": "Jaylen Waddle",
+   "pos": "WR",
+   "pts": 209.6,
+   "team": 7,
+   "keeperCost": 25
+  },
+  "4372019": {
+   "name": "Jerome Ford",
+   "pos": "RB",
+   "pts": 217.2,
+   "team": 6,
+   "keeperCost": 41
+  },
+  "4372066": {
+   "name": "Jake Moody",
+   "pos": "K",
+   "pts": 117.0,
+   "team": 7,
+   "keeperCost": 2
+  },
+  "4372414": {
+   "name": "Elijah Moore",
+   "pos": "WR",
+   "pts": 132.1,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4373626": {
+   "name": "Tyler Allgeier",
+   "pos": "RB",
+   "pts": 139.6,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4374302": {
+   "name": "Amon-Ra St. Brown",
+   "pos": "WR",
+   "pts": 359.9,
+   "team": 1,
+   "keeperCost": 50
+  },
+  "4379399": {
+   "name": "James Cook",
+   "pos": "RB",
+   "pts": 235.7,
+   "team": 3,
+   "keeperCost": 3
+  },
+  "4385690": {
+   "name": "Dalton Kincaid",
+   "pos": "TE",
+   "pts": 150.3,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4426354": {
+   "name": "George Pickens",
+   "pos": "WR",
+   "pts": 230.8,
+   "team": 9,
+   "keeperCost": 5
+  },
+  "4426385": {
+   "name": "Zach Charbonnet",
+   "pos": "RB",
+   "pts": 106.1,
+   "team": 10,
+   "keeperCost": 1
+  },
+  "4426386": {
+   "name": "Roschon Johnson",
+   "pos": "RB",
+   "pts": 102.1,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4426388": {
+   "name": "Jameson Williams",
+   "pos": "WR",
+   "pts": 81.3,
+   "team": 1,
+   "keeperCost": 1
+  },
+  "4426502": {
+   "name": "Drake London",
+   "pos": "WR",
+   "pts": 180.63,
+   "team": 1,
+   "keeperCost": 5
+  },
+  "4426515": {
+   "name": "Puka Nacua",
+   "pos": "WR",
+   "pts": 321.5,
+   "team": 9,
+   "keeperCost": 3
+  },
+  "4426875": {
+   "name": "Sam Howell",
+   "pos": "QB",
+   "pts": 361.54,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4427095": {
+   "name": "DeMario Douglas",
+   "pos": "WR",
+   "pts": 107.2,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4427366": {
+   "name": "Breece Hall",
+   "pos": "RB",
+   "pts": 299.5,
+   "team": 10,
+   "keeperCost": 20
+  },
+  "4428085": {
+   "name": "Luke Musgrave",
+   "pos": "TE",
+   "pts": 75.2,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4428331": {
+   "name": "Rashee Rice",
+   "pos": "WR",
+   "pts": 218.5,
+   "team": 4,
+   "keeperCost": 1
+  },
+  "4428557": {
+   "name": "Tyjae Spears",
+   "pos": "RB",
+   "pts": 153.8,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4429013": {
+   "name": "Tank Bigsby",
+   "pos": "RB",
+   "pts": 22.8,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4429025": {
+   "name": "Quentin Johnston",
+   "pos": "WR",
+   "pts": 94.0,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4429084": {
+   "name": "Anthony Richardson",
+   "pos": "QB",
+   "pts": 85.18,
+   "team": 2,
+   "keeperCost": 1
+  },
+  "4429160": {
+   "name": "De'Von Achane",
+   "pos": "RB",
+   "pts": 199.7,
+   "team": 1,
+   "keeperCost": 65
+  },
+  "4429205": {
+   "name": "Jordan Addison",
+   "pos": "WR",
+   "pts": 232.3,
+   "team": 6,
+   "keeperCost": 4
+  },
+  "4429615": {
+   "name": "Zay Flowers",
+   "pos": "WR",
+   "pts": 211.4,
+   "team": 6,
+   "keeperCost": 1
+  },
+  "4429795": {
+   "name": "Jahmyr Gibbs",
+   "pos": "RB",
+   "pts": 244.1,
+   "team": 8,
+   "keeperCost": 29
+  },
+  "4430027": {
+   "name": "Sam LaPorta",
+   "pos": "TE",
+   "pts": 243.3,
+   "team": 7,
+   "keeperCost": 1
+  },
+  "4430191": {
+   "name": "Skyy Moore",
+   "pos": "WR",
+   "pts": 53.7,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4430737": {
+   "name": "Kyren Williams",
+   "pos": "RB",
+   "pts": 261.0,
+   "team": 5,
+   "keeperCost": 64
+  },
+  "4430807": {
+   "name": "Bijan Robinson",
+   "pos": "RB",
+   "pts": 253.3,
+   "team": 10,
+   "keeperCost": 50
+  },
+  "4430878": {
+   "name": "Jaxon Smith-Njigba",
+   "pos": "WR",
+   "pts": 149.8,
+   "team": 1,
+   "keeperCost": 1
+  },
+  "4432577": {
+   "name": "C.J. Stroud",
+   "pos": "QB",
+   "pts": 376.77,
+   "team": 5,
+   "keeperCost": 1
+  },
+  "4432620": {
+   "name": "Parker Washington",
+   "pos": "WR",
+   "pts": 39.2,
+   "team": 4,
+   "keeperCost": 1
+  },
+  "4567048": {
+   "name": "Kenneth Walker III",
+   "pos": "RB",
+   "pts": 202.4,
+   "team": 3,
+   "keeperCost": 9
+  },
+  "4567156": {
+   "name": "Treylon Burks",
+   "pos": "WR",
+   "pts": 39.9,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4569173": {
+   "name": "Rhamondre Stevenson",
+   "pos": "RB",
+   "pts": 147.7,
+   "team": 2,
+   "keeperCost": 1
+  },
+  "4569618": {
+   "name": "Garrett Wilson",
+   "pos": "WR",
+   "pts": 221.2,
+   "team": 4,
+   "keeperCost": 41
+  },
+  "4569987": {
+   "name": "Jaylen Warren",
+   "pos": "RB",
+   "pts": 200.4,
+   "team": 9,
+   "keeperCost": 10
+  },
+  "4685035": {
+   "name": "Zach Evans",
+   "pos": "RB",
+   "pts": 1.9,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4686472": {
+   "name": "Marvin Mims Jr.",
+   "pos": "WR",
+   "pts": 75.7,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4688813": {
+   "name": "Josh Downs",
+   "pos": "WR",
+   "pts": 162.1,
+   "team": 0,
+   "keeperCost": 0
+  },
+  "4697815": {
+   "name": "Rachaad White",
+   "pos": "RB",
+   "pts": 270.9,
+   "team": 7,
+   "keeperCost": 9
+  },
+  "4722893": {
+   "name": "Jaleel McLaughlin",
+   "pos": "RB",
+   "pts": 106.0,
+   "team": 0,
+   "keeperCost": 0
+  }
+ }
+}
