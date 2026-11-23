@@ -243,6 +243,13 @@
   .odds-tip .row { display: flex; justify-content: space-between; gap: 12px; font-variant-numeric: tabular-nums; }
   .odds-tip .row.hi { color: #3987e5; font-weight: 800; }
   .pill.hi-pill.active { background: rgba(57,135,229,0.16); color: #7fb0ef; border-color: rgba(57,135,229,0.55); }
+  .awards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 12px; }
+  .award-card { display: flex; gap: 12px; align-items: flex-start; background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 14px; }
+  .award-card.gold { background: linear-gradient(145deg, rgba(245,158,11,0.16), rgba(17,24,39,0.9)); border-color: rgba(245,158,11,0.4); }
+  .award-icon { font-size: 1.8rem; line-height: 1; }
+  .award-label { font-size: 0.72rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; }
+  .award-winner { font-size: 1.05rem; font-weight: 800; margin: 2px 0; }
+  .award-detail { font-size: 0.8rem; color: var(--muted); }
   .mgr-link { color: inherit; font-weight: 700; text-decoration: none; border-bottom: 1px dotted var(--muted); }
   .mgr-link:hover { color: var(--blue); border-bottom-color: var(--blue); }
   .badge-alive { background: var(--blue-bg); color: var(--blue); border: 1px solid rgba(56,189,248,0.35); }
@@ -346,6 +353,7 @@
     <button class="tab-btn" data-group="rosters" data-tab="draft">Draft &amp; Keepers</button>
     <button class="tab-btn" data-group="rosters" data-tab="activity">Trades &amp; Waivers</button>
     <button class="tab-btn" data-group="history" data-tab="managers">Managers</button>
+    <button class="tab-btn" data-group="history" data-tab="awards">Awards</button>
     <button class="tab-btn" data-group="history" data-tab="alltime">All-Time</button>
     <button class="tab-btn" data-group="history" data-tab="rivalry">Rivalries</button>
     <button class="tab-btn" data-group="history" data-tab="seasons">Season-by-Season</button>
@@ -578,6 +586,21 @@
         <div class="card-title">🤝 Trades &amp; Waivers</div>
         <div id="profileTrades"></div>
       </div>
+    </div>
+  </section>
+
+  <!-- TAB: SEASON AWARDS -->
+  <section id="tab-awards" class="panel">
+    <div class="card">
+      <div class="card-title">
+        <span id="awardsTitle">🏅 Season Awards</span>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+          <div class="pill-group" id="awardsPills"></div>
+          <button class="btn" onclick="copyAwards()">📋 Copy for Group Chat</button>
+        </div>
+      </div>
+      <div class="awards-grid" id="awardsGrid"></div>
+      <p class="note" id="awardsNote"></p>
     </div>
   </section>
 
@@ -848,6 +871,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
     lastTabInGroup[btn.dataset.group] = btn;
+    setTimeout(syncHash, 0);
     showGroup(btn.dataset.group);
     document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
     if (btn.dataset.tab === 'matchups') centerActiveWeek();
@@ -856,6 +880,21 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
   });
 });
 showGroup('season');
+
+function copyText(text, doneMsg) {
+  // Clipboard API where available (https), with a fallback for older browsers.
+  const fallback = () => {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+    ta.remove();
+    showToast(ok ? doneMsg : 'Couldn’t copy automatically. Try again or copy by hand.');
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(() => showToast(doneMsg), fallback);
+  else fallback();
+}
 
 function showToast(msg) {
   const el = document.getElementById('toast');
@@ -951,6 +990,9 @@ async function loadInitialData() {
     showConnectionStatus();
     renderAll();
     startLiveUpdates();
+    if (INITIAL_HASH) await applyRoute(INITIAL_HASH);
+    routeReady = true;
+    syncHash();
   } catch (err) {
     document.getElementById('syncStatus').textContent = 'Error loading local JSON';
     document.getElementById('syncDot').style.background = 'var(--red)';
@@ -1362,9 +1404,9 @@ function copyShareSummary() {
   const lines = [
     `🦆 Duck Dynasty Fantasy League — ${CURRENT_SEASON} Standings (Wk ${CURRENT.currentMatchupPeriod})`,
     ...sorted.map((t, i) => `${i+1}. ${t.manager} (${t.wins}-${t.losses}, ${t.pf.toFixed(1)} PF)${i<2?' [BYE]':i<6?' [IN]':''}`),
-    `Link: ${window.location.href}`
+    `Link: ${shareUrl('standings')}`
   ];
-  navigator.clipboard.writeText(lines.join('\n')).then(() => showToast('Standings summary copied for group chat!'));
+  copyText(lines.join('\n'), 'Standings summary copied for group chat!');
 }
 
 let selectedWeek = null;
@@ -2295,9 +2337,9 @@ function copyRecap() {
     '',
     ...awards.map(a => `${a.icon} ${a.label}: ${a.value} (${a.text})`),
     '',
-    `Full recap: ${window.location.href.split('#')[0]}`
+    `Full recap: ${shareUrl('recap', recapSeason, recapWeek)}`
   ];
-  navigator.clipboard.writeText(lines.join('\n')).then(() => showToast('Recap copied for the group chat!'));
+  copyText(lines.join('\n'), 'Recap copied for the group chat!');
 }
 
 // --------------------------------------------------------------------------
@@ -3150,6 +3192,220 @@ function renderOddsChart() {
   hit.addEventListener('mouseleave', hide);
 }
 
+// --------------------------------------------------------------------------
+// Season awards
+// --------------------------------------------------------------------------
+let awardsSeason = null;
+function setAwardsSeason(v) { awardsSeason = Number(v); renderAwards(); }
+
+function seasonAwards(y) {
+  const d = seasonData(y);
+  const lastReg = regularSeasonWeeks(y);
+  const regGames = d.schedule.filter(g => g.week <= lastReg && g.winner !== 'UNDECIDED');
+  const L = EXTRAS[y] && EXTRAS[y].lineups;
+  const G = EXTRAS[y] && EXTRAS[y].league;
+  const A = [];
+  const add = (icon, label, winnerId, winnerText, detail, gold) => A.push({ icon, label, winnerId, winnerText, detail, gold });
+  const champ = HISTORY.champions.find(c => c.year === y);
+  if (champ) add('🏆', 'Champion', champ.champId, getManager(champ.champId), `${champ.champTeam} · beat ${getManager(champ.runnerUpId)} ${champ.score}`, true);
+
+  const teams = [...d.teams];
+  const pk = maxBy(teams, t => t.pf);
+  if (pk) add('👑', 'Points King', pk.id, getManager(pk.id), `${pk.pf.toFixed(2)} points for · ${rec(pk.wins, pk.losses, pk.ties)}`);
+
+  if (L) {
+    // MVP: most started points for one manager in the regular season
+    const totals = {};
+    Object.entries(L.weeks).forEach(([w, ts]) => {
+      if (Number(w) > lastReg) return;
+      Object.entries(ts).forEach(([tid, e]) => e.players.forEach(p => {
+        if (p.slot === BENCH_SLOT || p.slot === IR_SLOT) return;
+        const k = `${tid}:${p.id}`;
+        (totals[k] = totals[k] || { tid: Number(tid), name: p.name, pos: p.pos, pts: 0, games: 0 }).pts += p.pts;
+        totals[k].games += 1;
+      }));
+    });
+    const mvp = maxBy(Object.values(totals), x => x.pts);
+    if (mvp) add('⭐', 'MVP', mvp.tid, `${mvp.name}`, `${mvp.pos} · ${mvp.pts.toFixed(1)} started pts for ${getManager(mvp.tid)} in ${mvp.games} games`);
+  }
+
+  if (G && G.draft && G.draft.length && draftHasPrices(y)) {
+    const picks = draftPicks(y);
+    const spent = picks.reduce((a, p) => a + p.bid, 0);
+    const rate = spent ? picks.reduce((a, p) => a + p.pts, 0) / spent : 0;
+    const steal = maxBy(picks, p => p.pts - p.bid * rate);
+    if (steal) add('💎', 'Draft Steal', steal.teamId, steal.name, `$${steal.bid} → ${steal.pts.toFixed(1)} pts · ${getManager(steal.teamId)}${steal.keeper ? ' (keeper)' : ''}`);
+    const pricey = picks.filter(p => p.bid >= 25);
+    const bust = maxBy(pricey, p => -p.ppd);
+    if (bust) add('💸', 'Draft Bust', bust.teamId, bust.name, `$${bust.bid} → ${bust.pts.toFixed(1)} pts · ${getManager(bust.teamId)}`);
+  }
+
+  if (G && L) {
+    const claims = (G.transactions || []).filter(t => t.type === 'WAIVER').flatMap(t => t.items.filter(i => i.type === 'ADD').map(i => ({
+      tid: t.teamId, pid: i.playerId, bid: t.bid || 0, week: t.week,
+      name: (G.players[String(i.playerId)] || {}).name || 'Unknown',
+      pts: startedPointsAfter(y, i.playerId, String(t.teamId), t.week)
+    })));
+    const hero = maxBy(claims, c => c.pts);
+    if (hero && hero.pts > 0) add('🛒', 'Waiver Wire Hero', hero.tid, hero.name, `$${hero.bid} pickup (Wk ${hero.week}) · ${hero.pts.toFixed(1)} started pts for ${getManager(hero.tid)}`);
+
+    const trades = (G.trades || []).map(t => {
+      const [a, b] = t.teams;
+      const side = tid => t.moves.filter(m => m.to === tid).reduce((s2, m) => s2 + startedPointsAfter(y, m.playerId, String(tid), t.week), 0);
+      const pa = side(a), pb = side(b);
+      return { t, win: pa >= pb ? a : b, lose: pa >= pb ? b : a, edge: Math.abs(pa - pb) };
+    });
+    const best = maxBy(trades, x => x.edge);
+    if (best && best.edge > 0) {
+      const got = best.t.moves.filter(m => m.to === best.win).map(m => m.name).join(', ') || 'nothing still rostered';
+      add('🤝', 'Trade of the Year', best.win, getManager(best.win), `Got ${got} from ${getManager(best.lose)} (Wk ${best.t.week}) · +${best.edge.toFixed(1)} started pts`);
+    }
+
+    const iq = lineupStats([y]).rows;
+    const genius = maxBy(iq, r => r.eff);
+    if (genius) add('🧠', 'Lineup Genius', genius.id, getManager(genius.id), `${(genius.eff * 100).toFixed(1)}% of best possible points`);
+    const maxPerfect = Math.max(0, ...iq.map(r => r.perfect));
+    const perfect = iq.filter(r => r.perfect === maxPerfect && maxPerfect > 0);
+    if (perfect.length) add('🎯', 'Most Perfect Lineups', perfect[0].id, perfect.map(r => getManager(r.id)).join(' & '), `${maxPerfect} perfect lineup${maxPerfect === 1 ? '' : 's'}`);
+    const benched = [];
+    Object.entries(L.weeks).forEach(([w, ts]) => { if (Number(w) <= lastReg) Object.entries(ts).forEach(([tid, e]) => e.players.forEach(p => { if (p.slot === BENCH_SLOT) benched.push({ ...p, tid: Number(tid), week: Number(w) }); })); });
+    const bomb = maxBy(benched, p => p.pts);
+    if (bomb) add('💣', 'Bench Bomb', bomb.tid, bomb.name, `${bomb.pts.toFixed(1)} pts on ${getManager(bomb.tid)}’s bench (Wk ${bomb.week})`);
+  }
+
+  const ap = allPlayStats(y, 99).rows;
+  const lucky = maxBy(ap, r => r.luck), unlucky = maxBy(ap, r => -r.luck);
+  if (lucky) add('🍀', 'Luckiest', lucky.id, getManager(lucky.id), `${rec(lucky.wins, lucky.losses, lucky.ties)} with scores worth ${lucky.exp.toFixed(1)} wins (+${lucky.luck.toFixed(1)})`);
+  if (unlucky) add('😤', 'Unluckiest', unlucky.id, getManager(unlucky.id), `${rec(unlucky.wins, unlucky.losses, unlucky.ties)} with scores worth ${unlucky.exp.toFixed(1)} wins (${unlucky.luck.toFixed(1)})`);
+
+  const sides = regGames.flatMap(g => [
+    { id: g.homeId, pts: g.homePts, opp: g.awayId, oppPts: g.awayPts, won: g.winner === 'HOME', week: g.week },
+    { id: g.awayId, pts: g.awayPts, opp: g.homeId, oppPts: g.homePts, won: g.winner === 'AWAY', week: g.week }]);
+  const top = maxBy(sides, x => x.pts);
+  if (top) add('🔥', 'Highest Score', top.id, getManager(top.id), `${top.pts.toFixed(2)} vs ${getManager(top.opp)} (Wk ${top.week})`);
+  const heart = maxBy(sides.filter(x => !x.won && regGames.find(g => g.week === x.week && (g.homeId === x.id || g.awayId === x.id)).winner !== 'TIE'), x => x.pts);
+  if (heart) add('💔', 'Heartbreaker', heart.id, getManager(heart.id), `Lost with ${heart.pts.toFixed(2)} to ${getManager(heart.opp)}’s ${heart.oppPts.toFixed(2)} (Wk ${heart.week})`);
+  const blow = maxBy(sides.filter(x => x.won), x => x.pts - x.oppPts);
+  if (blow) add('💥', 'Biggest Blowout', blow.id, getManager(blow.id), `Beat ${getManager(blow.opp)} by ${(blow.pts - blow.oppPts).toFixed(2)} (Wk ${blow.week})`);
+  return A;
+}
+
+function renderAwards() {
+  const seasons = allSeasons().filter(y => completedWeeks(y).length);
+  if (!seasons.length) { document.getElementById('awardsGrid').innerHTML = noData('No completed weeks yet.'); return; }
+  const finishedSeasons = seasons.filter(y => HISTORY.champions.some(c => c.year === y));
+  if (!seasons.includes(awardsSeason)) awardsSeason = finishedSeasons[0] || seasons[0];
+  const label = y => y === CURRENT_SEASON && !HISTORY.champions.some(c => c.year === y) ? `${y} (so far)` : String(y);
+  document.getElementById('awardsPills').innerHTML = seasons.map(y =>
+    `<button class="pill ${y === awardsSeason ? 'active' : ''}" onclick="setAwardsSeason(${y})">${label(y)}</button>`).join('');
+  document.getElementById('awardsTitle').textContent = `🏅 ${label(awardsSeason)} Season Awards`;
+  const awards = seasonAwards(awardsSeason);
+  document.getElementById('awardsGrid').innerHTML = awards.map(a => `<div class="award-card ${a.gold ? 'gold' : ''}">
+      <div class="award-icon">${a.icon}</div>
+      <div><div class="award-label">${esc(a.label)}</div>
+        <div class="award-winner">${esc(a.winnerText)}</div>
+        <div class="award-detail">${esc(a.detail)}</div></div>
+    </div>`).join('');
+  const missing = [];
+  if (!(EXTRAS[awardsSeason] && EXTRAS[awardsSeason].lineups)) missing.push('lineup awards');
+  if (!draftHasPrices(awardsSeason)) missing.push('draft awards (ESPN has no auction prices for this season)');
+  document.getElementById('awardsNote').textContent = 'Regular-season games only, except Champion. "Started pts" count only points scored in that manager’s starting lineup. Luck compares each team’s record with the wins its weekly scores would earn on average.' +
+    (missing.length ? ` Not available for this season: ${missing.join('; ')}.` : '');
+}
+
+function copyAwards() {
+  const lines = [`🦆 Duck Dynasty FF: ${awardsSeason} Season Awards`, '',
+    ...seasonAwards(awardsSeason).map(a => `${a.icon} ${a.label}: ${a.winnerText} (${a.detail})`), '',
+    `More: ${shareUrl('awards', awardsSeason)}`];
+  copyText(lines.join('\n'), 'Awards copied for the group chat!');
+}
+
+// --------------------------------------------------------------------------
+// Shareable links: the address bar follows the page you're on, e.g.
+// #recap/2026/10, #managers/rory, #draft/2024, #matchups/12
+// --------------------------------------------------------------------------
+let applyingRoute = false;
+// The link the page was opened with. The address bar isn't touched until it
+// has been applied, so a shared link isn't overwritten by the first render.
+const INITIAL_HASH = location.hash;
+let routeReady = false;
+
+function managerSlug(id) { return getManager(id).toLowerCase().replace(/[^a-z0-9]+/g, '-'); }
+
+function currentRoute() {
+  const panel = document.querySelector('.panel.active');
+  const tab = panel ? panel.id.replace('tab-', '') : 'matchups';
+  switch (tab) {
+    case 'matchups': return selectedWeek && selectedWeek !== CURRENT.currentMatchupPeriod ? ['matchups', selectedWeek] : [];
+    case 'recap': return ['recap', recapSeason, recapWeek];
+    case 'playoffs': return ['playoffs', bracketSeason];
+    case 'power': return ['power', powerSeason];
+    case 'lineups': return ['lineups', iqSeason];
+    case 'draft': return ['draft', draftSeason];
+    case 'activity': return ['activity', activitySeason];
+    case 'managers': return ['managers', managerSlug(profileId)];
+    case 'awards': return ['awards', awardsSeason];
+    case 'seasons': return ['seasons', selectedSeason];
+    case 'violations': return ['violations', violSeason];
+    case 'current': return ['standings'];
+    default: return [tab];
+  }
+}
+
+function shareUrl(...parts) {
+  const base = location.href.split('#')[0];
+  const route = parts.filter(x => x !== null && x !== undefined && x !== '').join('/');
+  return route ? `${base}#${route}` : base;
+}
+
+function syncHash() {
+  if (applyingRoute || !routeReady || !CURRENT) return;
+  const route = currentRoute().filter(x => x !== null && x !== undefined).join('/');
+  const want = route ? `#${route}` : '';
+  if (location.hash !== want) history.replaceState(null, '', want || location.pathname + location.search);
+}
+
+async function applyRoute(hash) {
+  const [tabRaw, a, b] = decodeURIComponent((hash || '').replace(/^#/, '')).split('/');
+  if (!tabRaw) return;
+  const tab = tabRaw === 'standings' ? 'current' : tabRaw;
+  const btn = document.querySelector(`.tab-btn[data-tab="${tab}"]`);
+  if (!btn) return;
+  applyingRoute = true;
+  try {
+    if (NEEDS_PAST_SEASONS.has(tab)) await loadPastSeasons();
+    const num = v => (v !== undefined && v !== '' && !isNaN(Number(v))) ? Number(v) : null;
+    if (tab === 'matchups' && num(a)) selectedWeek = num(a);
+    if (tab === 'recap') { if (num(a)) recapSeason = num(a); if (num(b)) recapWeek = num(b); }
+    if (tab === 'playoffs' && num(a)) bracketSeason = num(a);
+    if (tab === 'power' && num(a)) powerSeason = num(a);
+    if (tab === 'lineups' && a) iqSeason = a === 'all' ? 'all' : a;
+    if (tab === 'draft' && num(a)) { draftSeason = num(a); draftTeam = 'all'; }
+    if (tab === 'activity' && num(a)) { activitySeason = num(a); activityTeam = 'all'; }
+    if (tab === 'awards' && num(a)) awardsSeason = num(a);
+    if (tab === 'seasons' && num(a)) selectedSeason = String(num(a));
+    if (tab === 'violations' && a) violSeason = a === 'all' ? 'all' : a;
+    if (tab === 'managers' && a) {
+      const id = Object.keys(HISTORY.managers).map(Number).find(m => managerSlug(m) === a.toLowerCase() || String(m) === a);
+      if (id) { profileId = id; profileAllTrades = false; }
+    }
+    renderAll();
+    btn.click();
+  } finally {
+    applyingRoute = false;
+  }
+  syncHash();
+}
+
+window.addEventListener('hashchange', () => { if (routeReady) applyRoute(location.hash); });
+
+// Keep the address bar in step whenever a page re-renders with new choices.
+['renderMatchups', 'renderPlayoffs', 'renderRecap', 'renderPower', 'renderLineupIQ', 'renderDraft', 'renderActivity',
+ 'renderManagers', 'renderAwards', 'renderSeasons', 'renderViolations'].forEach(name => {
+  const fn = window[name];
+  window[name] = function (...args) { const r = fn.apply(this, args); syncHash(); return r; };
+});
+
 function renderAll() {
   renderCurrentStandings();
   renderPlayoffRace();
@@ -3159,6 +3415,7 @@ function renderAll() {
   renderPower();
   renderManagers();
   renderPlayerRecords();
+  renderAwards();
   renderLineupIQ();
   renderDraft();
   renderActivity();
