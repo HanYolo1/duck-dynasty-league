@@ -164,6 +164,33 @@
   .keeper-card { background: var(--surface-2); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; }
   .keeper-card .lu-row { grid-template-columns: 14px 1fr 44px 52px; }
   .empty-state { color: var(--muted); font-size: 0.88rem; padding: 12px 0; }
+  .profile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(480px, 100%), 1fr)); gap: 18px; align-items: start; }
+  .profile-grid .card { margin-bottom: 0; }
+  .mgr-link { color: inherit; font-weight: 700; text-decoration: none; border-bottom: 1px dotted var(--muted); }
+  .mgr-link:hover { color: var(--blue); border-bottom-color: var(--blue); }
+  .badge-alive { background: var(--blue-bg); color: var(--blue); border: 1px solid rgba(56,189,248,0.35); }
+  .race-table td { vertical-align: middle; }
+  .race-chips { display: flex; gap: 4px; }
+  .race-chip { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 24px; border-radius: 6px; font-size: 0.68rem; font-weight: 800; }
+  .race-chip.bye { background: var(--gold-bg); color: var(--gold); }
+  .race-chip.in { background: var(--green-bg); color: var(--green); }
+  .race-chip.maybe { background: rgba(148,163,184,0.14); color: var(--text); }
+  .race-chip.out { background: var(--red-bg); color: var(--red); }
+  .race-chip.na { background: transparent; }
+  .race-summary { font-size: 0.82rem; color: var(--muted); min-width: 200px; }
+  .race-mobile-legend { display: none; }
+  @media (max-width: 640px) {
+    .race-mobile-legend { display: block; margin-bottom: 6px; }
+    .race-table thead { display: none; }
+    .race-table tr { display: grid; grid-template-columns: 1fr auto; gap: 6px 10px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+    .race-table td { display: block; padding: 0; border: none; }
+    .race-table td:nth-child(3), .race-table td:nth-child(4) { grid-column: 1 / -1; }
+    .race-summary { min-width: 0; }
+    .race-chip { width: auto; flex: 1; }
+  }
+  .scroll-pills { flex-wrap: nowrap; overflow-x: auto; max-width: 100%; padding-bottom: 4px; }
+  .scroll-pills .pill { flex-shrink: 0; }
+  .kept-tag { font-size: 0.64rem; color: var(--blue); font-weight: 700; margin-left: 4px; }
   .champ-card {
     background: linear-gradient(145deg, rgba(245,158,11,0.14), rgba(17,24,39,0.9));
     border: 1px solid rgba(245,158,11,0.35); border-radius: 12px; padding: 16px;
@@ -228,9 +255,13 @@
   <nav class="tabs">
     <button class="tab-btn active" data-tab="current">Current Standings</button>
     <button class="tab-btn" data-tab="matchups">Matchups</button>
+    <button class="tab-btn" data-tab="recap">Weekly Recap</button>
+    <button class="tab-btn" data-tab="power">Power Rankings</button>
     <button class="tab-btn" data-tab="lineups">Lineup IQ</button>
     <button class="tab-btn" data-tab="draft">Draft &amp; Keepers</button>
     <button class="tab-btn" data-tab="activity">Trades &amp; Waivers</button>
+    <button class="tab-btn" data-tab="managers">Managers</button>
+    <button class="tab-btn" data-tab="players">Player Records</button>
     <button class="tab-btn" data-tab="alltime">All-Time Standings</button>
     <button class="tab-btn" data-tab="rivalry">Rivalry Matrix</button>
     <button class="tab-btn" data-tab="seasons">Season-by-Season</button>
@@ -266,6 +297,15 @@
         <div id="liveMatchups" style="display:grid;gap:10px;"></div>
       </div>
     </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span>🧮 Playoff Race</span>
+        <span style="font-size:0.8rem;color:var(--muted);" id="raceSub"></span>
+      </div>
+      <div id="playoffRace"></div>
+      <p class="note">Every possible win/loss result of the remaining regular-season games is checked, including this week’s games in progress. <strong>IN</strong> = clinched with that many more wins no matter what else happens; <strong>?</strong> = possible with help; <strong>OUT</strong> = can’t make it. A tie on record counts as could-go-either-way, because the tiebreaker is total points scored. ESPN’s playoff odds above estimate how likely each case is.</p>
+    </div>
   </section>
 
   <!-- TAB: MATCHUPS -->
@@ -277,6 +317,45 @@
       </div>
       <div id="weekSummary" class="week-summary"></div>
       <div id="matchupsGrid" class="matchups-grid"></div>
+    </div>
+  </section>
+
+  <!-- TAB: WEEKLY RECAP -->
+  <section id="tab-recap" class="panel">
+    <div class="card">
+      <div class="card-title">
+        <span id="recapTitle">📰 Weekly Recap</span>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+          <div class="pill-group" id="recapSeasonPills"></div>
+          <button class="btn" onclick="copyRecap()">📋 Copy for Group Chat</button>
+        </div>
+      </div>
+      <div class="pill-group scroll-pills" id="recapWeekPills" style="margin-bottom:16px;"></div>
+      <div class="grid-3" id="recapAwards" style="margin-bottom:16px;"></div>
+      <div class="card-title" style="margin-bottom:6px;">🏈 Results</div>
+      <div id="recapResults"></div>
+    </div>
+  </section>
+
+  <!-- TAB: POWER RANKINGS -->
+  <section id="tab-power" class="panel">
+    <div class="card">
+      <div class="card-title">
+        <span id="powerTitle">⚡ Power Rankings</span>
+        <div class="pill-group" id="powerPills"></div>
+      </div>
+      <div class="grid-4" id="powerRecords" style="margin-bottom:16px;"></div>
+      <div class="table-wrap">
+        <table id="powerTable">
+          <thead><tr><th>#</th><th>Move</th><th>Manager</th><th>Record</th><th title="Record if you played every team every week">All-Play</th><th>All-Play %</th><th title="Share of the league beaten per week, last 3 weeks">Last 3</th><th>PF / Wk</th><th title="Wins you would expect from your weekly scores">Exp. Wins</th><th title="Actual wins minus expected wins">Luck</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="note">All-play is your record if you had played every team every week, so it measures how good a team is rather than who it happened to face. Power = 60% season all-play + 40% the last three weeks. Luck = actual wins minus the wins your scores would earn on average. Regular season only.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">🍀 Career Luck (All Seasons)</div>
+      <div id="careerLuck"></div>
     </div>
   </section>
 
@@ -333,7 +412,7 @@
         <span style="font-size:0.8rem;color:var(--muted);" id="keeperSub"></span>
       </div>
       <div class="grid-3" id="keeperGrid"></div>
-      <p class="note">Prices are ESPN’s listed keeper cost for next season (your auction price, or ESPN’s default for players added in-season). ★ marks each team’s three best values: the most points above what that price usually buys in this league. Check the house rules before deciding.</p>
+      <p class="note">Prices are ESPN’s listed keeper cost for next season (your auction price, or ESPN’s default for players added in-season), plus any house-rule increase. <span class="kept-tag">K1</span>/<span class="kept-tag">K2</span> = seasons this team has already kept the player in a row. ★ marks each team’s best values: the most points above what that price usually buys in this league.</p>
     </div>
   </section>
 
@@ -360,6 +439,58 @@
         <div id="waiverList"></div>
       </div>
     </div>
+  </section>
+
+  <!-- TAB: MANAGERS -->
+  <section id="tab-managers" class="panel">
+    <div class="card">
+      <div class="card-title">
+        <span id="profileTitle">👤 Managers</span>
+      </div>
+      <div class="pill-group" id="managerPills" style="margin-bottom:16px;"></div>
+      <div class="grid-4" id="profileStats"></div>
+    </div>
+    <div class="profile-grid">
+      <div class="card">
+        <div class="card-title">📅 Season by Season</div>
+        <div class="table-wrap"><table id="profileSeasons"><thead><tr><th>Season</th><th>Team</th><th>Record</th><th>PF</th><th>Finish</th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="card">
+        <div class="card-title">⚔️ Rivalries <span class="proj-sub">(3+ games, playoffs included)</span></div>
+        <div id="profileRivals"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">💰 Draft Hits &amp; Misses</div>
+        <div id="profileDraft"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">🤝 Trades &amp; Waivers</div>
+        <div id="profileTrades"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAB: PLAYER RECORDS -->
+  <section id="tab-players" class="panel">
+    <div class="profile-grid">
+      <div class="card">
+        <div class="card-title">🚀 Top 10 Single-Week Scores</div>
+        <div class="table-wrap"><table id="topWeeks"><thead><tr><th>#</th><th>Pts</th><th>Player</th><th>Pos</th><th>Manager</th><th>When</th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="card">
+        <div class="card-title">🏅 Best by Position</div>
+        <div class="table-wrap"><table id="posBests"><thead><tr><th>Pos</th><th>Best Week</th><th>Best Season</th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="card">
+        <div class="card-title">📈 Top 10 Seasons</div>
+        <div class="table-wrap"><table id="topSeasons"><thead><tr><th>#</th><th>Pts</th><th>Player</th><th>Pos</th><th>Season</th></tr></thead><tbody></tbody></table></div>
+      </div>
+      <div class="card" style="grid-column:1/-1;">
+        <div class="card-title">🔁 Most-Drafted Players</div>
+        <div class="table-wrap"><table id="mostDrafted"><thead><tr><th>Player</th><th>Drafts</th><th>Avg $</th><th>History (K = kept)</th></tr></thead><tbody></tbody></table></div>
+      </div>
+    </div>
+    <p class="note">Weekly scores cover every player on a league roster that week, benched or not. Season totals are each player’s full NFL season for any team, among players who were drafted, picked up or rostered in this league.</p>
   </section>
 
   <!-- TAB 2: ALL-TIME STANDINGS -->
@@ -722,7 +853,7 @@ function renderCurrentStandings() {
     return `<tr class="${seed === 6 ? 'cutoff-row' : ''}">
       <td><strong>#${seed}</strong></td>
       <td>${statusBadge}</td>
-      <td><strong>${esc(t.manager)}</strong><div style="font-size:0.78rem;color:var(--muted);">${esc(t.name)}</div></td>
+      <td>${managerLink(t.id, t.manager)}<div style="font-size:0.78rem;color:var(--muted);">${esc(t.name)}</div></td>
       <td><strong>${rec(t.wins, t.losses, t.ties)}</strong></td>
       <td>${t.pf.toFixed(2)}</td>
       <td>${t.pa.toFixed(2)}</td>
@@ -824,7 +955,7 @@ function renderAllTime() {
     if (r.thirds) medals.push(`<span class="badge badge-out">🥉 ${r.thirds}× 3rd</span>`);
     return `<tr>
       <td><strong>${i + 1}</strong></td>
-      <td><strong>${esc(r.manager)}</strong></td>
+      <td>${managerLink(r.id, r.manager)}</td>
       <td><strong>${rec(r.wins, r.losses, r.ties)}</strong></td>
       <td>${r.winPct.toFixed(3)}</td>
       <td>${r.pf.toFixed(2)}</td>
@@ -1346,6 +1477,11 @@ function renderLineupIQ() {
 let draftSeason = null, draftTeam = 'all', draftSort = { key: 'pick', dir: 1 }, draftShowAll = false;
 function setDraftSeason(v) { draftSeason = Number(v); draftTeam = 'all'; draftShowAll = false; renderDraft(); }
 
+function draftHasPrices(season) {
+  const G = EXTRAS[season] && EXTRAS[season].league;
+  return !!(G && G.draft && G.draft.some(p => p.bid > 0));
+}
+
 function draftPicks(season) {
   const G = EXTRAS[season].league;
   return G.draft.map(p => {
@@ -1369,6 +1505,7 @@ function renderDraft() {
   const ptsLabel = live ? 'season-to-date points' : 'season points';
 
   const by = (arr, f) => arr.reduce((m, x) => (f(x) > f(m) ? x : m), arr[0]);
+  const priced = draftHasPrices(draftSeason);
   const priciest = by(picks, p => p.bid);
   const bargains = picks.filter(p => p.bid <= 5);
   const bargain = bargains.length ? by(bargains, p => p.pts) : null;
@@ -1377,9 +1514,9 @@ function renderDraft() {
   const topScorer = by(picks, p => p.pts);
   const card = (label, val, sub) => `<div class="record-card"><div class="record-label">${label}</div><div class="record-val">${val}</div><div class="record-sub">${sub}</div></div>`;
   document.getElementById('draftRecords').innerHTML = [
-    card('Most Expensive', `$${priciest.bid}`, `${esc(priciest.name)} · ${esc(priciest.manager)} · ${priciest.pts.toFixed(1)} pts`),
-    bargain ? card('Best Bargain ($5 or less)', esc(bargain.name), `$${bargain.bid} · ${esc(bargain.manager)} · ${bargain.pts.toFixed(1)} pts`) : '',
-    bust ? card('Biggest Bust ($25+)', esc(bust.name), `$${bust.bid} · ${esc(bust.manager)} · ${bust.pts.toFixed(1)} pts (${bust.ppd.toFixed(2)}/$)`) : '',
+    priced ? card('Most Expensive', `$${priciest.bid}`, `${esc(priciest.name)} · ${esc(priciest.manager)} · ${priciest.pts.toFixed(1)} pts`) : '',
+    priced && bargain ? card('Best Bargain ($5 or less)', esc(bargain.name), `$${bargain.bid} · ${esc(bargain.manager)} · ${bargain.pts.toFixed(1)} pts`) : '',
+    priced && bust ? card('Biggest Bust ($25+)', esc(bust.name), `$${bust.bid} · ${esc(bust.manager)} · ${bust.pts.toFixed(1)} pts (${bust.ppd.toFixed(2)}/$)`) : '',
     card('Top Scorer Drafted', esc(topScorer.name), `$${topScorer.bid} · ${esc(topScorer.manager)} · ${topScorer.pts.toFixed(1)} pts`)
   ].join('');
 
@@ -1391,12 +1528,12 @@ function renderDraft() {
   document.querySelector('#draftTeamTable tbody').innerHTML = Object.values(teams)
     .sort((a, b) => b.pts - a.pts)
     .map(t => `<tr>
-      <td><strong>${esc(getManager(t.id))}</strong></td>
-      <td>$${t.spent}</td>
+      <td>${managerLink(t.id)}</td>
+      <td>${priced ? '$' + t.spent : '—'}</td>
       <td>${t.keepers || '—'}</td>
       <td>${t.players}</td>
       <td>${t.pts.toFixed(1)}</td>
-      <td>${t.spent ? (t.pts / t.spent).toFixed(2) : '—'}</td>
+      <td>${priced && t.spent ? (t.pts / t.spent).toFixed(2) : '—'}</td>
     </tr>`).join('');
 
   const filter = document.getElementById('draftTeamFilter');
@@ -1415,12 +1552,12 @@ function renderDraft() {
       <td><strong>${esc(p.manager)}</strong></td>
       <td>${esc(p.name)} ${p.keeper ? '<span class="badge badge-bye">Keeper</span>' : ''}</td>
       <td>${esc(p.pos)}</td>
-      <td>$${p.bid}</td>
+      <td>${priced ? '$' + p.bid : '—'}</td>
       <td>${p.pts.toFixed(1)}</td>
-      <td>${p.bid ? p.ppd.toFixed(2) : '—'}</td>
+      <td>${priced && p.bid ? p.ppd.toFixed(2) : '—'}</td>
     </tr>`).join('') + (rows.length > shownRows.length
       ? `<tr><td colspan="7"><button class="lu-toggle" onclick="draftShowAll=true;renderDraft();">Show all ${rows.length} picks</button></td></tr>` : '');
-  document.getElementById('draftNote').textContent = `Points are each player’s ${ptsLabel} for any team, including weeks on someone else’s roster or the bench. Nom. # is the order players were nominated in the auction.`;
+  document.getElementById('draftNote').textContent = (priced ? '' : `ESPN has no auction prices for ${draftSeason} (every pick is recorded at $0), so price stats are left out. `) + `Points are each player’s ${ptsLabel} for any team, including weeks on someone else’s roster or the bench. Nom. # is the order players were nominated in the auction.`;
 
   renderKeepers(picks);
 }
@@ -1439,15 +1576,20 @@ function renderKeepers(picks) {
   document.getElementById('keeperGrid').innerHTML = teamIds.map(id => {
     const players = G.rosters[id].map(pid => ({ id: pid, ...(G.players[String(pid)] || { name: 'Unknown', pos: '?', pts: 0 }) }))
       .filter(p => p.keeperCost != null)
-      .map(p => ({ ...p, surplus: p.pts - p.keeperCost * rate }));
-    const best = new Set([...players].sort((a, b) => b.surplus - a.surplus).slice(0, keepCount).map(p => p.id));
+      .map(p => {
+        const kept = yearsKept(p.id, id);
+        const cost = p.keeperCost + (kept ? KEEPER_RULES.priceIncrease : 0);
+        const eligible = !(KEEPER_RULES.maxYearsKept && kept >= KEEPER_RULES.maxYearsKept);
+        return { ...p, kept, cost, eligible, surplus: p.pts - cost * rate };
+      });
+    const best = new Set([...players].filter(p => p.eligible).sort((a, b) => b.surplus - a.surplus).slice(0, keepCount).map(p => p.id));
     players.sort((a, b) => b.surplus - a.surplus);
     return `<div class="keeper-card"><div class="lu-head">${esc(getManager(id))}</div>
       <div class="lu-row proj-sub"><span></span><span>Player</span><span>Cost</span><span>Pts</span></div>
       ${players.map(p => `<div class="lu-row ${best.has(p.id) ? '' : 'bench'}">
         <span>${best.has(p.id) ? '★' : ''}</span>
-        <span class="lu-player">${esc(p.name)} <span class="proj-sub">${esc(p.pos)}</span></span>
-        <span class="lu-pts">$${p.keeperCost}</span>
+        <span class="lu-player" ${p.eligible ? '' : 'style="text-decoration:line-through;" title="Kept the maximum number of years"'}>${esc(p.name)} <span class="proj-sub">${esc(p.pos)}</span>${p.kept ? `<span class="kept-tag" title="Kept ${p.kept} season${p.kept === 1 ? '' : 's'} in a row">K${p.kept}</span>` : ''}</span>
+        <span class="lu-pts">$${p.cost}</span>
         <span class="lu-pts">${(p.pts || 0).toFixed(1)}</span>
       </div>`).join('')}
     </div>`;
@@ -1591,9 +1733,564 @@ function renderRulesSettings() {
   ].join('');
 }
 
+// --------------------------------------------------------------------------
+// Navigation helpers
+// --------------------------------------------------------------------------
+function switchTab(name) {
+  const btn = document.querySelector(`.tab-btn[data-tab="${name}"]`);
+  if (btn) btn.click();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function managerLink(id, label) {
+  return `<a class="mgr-link" href="#" onclick="openManager(${Number(id)});return false;">${esc(label || getManager(id))}</a>`;
+}
+
+function maxBy(arr, f) {
+  return arr.reduce((m, x) => (m === undefined || f(x) > f(m) ? x : m), undefined);
+}
+
+// --------------------------------------------------------------------------
+// Playoff race: clinched / eliminated / wins needed
+// --------------------------------------------------------------------------
+function playoffRaceSolver(input) {
+  // Pure function, also run inside a Web Worker. Tries every win/loss
+  // combination of the remaining regular-season games. Ties in the standings
+  // count as "could go either way" (the real tiebreaker is total points).
+  const { ids, wins, games, spots, byes } = input;
+  const n = ids.length, g = games.length;
+  const idx = {};
+  ids.forEach((id, i) => { idx[id] = i; });
+  const gh = games.map(x => idx[x[0]]), ga = games.map(x => idx[x[1]]);
+  const remaining = new Array(n).fill(0);
+  gh.forEach(i => remaining[i]++);
+  ga.forEach(i => remaining[i]++);
+  const grid = v => remaining.map(r => new Array(r + 1).fill(v));
+  const seen = grid(0), alwaysIn = grid(1), everIn = grid(0), alwaysBye = grid(1), everBye = grid(0);
+  const w = new Int32Array(n), extra = new Int32Array(n);
+  const total = Math.pow(2, g);
+  for (let m = 0; m < total; m++) {
+    for (let i = 0; i < n; i++) { w[i] = wins[i]; extra[i] = 0; }
+    for (let j = 0; j < g; j++) {
+      const winner = ((m >> j) & 1) ? gh[j] : ga[j];
+      w[winner]++; extra[winner]++;
+    }
+    for (let i = 0; i < n; i++) {
+      let gt = 0, eq = 0;
+      const wi = w[i];
+      for (let k = 0; k < n; k++) {
+        if (k === i) continue;
+        if (w[k] > wi) gt++; else if (w[k] === wi) eq++;
+      }
+      const e = extra[i];
+      seen[i][e] = 1;
+      if (gt + eq >= spots) alwaysIn[i][e] = 0;
+      if (gt < spots) everIn[i][e] = 1;
+      if (gt + eq >= byes) alwaysBye[i][e] = 0;
+      if (gt < byes) everBye[i][e] = 1;
+    }
+  }
+  return { ids, remaining, seen, alwaysIn, everIn, alwaysBye, everBye, scenarios: total };
+}
+
+function runPlayoffSolver(input) {
+  return new Promise(resolve => {
+    const fallback = () => setTimeout(() => resolve(playoffRaceSolver(input)), 0);
+    try {
+      const src = `${playoffRaceSolver.toString()}\nonmessage = e => postMessage(playoffRaceSolver(e.data));`;
+      const url = URL.createObjectURL(new Blob([src], { type: 'text/javascript' }));
+      const worker = new Worker(url);
+      worker.onmessage = e => { resolve(e.data); worker.terminate(); URL.revokeObjectURL(url); };
+      worker.onerror = () => { worker.terminate(); fallback(); };
+      worker.postMessage(input);
+    } catch (err) {
+      fallback();
+    }
+  });
+}
+
+let raceKey = '', raceResult = null;
+function renderPlayoffRace() {
+  const el = document.getElementById('playoffRace');
+  const lastReg = regularSeasonWeeks(CURRENT_SEASON);
+  const spots = playoffSpots();
+  const byes = 2;
+  const games = CURRENT.schedule
+    .filter(g => g.week <= lastReg && g.winner === 'UNDECIDED')
+    .map(g => [g.homeId, g.awayId]);
+  document.getElementById('raceSub').textContent = games.length
+    ? `${games.length} games left · ${Math.pow(2, games.length).toLocaleString()} possible outcomes checked`
+    : '';
+  if (!games.length) { el.innerHTML = noData('The regular season is over. Seeds are final.'); return; }
+  if (games.length > 22) { el.innerHTML = noData('Too early to call: this switches on with about four weeks left.'); return; }
+  const input = { ids: CURRENT.teams.map(t => t.id), wins: CURRENT.teams.map(t => t.wins), games, spots, byes };
+  const key = JSON.stringify(input);
+  if (key === raceKey && raceResult) { drawPlayoffRace(raceResult); return; }
+  raceKey = key;
+  raceResult = null;
+  el.innerHTML = '<div class="empty-state">Working through every remaining outcome…</div>';
+  runPlayoffSolver(input).then(res => {
+    if (raceKey !== key) return;
+    raceResult = res;
+    drawPlayoffRace(res);
+  });
+}
+
+function drawPlayoffRace(res) {
+  const order = standingsOrder(CURRENT.teams);
+  const idx = Object.fromEntries(res.ids.map((id, i) => [id, i]));
+  const maxRem = Math.max(...res.remaining);
+  const rows = order.map(t => {
+    const i = idx[t.id];
+    const ks = res.seen[i].map((s, k) => k).filter(k => res.seen[i][k]);
+    const all = arr => ks.every(k => arr[i][k]);
+    const any = arr => ks.some(k => arr[i][k]);
+    let status, cls;
+    if (all(res.alwaysBye)) { status = 'Clinched bye'; cls = 'badge-bye'; }
+    else if (all(res.alwaysIn)) { status = 'Clinched playoffs'; cls = 'badge-in'; }
+    else if (!any(res.everIn)) { status = 'Eliminated'; cls = 'badge-out'; }
+    else { status = 'Alive'; cls = 'badge-alive'; }
+
+    let summary = '';
+    const rem = res.remaining[i];
+    const winWord = k => `${k} more win${k === 1 ? '' : 's'}`;
+    if (status === 'Clinched bye') summary = 'Locked into the top 2.';
+    else if (status === 'Clinched playoffs') {
+      const byeK = ks.find(k => res.alwaysBye[i][k]);
+      summary = byeK !== undefined ? `Clinches a bye with ${winWord(byeK)}.` : (any(res.everBye) ? 'A bye is still possible with help.' : 'Can’t catch the top 2.');
+    } else if (status === 'Eliminated') summary = `Can’t reach the top ${playoffSpots()} any more.`;
+    else {
+      const inK = ks.find(k => res.alwaysIn[i][k]);
+      const byeK = ks.find(k => res.alwaysBye[i][k]);
+      const aliveK = ks.find(k => res.everIn[i][k]);
+      if (inK !== undefined) {
+        summary = `Clinches a spot with ${winWord(inK)}`;
+        if (byeK !== undefined) summary += ` and a bye with ${byeK}`;
+        summary += aliveK < inK ? (aliveK === 0 ? '. Fewer can still work with help.' : `. ${aliveK}+ can still work with help.`) : '.';
+      } else {
+        summary = aliveK > 0 ? `Must win at least ${aliveK}, and needs help.` : 'Needs help, even winning out.';
+      }
+    }
+    const chips = Array.from({ length: maxRem + 1 }, (_, k) => {
+      if (k > rem || !res.seen[i][k]) return '<span class="race-chip na"></span>';
+      if (res.alwaysBye[i][k]) return '<span class="race-chip bye" title="Clinches a bye">BYE</span>';
+      if (res.alwaysIn[i][k]) return '<span class="race-chip in" title="Clinches a playoff spot">IN</span>';
+      if (res.everIn[i][k]) return '<span class="race-chip maybe" title="Needs help from other results">?</span>';
+      return '<span class="race-chip out" title="Out">OUT</span>';
+    }).join('');
+    return `<tr>
+      <td>${managerLink(t.id)}<div class="proj-sub">${rec(t.wins, t.losses, t.ties)}</div></td>
+      <td><span class="badge ${cls}">${status}</span></td>
+      <td><div class="race-chips">${chips}</div></td>
+      <td class="race-summary">${esc(summary)}</td>
+    </tr>`;
+  }).join('');
+  document.getElementById('playoffRace').innerHTML = `<div class="race-mobile-legend proj-sub">Boxes, left to right: if they win ${Array.from({ length: maxRem + 1 }, (_, k) => k).join(', ')} of their remaining games.</div><div class="table-wrap"><table class="race-table">
+    <thead><tr><th>Manager</th><th>Status</th><th>If they win … more games: ${Array.from({ length: maxRem + 1 }, (_, k) => k).join(' · ')}</th><th>What it takes</th></tr></thead>
+    <tbody>${rows}</tbody></table></div>`;
+}
+function playoffSpots() {
+  const lg = EXTRAS[CURRENT_SEASON] && EXTRAS[CURRENT_SEASON].league;
+  return (lg && lg.settings && lg.settings.playoffTeams) || 6;
+}
+
+// --------------------------------------------------------------------------
+// Weekly recap
+// --------------------------------------------------------------------------
+let recapSeason = null, recapWeek = null;
+function setRecapSeason(v) { recapSeason = Number(v); recapWeek = null; renderRecap(); }
+function setRecapWeek(v) { recapWeek = Number(v); renderRecap(); }
+
+function completedWeeks(season) {
+  const d = seasonData(season);
+  if (!d) return [];
+  const byWeek = {};
+  d.schedule.forEach(g => { (byWeek[g.week] = byWeek[g.week] || []).push(g); });
+  return Object.keys(byWeek).map(Number).filter(w => byWeek[w].every(g => g.winner !== 'UNDECIDED')).sort((a, b) => a - b);
+}
+
+function weekAwards(season, week) {
+  const games = seasonData(season).schedule.filter(g => g.week === week && g.winner !== 'UNDECIDED');
+  const scores = games.flatMap(g => [
+    { id: g.homeId, pts: g.homePts, opp: g.awayId, oppPts: g.awayPts, won: g.winner === 'HOME', tie: g.winner === 'TIE' },
+    { id: g.awayId, pts: g.awayPts, opp: g.homeId, oppPts: g.homePts, won: g.winner === 'AWAY', tie: g.winner === 'TIE' }
+  ]);
+  const awards = [];
+  const add = (icon, label, value, text) => awards.push({ icon, label, value, text });
+  const hi = maxBy(scores, s => s.pts), lo = maxBy(scores, s => -s.pts);
+  add('🔥', 'Top Score', hi.pts.toFixed(2), `${getManager(hi.id)} led the league.`);
+  add('🧊', 'Low Score', lo.pts.toFixed(2), `${getManager(lo.id)} ${lo.won ? 'scored least but still won' : 'had the quietest week'}.`);
+  const winners = scores.filter(s => s.won), losers = scores.filter(s => !s.won && !s.tie);
+  if (winners.length) {
+    const lucky = maxBy(winners, s => -s.pts);
+    add('🍀', 'Luckiest Win', lucky.pts.toFixed(2), `${getManager(lucky.id)} beat ${getManager(lucky.opp)} with the week’s lowest winning score.`);
+  }
+  if (losers.length) {
+    const unlucky = maxBy(losers, s => s.pts);
+    add('😤', 'Unluckiest Loss', unlucky.pts.toFixed(2), `${getManager(unlucky.id)} lost to ${getManager(unlucky.opp)} despite the week’s highest losing score.`);
+  }
+  const margin = g => Math.abs(g.homePts - g.awayPts);
+  const winnerOf = g => g.winner === 'HOME' ? [g.homeId, g.awayId] : [g.awayId, g.homeId];
+  const close = maxBy(games, g => -margin(g)), blow = maxBy(games, g => margin(g));
+  add('😬', 'Nail-Biter', `${margin(close).toFixed(2)} pts`, `${getManager(winnerOf(close)[0])} edged ${getManager(winnerOf(close)[1])}.`);
+  add('💥', 'Biggest Blowout', `${margin(blow).toFixed(2)} pts`, `${getManager(winnerOf(blow)[0])} flattened ${getManager(winnerOf(blow)[1])}.`);
+
+  const wk = weekLineups(season, week);
+  if (wk) {
+    const blunders = scores.map(s => ({ ...s, e: wk[s.id] })).filter(s => s.e);
+    const worst = maxBy(blunders, s => s.e.best - s.e.actual);
+    if (worst && worst.e.best - worst.e.actual > 0.005) {
+      const cost = !worst.won && !worst.tie && worst.e.best + (worst.e.adj || 0) > worst.oppPts;
+      add('🪑', 'Bench Blunder', `${(worst.e.best - worst.e.actual).toFixed(2)} pts`, `${getManager(worst.id)} left that on the bench${cost ? ' and it cost them the game' : ''}.`);
+    }
+    const benched = blunders.flatMap(s => s.e.players.filter(p => p.slot === BENCH_SLOT && p.opt).map(p => ({ ...p, id: s.id })));
+    const sit = maxBy(benched, p => p.pts);
+    if (sit) add('🙈', 'Should’ve Started', `${sit.pts.toFixed(1)} pts`, `${sit.name} (${sit.pos}) sat on ${getManager(sit.id)}’s bench.`);
+    const perfect = blunders.filter(s => s.e.best - s.e.actual < 0.005).map(s => getManager(s.id));
+    if (perfect.length) add('🎯', 'Perfect Lineup', String(perfect.length), `${perfect.join(', ')} started the best possible lineup.`);
+  }
+  const lg = EXTRAS[season] && EXTRAS[season].league;
+  if (lg && wk) {
+    const pickups = (lg.transactions || []).filter(t => t.type === 'WAIVER' && t.week === week).flatMap(t =>
+      t.items.filter(i => i.type === 'ADD').map(i => {
+        const e = wk[t.teamId];
+        const p = e && e.players.find(x => x.id === i.playerId && x.slot !== BENCH_SLOT && x.slot !== IR_SLOT);
+        return p ? { ...p, id: t.teamId, bid: t.bid } : null;
+      })).filter(Boolean);
+    const hero = maxBy(pickups, p => p.pts);
+    if (hero) add('🛒', 'Waiver Pickup of the Week', `${hero.pts.toFixed(1)} pts`, `${hero.name} ($${hero.bid}) started for ${getManager(hero.id)} right away.`);
+  }
+  return { games, awards };
+}
+
+function renderRecap() {
+  const seasons = allSeasons().filter(y => completedWeeks(y).length);
+  if (!seasons.length) { document.getElementById('recapAwards').innerHTML = noData('No completed weeks yet.'); return; }
+  if (!seasons.includes(recapSeason)) recapSeason = seasons[0];
+  const weeks = completedWeeks(recapSeason);
+  if (!weeks.includes(recapWeek)) recapWeek = weeks[weeks.length - 1];
+  const lastReg = regularSeasonWeeks(recapSeason);
+  document.getElementById('recapSeasonPills').innerHTML = seasonPills(seasons, recapSeason, 'setRecapSeason');
+  document.getElementById('recapWeekPills').innerHTML = weeks.map(w =>
+    `<button class="pill ${w === recapWeek ? 'active' : ''}" onclick="setRecapWeek(${w})">${w > lastReg ? 'PO ' : 'Wk '}${w}</button>`).join('');
+  document.getElementById('recapTitle').textContent = `📰 ${recapSeason} Week ${recapWeek} Recap${recapWeek > lastReg ? ' (Playoffs)' : ''}`;
+  const { games, awards } = weekAwards(recapSeason, recapWeek);
+  document.getElementById('recapAwards').innerHTML = awards.map(a => `<div class="record-card">
+      <div class="record-label">${a.icon} ${esc(a.label)}</div>
+      <div class="record-val">${esc(a.value)}</div>
+      <div class="record-sub">${esc(a.text)}</div>
+    </div>`).join('');
+  document.getElementById('recapResults').innerHTML = games.map(g => {
+    const [w, l] = g.winner === 'HOME' ? [[g.homeId, g.homePts], [g.awayId, g.awayPts]] : [[g.awayId, g.awayPts], [g.homeId, g.homePts]];
+    return `<div class="list-row"><div><strong>${esc(getManager(w[0]))}</strong> ${g.winner === 'TIE' ? 'tied' : 'def.'} ${esc(getManager(l[0]))}${g.playoffTier && g.playoffTier !== 'NONE' ? ' <span class="badge badge-bye">PO</span>' : ''}</div>
+      <div style="font-variant-numeric:tabular-nums;white-space:nowrap;"><strong style="color:var(--green);">${w[1].toFixed(2)}</strong> – ${l[1].toFixed(2)}</div></div>`;
+  }).join('');
+}
+
+function copyRecap() {
+  const { games, awards } = weekAwards(recapSeason, recapWeek);
+  const lines = [
+    `🦆 Duck Dynasty — ${recapSeason} Week ${recapWeek} Recap`,
+    '',
+    ...games.map(g => {
+      const [w, l] = g.winner === 'HOME' ? [[g.homeId, g.homePts], [g.awayId, g.awayPts]] : [[g.awayId, g.awayPts], [g.homeId, g.homePts]];
+      return `${getManager(w[0])} ${w[1].toFixed(2)} ${g.winner === 'TIE' ? 'tied' : 'def.'} ${getManager(l[0])} ${l[1].toFixed(2)}`;
+    }),
+    '',
+    ...awards.map(a => `${a.icon} ${a.label}: ${a.value} (${a.text})`),
+    '',
+    `Full recap: ${window.location.href.split('#')[0]}`
+  ];
+  navigator.clipboard.writeText(lines.join('\n')).then(() => showToast('Recap copied for the group chat!'));
+}
+
+// --------------------------------------------------------------------------
+// Power rankings & luck
+// --------------------------------------------------------------------------
+let powerSeason = null;
+function setPowerSeason(v) { powerSeason = Number(v); renderPower(); }
+
+function allPlayStats(season, uptoWeek) {
+  const d = seasonData(season);
+  const lastReg = regularSeasonWeeks(season);
+  const byWeek = {};
+  d.schedule.forEach(g => {
+    if (g.week > lastReg || g.week > uptoWeek || g.winner === 'UNDECIDED') return;
+    const res = side => g.winner === 'TIE' ? 0.5 : (g.winner === side ? 1 : 0);
+    (byWeek[g.week] = byWeek[g.week] || []).push({ id: g.homeId, pts: g.homePts, res: res('HOME') }, { id: g.awayId, pts: g.awayPts, res: res('AWAY') });
+  });
+  const weeks = Object.keys(byWeek).map(Number).sort((a, b) => a - b);
+  const st = {};
+  weeks.forEach(w => {
+    const entries = byWeek[w];
+    entries.forEach(e => {
+      const s = st[e.id] = st[e.id] || { id: e.id, wins: 0, losses: 0, ties: 0, apW: 0, apL: 0, apT: 0, exp: 0, pf: 0, games: 0, weekly: [] };
+      const beat = entries.filter(o => o !== e && o.pts < e.pts).length;
+      const tied = entries.filter(o => o !== e && o.pts === e.pts).length;
+      const lost = entries.length - 1 - beat - tied;
+      const pct = (beat + tied / 2) / (entries.length - 1);
+      s.apW += beat; s.apL += lost; s.apT += tied;
+      s.exp += pct;
+      s.pf += e.pts; s.games += 1;
+      if (e.res === 1) s.wins += 1; else if (e.res === 0.5) s.ties += 1; else s.losses += 1;
+      s.weekly.push(pct);
+    });
+  });
+  const rows = Object.values(st).map(s => {
+    const apPct = (s.apW + s.apT / 2) / Math.max(1, s.apW + s.apL + s.apT);
+    const last3 = s.weekly.slice(-3);
+    const recent = last3.reduce((a, b) => a + b, 0) / Math.max(1, last3.length);
+    return { ...s, apPct, recent, luck: s.wins + s.ties / 2 - s.exp, power: 0.6 * apPct + 0.4 * recent };
+  }).sort((a, b) => b.power - a.power);
+  return { rows, weeks };
+}
+
+function renderPower() {
+  const seasons = allSeasons();
+  if (!seasons.includes(powerSeason)) powerSeason = seasons[0];
+  document.getElementById('powerPills').innerHTML = seasonPills(seasons, powerSeason, 'setPowerSeason');
+  const { rows, weeks } = allPlayStats(powerSeason, 99);
+  if (!rows.length) { document.getElementById('powerRecords').innerHTML = noData('No completed weeks yet.'); return; }
+  const lastWeek = weeks[weeks.length - 1];
+  const prev = weeks.length > 1 ? allPlayStats(powerSeason, weeks[weeks.length - 2]).rows : [];
+  const prevRank = Object.fromEntries(prev.map((r, i) => [r.id, i + 1]));
+  document.getElementById('powerTitle').textContent = `⚡ ${powerSeason} Power Rankings (through Week ${lastWeek})`;
+
+  const lucky = maxBy(rows, r => r.luck), unlucky = maxBy(rows, r => -r.luck), hot = maxBy(rows, r => r.recent), best = maxBy(rows, r => r.apPct);
+  const card = (label, val, sub) => `<div class="record-card"><div class="record-label">${label}</div><div class="record-val">${val}</div><div class="record-sub">${sub}</div></div>`;
+  document.getElementById('powerRecords').innerHTML = [
+    card('Best Team (All-Play)', esc(getManager(best.id)), `${rec(best.apW, best.apL, best.apT)} against everyone (${(best.apPct * 100).toFixed(1)}%)`),
+    card('Hottest (Last 3 Weeks)', esc(getManager(hot.id)), `Beat ${(hot.recent * 100).toFixed(0)}% of the league each week`),
+    card('Luckiest', esc(getManager(lucky.id)), `${lucky.luck >= 0 ? '+' : ''}${lucky.luck.toFixed(1)} wins vs. expected`),
+    card('Unluckiest', esc(getManager(unlucky.id)), `${unlucky.luck.toFixed(1)} wins vs. expected`)
+  ].join('');
+
+  document.querySelector('#powerTable tbody').innerHTML = rows.map((r, i) => {
+    const before = prevRank[r.id];
+    const move = before ? before - (i + 1) : 0;
+    const arrow = !before || move === 0 ? '<span class="proj-sub">–</span>'
+      : move > 0 ? `<span style="color:var(--green);">▲${move}</span>` : `<span style="color:var(--red);">▼${-move}</span>`;
+    const luckColor = r.luck > 0.5 ? 'var(--green)' : r.luck < -0.5 ? 'var(--red)' : 'var(--muted)';
+    return `<tr>
+      <td><strong>${i + 1}</strong></td>
+      <td>${arrow}</td>
+      <td>${managerLink(r.id)}</td>
+      <td><strong>${rec(r.wins, r.losses, r.ties)}</strong></td>
+      <td>${rec(r.apW, r.apL, r.apT)}</td>
+      <td>${(r.apPct * 100).toFixed(1)}%</td>
+      <td>${(r.recent * 100).toFixed(0)}%</td>
+      <td>${(r.pf / r.games).toFixed(2)}</td>
+      <td>${r.exp.toFixed(1)}</td>
+      <td style="color:${luckColor};font-weight:600;">${r.luck >= 0 ? '+' : ''}${r.luck.toFixed(1)}</td>
+    </tr>`;
+  }).join('');
+
+  // Career luck across every season
+  const career = {};
+  allSeasons().forEach(y => allPlayStats(y, 99).rows.forEach(r => {
+    const c = career[r.id] = career[r.id] || { id: r.id, luck: 0, wins: 0, exp: 0 };
+    c.luck += r.luck; c.wins += r.wins + r.ties / 2; c.exp += r.exp;
+  }));
+  document.getElementById('careerLuck').innerHTML = Object.values(career).sort((a, b) => b.luck - a.luck).map(c => `<div class="list-row">
+      <div>${managerLink(c.id)}<div class="proj-sub">${c.wins} actual wins · ${c.exp.toFixed(1)} expected</div></div>
+      <strong style="color:${c.luck > 0.5 ? 'var(--green)' : c.luck < -0.5 ? 'var(--red)' : 'var(--muted)'};">${c.luck >= 0 ? '+' : ''}${c.luck.toFixed(1)}</strong>
+    </div>`).join('');
+}
+
+// --------------------------------------------------------------------------
+// Manager profiles
+// --------------------------------------------------------------------------
+let profileId = null, profileAllTrades = false;
+function openManager(id) { profileId = Number(id); profileAllTrades = false; renderManagers(); switchTab('managers'); }
+function setProfile(id) { profileId = Number(id); profileAllTrades = false; renderManagers(); }
+
+function headToHead(id) {
+  const opp = {};
+  getAllMatchups().forEach(g => {
+    if (g.winner === 'UNDECIDED' || (g.homeId !== id && g.awayId !== id)) return;
+    const home = g.homeId === id;
+    const o = home ? g.awayId : g.homeId;
+    const r = opp[o] = opp[o] || { id: o, w: 0, l: 0, t: 0 };
+    if (g.winner === 'TIE') r.t += 1;
+    else if ((g.winner === 'HOME') === home) r.w += 1; else r.l += 1;
+  });
+  return Object.values(opp).map(r => ({ ...r, n: r.w + r.l + r.t, pct: (r.w + r.t / 2) / Math.max(1, r.w + r.l + r.t) }));
+}
+
+function renderManagers() {
+  const ids = Object.keys(HISTORY.managers).map(Number).sort((a, b) => getManager(a).localeCompare(getManager(b)));
+  if (!ids.includes(profileId)) profileId = ids[0];
+  const id = profileId;
+  document.getElementById('managerPills').innerHTML = ids.map(m =>
+    `<button class="pill ${m === id ? 'active' : ''}" onclick="setProfile(${m})">${esc(getManager(m))}</button>`).join('');
+
+  const career = computeAllTimeStats();
+  const me = career.find(s => s.id === id);
+  const winRank = [...career].sort((a, b) => b.winPct - a.winPct).findIndex(s => s.id === id) + 1;
+  const iq = lineupStats(extrasSeasons('lineups'));
+  const iqRows = [...iq.rows].sort((a, b) => b.eff - a.eff);
+  const myIq = iqRows.find(r => r.id === id);
+  const medals = [];
+  if (me.titles) medals.push(`🏆 ${me.titles}× Champion`);
+  if (me.seconds) medals.push(`🥈 ${me.seconds}× Runner-up`);
+  if (me.thirds) medals.push(`🥉 ${me.thirds}× Third`);
+  const card = (label, val, sub) => `<div class="record-card"><div class="record-label">${label}</div><div class="record-val">${val}</div><div class="record-sub">${sub}</div></div>`;
+  document.getElementById('profileTitle').textContent = `👤 ${getManager(id)}`;
+  document.getElementById('profileStats').innerHTML = [
+    card('Career Record', rec(me.wins, me.losses, me.ties), `${me.winPct.toFixed(3)} · #${winRank} of ${career.length} in win %`),
+    card('Hardware', medals.length ? medals.join('<br>') : '—', medals.length ? '' : 'Still chasing a podium'),
+    card('Scoring', `${me.ppg.toFixed(2)} PPG`, `${me.pf.toFixed(0)} career points`),
+    myIq ? card('Lineup IQ', `${(myIq.eff * 100).toFixed(1)}%`, `#${iqRows.indexOf(myIq) + 1} of ${iqRows.length} · ${myIq.left.toFixed(0)} pts benched`) : ''
+  ].join('');
+
+  // Seasons
+  document.querySelector('#profileSeasons tbody').innerHTML = allSeasons().slice().reverse().map(y => {
+    const d = seasonData(y);
+    const t = d && d.teams.find(x => x.id === id);
+    if (!t) return '';
+    const champ = HISTORY.champions.find(c => c.year === y);
+    let finish;
+    if (y === CURRENT_SEASON) finish = `Seed #${standingsOrder(d.teams).findIndex(x => x.id === id) + 1} <span class="proj-sub">(live)</span>`;
+    else if (champ && champ.champId === id) finish = '🏆 Champion';
+    else if (champ && champ.runnerUpId === id) finish = '🥈 Runner-up';
+    else if (champ && champ.thirdId === id) finish = '🥉 Third';
+    else finish = t.rankCalculatedFinal ? `#${t.rankCalculatedFinal}` : '—';
+    return `<tr><td><strong>${y}</strong></td><td>${esc(t.name)}</td><td>${rec(t.wins, t.losses, t.ties)}</td><td>${t.pf.toFixed(2)}</td><td>${finish}</td></tr>`;
+  }).join('');
+
+  // Rivalries (all games, playoffs included)
+  const h2h = headToHead(id).filter(r => r.n >= 3);
+  const bestR = maxBy(h2h, r => r.pct + r.n / 1000), worstR = maxBy(h2h, r => -r.pct + r.n / 1000), mostR = maxBy(h2h, r => r.n);
+  const rivalRow = (label, r) => r ? `<div class="list-row"><div><span class="proj-sub">${label}</span><div>${managerLink(r.id)}</div></div><strong>${rec(r.w, r.l, r.t)}</strong></div>` : '';
+  document.getElementById('profileRivals').innerHTML = (rivalRow('Owns', bestR) + rivalRow('Owned by', worstR) + rivalRow('Most played', mostR)) || noData('Not enough games yet.');
+
+  // Draft: best buys and worst bust across seasons
+  const buys = [];
+  extrasSeasons('league', G => G.draft && G.draft.length).filter(draftHasPrices).forEach(y => {
+    const picks = draftPicks(y);
+    const spent = picks.reduce((s, p) => s + p.bid, 0);
+    const rate = spent ? picks.reduce((s, p) => s + p.pts, 0) / spent : 0;
+    picks.filter(p => p.teamId === id).forEach(p => buys.push({ ...p, season: y, surplus: p.pts - p.bid * rate }));
+  });
+  const topBuys = [...buys].sort((a, b) => b.surplus - a.surplus).slice(0, 3);
+  const busts = buys.filter(b => b.bid >= 25 && b.season !== CURRENT_SEASON);
+  const bust = maxBy(busts.length ? busts : buys.filter(b => b.bid >= 25), b => -b.ppd);
+  const buyRow = (b, tag) => `<div class="list-row"><div>${tag ? `<span class="proj-sub">${tag}</span><div>` : '<div>'}${esc(b.name)} <span class="proj-sub">${esc(b.pos)} · ${b.season}</span></div></div><div style="text-align:right;white-space:nowrap;"><strong>$${b.bid}</strong><div class="proj-sub">${b.pts.toFixed(1)} pts</div></div></div>`;
+  const pricedYears = new Set(buys.map(b => b.season)).size;
+  const totalSpentByYear = buys.length ? `Spent $${buys.reduce((s, b) => s + b.bid, 0)} across ${pricedYears} priced draft${pricedYears === 1 ? '' : 's'} (ESPN has no prices for some seasons).` : '';
+  document.getElementById('profileDraft').innerHTML = buys.length
+    ? topBuys.map((b, i) => buyRow(b, i === 0 ? 'Best buys' : '')).join('') + (bust ? buyRow(bust, 'Biggest bust ($25+)') : '') + `<p class="note">${totalSpentByYear}</p>`
+    : noData('No draft data.');
+
+  // Trades and waivers
+  const trades = [];
+  let claims = 0, faab = 0, topBid = null;
+  extrasSeasons('league').forEach(y => {
+    const G = EXTRAS[y].league;
+    (G.trades || []).filter(t => t.teams.includes(id)).forEach(t => {
+      const other = t.teams.find(x => x !== id);
+      const got = t.moves.filter(m => m.to === id), gave = t.moves.filter(m => m.from === id);
+      const gotPts = got.reduce((s, m) => s + startedPointsAfter(y, m.playerId, String(id), t.week), 0);
+      const gavePts = gave.reduce((s, m) => s + startedPointsAfter(y, m.playerId, String(other), t.week), 0);
+      trades.push({ season: y, week: t.week, other, got, gave, net: gotPts - gavePts });
+    });
+    (G.transactions || []).filter(t => t.type === 'WAIVER' && t.teamId === id).forEach(t => {
+      claims += 1; faab += t.bid || 0;
+      if (!topBid || (t.bid || 0) > topBid.bid) topBid = { ...t, season: y, name: (G.players[String((t.items.find(i => i.type === 'ADD') || {}).playerId)] || {}).name };
+    });
+  });
+  trades.sort((a, b) => b.season - a.season || b.week - a.week);
+  const shownTrades = profileAllTrades ? trades : trades.slice(0, 8);
+  const tradeNet = trades.reduce((s, t) => s + t.net, 0);
+  document.getElementById('profileTrades').innerHTML = (trades.length ? `<div class="proj-sub" style="margin-bottom:4px;">${trades.length} trade${trades.length === 1 ? '' : 's'} · net ${tradeNet >= 0 ? '+' : ''}${tradeNet.toFixed(1)} started pts</div>` : '') + (shownTrades.map(t => `<div class="list-row">
+      <div><span class="proj-sub">${t.season} Wk ${t.week} · with ${esc(getManager(t.other))}</span>
+        <div>Got ${esc(t.got.map(m => m.name).join(', ') || 'nothing still rostered')}</div>
+        <div class="proj-sub">Gave ${esc(t.gave.map(m => m.name).join(', ') || 'nothing still rostered')}</div></div>
+      <strong style="white-space:nowrap;color:${t.net > 0 ? 'var(--green)' : t.net < 0 ? 'var(--red)' : 'var(--muted)'};" title="Started points gained minus started points given up">${t.net >= 0 ? '+' : ''}${t.net.toFixed(1)}</strong>
+    </div>`).join('') || noData('No trades found.')) +
+    (trades.length > shownTrades.length ? `<button class="lu-toggle" style="margin-top:8px;" onclick="profileAllTrades=true;renderManagers();">Show all ${trades.length} trades</button>` : '') +
+    `<p class="note">Waivers: ${claims} claims, $${faab} FAAB spent${topBid && topBid.bid ? `, biggest $${topBid.bid} on ${esc(topBid.name || 'a player')} (${topBid.season})` : ''}. Trade numbers are started points gained minus started points given up.</p>`;
+}
+
+// --------------------------------------------------------------------------
+// Player records
+// --------------------------------------------------------------------------
+const POS_ORDER = ['QB', 'RB', 'WR', 'TE', 'K', 'D/ST'];
+
+function renderPlayerRecords() {
+  const weeksAll = [];
+  extrasSeasons('lineups').forEach(y => {
+    const lastReg = regularSeasonWeeks(y);
+    Object.entries(EXTRAS[y].lineups.weeks).forEach(([w, teams]) => Object.entries(teams).forEach(([tid, e]) => e.players.forEach(p =>
+      weeksAll.push({ ...p, season: y, week: Number(w), team: Number(tid), playoff: Number(w) > lastReg, started: p.slot !== BENCH_SLOT && p.slot !== IR_SLOT }))));
+  });
+  const when = r => `${r.season} ${r.playoff ? 'PO' : 'Wk'} ${r.week}`;
+  const topWeeks = [...weeksAll].sort((a, b) => b.pts - a.pts).slice(0, 10);
+  document.querySelector('#topWeeks tbody').innerHTML = topWeeks.map((r, i) => `<tr>
+      <td><strong>${i + 1}</strong></td><td><strong>${r.pts.toFixed(2)}</strong></td><td>${esc(r.name)}</td><td>${esc(r.pos)}</td>
+      <td>${managerLink(r.team)}${r.started ? '' : ' <span class="badge badge-out">Bench</span>'}</td><td>${when(r)}</td></tr>`).join('');
+
+  const seasonsAll = [];
+  extrasSeasons('league').forEach(y => Object.values(EXTRAS[y].league.players || {}).forEach(p => seasonsAll.push({ ...p, season: y })));
+  const live = y => y === CURRENT_SEASON ? ' <span class="proj-sub">(so far)</span>' : '';
+  document.querySelector('#posBests tbody').innerHTML = POS_ORDER.map(pos => {
+    const wk = maxBy(weeksAll.filter(r => r.pos === pos), r => r.pts);
+    const ss = maxBy(seasonsAll.filter(r => r.pos === pos), r => r.pts);
+    return `<tr><td><span class="badge badge-out">${pos}</span></td>
+      <td>${wk ? `<strong>${wk.pts.toFixed(2)}</strong> ${esc(wk.name)}<div class="proj-sub">${esc(getManager(wk.team))} · ${when(wk)}</div>` : '—'}</td>
+      <td>${ss ? `<strong>${ss.pts.toFixed(1)}</strong> ${esc(ss.name)}<div class="proj-sub">${ss.season}${live(ss.season)}</div>` : '—'}</td></tr>`;
+  }).join('');
+
+  const topSeasons = [...seasonsAll].sort((a, b) => b.pts - a.pts).slice(0, 10);
+  document.querySelector('#topSeasons tbody').innerHTML = topSeasons.map((r, i) => `<tr>
+      <td><strong>${i + 1}</strong></td><td><strong>${r.pts.toFixed(1)}</strong></td><td>${esc(r.name)}</td><td>${esc(r.pos)}</td><td>${r.season}${live(r.season)}</td></tr>`).join('');
+
+  const drafted = {};
+  extrasSeasons('league', G => G.draft && G.draft.length).forEach(y => draftPicks(y).forEach(p => {
+    const d = drafted[p.playerId] = drafted[p.playerId] || { name: p.name, pos: p.pos, picks: [] };
+    d.picks.push({ season: y, bid: p.bid, priced: draftHasPrices(y), teamId: p.teamId, keeper: p.keeper });
+  }));
+  const most = Object.values(drafted).filter(d => d.picks.length >= 2)
+    .map(d => {
+      const paid = d.picks.filter(p => p.priced);
+      return { ...d, avg: paid.length ? paid.reduce((s, p) => s + p.bid, 0) / paid.length : 0 };
+    })
+    .sort((a, b) => b.picks.length - a.picks.length || b.avg - a.avg).slice(0, 15);
+  document.querySelector('#mostDrafted tbody').innerHTML = most.map(d => `<tr>
+      <td>${esc(d.name)} <span class="proj-sub">${esc(d.pos)}</span></td><td>${d.picks.length}</td><td>${d.avg ? '$' + d.avg.toFixed(1) : '—'}</td>
+      <td class="proj-sub">${d.picks.sort((a, b) => a.season - b.season).map(p => `${p.season}: ${esc(getManager(p.teamId))}${p.priced ? ' $' + p.bid : ''}${p.keeper ? ' (K)' : ''}`).join(' · ')}</td></tr>`).join('')
+    || '<tr><td colspan="4" class="proj-sub">No player has been drafted twice yet.</td></tr>';
+}
+
+// --------------------------------------------------------------------------
+// Keeper rules
+// --------------------------------------------------------------------------
+// House keeper rules, applied on top of ESPN's listed keeper price.
+const KEEPER_RULES = {
+  priceIncrease: 0,    // dollars added to ESPN's price when a player is kept again
+  maxYearsKept: null   // e.g. 2 = no player can be kept more than 2 seasons in a row
+};
+
+function yearsKept(playerId, teamId) {
+  // Consecutive seasons (ending now) this team has kept this player.
+  let years = 0;
+  for (let y = CURRENT_SEASON; ; y--) {
+    const G = EXTRAS[y] && EXTRAS[y].league;
+    const pick = G && (G.draft || []).find(p => p.playerId === playerId);
+    if (!pick || !pick.keeper || String(pick.teamId) !== String(teamId)) break;
+    years += 1;
+  }
+  return years;
+}
+
 function renderAll() {
   renderCurrentStandings();
+  renderPlayoffRace();
   renderMatchups();
+  renderRecap();
+  renderPower();
+  renderManagers();
+  renderPlayerRecords();
   renderLineupIQ();
   renderDraft();
   renderActivity();
