@@ -1,11 +1,15 @@
 # Duck Dynasty Fantasy League Hub (ESPN League #52568337)
 
 An interactive, self-updating league dashboard hosted on **GitHub Pages** featuring:
-- **Current Standings & Playoff Picture** (ESPN seeds, live playoff odds, BYE/IN cutoff, projected bracket)
+- **Current Standings & Playoff Picture** (ESPN seeds, live playoff odds, BYE/IN cutoff, projected bracket) plus a **Playoff Race** that checks every remaining outcome to show who has clinched, who is out, and how many wins each team needs
 - **Matchups** for every week: live scores, projections and win probability, all-time series, and both starting lineups with player points
+- **Weekly Recap**: awards for every completed week (top score, luckiest win, bench blunder, waiver pickup of the week…) with a copy-for-group-chat button
+- **Power Rankings**: all-play records, recent form, expected wins and luck, by season and career
 - **Lineup IQ**: points left on the bench, lineup efficiency, and losses a better lineup would have won (by season and all-time)
 - **Draft & Keepers**: the auction draft board with prices and points per dollar, team spending, and next season's keeper prices
 - **Trades & Waivers**: every trade with points each side has started since, FAAB spending, and all waiver claims
+- **Manager profiles**: career record, finishes, rivalries, draft hits and misses, every trade and waiver spending (click any manager's name)
+- **Player Records**: top single-week scores, best weeks and seasons by position, and the most-drafted players
 - **All-Time Standings & Records**, the **Rivalry Matrix**, and **Season-by-Season Archives**
 - **Official Rulebook**: house rules plus league settings and scoring pulled straight from ESPN
 
@@ -37,8 +41,26 @@ An interactive, self-updating league dashboard hosted on **GitHub Pages** featur
 
 Trades are worked out from week-to-week rosters, because ESPN doesn't publish accepted trades without a login.
 
+### Keeper rules
+Keeper Watch starts from ESPN's listed keeper price. To apply house rules, edit `KEEPER_RULES` near the bottom of `index.html`:
+```js
+const KEEPER_RULES = {
+  priceIncrease: 0,    // dollars added to ESPN's price when a player is kept again
+  maxYearsKept: null   // e.g. 2 = no player can be kept more than 2 seasons in a row
+};
+```
+"K1/K2/K3" tags show how many seasons in a row a team has already kept a player (from the draft history).
+
+Note: ESPN has no auction prices for the 2024 draft (every pick is recorded at $0), so price-based stats skip 2024.
+
+## Tests
+`tests/test_sync_espn.py` covers the best-lineup math, trade detection, the skip-unchanged-file logic and settings parsing. They run automatically on every push and pull request (`.github/workflows/tests.yml`), along with a check that the page's JavaScript and every data file parse. To run them locally:
+```bash
+python -m unittest discover tests
+```
+
 ## Backfilling a Past Season
-2023 and 2024 are already backfilled. **2025 is private on ESPN**, so it needs your login cookies:
+2023, 2024 and 2025 are already backfilled. **2025 is private on ESPN**, so syncing it needs your login cookies (already saved as secrets):
 1. Log in at fantasy.espn.com, open your browser's developer tools → Application/Storage → Cookies, and copy the values of `espn_s2` and `SWID`.
 2. In the repo, go to **Settings → Secrets and variables → Actions** and add them as secrets named `ESPN_S2` and `SWID`.
 3. **Actions** → **Sync ESPN Fantasy League Data** → **Run workflow**, enter season `2025` and tick **backfill**.
