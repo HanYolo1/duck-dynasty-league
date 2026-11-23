@@ -206,6 +206,14 @@
   .pv-res { display: inline-block; width: 16px; text-align: center; font-weight: 800; font-size: 0.7rem; }
   .pv-res.W { color: var(--green); } .pv-res.L { color: var(--red); } .pv-res.T { color: var(--muted); }
   .pv-note { margin-top: 8px; color: var(--muted); font-size: 0.78rem; }
+  .inj { display: inline-block; margin-left: 4px; padding: 0 4px; border-radius: 4px; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.02em; vertical-align: 1px; }
+  .inj.warn { background: var(--gold-bg); color: var(--gold); }
+  .inj.out { background: var(--red-bg); color: var(--red); }
+  .alerts-card { background: var(--surface-2); border: 1px solid var(--border); border-left: 3px solid var(--red); border-radius: 12px; padding: 12px 16px; margin-bottom: 16px; font-size: 0.84rem; }
+  .alerts-card.clear { border-left-color: var(--green); }
+  .alerts-card h4 { font-size: 0.9rem; margin-bottom: 6px; }
+  .alert-row { display: flex; gap: 10px; padding: 3px 0; flex-wrap: wrap; }
+  .alert-row strong { min-width: 70px; }
   .mgr-link { color: inherit; font-weight: 700; text-decoration: none; border-bottom: 1px dotted var(--muted); }
   .mgr-link:hover { color: var(--blue); border-bottom-color: var(--blue); }
   .badge-alive { background: var(--blue-bg); color: var(--blue); border: 1px solid rgba(56,189,248,0.35); }
@@ -363,6 +371,7 @@
         <div class="pill-group" id="weekPills"></div>
       </div>
       <div id="weekSummary" class="week-summary"></div>
+      <div id="lineupAlerts"></div>
       <div id="matchupsGrid" class="matchups-grid"></div>
     </div>
   </section>
@@ -1332,6 +1341,7 @@ function renderMatchups() {
       <div class="record-card"><div class="record-label">${pre}Biggest Margin</div><div class="record-val">${margin(blow).toFixed(2)} pts</div><div class="record-sub">${vs(blow)}</div></div>`;
   }
   document.getElementById('weekSummary').innerHTML = summary;
+  renderLineupAlerts(wk);
 
   document.getElementById('matchupsGrid').innerHTML = games.map(g => {
     const a = teamMap[g.awayId] || { manager: getManager(g.awayId), name: '', wins: 0, losses: 0 };
@@ -1447,22 +1457,93 @@ function toggleLineup(key) {
   renderMatchups();
 }
 
-function lineupColumn(season, manager, entry, live) {
+// --------------------------------------------------------------------------
+// Injuries & byes (ESPN only reports today's status, so these apply to the
+// current week and upcoming weeks, never to finished ones)
+// --------------------------------------------------------------------------
+const INJURY_LABEL = {
+  QUESTIONABLE: ['Q', 'warn', 'Questionable'], DOUBTFUL: ['D', 'warn', 'Doubtful'],
+  OUT: ['O', 'out', 'Out'], INJURY_RESERVE: ['IR', 'out', 'Injured reserve'],
+  SUSPENSION: ['SSPD', 'out', 'Suspended'], DAY_TO_DAY: ['DTD', 'warn', 'Day-to-day']
+};
+
+function availability(playerId, week) {
+  // {label, cls, title, out} for a player in a given week of the current season, or null.
+  if (week < CURRENT.currentMatchupPeriod) return null;
+  const G = EXTRAS[CURRENT_SEASON] && EXTRAS[CURRENT_SEASON].league;
+  const pl = G && G.players && G.players[String(playerId)];
+  if (!pl) return null;
+  const nfl = G.proTeams && pl.nfl != null && G.proTeams[String(pl.nfl)];
+  if (nfl && nfl.bye === week) return { label: 'BYE', cls: 'out', title: `${nfl.abbrev} on bye in Week ${week}`, out: true };
+  const inj = pl.injury && (INJURY_LABEL[pl.injury] || [pl.injury.slice(0, 4), 'warn', pl.injury]);
+  return inj ? { label: inj[0], cls: inj[1], title: inj[2], out: inj[1] === 'out' } : null;
+}
+
+function emptySlots(season, entry) {
+  // Starting slots with nobody in them, e.g. ['TE'].
+  const lg = EXTRAS[season] && EXTRAS[season].league;
+  const slots = EXTRAS[season] && EXTRAS[season].lineups && EXTRAS[season].lineups.slots;
+  if (!lg || !lg.settings || !lg.settings.lineup || !slots) return [];
+  const missing = [];
+  lg.settings.lineup.forEach(({ slot, count }) => {
+    if (slot === 'Bench' || slot === 'IR' || slots[slot] === undefined) return;
+    const have = entry.players.filter(p => p.slot === slots[slot]).length;
+    for (let i = have; i < count; i++) missing.push(slot);
+  });
+  return missing;
+}
+
+function availBadge(playerId, week) {
+  const a = availability(playerId, week);
+  return a ? `<span class="inj ${a.cls}" title="${esc(a.title)}">${esc(a.label)}</span>` : '';
+}
+
+function renderLineupAlerts(week) {
+  const el = document.getElementById('lineupAlerts');
+  const wk = week === CURRENT.currentMatchupPeriod ? weekLineups(CURRENT_SEASON, week) : null;
+  if (!wk) { el.innerHTML = ''; return; }
+  const rows = Object.entries(wk).map(([tid, e]) => {
+    const starters = e.players.filter(p => p.slot !== BENCH_SLOT && p.slot !== IR_SLOT);
+    // A player who already scored clearly played, whatever his status says now.
+    const flagged = starters.map(p => ({ p, a: availability(p.id, week) })).filter(x => x.a && !x.p.pts);
+    return { tid, empty: emptySlots(CURRENT_SEASON, e), out: flagged.filter(x => x.a.out), maybe: flagged.filter(x => !x.a.out) };
+  }).filter(r => r.empty.length || r.out.length || r.maybe.length)
+    .sort((a, b) => (b.empty.length + b.out.length) - (a.empty.length + a.out.length) || getManager(a.tid).localeCompare(getManager(b.tid)));
+  const fmt = list => list.map(x => `${esc(x.p.name)} <span class="inj ${x.a.cls}">${esc(x.a.label)}</span>`).join(', ');
+  const anyOut = rows.some(r => r.out.length || r.empty.length);
+  el.innerHTML = rows.length ? `<div class="alerts-card ${anyOut ? '' : 'clear'}">
+      <h4>🚑 Lineup Alerts: Week ${week}</h4>
+      ${rows.map(r => `<div class="alert-row"><strong>${managerLink(r.tid)}</strong>
+        <span>${[
+          r.empty.length ? `Empty slot${r.empty.length > 1 ? 's' : ''}: ${r.empty.map(x => `<span class="inj out">${esc(x)}</span>`).join(' ')}` : '',
+          r.out.length ? `Won’t play: ${fmt(r.out)}` : '',
+          r.maybe.length ? `Game-time decision: ${fmt(r.maybe)}` : ''
+        ].filter(Boolean).join(' · ')}</span></div>`).join('')}
+      <div class="proj-sub" style="margin-top:6px;">Empty starting slots, and starters who are out, on IR, suspended or on bye and haven’t played yet. House rule: every manager must start a full, active lineup. Injury news as of the last sync (${esc(formatDate(EXTRAS[CURRENT_SEASON].league.syncedAt))}).</div>
+    </div>`
+    : `<div class="alerts-card clear"><h4>✅ Lineup Alerts: Week ${week}</h4><div class="proj-sub">Every lineup is full, with no injured, suspended or bye-week starters right now.</div></div>`;
+}
+
+function lineupColumn(season, manager, entry, live, week) {
   const starters = entry.players.filter(p => p.slot !== BENCH_SLOT && p.slot !== IR_SLOT);
   const bench = entry.players.filter(p => p.slot === BENCH_SLOT || p.slot === IR_SLOT);
   // Gold = a benched player who belonged in the best possible lineup.
-  const row = (p, benchRow) => `<div class="lu-row ${benchRow ? 'bench' : ''} ${benchRow && p.opt ? 'hot' : ''}" ${benchRow && p.opt ? 'title="Should have started"' : ''}>
+  const shouldStart = p => p.opt && p.pts > 0;
+  const row = (p, benchRow) => `<div class="lu-row ${benchRow ? 'bench' : ''} ${benchRow && shouldStart(p) ? 'hot' : ''}" ${benchRow && shouldStart(p) ? 'title="Should have started"' : ''}>
       <span class="lu-slot">${esc(slotLabel(season, p.slot))}</span>
-      <span class="lu-player">${esc(p.name)} <span class="proj-sub">${esc(p.pos)}</span></span>
+      <span class="lu-player">${esc(p.name)} <span class="proj-sub">${esc(p.pos)}</span>${season === CURRENT_SEASON ? availBadge(p.id, week) : ''}</span>
       <span class="lu-pts">${p.pts.toFixed(1)}</span>
     </div>`;
+  const empties = emptySlots(season, entry).map(slot => `<div class="lu-row" style="color:var(--red);">
+      <span class="lu-slot" style="color:var(--red);">${esc(slot)}</span><span class="lu-player"><em>Empty slot</em></span><span class="lu-pts">0.0</span>
+    </div>`).join('');
   const left = entry.best - entry.actual;
   const foot = left > 0.005
     ? `<div class="lu-foot">${live ? 'So far: ' : ''}${left.toFixed(2)} pts left on the bench (best possible ${entry.best.toFixed(2)})</div>`
     : `<div class="lu-foot ok">✅ ${live ? 'Optimal so far' : 'Perfect lineup'}</div>`;
   const adj = entry.adj ? `<div class="proj-sub">Commissioner adjustment: ${entry.adj > 0 ? '+' : ''}${entry.adj}</div>` : '';
   return `<div><div class="lu-head">${esc(manager)}</div>
-    ${starters.map(p => row(p, false)).join('')}
+    ${starters.map(p => row(p, false)).join('')}${empties}
     <div class="lu-sep">Bench</div>
     ${bench.map(p => row(p, true)).join('') || '<div class="proj-sub">—</div>'}
     ${adj}${foot}</div>`;
@@ -1475,8 +1556,8 @@ function lineupBlock(season, week, game, live) {
   const open = OPEN_LINEUPS.has(key);
   const button = `<button class="lu-toggle" onclick="toggleLineup('${key}')">${open ? 'Hide lineups ▴' : 'Lineups ▾'}</button>`;
   const body = open ? `<div class="lu-pair">
-      ${lineupColumn(season, getManager(game.awayId), wk[game.awayId], live)}
-      ${lineupColumn(season, getManager(game.homeId), wk[game.homeId], live)}
+      ${lineupColumn(season, getManager(game.awayId), wk[game.awayId], live, week)}
+      ${lineupColumn(season, getManager(game.homeId), wk[game.homeId], live, week)}
     </div>${live ? `<p class="note" style="margin-top:6px;">Lineups as of the last auto-sync (${esc(formatDate(EXTRAS[season].lineups.syncedAt))}).</p>` : ''}` : '';
   return { button, body };
 }
@@ -2531,10 +2612,11 @@ function keyPlayers(id, count) {
 }
 
 function matchupPreview(g) {
+  const badge = p => availBadge(p.id, g.week);
   const fa = teamForm(g.awayId), fh = teamForm(g.homeId);
   const ka = keyPlayers(g.awayId, 2), kh = keyPlayers(g.homeId, 2);
   const streak = f => f.streak.map(r => `<span class="pv-res ${r}">${r}</span>`).join('') || '—';
-  const keys = list => list.map(p => `<div>${esc(p.name)} <span class="proj-sub">${esc(p.pos)} · ${p.avg.toFixed(1)}</span></div>`).join('') || '<span class="proj-sub">—</span>';
+  const keys = list => list.map(p => `<div>${esc(p.name)}${badge(p)} <span class="proj-sub">${esc(p.pos)} · ${p.avg.toFixed(1)}</span></div>`).join('') || '<span class="proj-sub">—</span>';
   const better = (x, y) => x > y + 0.005 ? 'pv-up' : '';
   const last = lastMeeting(g.awayId, g.homeId);
   let lastText = 'First meeting.';

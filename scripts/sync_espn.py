@@ -132,8 +132,9 @@ class PrivateSeasonError(Exception):
     """ESPN refused the request (401): the season is private."""
 
 
-def espn_get(season, params, fantasy_filter=None, path=""):
-    url = f"{API}/{season}/segments/0/leagues/{LEAGUE_ID}{path}?{urllib.parse.urlencode(params, doseq=True)}"
+def espn_get(season, params, fantasy_filter=None, path="", league=True):
+    base = f"{API}/{season}/segments/0/leagues/{LEAGUE_ID}{path}" if league else f"{API}/{season}"
+    url = f"{base}?{urllib.parse.urlencode(params, doseq=True)}"
     headers = {
         "User-Agent": "Mozilla/5.0 (compatible; DuckDynastyLeagueHub/1.0)",
         "Accept": "application/json",
@@ -461,8 +462,37 @@ def sync_transactions(season, latest, existing, backfill):
     return sorted(txs.values(), key=lambda t: t["date"] or 0, reverse=True), sorted(fetched)
 
 
+HEALTHY = (None, "", "ACTIVE", "NORMAL")
+
+
+def player_info(entry, season):
+    """One player's entry in the league file from a kona_player_info row."""
+    pl = entry.get("player", {})
+    info = {
+        "name": pl.get("fullName", "Unknown"),
+        "pos": POSITIONS.get(pl.get("defaultPositionId"), "?"),
+        "pts": round(stat_total(pl, season, 0, 0), 2),
+        "team": entry.get("onTeamId", 0),
+        "keeperCost": entry.get("keeperValueFuture"),
+        "nfl": pl.get("proTeamId"),
+    }
+    # Current injury designation (QUESTIONABLE, DOUBTFUL, OUT, INJURY_RESERVE,
+    # SUSPENSION, ...). ESPN only gives today's status, not past weeks'.
+    if pl.get("injuryStatus") not in HEALTHY:
+        info["injury"] = pl["injuryStatus"]
+    return info
+
+
+def pro_team_byes(data):
+    """{proTeamId: {"abbrev", "bye"}} from the proTeamSchedules view."""
+    teams = data.get("settings", {}).get("proTeams", [])
+    return {str(t["id"]): {"abbrev": t.get("abbrev", ""), "bye": t.get("byeWeek", 0)}
+            for t in teams if t.get("id")}
+
+
 def fetch_players(season, ids):
-    """Name, position, season points and keeper cost for the given players."""
+    """Name, position, season points, keeper cost, NFL team and injury
+    status for the given players."""
     players = {}
     ids = sorted(set(i for i in ids if i))
     for start in range(0, len(ids), 100):
@@ -474,13 +504,7 @@ def fetch_players(season, ids):
         data = espn_get(season, [("view", "kona_player_info")], flt)
         for entry in data.get("players", []):
             pl = entry.get("player", {})
-            players[str(pl.get("id", entry.get("id")))] = {
-                "name": pl.get("fullName", "Unknown"),
-                "pos": POSITIONS.get(pl.get("defaultPositionId"), "?"),
-                "pts": round(stat_total(pl, season, 0, 0), 2),
-                "team": entry.get("onTeamId", 0),
-                "keeperCost": entry.get("keeperValueFuture"),
-            }
+            players[str(pl.get("id", entry.get("id")))] = player_info(entry, season)
     return players
 
 
@@ -520,6 +544,7 @@ def sync_league(season, main, lineups, backfill):
         "txPeriodsFetched": fetched,
         "trades": trades,
         "players": dict(sorted(players.items(), key=lambda kv: int(kv[0]))),
+        "proTeams": pro_team_byes(espn_get(season, [("view", "proTeamSchedules_wl")], league=False)),
     }
     write_if_changed(path, payload)
 

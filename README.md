@@ -2,7 +2,7 @@
 
 An interactive, self-updating league dashboard hosted on **GitHub Pages** featuring:
 - **Current Standings & Playoff Picture** (ESPN seeds, live playoff odds, BYE/IN cutoff, projected bracket) plus a **Playoff Race** that checks every remaining outcome to show who has clinched, who is out, and how many wins each team needs
-- **Matchups** for every week: live scores, projections and win probability, all-time series, both starting lineups with player points, and previews of upcoming games (form, key players, last meeting)
+- **Matchups** for every week: live scores, projections and win probability, all-time series, both starting lineups with player points, and previews of upcoming games (form, key players, last meeting). For the current week, players show injury and bye badges (Q / D / O / IR / BYE), and a **Lineup Alerts** card flags empty starting slots and starters who won't play
 - **Playoffs**: the bracket for every season, projected from the current seeds until Week 15, then filled in with real games and live scores, plus all consolation games
 - **Weekly Recap**: awards for every completed week (top score, luckiest win, bench blunder, waiver pickup of the week…) with a copy-for-group-chat button
 - **Power Rankings**: all-play records, recent form, expected wins and luck, by season and career
@@ -27,7 +27,7 @@ An interactive, self-updating league dashboard hosted on **GitHub Pages** featur
      `https://<your-github-username>.github.io/duck-dynasty-league/`
 
 ## How Automatic Updates Work
-- **Automated GitHub Actions:** `.github/workflows/sync-espn.yml` runs `scripts/sync_espn.py` every 30 minutes during NFL game windows (Sunday, Monday and Thursday nights) and on Tuesday mornings. It only commits when something actually changed.
+- **Automated GitHub Actions:** `.github/workflows/sync-espn.yml` runs `scripts/sync_espn.py` every 30 minutes during NFL game windows (Sunday, Monday and Thursday nights) and on Tuesday mornings. It also runs twice a day Wednesday through Saturday to pick up injury news. It only commits when something actually changed.
 - **Manual Refresh Anytime:** **Actions** tab → **Sync ESPN Fantasy League Data** → **Run workflow**.
 - **Sync Live button:** pulls the latest standings and scores straight from ESPN in your browser. Lineups, the draft and transactions update with the next automatic sync.
 

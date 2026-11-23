@@ -1,6 +1,6 @@
 {
  "seasonId": 2026,
- "syncedAt": "2026-11-23T04:21:18Z",
+ "syncedAt": "2026-11-23T05:44:25Z",
  "settings": {
   "teams": 10,
   "draftType": "AUCTION",
@@ -5119,1694 +5119,2116 @@
    "pos": "D/ST",
    "pts": 61.0,
    "team": 2,
-   "keeperCost": 8
+   "keeperCost": 8,
+   "nfl": 34
   },
   "-16033": {
    "name": "Ravens D/ST",
    "pos": "D/ST",
    "pts": 46.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 33
   },
   "-16030": {
    "name": "Jaguars D/ST",
    "pos": "D/ST",
    "pts": 75.0,
    "team": 3,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 30
   },
   "-16029": {
    "name": "Panthers D/ST",
    "pos": "D/ST",
    "pts": 43.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 29
   },
   "-16028": {
    "name": "Commanders D/ST",
    "pos": "D/ST",
    "pts": 46.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 28
   },
   "-16027": {
    "name": "Buccaneers D/ST",
    "pos": "D/ST",
    "pts": 92.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 27
   },
   "-16026": {
    "name": "Seahawks D/ST",
    "pos": "D/ST",
    "pts": 89.0,
    "team": 1,
-   "keeperCost": 5
+   "keeperCost": 5,
+   "nfl": 26
   },
   "-16025": {
    "name": "49ers D/ST",
    "pos": "D/ST",
    "pts": 81.0,
    "team": 6,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 25
   },
   "-16024": {
    "name": "Chargers D/ST",
    "pos": "D/ST",
    "pts": 36.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 24
   },
   "-16023": {
    "name": "Steelers D/ST",
    "pos": "D/ST",
    "pts": 73.0,
    "team": 10,
-   "keeperCost": 2
+   "keeperCost": 2,
+   "nfl": 23
   },
   "-16021": {
    "name": "Eagles D/ST",
    "pos": "D/ST",
    "pts": 28.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 21
   },
   "-16020": {
    "name": "Jets D/ST",
    "pos": "D/ST",
    "pts": 51.0,
    "team": 1,
-   "keeperCost": 3
+   "keeperCost": 3,
+   "nfl": 20
   },
   "-16017": {
    "name": "Patriots D/ST",
    "pos": "D/ST",
    "pts": 44.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 17
   },
   "-16016": {
    "name": "Vikings D/ST",
    "pos": "D/ST",
    "pts": 106.0,
    "team": 4,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 16
   },
   "-16014": {
    "name": "Rams D/ST",
    "pos": "D/ST",
    "pts": 64.0,
    "team": 6,
-   "keeperCost": 8
+   "keeperCost": 8,
+   "nfl": 14
   },
   "-16012": {
    "name": "Chiefs D/ST",
    "pos": "D/ST",
    "pts": 67.0,
    "team": 8,
-   "keeperCost": 3
+   "keeperCost": 3,
+   "nfl": 12
   },
   "-16010": {
    "name": "Titans D/ST",
    "pos": "D/ST",
    "pts": 23.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 10
   },
   "-16009": {
    "name": "Packers D/ST",
    "pos": "D/ST",
    "pts": 71.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 9
   },
   "-16008": {
    "name": "Lions D/ST",
    "pos": "D/ST",
    "pts": 57.0,
    "team": 9,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 8
   },
   "-16007": {
    "name": "Broncos D/ST",
    "pos": "D/ST",
    "pts": 68.0,
    "team": 4,
-   "keeperCost": 4
+   "keeperCost": 4,
+   "nfl": 7
   },
   "-16005": {
    "name": "Browns D/ST",
    "pos": "D/ST",
    "pts": 57.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 5
   },
   "-16004": {
    "name": "Bengals D/ST",
    "pos": "D/ST",
    "pts": 58.0,
    "team": 7,
-   "keeperCost": 4
+   "keeperCost": 4,
+   "nfl": 4
   },
   "-16003": {
    "name": "Bears D/ST",
    "pos": "D/ST",
    "pts": 84.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 3
   },
   "-16002": {
    "name": "Bills D/ST",
    "pos": "D/ST",
    "pts": 61.0,
    "team": 5,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 2
   },
   "8439": {
    "name": "Aaron Rodgers",
    "pos": "QB",
    "pts": 205.74,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 23
   },
   "12483": {
    "name": "Matthew Stafford",
    "pos": "QB",
    "pts": 229.62,
    "team": 1,
-   "keeperCost": 3
+   "keeperCost": 3,
+   "nfl": 14
   },
   "14880": {
    "name": "Kirk Cousins",
    "pos": "QB",
    "pts": 261.33,
    "team": 8,
-   "keeperCost": 2
+   "keeperCost": 2,
+   "nfl": 16
   },
   "15818": {
    "name": "Keenan Allen",
    "pos": "WR",
    "pts": 99.0,
    "team": 4,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 25
   },
   "15847": {
    "name": "Travis Kelce",
    "pos": "TE",
    "pts": 132.7,
    "team": 2,
-   "keeperCost": 6
+   "keeperCost": 6,
+   "nfl": 12
   },
   "16731": {
    "name": "Brandin Cooks",
    "pos": "WR",
    "pts": 16.8,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 0
   },
   "16737": {
    "name": "Mike Evans",
    "pos": "WR",
    "pts": 117.9,
    "team": 4,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 25
   },
   "16800": {
    "name": "Davante Adams",
    "pos": "WR",
    "pts": 108.0,
    "team": 6,
-   "keeperCost": 34
+   "keeperCost": 34,
+   "nfl": 14,
+   "injury": "INJURY_RESERVE"
   },
   "17372": {
    "name": "Chris Boswell",
    "pos": "K",
    "pts": 82.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 23
   },
   "17427": {
    "name": "Cairo Santos",
    "pos": "K",
    "pts": 76.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 3
   },
   "2473037": {
    "name": "Jason Myers",
    "pos": "K",
    "pts": 64.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 26
   },
   "2576925": {
    "name": "Darren Waller",
    "pos": "TE",
    "pts": 90.5,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 29
   },
   "2577417": {
    "name": "Dak Prescott",
    "pos": "QB",
    "pts": 312.76,
    "team": 1,
-   "keeperCost": 8
+   "keeperCost": 8,
+   "nfl": 6
   },
   "2578570": {
    "name": "Jacoby Brissett",
    "pos": "QB",
    "pts": 202.2,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 33
   },
   "2971573": {
    "name": "Ka'imi Fairbairn",
    "pos": "K",
    "pts": 93.0,
    "team": 9,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 34
   },
   "2973405": {
    "name": "Kalif Raymond",
    "pos": "WR",
    "pts": 74.1,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 3
   },
   "2976212": {
    "name": "Stefon Diggs",
    "pos": "WR",
    "pts": 110.6,
    "team": 6,
-   "keeperCost": 3
+   "keeperCost": 3,
+   "nfl": 28
   },
   "2977187": {
    "name": "Cooper Kupp",
    "pos": "WR",
    "pts": 68.2,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 26
   },
   "3040151": {
    "name": "George Kittle",
    "pos": "TE",
    "pts": 148.1,
    "team": 7,
-   "keeperCost": 7
+   "keeperCost": 7,
+   "nfl": 25
   },
   "3042519": {
    "name": "Aaron Jones Sr.",
    "pos": "RB",
    "pts": 108.7,
    "team": 5,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 16
   },
   "3043078": {
    "name": "Derrick Henry",
    "pos": "RB",
    "pts": 182.63,
    "team": 2,
-   "keeperCost": 40
+   "keeperCost": 40,
+   "nfl": 33
   },
   "3046439": {
    "name": "Hunter Henry",
    "pos": "TE",
    "pts": 84.3,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 17
   },
   "3046779": {
    "name": "Jared Goff",
    "pos": "QB",
    "pts": 258.39,
    "team": 6,
-   "keeperCost": 4
+   "keeperCost": 4,
+   "nfl": 8
   },
   "3052587": {
    "name": "Baker Mayfield",
    "pos": "QB",
    "pts": 97.46,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 27
   },
   "3054850": {
    "name": "Alvin Kamara",
    "pos": "RB",
    "pts": 97.3,
    "team": 3,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 18
   },
   "3055899": {
    "name": "Harrison Butker",
    "pos": "K",
    "pts": 66.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 12
   },
   "3116164": {
    "name": "Mike Gesicki",
    "pos": "TE",
    "pts": 82.1,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 4
   },
   "3116165": {
    "name": "Chris Godwin Jr.",
    "pos": "WR",
    "pts": 62.2,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 27
   },
   "3116365": {
    "name": "Mark Andrews",
    "pos": "TE",
    "pts": 78.3,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 33
   },
   "3116406": {
    "name": "Tyreek Hill",
    "pos": "WR",
    "pts": 0.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 0,
+   "injury": "QUESTIONABLE"
   },
   "3117251": {
    "name": "Christian McCaffrey",
    "pos": "RB",
    "pts": 234.2,
    "team": 2,
-   "keeperCost": 9
+   "keeperCost": 9,
+   "nfl": 25
   },
   "3117256": {
    "name": "Dalton Schultz",
    "pos": "TE",
    "pts": 84.6,
    "team": 3,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 34
   },
   "3121023": {
    "name": "Dallas Goedert",
    "pos": "TE",
    "pts": 79.8,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 21
   },
   "3121422": {
    "name": "Terry McLaurin",
    "pos": "WR",
    "pts": 46.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 28,
+   "injury": "INJURY_RESERVE"
   },
   "3124679": {
    "name": "Jason Sanders",
    "pos": "K",
    "pts": 97.0,
    "team": 2,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 20
   },
   "3126486": {
    "name": "Deebo Samuel Sr.",
    "pos": "WR",
    "pts": 98.0,
    "team": 3,
-   "keeperCost": 8
+   "keeperCost": 8,
+   "nfl": 25
   },
   "3128429": {
    "name": "Courtland Sutton",
    "pos": "WR",
    "pts": 63.6,
    "team": 9,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 7
   },
   "3139477": {
    "name": "Patrick Mahomes",
    "pos": "QB",
    "pts": 265.86,
    "team": 10,
-   "keeperCost": 7
+   "keeperCost": 7,
+   "nfl": 12
   },
   "3150744": {
    "name": "Chase McLaughlin",
    "pos": "K",
    "pts": 91.0,
    "team": 3,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 27
   },
   "3886598": {
    "name": "Jauan Jennings",
    "pos": "WR",
    "pts": 16.4,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 16
   },
   "3895856": {
    "name": "Christian Kirk",
    "pos": "WR",
    "pts": 0.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 25,
+   "injury": "INJURY_RESERVE"
   },
   "3912547": {
    "name": "Sam Darnold",
    "pos": "QB",
    "pts": 126.07,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 26,
+   "injury": "OUT"
   },
   "3915416": {
    "name": "DJ Moore",
    "pos": "WR",
    "pts": 107.0,
    "team": 5,
-   "keeperCost": 28
+   "keeperCost": 28,
+   "nfl": 2
   },
   "3915511": {
    "name": "Joe Burrow",
    "pos": "QB",
    "pts": 318.8,
    "team": 2,
-   "keeperCost": 7
+   "keeperCost": 7,
+   "nfl": 4
   },
   "3916148": {
    "name": "Tony Pollard",
    "pos": "RB",
    "pts": 155.4,
    "team": 6,
-   "keeperCost": 11
+   "keeperCost": 11,
+   "nfl": 10
   },
   "3916387": {
    "name": "Lamar Jackson",
    "pos": "QB",
    "pts": 99.08,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 33,
+   "injury": "INJURY_RESERVE"
   },
   "3916433": {
    "name": "Jakobi Meyers",
    "pos": "WR",
    "pts": 94.5,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 30
   },
   "3917232": {
    "name": "Tyler Bass",
    "pos": "K",
    "pts": 102.0,
    "team": 7,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 2
   },
   "3917315": {
    "name": "Kyler Murray",
    "pos": "QB",
    "pts": 99.58,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 16,
+   "injury": "OUT"
   },
   "3918298": {
    "name": "Josh Allen",
    "pos": "QB",
    "pts": 289.68,
    "team": 9,
-   "keeperCost": 45
+   "keeperCost": 45,
+   "nfl": 2
   },
   "3929630": {
    "name": "Saquon Barkley",
    "pos": "RB",
    "pts": 72.2,
    "team": 9,
-   "keeperCost": 67
+   "keeperCost": 67,
+   "nfl": 21,
+   "injury": "QUESTIONABLE"
   },
   "3929645": {
    "name": "Juwan Johnson",
    "pos": "TE",
    "pts": 83.7,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 18,
+   "injury": "QUESTIONABLE"
   },
   "3953687": {
    "name": "Brandon Aubrey",
    "pos": "K",
    "pts": 90.0,
    "team": 6,
-   "keeperCost": 7
+   "keeperCost": 7,
+   "nfl": 6
   },
   "4034949": {
    "name": "Eddy Pineiro",
    "pos": "K",
    "pts": 55.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 25
   },
   "4035538": {
    "name": "David Montgomery",
    "pos": "RB",
    "pts": 61.9,
    "team": 4,
-   "keeperCost": 5
+   "keeperCost": 5,
+   "nfl": 34
   },
   "4035687": {
    "name": "Michael Pittman Jr.",
    "pos": "WR",
    "pts": 15.9,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 23,
+   "injury": "INJURY_RESERVE"
   },
   "4036133": {
    "name": "T.J. Hockenson",
    "pos": "TE",
    "pts": 100.3,
    "team": 5,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 16
   },
   "4036378": {
    "name": "Jordan Love",
    "pos": "QB",
    "pts": 262.82,
    "team": 10,
-   "keeperCost": 5
+   "keeperCost": 5,
+   "nfl": 9
   },
   "4038815": {
    "name": "Rico Dowdle",
    "pos": "RB",
    "pts": 57.4,
    "team": 9,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 23
   },
   "4038941": {
    "name": "Justin Herbert",
    "pos": "QB",
    "pts": 164.09,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 24,
+   "injury": "QUESTIONABLE"
   },
   "4040715": {
    "name": "Jalen Hurts",
    "pos": "QB",
    "pts": 105.27,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 21,
+   "injury": "INJURY_RESERVE"
   },
   "4047365": {
    "name": "Josh Jacobs",
    "pos": "RB",
    "pts": 43.8,
    "team": 4,
-   "keeperCost": 5
+   "keeperCost": 5,
+   "nfl": 9,
+   "injury": "OUT"
   },
   "4047646": {
    "name": "A.J. Brown",
    "pos": "WR",
    "pts": 23.8,
    "team": 4,
-   "keeperCost": 59
+   "keeperCost": 59,
+   "nfl": 17,
+   "injury": "DOUBTFUL"
   },
   "4047650": {
    "name": "DK Metcalf",
    "pos": "WR",
    "pts": 97.5,
    "team": 4,
-   "keeperCost": 12
+   "keeperCost": 12,
+   "nfl": 23
   },
   "4239993": {
    "name": "Tee Higgins",
    "pos": "WR",
    "pts": 180.4,
    "team": 10,
-   "keeperCost": 18
+   "keeperCost": 18,
+   "nfl": 4
   },
   "4239996": {
    "name": "Travis Etienne Jr.",
    "pos": "RB",
    "pts": 44.9,
    "team": 2,
-   "keeperCost": 20
+   "keeperCost": 20,
+   "nfl": 18
   },
   "4241389": {
    "name": "CeeDee Lamb",
    "pos": "WR",
    "pts": 268.2,
    "team": 6,
-   "keeperCost": 35
+   "keeperCost": 35,
+   "nfl": 6
   },
   "4241416": {
    "name": "Chuba Hubbard",
    "pos": "RB",
    "pts": 209.8,
    "team": 10,
-   "keeperCost": 2
+   "keeperCost": 2,
+   "nfl": 29
   },
   "4241474": {
    "name": "Brian Robinson Jr.",
    "pos": "RB",
    "pts": 53.1,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 1,
+   "injury": "INJURY_RESERVE"
   },
   "4241478": {
    "name": "DeVonta Smith",
    "pos": "WR",
    "pts": 81.1,
    "team": 5,
-   "keeperCost": 22
+   "keeperCost": 22,
+   "nfl": 21
   },
   "4241985": {
    "name": "J.K. Dobbins",
    "pos": "RB",
    "pts": 62.5,
    "team": 7,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 7
   },
   "4242335": {
    "name": "Jonathan Taylor",
    "pos": "RB",
    "pts": 172.6,
    "team": 8,
-   "keeperCost": 25
+   "keeperCost": 25,
+   "nfl": 11
   },
   "4242355": {
    "name": "Jake Ferguson",
    "pos": "TE",
    "pts": 54.6,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 6,
+   "injury": "OUT"
   },
   "4248528": {
    "name": "Christian Watson",
    "pos": "WR",
    "pts": 200.6,
    "team": 7,
-   "keeperCost": 3
+   "keeperCost": 3,
+   "nfl": 9
   },
   "4249087": {
    "name": "Matt Gay",
    "pos": "K",
    "pts": 91.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 13
   },
   "4258173": {
    "name": "Nico Collins",
    "pos": "WR",
    "pts": 134.8,
    "team": 9,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 34
   },
   "4259545": {
    "name": "D'Andre Swift",
    "pos": "RB",
    "pts": 166.7,
    "team": 7,
-   "keeperCost": 16
+   "keeperCost": 16,
+   "nfl": 3
   },
   "4262921": {
    "name": "Justin Jefferson",
    "pos": "WR",
    "pts": 125.3,
    "team": 3,
-   "keeperCost": 65
+   "keeperCost": 65,
+   "nfl": 16
   },
   "4360078": {
    "name": "Alec Pierce",
    "pos": "WR",
    "pts": 12.2,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 11,
+   "injury": "INJURY_RESERVE"
   },
   "4360234": {
    "name": "Evan McPherson",
    "pos": "K",
    "pts": 76.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 4
   },
   "4360248": {
    "name": "Kyle Pitts Sr.",
    "pos": "TE",
    "pts": 78.0,
    "team": 2,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 1
   },
   "4360310": {
    "name": "Trevor Lawrence",
    "pos": "QB",
    "pts": 243.7,
    "team": 8,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 30
   },
   "4360438": {
    "name": "Brandon Aiyuk",
    "pos": "WR",
    "pts": 0.0,
    "team": 8,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 25,
+   "injury": "OUT"
   },
   "4360569": {
    "name": "Jordan Mason",
    "pos": "RB",
    "pts": 37.5,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 16
   },
   "4360689": {
    "name": "Tyler Shough",
    "pos": "QB",
    "pts": 240.4,
    "team": 7,
-   "keeperCost": 5
+   "keeperCost": 5,
+   "nfl": 18
   },
   "4360761": {
    "name": "Michael Wilson",
    "pos": "WR",
    "pts": 123.93,
    "team": 4,
-   "keeperCost": 5
+   "keeperCost": 5,
+   "nfl": 22,
+   "injury": "INJURY_RESERVE"
   },
   "4361050": {
    "name": "Isaiah Likely",
    "pos": "TE",
    "pts": 166.0,
    "team": 4,
-   "keeperCost": 2
+   "keeperCost": 2,
+   "nfl": 19
   },
   "4361307": {
    "name": "Trey McBride",
    "pos": "TE",
    "pts": 189.3,
    "team": 10,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 22
   },
   "4361370": {
    "name": "Chris Olave",
    "pos": "WR",
    "pts": 178.6,
    "team": 10,
-   "keeperCost": 45
+   "keeperCost": 45,
+   "nfl": 18
   },
   "4361411": {
    "name": "Pat Freiermuth",
    "pos": "TE",
    "pts": 99.5,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 23
   },
   "4361432": {
    "name": "Romeo Doubs",
    "pos": "WR",
    "pts": 59.1,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 17,
+   "injury": "INJURY_RESERVE"
   },
   "4361529": {
    "name": "Isiah Pacheco",
    "pos": "RB",
    "pts": 0.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 8,
+   "injury": "INJURY_RESERVE"
   },
   "4361579": {
    "name": "Javonte Williams",
    "pos": "RB",
    "pts": 193.4,
    "team": 5,
-   "keeperCost": 32
+   "keeperCost": 32,
+   "nfl": 6
   },
   "4361741": {
    "name": "Brock Purdy",
    "pos": "QB",
    "pts": 285.66,
    "team": 4,
-   "keeperCost": 5
+   "keeperCost": 5,
+   "nfl": 25
   },
   "4362081": {
    "name": "Cameron Dicker",
    "pos": "K",
    "pts": 71.0,
    "team": 8,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 24
   },
   "4362238": {
    "name": "Chase Brown",
    "pos": "RB",
    "pts": 129.7,
    "team": 10,
-   "keeperCost": 37
+   "keeperCost": 37,
+   "nfl": 4
   },
   "4362249": {
    "name": "Jayden Reed",
    "pos": "WR",
    "pts": 6.4,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 9,
+   "injury": "INJURY_RESERVE"
   },
   "4362619": {
    "name": "Chris Rodriguez Jr.",
    "pos": "RB",
    "pts": 60.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 30
   },
   "4362628": {
    "name": "Ja'Marr Chase",
    "pos": "WR",
    "pts": 205.8,
    "team": 10,
-   "keeperCost": 53
+   "keeperCost": 53,
+   "nfl": 4
   },
   "4363538": {
    "name": "Chad Ryland",
    "pos": "K",
    "pts": 82.0,
    "team": 4,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 22
   },
   "4366031": {
    "name": "Tank Dell",
    "pos": "WR",
    "pts": 41.8,
    "team": 7,
-   "keeperCost": 10
+   "keeperCost": 10,
+   "nfl": 34
   },
   "4371733": {
    "name": "Kenny Gainwell",
    "pos": "RB",
    "pts": 74.5,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 27
   },
   "4372016": {
    "name": "Jaylen Waddle",
    "pos": "WR",
    "pts": 94.1,
    "team": 7,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 7
   },
   "4373626": {
    "name": "Tyler Allgeier",
    "pos": "RB",
    "pts": 97.4,
    "team": 1,
-   "keeperCost": 5
+   "keeperCost": 5,
+   "nfl": 22
   },
   "4373678": {
    "name": "Khalil Shakir",
    "pos": "WR",
    "pts": 102.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 2
   },
   "4374302": {
    "name": "Amon-Ra St. Brown",
    "pos": "WR",
    "pts": 206.1,
    "team": 1,
-   "keeperCost": 64
+   "keeperCost": 64,
+   "nfl": 8
   },
   "4379399": {
    "name": "James Cook III",
    "pos": "RB",
    "pts": 194.3,
    "team": 3,
-   "keeperCost": 3
+   "keeperCost": 3,
+   "nfl": 2
   },
   "4385690": {
    "name": "Dalton Kincaid",
    "pos": "TE",
    "pts": 95.7,
    "team": 9,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 2,
+   "injury": "OUT"
   },
   "4426338": {
    "name": "Bo Nix",
    "pos": "QB",
    "pts": 194.55,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 7
   },
   "4426348": {
    "name": "Jayden Daniels",
    "pos": "QB",
    "pts": 172.46,
    "team": 3,
-   "keeperCost": 19
+   "keeperCost": 19,
+   "nfl": 28
   },
   "4426354": {
    "name": "George Pickens",
    "pos": "WR",
    "pts": 180.6,
    "team": 5,
-   "keeperCost": 9
+   "keeperCost": 9,
+   "nfl": 6
   },
   "4426385": {
    "name": "Zach Charbonnet",
    "pos": "RB",
    "pts": 24.9,
    "team": 1,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 26
   },
   "4426388": {
    "name": "Jameson Williams",
    "pos": "WR",
    "pts": 139.0,
    "team": 2,
-   "keeperCost": 16
+   "keeperCost": 16,
+   "nfl": 8
   },
   "4426502": {
    "name": "Drake London",
    "pos": "WR",
    "pts": 147.5,
    "team": 2,
-   "keeperCost": 52
+   "keeperCost": 52,
+   "nfl": 1
   },
   "4426515": {
    "name": "Puka Nacua",
    "pos": "WR",
    "pts": 182.6,
    "team": 9,
-   "keeperCost": 3
+   "keeperCost": 3,
+   "nfl": 14,
+   "injury": "INJURY_RESERVE"
   },
   "4427095": {
    "name": "DeMario Douglas",
    "pos": "WR",
    "pts": 101.8,
    "team": 9,
-   "keeperCost": 3
+   "keeperCost": 3,
+   "nfl": 17
   },
   "4427366": {
    "name": "Breece Hall",
    "pos": "RB",
    "pts": 89.0,
    "team": 6,
-   "keeperCost": 40
+   "keeperCost": 40,
+   "nfl": 20
   },
   "4428331": {
    "name": "Rashee Rice",
    "pos": "WR",
    "pts": 90.7,
    "team": 8,
-   "keeperCost": 48
+   "keeperCost": 48,
+   "nfl": 12
   },
   "4428557": {
    "name": "Tyjae Spears",
    "pos": "RB",
    "pts": 30.9,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 10,
+   "injury": "INJURY_RESERVE"
   },
   "4428718": {
    "name": "Tre Tucker",
    "pos": "WR",
    "pts": 126.2,
    "team": 8,
-   "keeperCost": 2
+   "keeperCost": 2,
+   "nfl": 13
   },
   "4428850": {
    "name": "Dontayvion Wicks",
    "pos": "WR",
    "pts": 53.4,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 21,
+   "injury": "INJURY_RESERVE"
   },
   "4429013": {
    "name": "Tank Bigsby",
    "pos": "RB",
    "pts": 17.1,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 21,
+   "injury": "INJURY_RESERVE"
   },
   "4429023": {
    "name": "MarShawn Lloyd",
    "pos": "RB",
    "pts": 58.7,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 9
   },
   "4429025": {
    "name": "Quentin Johnston",
    "pos": "WR",
    "pts": 51.4,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 24
   },
   "4429059": {
    "name": "Woody Marks",
    "pos": "RB",
    "pts": 78.4,
    "team": 9,
-   "keeperCost": 20
+   "keeperCost": 20,
+   "nfl": 34,
+   "injury": "OUT"
   },
   "4429096": {
    "name": "Blake Corum",
    "pos": "RB",
    "pts": 116.5,
    "team": 10,
-   "keeperCost": 3
+   "keeperCost": 3,
+   "nfl": 14
   },
   "4429160": {
    "name": "De'Von Achane",
    "pos": "RB",
    "pts": 24.6,
    "team": 6,
-   "keeperCost": 33
+   "keeperCost": 33,
+   "nfl": 15,
+   "injury": "INJURY_RESERVE"
   },
   "4429205": {
    "name": "Jordan Addison",
    "pos": "WR",
    "pts": 54.9,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 16,
+   "injury": "OUT"
   },
   "4429615": {
    "name": "Zay Flowers",
    "pos": "WR",
    "pts": 167.3,
    "team": 7,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 33
   },
   "4429795": {
    "name": "Jahmyr Gibbs",
    "pos": "RB",
    "pts": 286.2,
    "team": 8,
-   "keeperCost": 29
+   "keeperCost": 29,
+   "nfl": 8
   },
   "4430027": {
    "name": "Sam LaPorta",
    "pos": "TE",
    "pts": 104.9,
    "team": 6,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 8
   },
   "4430539": {
    "name": "Brenton Strange",
    "pos": "TE",
    "pts": 85.1,
    "team": 5,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 30
   },
   "4430737": {
    "name": "Kyren Williams",
    "pos": "RB",
    "pts": 164.3,
    "team": 5,
-   "keeperCost": 29
+   "keeperCost": 29,
+   "nfl": 14,
+   "injury": "QUESTIONABLE"
   },
   "4430807": {
    "name": "Bijan Robinson",
    "pos": "RB",
    "pts": 202.7,
    "team": 4,
-   "keeperCost": 60
+   "keeperCost": 60,
+   "nfl": 1
   },
   "4430878": {
    "name": "Jaxon Smith-Njigba",
    "pos": "WR",
    "pts": 293.41,
    "team": 8,
-   "keeperCost": 62
+   "keeperCost": 62,
+   "nfl": 26
   },
   "4431299": {
    "name": "Rome Odunze",
    "pos": "WR",
    "pts": 97.3,
    "team": 2,
-   "keeperCost": 15
+   "keeperCost": 15,
+   "nfl": 3
   },
   "4431431": {
    "name": "Corey Kiner",
    "pos": "RB",
    "pts": 34.5,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 17
   },
   "4431452": {
    "name": "Drake Maye",
    "pos": "QB",
    "pts": 233.45,
    "team": 7,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 17,
+   "injury": "OUT"
   },
   "4431459": {
    "name": "Tyler Warren",
    "pos": "TE",
    "pts": 89.7,
    "team": 8,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 11
   },
   "4431545": {
    "name": "Will Shipley",
    "pos": "RB",
    "pts": 20.7,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 21
   },
   "4431611": {
    "name": "Caleb Williams",
    "pos": "QB",
    "pts": 165.93,
    "team": 9,
-   "keeperCost": 9
+   "keeperCost": 9,
+   "nfl": 3
   },
   "4432577": {
    "name": "C.J. Stroud",
    "pos": "QB",
    "pts": 269.44,
    "team": 5,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 34
   },
   "4432620": {
    "name": "Parker Washington",
    "pos": "WR",
    "pts": 169.1,
    "team": 3,
-   "keeperCost": 7
+   "keeperCost": 7,
+   "nfl": 30
   },
   "4432665": {
    "name": "Brock Bowers",
    "pos": "TE",
    "pts": 158.8,
    "team": 3,
-   "keeperCost": 8
+   "keeperCost": 8,
+   "nfl": 13,
+   "injury": "OUT"
   },
   "4432708": {
    "name": "Marvin Harrison Jr.",
    "pos": "WR",
    "pts": 37.5,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 34,
+   "injury": "OUT"
   },
   "4432710": {
    "name": "TreVeyon Henderson",
    "pos": "RB",
    "pts": 33.8,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 17,
+   "injury": "INJURY_RESERVE"
   },
   "4432773": {
    "name": "Brian Thomas Jr.",
    "pos": "WR",
    "pts": 48.4,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 30
   },
   "4567048": {
    "name": "Kenneth Walker III",
    "pos": "RB",
    "pts": 203.4,
    "team": 3,
-   "keeperCost": 9
+   "keeperCost": 9,
+   "nfl": 12,
+   "injury": "OUT"
   },
   "4567104": {
    "name": "Will Reichard",
    "pos": "K",
    "pts": 89.0,
    "team": 1,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 16
   },
   "4567750": {
    "name": "Emeka Egbuka",
    "pos": "WR",
    "pts": 81.8,
    "team": 1,
-   "keeperCost": 16
+   "keeperCost": 16,
+   "nfl": 27
   },
   "4568490": {
    "name": "RJ Harvey",
    "pos": "RB",
    "pts": 69.4,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 7,
+   "injury": "INJURY_RESERVE"
   },
   "4569173": {
    "name": "Rhamondre Stevenson",
    "pos": "RB",
    "pts": 116.2,
    "team": 7,
-   "keeperCost": 9
+   "keeperCost": 9,
+   "nfl": 17
   },
   "4569559": {
    "name": "Devaughn Vele",
    "pos": "WR",
    "pts": 107.5,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 18
   },
   "4569587": {
    "name": "Wan'Dale Robinson",
    "pos": "WR",
    "pts": 81.3,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 10,
+   "injury": "INJURY_RESERVE"
   },
   "4569618": {
    "name": "Garrett Wilson",
    "pos": "WR",
    "pts": 145.2,
    "team": 2,
-   "keeperCost": 13
+   "keeperCost": 13,
+   "nfl": 20
   },
   "4569682": {
    "name": "Audric Estime",
    "pos": "RB",
    "pts": 24.7,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 18,
+   "injury": "OUT"
   },
   "4569987": {
    "name": "Jaylen Warren",
    "pos": "RB",
    "pts": 162.8,
    "team": 6,
-   "keeperCost": 5
+   "keeperCost": 5,
+   "nfl": 23
   },
   "4571557": {
    "name": "Spencer Shrader",
    "pos": "K",
    "pts": 94.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 11
   },
   "4572680": {
    "name": "Tucker Kraft",
    "pos": "TE",
    "pts": 93.3,
    "team": 1,
-   "keeperCost": 12
+   "keeperCost": 12,
+   "nfl": 9
   },
   "4574716": {
    "name": "Harrison Mevis",
    "pos": "K",
    "pts": 22.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 0
   },
   "4575131": {
    "name": "Jacory Croskey-Merritt",
    "pos": "RB",
    "pts": 44.9,
    "team": 8,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 28,
+   "injury": "INJURY_RESERVE"
   },
   "4595348": {
    "name": "Malik Nabers",
    "pos": "WR",
    "pts": 167.7,
    "team": 2,
-   "keeperCost": 20
+   "keeperCost": 20,
+   "nfl": 19
   },
   "4596334": {
    "name": "Keaton Mitchell",
    "pos": "RB",
    "pts": 52.1,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 24,
+   "injury": "QUESTIONABLE"
   },
   "4596448": {
    "name": "Bucky Irving",
    "pos": "RB",
    "pts": 181.1,
    "team": 1,
-   "keeperCost": 2
+   "keeperCost": 2,
+   "nfl": 27
   },
   "4599739": {
    "name": "Kendre Miller",
    "pos": "RB",
    "pts": 38.6,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 0
   },
   "4608686": {
    "name": "Kyle Monangai",
    "pos": "RB",
    "pts": 65.1,
    "team": 10,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 3
   },
   "4612826": {
    "name": "Ladd McConkey",
    "pos": "WR",
    "pts": 72.3,
    "team": 9,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 24
   },
   "4635008": {
    "name": "Keon Coleman",
    "pos": "WR",
    "pts": 80.2,
    "team": 1,
-   "keeperCost": 5
+   "keeperCost": 5,
+   "nfl": 2
   },
   "4678008": {
    "name": "Jonathon Brooks",
    "pos": "RB",
    "pts": 9.3,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 29,
+   "injury": "INJURY_RESERVE"
   },
   "4682745": {
    "name": "Jaylen Wright",
    "pos": "RB",
    "pts": 8.6,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 15
   },
   "4683062": {
    "name": "Xavier Worthy",
    "pos": "WR",
    "pts": 78.6,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 12
   },
   "4685247": {
    "name": "Braelon Allen",
    "pos": "RB",
    "pts": 123.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 20
   },
   "4685261": {
    "name": "Germie Bernard",
    "pos": "WR",
    "pts": 77.8,
    "team": 2,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 23
   },
   "4685278": {
    "name": "Luther Burden III",
    "pos": "WR",
    "pts": 144.6,
    "team": 10,
-   "keeperCost": 9
+   "keeperCost": 9,
+   "nfl": 3
   },
   "4685382": {
    "name": "Omarion Hampton",
    "pos": "RB",
    "pts": 97.0,
    "team": 3,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 24
   },
   "4685415": {
    "name": "Travis Hunter",
    "pos": "WR",
    "pts": 25.4,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 30
   },
   "4685472": {
    "name": "Tetairoa McMillan",
    "pos": "WR",
    "pts": 156.1,
    "team": 3,
-   "keeperCost": 40
+   "keeperCost": 40,
+   "nfl": 29
   },
   "4685512": {
    "name": "Jadarian Price",
    "pos": "RB",
    "pts": 42.9,
    "team": 7,
-   "keeperCost": 4
+   "keeperCost": 4,
+   "nfl": 26
   },
   "4685702": {
    "name": "Quinshon Judkins",
    "pos": "RB",
    "pts": 108.2,
    "team": 1,
-   "keeperCost": 23
+   "keeperCost": 23,
+   "nfl": 5
   },
   "4685720": {
    "name": "Bryce Young",
    "pos": "QB",
    "pts": 232.89,
    "team": 3,
-   "keeperCost": 30
+   "keeperCost": 30,
+   "nfl": 29
   },
   "4686361": {
    "name": "Cam Little",
    "pos": "K",
    "pts": 97.0,
    "team": 10,
-   "keeperCost": 3
+   "keeperCost": 3,
+   "nfl": 30
   },
   "4686422": {
    "name": "Xavier Hutchinson",
    "pos": "WR",
    "pts": 85.4,
    "team": 5,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 34
   },
   "4686468": {
    "name": "Seth McGowan",
    "pos": "RB",
    "pts": 48.2,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 11,
+   "injury": "QUESTIONABLE"
   },
   "4686612": {
    "name": "Tre' Harris",
    "pos": "WR",
    "pts": 65.6,
    "team": 6,
-   "keeperCost": 3
+   "keeperCost": 3,
+   "nfl": 24
   },
   "4688813": {
    "name": "Josh Downs",
    "pos": "WR",
    "pts": 100.3,
    "team": 10,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 12
   },
   "4689114": {
    "name": "Jaxson Dart",
    "pos": "QB",
    "pts": 33.9,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 19,
+   "injury": "INJURY_RESERVE"
   },
   "4689936": {
    "name": "Jake Bates",
    "pos": "K",
    "pts": 83.0,
    "team": 5,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 8
   },
   "4695883": {
    "name": "Jalen Coker",
    "pos": "WR",
    "pts": 100.0,
    "team": 5,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 29,
+   "injury": "QUESTIONABLE"
   },
   "4696044": {
    "name": "Kaelon Black",
    "pos": "RB",
    "pts": 54.8,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 25
   },
   "4696981": {
    "name": "Cam Skattebo",
    "pos": "RB",
    "pts": 104.4,
    "team": 4,
-   "keeperCost": 29
+   "keeperCost": 29,
+   "nfl": 19
   },
   "4697745": {
    "name": "Tyler Loop",
    "pos": "K",
    "pts": 55.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 33,
+   "injury": "INJURY_RESERVE"
   },
   "4697815": {
    "name": "Rachaad White",
    "pos": "RB",
    "pts": 75.9,
    "team": 6,
-   "keeperCost": 5
+   "keeperCost": 5,
+   "nfl": 28,
+   "injury": "QUESTIONABLE"
   },
   "4701936": {
    "name": "Matthew Golden",
    "pos": "WR",
    "pts": 187.9,
    "team": 6,
-   "keeperCost": 3
+   "keeperCost": 3,
+   "nfl": 9
   },
   "4702555": {
    "name": "Jonah Coleman",
    "pos": "RB",
    "pts": 98.8,
    "team": 3,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 7
   },
   "4710714": {
    "name": "De'Zhaun Stribling",
    "pos": "WR",
    "pts": 0.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 25,
+   "injury": "INJURY_RESERVE"
   },
   "4710855": {
    "name": "Konata Mumpfield",
    "pos": "WR",
    "pts": 45.3,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 14
   },
   "4711533": {
    "name": "Ollie Gordon II",
    "pos": "RB",
    "pts": 105.8,
    "team": 8,
-   "keeperCost": 12
+   "keeperCost": 12,
+   "nfl": 15
   },
   "4715355": {
    "name": "Darius Cooper",
    "pos": "WR",
    "pts": 68.9,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 21
   },
   "4723086": {
    "name": "Colston Loveland",
    "pos": "TE",
    "pts": 95.2,
    "team": 1,
-   "keeperCost": 2
+   "keeperCost": 2,
+   "nfl": 3
   },
   "4723820": {
    "name": "Omar Cooper Jr.",
    "pos": "WR",
    "pts": 69.6,
    "team": 5,
-   "keeperCost": 11
+   "keeperCost": 11,
+   "nfl": 20,
+   "injury": "OUT"
   },
   "4819231": {
    "name": "Kaleb Johnson",
    "pos": "RB",
    "pts": 27.4,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 9
   },
   "4832800": {
    "name": "Denzel Boston",
    "pos": "WR",
    "pts": 108.3,
    "team": 7,
-   "keeperCost": 15
+   "keeperCost": 15,
+   "nfl": 5
   },
   "4832955": {
    "name": "Emmett Johnson",
    "pos": "RB",
    "pts": 127.2,
    "team": 4,
-   "keeperCost": 16
+   "keeperCost": 16,
+   "nfl": 12
   },
   "4869461": {
    "name": "Trey Smack",
    "pos": "K",
    "pts": 55.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 9
   },
   "4869645": {
    "name": "Caleb Douglas",
    "pos": "WR",
    "pts": 77.7,
    "team": 9,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 15
   },
   "4870653": {
    "name": "KC Concepcion",
    "pos": "WR",
    "pts": 105.1,
    "team": 10,
-   "keeperCost": 2
+   "keeperCost": 2,
+   "nfl": 5
   },
   "4870795": {
    "name": "Makai Lemon",
    "pos": "WR",
    "pts": 75.0,
    "team": 5,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 21
   },
   "4870808": {
    "name": "Jeremiyah Love",
    "pos": "RB",
    "pts": 53.4,
    "team": 7,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 22,
+   "injury": "INJURY_RESERVE"
   },
   "4871023": {
    "name": "Carnell Tate",
    "pos": "WR",
    "pts": 96.1,
    "team": 8,
-   "keeperCost": 26
+   "keeperCost": 26,
+   "nfl": 10
   },
   "4880281": {
    "name": "Jordyn Tyson",
    "pos": "WR",
    "pts": 26.0,
    "team": 8,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 18
   },
   "4882093": {
    "name": "Bhayshul Tuten",
    "pos": "RB",
    "pts": 156.8,
    "team": 2,
-   "keeperCost": 17
+   "keeperCost": 17,
+   "nfl": 30
   },
   "4887558": {
    "name": "Emanuel Wilson",
    "pos": "RB",
    "pts": 75.8,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 26
   },
   "4890973": {
    "name": "Ashton Jeanty",
    "pos": "RB",
    "pts": 180.6,
    "team": 1,
-   "keeperCost": 41
+   "keeperCost": 41,
+   "nfl": 13
   },
   "5081397": {
    "name": "Dylan Sampson",
    "pos": "RB",
    "pts": 39.1,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 5
   },
   "5081432": {
    "name": "Antonio Williams",
    "pos": "WR",
    "pts": 72.6,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 28
   },
   "5082424": {
    "name": "Dominic Zvada",
    "pos": "K",
    "pts": 75.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 19
   },
   "5083076": {
    "name": "Harold Fannin Jr.",
    "pos": "TE",
    "pts": 121.4,
    "team": 9,
-   "keeperCost": 10
+   "keeperCost": 10,
+   "nfl": 5
   },
   "5083315": {
    "name": "Kenyon Sadiq",
    "pos": "TE",
    "pts": 65.1,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 20
+  }
+ },
+ "proTeams": {
+  "11": {
+   "abbrev": "IND",
+   "bye": 13
+  },
+  "12": {
+   "abbrev": "KC",
+   "bye": 5
+  },
+  "13": {
+   "abbrev": "LV",
+   "bye": 13
+  },
+  "14": {
+   "abbrev": "LAR",
+   "bye": 11
+  },
+  "15": {
+   "abbrev": "MIA",
+   "bye": 6
+  },
+  "16": {
+   "abbrev": "MIN",
+   "bye": 6
+  },
+  "17": {
+   "abbrev": "NE",
+   "bye": 11
+  },
+  "18": {
+   "abbrev": "NO",
+   "bye": 8
+  },
+  "19": {
+   "abbrev": "NYG",
+   "bye": 8
+  },
+  "20": {
+   "abbrev": "NYJ",
+   "bye": 13
+  },
+  "21": {
+   "abbrev": "PHI",
+   "bye": 10
+  },
+  "22": {
+   "abbrev": "ARI",
+   "bye": 14
+  },
+  "23": {
+   "abbrev": "PIT",
+   "bye": 9
+  },
+  "24": {
+   "abbrev": "LAC",
+   "bye": 7
+  },
+  "25": {
+   "abbrev": "SF",
+   "bye": 8
+  },
+  "26": {
+   "abbrev": "SEA",
+   "bye": 11
+  },
+  "27": {
+   "abbrev": "TB",
+   "bye": 10
+  },
+  "28": {
+   "abbrev": "WSH",
+   "bye": 7
+  },
+  "29": {
+   "abbrev": "CAR",
+   "bye": 5
+  },
+  "30": {
+   "abbrev": "JAX",
+   "bye": 7
+  },
+  "33": {
+   "abbrev": "BAL",
+   "bye": 13
+  },
+  "34": {
+   "abbrev": "HOU",
+   "bye": 8
+  },
+  "1": {
+   "abbrev": "ATL",
+   "bye": 11
+  },
+  "2": {
+   "abbrev": "BUF",
+   "bye": 7
+  },
+  "3": {
+   "abbrev": "CHI",
+   "bye": 10
+  },
+  "4": {
+   "abbrev": "CIN",
+   "bye": 6
+  },
+  "5": {
+   "abbrev": "CLE",
+   "bye": 11
+  },
+  "6": {
+   "abbrev": "DAL",
+   "bye": 14
+  },
+  "7": {
+   "abbrev": "DEN",
+   "bye": 10
+  },
+  "8": {
+   "abbrev": "DET",
+   "bye": 6
+  },
+  "9": {
+   "abbrev": "GB",
+   "bye": 11
+  },
+  "10": {
+   "abbrev": "TEN",
+   "bye": 9
   }
  }
 }
