@@ -26,6 +26,7 @@ Usage:
       --backfill  refetch every week and skip data/<season>.json
 """
 import argparse
+import http.client
 import json
 import os
 import sys
@@ -159,7 +160,8 @@ def espn_get(season, params, fantasy_filter=None, path="", league=True):
                 )
             if exc.code < 500 or attempt == 3:
                 raise
-        except urllib.error.URLError:
+        except (urllib.error.URLError, http.client.IncompleteRead, ConnectionError, TimeoutError):
+            # Dropped or truncated responses are worth retrying.
             if attempt == 3:
                 raise
         time.sleep(2 ** attempt)
@@ -314,6 +316,7 @@ def week_lineups(box, season, period, slot_counts):
                     "name": pl.get("fullName", "Unknown"),
                     "pos": POSITIONS.get(pl.get("defaultPositionId"), "?"),
                     "slot": e.get("lineupSlotId"),
+                    "nfl": pl.get("proTeamId"),
                     "pts": round(pe.get("appliedStatTotal", 0.0), 2),
                     "proj": round(stat_total(pl, season, period, 1), 2),
                     "elig": pl.get("eligibleSlots", []),
@@ -518,6 +521,29 @@ def fetch_players(season, ids):
     return players
 
 
+UNAVAILABLE = ("OUT", "INJURY_RESERVE", "SUSPENSION")
+
+
+def update_lineup_flags(flags, week, week_teams, players):
+    """Record starters who are listed OUT / IR / suspended during `week`.
+    ESPN keeps no history of injury statuses, so each run notes what it
+    sees for the current week; entries are never removed. The site counts a
+    flag as a violation only if the player still scored 0 once the week is
+    over. Returns the updated flags dict."""
+    flags = {w: {t: list(v) for t, v in teams.items()} for w, teams in (flags or {}).items()}
+    for team_id, entry in (week_teams or {}).items():
+        for p in entry.get("players", []):
+            if p.get("slot") in (BENCH, IR) or p.get("pts"):
+                continue
+            status = (players.get(str(p["id"])) or {}).get("injury")
+            if status not in UNAVAILABLE:
+                continue
+            seen = flags.setdefault(str(week), {}).setdefault(str(team_id), [])
+            if not any(f["playerId"] == p["id"] for f in seen):
+                seen.append({"playerId": p["id"], "name": p.get("name", ""), "status": status})
+    return flags
+
+
 def sync_league(season, main, lineups, backfill):
     path = path_for(f"{season}-league.json")
     existing = (read_json(path) or {}) if not backfill else {}
@@ -555,6 +581,8 @@ def sync_league(season, main, lineups, backfill):
         "trades": trades,
         "players": dict(sorted(players.items(), key=lambda kv: int(kv[0]))),
         "proTeams": pro_team_byes(espn_get(season, [("view", "proTeamSchedules_wl")], league=False)),
+        "lineupFlags": existing.get("lineupFlags", {}) if backfill else update_lineup_flags(
+            existing.get("lineupFlags", {}), latest, lineups["weeks"].get(str(latest)), players),
     }
     write_if_changed(path, payload)
 

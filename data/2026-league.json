@@ -1,6 +1,6 @@
 {
  "seasonId": 2026,
- "syncedAt": "2026-11-23T05:53:02Z",
+ "syncedAt": "2026-11-23T06:11:16Z",
  "settings": {
   "teams": 10,
   "draftType": "AUCTION",
@@ -7837,6 +7837,17 @@
     "17": 1798999200000,
     "18": 1799568060000
    }
+  }
+ },
+ "lineupFlags": {
+  "11": {
+   "3": [
+    {
+     "playerId": 4432665,
+     "name": "Brock Bowers",
+     "status": "OUT"
+    }
+   ]
   }
  }
 }

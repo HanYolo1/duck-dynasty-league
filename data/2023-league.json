@@ -1,6 +1,6 @@
 {
  "seasonId": 2023,
- "syncedAt": "2026-11-23T04:21:04Z",
+ "syncedAt": "2026-11-23T06:10:56Z",
  "settings": {
   "teams": 10,
   "draftType": "AUCTION",
@@ -6658,1764 +6658,2789 @@
    "pos": "D/ST",
    "pts": 118.0,
    "team": 7,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 34
   },
   "-16033": {
    "name": "Ravens D/ST",
    "pos": "D/ST",
    "pts": 172.0,
    "team": 9,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 33
   },
   "-16030": {
    "name": "Jaguars D/ST",
    "pos": "D/ST",
    "pts": 105.0,
    "team": 3,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 30
   },
   "-16028": {
    "name": "Commanders D/ST",
    "pos": "D/ST",
    "pts": 30.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 28
   },
   "-16027": {
    "name": "Buccaneers D/ST",
    "pos": "D/ST",
    "pts": 108.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 27
   },
   "-16026": {
    "name": "Seahawks D/ST",
    "pos": "D/ST",
    "pts": 80.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 26
   },
   "-16025": {
    "name": "49ers D/ST",
    "pos": "D/ST",
    "pts": 136.0,
    "team": 2,
-   "keeperCost": 2
+   "keeperCost": 2,
+   "nfl": 25
   },
   "-16023": {
    "name": "Steelers D/ST",
    "pos": "D/ST",
    "pts": 127.0,
    "team": 3,
-   "keeperCost": 4
+   "keeperCost": 4,
+   "nfl": 23
   },
   "-16021": {
    "name": "Eagles D/ST",
    "pos": "D/ST",
    "pts": 80.0,
    "team": 10,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 21
   },
   "-16020": {
    "name": "Jets D/ST",
    "pos": "D/ST",
    "pts": 159.0,
    "team": 8,
-   "keeperCost": 5
+   "keeperCost": 5,
+   "nfl": 20
   },
   "-16019": {
    "name": "Giants D/ST",
    "pos": "D/ST",
    "pts": 114.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 19
   },
   "-16018": {
    "name": "Saints D/ST",
    "pos": "D/ST",
    "pts": 129.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 18
   },
   "-16017": {
    "name": "Patriots D/ST",
    "pos": "D/ST",
    "pts": 111.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 17
   },
   "-16016": {
    "name": "Vikings D/ST",
    "pos": "D/ST",
    "pts": 111.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 16
   },
   "-16015": {
    "name": "Dolphins D/ST",
    "pos": "D/ST",
    "pts": 139.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 15
   },
   "-16013": {
    "name": "Raiders D/ST",
    "pos": "D/ST",
    "pts": 135.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 13
   },
   "-16012": {
    "name": "Chiefs D/ST",
    "pos": "D/ST",
    "pts": 140.0,
    "team": 4,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 12
   },
   "-16011": {
    "name": "Colts D/ST",
    "pos": "D/ST",
    "pts": 123.0,
    "team": 1,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 11
   },
   "-16009": {
    "name": "Packers D/ST",
    "pos": "D/ST",
    "pts": 99.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 9
   },
   "-16008": {
    "name": "Lions D/ST",
    "pos": "D/ST",
    "pts": 93.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 8
   },
   "-16007": {
    "name": "Broncos D/ST",
    "pos": "D/ST",
    "pts": 98.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 7
   },
   "-16006": {
    "name": "Cowboys D/ST",
    "pos": "D/ST",
    "pts": 172.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 6
   },
   "-16005": {
    "name": "Browns D/ST",
    "pos": "D/ST",
    "pts": 166.0,
    "team": 4,
-   "keeperCost": 2
+   "keeperCost": 2,
+   "nfl": 5
   },
   "-16004": {
    "name": "Bengals D/ST",
    "pos": "D/ST",
    "pts": 91.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 4
   },
   "-16003": {
    "name": "Bears D/ST",
    "pos": "D/ST",
    "pts": 110.0,
    "team": 5,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 3
   },
   "-16002": {
    "name": "Bills D/ST",
    "pos": "D/ST",
    "pts": 158.0,
    "team": 6,
-   "keeperCost": 2
+   "keeperCost": 2,
+   "nfl": 2
   },
   "-16001": {
    "name": "Falcons D/ST",
    "pos": "D/ST",
    "pts": 92.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 1
   },
   "8439": {
    "name": "Aaron Rodgers",
    "pos": "QB",
    "pts": 0.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 20,
+   "injury": "QUESTIONABLE"
   },
   "10621": {
    "name": "Nick Folk",
    "pos": "K",
    "pts": 117.0,
    "team": 8,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 10
   },
   "11122": {
    "name": "Matt Prater",
    "pos": "K",
    "pts": 108.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 22
   },
   "11252": {
    "name": "Joe Flacco",
    "pos": "QB",
    "pts": 142.59,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 11
   },
   "12483": {
    "name": "Matthew Stafford",
    "pos": "QB",
    "pts": 333.6,
    "team": 6,
-   "keeperCost": 3
+   "keeperCost": 3,
+   "nfl": 14
   },
   "14880": {
    "name": "Kirk Cousins",
    "pos": "QB",
    "pts": 213.74,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 1,
+   "injury": "QUESTIONABLE"
   },
   "14881": {
    "name": "Russell Wilson",
    "pos": "QB",
    "pts": 339.15,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 23
   },
   "15683": {
    "name": "Justin Tucker",
    "pos": "K",
    "pts": 141.0,
    "team": 9,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 33
   },
   "15795": {
    "name": "DeAndre Hopkins",
    "pos": "WR",
    "pts": 236.6,
    "team": 7,
-   "keeperCost": 20
+   "keeperCost": 20,
+   "nfl": 10
   },
   "15818": {
    "name": "Keenan Allen",
    "pos": "WR",
    "pts": 296.11,
    "team": 9,
-   "keeperCost": 16
+   "keeperCost": 16,
+   "nfl": 3
   },
   "15835": {
    "name": "Zach Ertz",
    "pos": "TE",
    "pts": 51.7,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 28
   },
   "15847": {
    "name": "Travis Kelce",
    "pos": "TE",
    "pts": 225.4,
    "team": 1,
-   "keeperCost": 58
+   "keeperCost": 58,
+   "nfl": 12
   },
   "15864": {
    "name": "Geno Smith",
    "pos": "QB",
    "pts": 316.01,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 26
   },
   "15920": {
    "name": "Latavius Murray",
    "pos": "RB",
    "pts": 82.9,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 2
   },
   "15965": {
    "name": "Dustin Hopkins",
    "pos": "K",
    "pts": 123.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 5,
+   "injury": "QUESTIONABLE"
   },
   "16339": {
    "name": "Brandon McManus",
    "pos": "K",
    "pts": 121.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 28
   },
   "16460": {
    "name": "Adam Thielen",
    "pos": "WR",
    "pts": 240.0,
    "team": 3,
-   "keeperCost": 35
+   "keeperCost": 35,
+   "nfl": 29
   },
   "16486": {
    "name": "Brett Maher",
    "pos": "K",
    "pts": 57.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 14
   },
   "16731": {
    "name": "Brandin Cooks",
    "pos": "WR",
    "pts": 176.2,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 6
   },
   "16733": {
    "name": "Odell Beckham Jr.",
    "pos": "WR",
    "pts": 112.5,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 0
   },
   "16737": {
    "name": "Mike Evans",
    "pos": "WR",
    "pts": 294.5,
    "team": 9,
-   "keeperCost": 5
+   "keeperCost": 5,
+   "nfl": 27
   },
   "16757": {
    "name": "Derek Carr",
    "pos": "QB",
    "pts": 343.87,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 18
   },
   "16782": {
    "name": "Jerick McKinnon",
    "pos": "RB",
    "pts": 84.61,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 12
   },
   "16800": {
    "name": "Davante Adams",
    "pos": "WR",
    "pts": 275.4,
    "team": 8,
-   "keeperCost": 41
+   "keeperCost": 41,
+   "nfl": 13
   },
   "16813": {
    "name": "Logan Thomas",
    "pos": "TE",
    "pts": 126.8,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 28,
+   "injury": "QUESTIONABLE"
   },
   "2468609": {
    "name": "Taysom Hill",
    "pos": "TE",
    "pts": 145.02,
    "team": 8,
-   "keeperCost": 3
+   "keeperCost": 3,
+   "nfl": 18
   },
   "2473037": {
    "name": "Jason Myers",
    "pos": "K",
    "pts": 132.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 26
   },
   "2573401": {
    "name": "Tyler Higbee",
    "pos": "TE",
    "pts": 108.5,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 14,
+   "injury": "QUESTIONABLE"
   },
   "2576414": {
    "name": "Raheem Mostert",
    "pos": "RB",
    "pts": 270.7,
    "team": 3,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 15
   },
   "2576925": {
    "name": "Darren Waller",
    "pos": "TE",
    "pts": 113.2,
    "team": 2,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 19
   },
   "2577327": {
    "name": "Tyler Lockett",
    "pos": "WR",
    "pts": 202.4,
    "team": 2,
-   "keeperCost": 10
+   "keeperCost": 10,
+   "nfl": 26
   },
   "2577417": {
    "name": "Dak Prescott",
    "pos": "QB",
    "pts": 460.34,
    "team": 7,
-   "keeperCost": 5
+   "keeperCost": 5,
+   "nfl": 6
   },
   "2971573": {
    "name": "Ka'imi Fairbairn",
    "pos": "K",
    "pts": 105.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 34
   },
   "2976212": {
    "name": "Stefon Diggs",
    "pos": "WR",
    "pts": 290.8,
    "team": 2,
-   "keeperCost": 48
+   "keeperCost": 48,
+   "nfl": 2
   },
   "2976316": {
    "name": "Michael Thomas",
    "pos": "WR",
    "pts": 89.8,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 18,
+   "injury": "QUESTIONABLE"
   },
   "2976499": {
    "name": "Amari Cooper",
    "pos": "WR",
    "pts": 248.0,
    "team": 5,
-   "keeperCost": 19
+   "keeperCost": 19,
+   "nfl": 5
   },
   "2977187": {
    "name": "Cooper Kupp",
    "pos": "WR",
    "pts": 178.4,
    "team": 9,
-   "keeperCost": 47
+   "keeperCost": 47,
+   "nfl": 14
   },
   "2980453": {
    "name": "Jamaal Williams",
    "pos": "RB",
    "pts": 60.8,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 18
   },
   "2985659": {
    "name": "Wil Lutz",
    "pos": "K",
    "pts": 114.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 7
   },
   "3040151": {
    "name": "George Kittle",
    "pos": "TE",
    "pts": 215.2,
    "team": 4,
-   "keeperCost": 15
+   "keeperCost": 15,
+   "nfl": 25,
+   "injury": "QUESTIONABLE"
   },
   "3042519": {
    "name": "Aaron Jones",
    "pos": "RB",
    "pts": 137.9,
    "team": 2,
-   "keeperCost": 28
+   "keeperCost": 28,
+   "nfl": 16
   },
   "3043078": {
    "name": "Derrick Henry",
    "pos": "RB",
    "pts": 251.16,
    "team": 2,
-   "keeperCost": 51
+   "keeperCost": 51,
+   "nfl": 33
   },
   "3044720": {
    "name": "Joshua Dobbs",
    "pos": "QB",
    "pts": 266.16,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 25
   },
   "3045138": {
    "name": "Mike Williams",
    "pos": "WR",
    "pts": 54.2,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 20,
+   "injury": "QUESTIONABLE"
   },
   "3045144": {
    "name": "Tyler Boyd",
    "pos": "WR",
    "pts": 147.8,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 4
   },
   "3045147": {
    "name": "James Conner",
    "pos": "RB",
    "pts": 205.5,
    "team": 4,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 22
   },
   "3045523": {
    "name": "Kendrick Bourne",
    "pos": "WR",
    "pts": 100.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 17,
+   "injury": "QUESTIONABLE"
   },
   "3046439": {
    "name": "Hunter Henry",
    "pos": "TE",
    "pts": 119.9,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 17
   },
   "3046779": {
    "name": "Jared Goff",
    "pos": "QB",
    "pts": 399.85,
    "team": 9,
-   "keeperCost": 10
+   "keeperCost": 10,
+   "nfl": 8
   },
   "3049899": {
    "name": "Younghoe Koo",
    "pos": "K",
    "pts": 118.0,
    "team": 4,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 1
   },
   "3050478": {
    "name": "Jake Elliott",
    "pos": "K",
    "pts": 139.0,
    "team": 3,
-   "keeperCost": 3
+   "keeperCost": 3,
+   "nfl": 21
   },
   "3051392": {
    "name": "Ezekiel Elliott",
    "pos": "RB",
    "pts": 174.5,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 17
   },
   "3051876": {
    "name": "Evan Engram",
    "pos": "TE",
    "pts": 230.3,
    "team": 2,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 30
   },
   "3051909": {
    "name": "Daniel Carlson",
    "pos": "K",
    "pts": 105.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 13
   },
   "3051926": {
    "name": "Gus Edwards",
    "pos": "RB",
    "pts": 187.0,
    "team": 1,
-   "keeperCost": 2
+   "keeperCost": 2,
+   "nfl": 24
   },
   "3052587": {
    "name": "Baker Mayfield",
    "pos": "QB",
    "pts": 375.06,
    "team": 10,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 27
   },
   "3054212": {
    "name": "Jonnu Smith",
    "pos": "TE",
    "pts": 129.2,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 15
   },
   "3054850": {
    "name": "Alvin Kamara",
    "pos": "RB",
    "pts": 233.0,
    "team": 9,
-   "keeperCost": 11
+   "keeperCost": 11,
+   "nfl": 18,
+   "injury": "QUESTIONABLE"
   },
   "3055899": {
    "name": "Harrison Butker",
    "pos": "K",
    "pts": 139.0,
    "team": 5,
-   "keeperCost": 2
+   "keeperCost": 2,
+   "nfl": 12
   },
   "3059722": {
    "name": "Zay Jones",
    "pos": "WR",
    "pts": 78.1,
    "team": 4,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 30
   },
   "3059915": {
    "name": "Kareem Hunt",
    "pos": "RB",
    "pts": 118.5,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 5,
+   "injury": "QUESTIONABLE"
   },
   "3068267": {
    "name": "Austin Ekeler",
    "pos": "RB",
    "pts": 186.4,
    "team": 10,
-   "keeperCost": 55
+   "keeperCost": 55,
+   "nfl": 28
   },
   "3115306": {
    "name": "Josh Reynolds",
    "pos": "WR",
    "pts": 128.8,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 8
   },
   "3115394": {
    "name": "DJ Chark Jr.",
    "pos": "WR",
    "pts": 116.5,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 29
   },
   "3116165": {
    "name": "Chris Godwin",
    "pos": "WR",
    "pts": 216.2,
    "team": 10,
-   "keeperCost": 10
+   "keeperCost": 10,
+   "nfl": 27
   },
   "3116365": {
    "name": "Mark Andrews",
    "pos": "TE",
    "pts": 135.4,
    "team": 6,
-   "keeperCost": 13
+   "keeperCost": 13,
+   "nfl": 33
   },
   "3116385": {
    "name": "Joe Mixon",
    "pos": "RB",
    "pts": 268.0,
    "team": 6,
-   "keeperCost": 29
+   "keeperCost": 29,
+   "nfl": 34
   },
   "3116389": {
    "name": "Samaje Perine",
    "pos": "RB",
    "pts": 121.3,
    "team": 7,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 7
   },
   "3116406": {
    "name": "Tyreek Hill",
    "pos": "WR",
    "pts": 411.4,
    "team": 5,
-   "keeperCost": 56
+   "keeperCost": 56,
+   "nfl": 15
   },
   "3116593": {
    "name": "Dalvin Cook",
    "pos": "RB",
    "pts": 40.2,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 33
   },
   "3117251": {
    "name": "Christian McCaffrey",
    "pos": "RB",
    "pts": 401.3,
    "team": 4,
-   "keeperCost": 58
+   "keeperCost": 58,
+   "nfl": 25
   },
   "3117256": {
    "name": "Dalton Schultz",
    "pos": "TE",
    "pts": 153.5,
    "team": 3,
-   "keeperCost": 6
+   "keeperCost": 6,
+   "nfl": 34
   },
   "3120348": {
    "name": "JuJu Smith-Schuster",
    "pos": "WR",
    "pts": 61.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 17,
+   "injury": "QUESTIONABLE"
   },
   "3121023": {
    "name": "Dallas Goedert",
    "pos": "TE",
    "pts": 139.3,
    "team": 5,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 21
   },
   "3121409": {
    "name": "Noah Brown",
    "pos": "WR",
    "pts": 109.6,
    "team": 8,
-   "keeperCost": 2
+   "keeperCost": 2,
+   "nfl": 34,
+   "injury": "QUESTIONABLE"
   },
   "3121422": {
    "name": "Terry McLaurin",
    "pos": "WR",
    "pts": 212.2,
    "team": 8,
-   "keeperCost": 5
+   "keeperCost": 5,
+   "nfl": 28
   },
   "3121427": {
    "name": "Curtis Samuel",
    "pos": "WR",
    "pts": 160.2,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 2
   },
   "3122840": {
    "name": "Deshaun Watson",
    "pos": "QB",
    "pts": 114.05,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 5,
+   "injury": "QUESTIONABLE"
   },
   "3122976": {
    "name": "Jeff Wilson Jr.",
    "pos": "RB",
    "pts": 41.3,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 15
   },
   "3123052": {
    "name": "Michael Badgley",
    "pos": "K",
    "pts": 23.0,
    "team": 2,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 8
   },
   "3123075": {
    "name": "Braxton Berrios",
    "pos": "WR",
    "pts": 57.9,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 15
   },
   "3123076": {
    "name": "David Njoku",
    "pos": "TE",
    "pts": 207.2,
    "team": 9,
-   "keeperCost": 41
+   "keeperCost": 41,
+   "nfl": 5
   },
   "3124679": {
    "name": "Jason Sanders",
    "pos": "K",
    "pts": 128.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 15
   },
   "3125116": {
    "name": "D'Onta Foreman",
    "pos": "RB",
    "pts": 91.2,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 5
   },
   "3126486": {
    "name": "Deebo Samuel",
    "pos": "WR",
    "pts": 256.7,
    "team": 6,
-   "keeperCost": 19
+   "keeperCost": 19,
+   "nfl": 25
   },
   "3128429": {
    "name": "Courtland Sutton",
    "pos": "WR",
    "pts": 192.2,
    "team": 7,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 7,
+   "injury": "QUESTIONABLE"
   },
   "3128720": {
    "name": "Nick Chubb",
    "pos": "RB",
    "pts": 24.1,
    "team": 7,
-   "keeperCost": 2
+   "keeperCost": 2,
+   "nfl": 5,
+   "injury": "QUESTIONABLE"
   },
   "3139477": {
    "name": "Patrick Mahomes",
    "pos": "QB",
    "pts": 391.47,
    "team": 8,
-   "keeperCost": 39
+   "keeperCost": 39,
+   "nfl": 12
   },
   "3139925": {
    "name": "Rashaad Penny",
    "pos": "RB",
    "pts": 4.8,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 21
   },
   "3886812": {
    "name": "Jake Browning",
    "pos": "QB",
    "pts": 196.19,
    "team": 9,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 4
   },
   "3895856": {
    "name": "Christian Kirk",
    "pos": "WR",
    "pts": 157.51,
    "team": 3,
-   "keeperCost": 7
+   "keeperCost": 7,
+   "nfl": 30,
+   "injury": "QUESTIONABLE"
   },
   "3910544": {
    "name": "Joshua Kelley",
    "pos": "RB",
    "pts": 62.7,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 24
   },
   "3915416": {
    "name": "DJ Moore",
    "pos": "WR",
    "pts": 304.5,
    "team": 2,
-   "keeperCost": 15
+   "keeperCost": 15,
+   "nfl": 3
   },
   "3915511": {
    "name": "Joe Burrow",
    "pos": "QB",
    "pts": 215.16,
    "team": 4,
-   "keeperCost": 17
+   "keeperCost": 17,
+   "nfl": 4,
+   "injury": "QUESTIONABLE"
   },
   "3916148": {
    "name": "Tony Pollard",
    "pos": "RB",
    "pts": 223.6,
    "team": 5,
-   "keeperCost": 48
+   "keeperCost": 48,
+   "nfl": 10
   },
   "3916387": {
    "name": "Lamar Jackson",
    "pos": "QB",
    "pts": 417.97,
    "team": 10,
-   "keeperCost": 20
+   "keeperCost": 20,
+   "nfl": 33
   },
   "3916433": {
    "name": "Jakobi Meyers",
    "pos": "WR",
    "pts": 219.08,
    "team": 7,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 13
   },
   "3916566": {
    "name": "K.J. Osborn",
    "pos": "WR",
    "pts": 120.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 17
   },
   "3917232": {
    "name": "Tyler Bass",
    "pos": "K",
    "pts": 116.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 2
   },
   "3917315": {
    "name": "Kyler Murray",
    "pos": "QB",
    "pts": 191.36,
    "team": 2,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 22
   },
   "3917792": {
    "name": "Daniel Jones",
    "pos": "QB",
    "pts": 84.96,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 19,
+   "injury": "QUESTIONABLE"
   },
   "3918298": {
    "name": "Josh Allen",
    "pos": "QB",
    "pts": 499.89,
    "team": 1,
-   "keeperCost": 47
+   "keeperCost": 47,
+   "nfl": 2
   },
   "3918639": {
    "name": "Gerald Everett",
    "pos": "TE",
    "pts": 111.1,
    "team": 6,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 3,
+   "injury": "QUESTIONABLE"
   },
   "3925357": {
    "name": "Calvin Ridley",
    "pos": "WR",
    "pts": 243.9,
    "team": 7,
-   "keeperCost": 13
+   "keeperCost": 13,
+   "nfl": 10
   },
   "3929630": {
    "name": "Saquon Barkley",
    "pos": "RB",
    "pts": 224.2,
    "team": 9,
-   "keeperCost": 48
+   "keeperCost": 48,
+   "nfl": 21
   },
   "3929645": {
    "name": "Juwan Johnson",
    "pos": "TE",
    "pts": 97.8,
    "team": 3,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 18
   },
   "3932905": {
    "name": "Diontae Johnson",
    "pos": "WR",
    "pts": 154.7,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 29
   },
   "3953687": {
    "name": "Brandon Aubrey",
    "pos": "K",
    "pts": 161.0,
    "team": 6,
-   "keeperCost": 2
+   "keeperCost": 2,
+   "nfl": 6
   },
   "4032473": {
    "name": "Rashid Shaheed",
    "pos": "WR",
    "pts": 161.6,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 18
   },
   "4035538": {
    "name": "David Montgomery",
    "pos": "RB",
    "pts": 213.2,
    "team": 3,
-   "keeperCost": 7
+   "keeperCost": 7,
+   "nfl": 8
   },
   "4035676": {
    "name": "Zack Moss",
    "pos": "RB",
    "pts": 173.6,
    "team": 8,
-   "keeperCost": 11
+   "keeperCost": 11,
+   "nfl": 4
   },
   "4035687": {
    "name": "Michael Pittman Jr.",
    "pos": "WR",
    "pts": 261.2,
    "team": 5,
-   "keeperCost": 4
+   "keeperCost": 4,
+   "nfl": 11
   },
   "4035886": {
    "name": "Khalil Herbert",
    "pos": "RB",
    "pts": 115.5,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 3
   },
   "4036133": {
    "name": "T.J. Hockenson",
    "pos": "TE",
    "pts": 222.0,
    "team": 10,
-   "keeperCost": 13
+   "keeperCost": 13,
+   "nfl": 16,
+   "injury": "QUESTIONABLE"
   },
   "4036378": {
    "name": "Jordan Love",
    "pos": "QB",
    "pts": 414.06,
    "team": 4,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 9
   },
   "4038441": {
    "name": "Justice Hill",
    "pos": "RB",
    "pts": 109.3,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 33
   },
   "4038941": {
    "name": "Justin Herbert",
    "pos": "QB",
    "pts": 319.41,
    "team": 10,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 24,
+   "injury": "QUESTIONABLE"
   },
   "4039359": {
    "name": "Darrell Henderson Jr.",
    "pos": "RB",
    "pts": 43.5,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 0
   },
   "4040715": {
    "name": "Jalen Hurts",
    "pos": "QB",
    "pts": 452.82,
    "team": 5,
-   "keeperCost": 37
+   "keeperCost": 37,
+   "nfl": 21
   },
   "4040761": {
    "name": "Devin Singletary",
    "pos": "RB",
    "pts": 170.59,
    "team": 6,
-   "keeperCost": 8
+   "keeperCost": 8,
+   "nfl": 19
   },
   "4045163": {
    "name": "Miles Sanders",
    "pos": "RB",
    "pts": 87.6,
    "team": 3,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 29
   },
   "4046676": {
    "name": "Tony Jones Jr.",
    "pos": "RB",
    "pts": 32.2,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 22
   },
   "4047365": {
    "name": "Josh Jacobs",
    "pos": "RB",
    "pts": 185.1,
    "team": 5,
-   "keeperCost": 36
+   "keeperCost": 36,
+   "nfl": 9
   },
   "4047646": {
    "name": "A.J. Brown",
    "pos": "WR",
    "pts": 312.6,
    "team": 1,
-   "keeperCost": 33
+   "keeperCost": 33,
+   "nfl": 21,
+   "injury": "QUESTIONABLE"
   },
   "4047650": {
    "name": "DK Metcalf",
    "pos": "WR",
    "pts": 236.4,
    "team": 10,
-   "keeperCost": 20
+   "keeperCost": 20,
+   "nfl": 26
   },
   "4048244": {
    "name": "Alexander Mattison",
    "pos": "RB",
    "pts": 133.2,
    "team": 4,
-   "keeperCost": 45
+   "keeperCost": 45,
+   "nfl": 13
   },
   "4239934": {
    "name": "AJ Dillon",
    "pos": "RB",
    "pts": 117.6,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 9
   },
   "4239993": {
    "name": "Tee Higgins",
    "pos": "WR",
    "pts": 145.6,
    "team": 5,
-   "keeperCost": 33
+   "keeperCost": 33,
+   "nfl": 4
   },
   "4239996": {
    "name": "Travis Etienne Jr.",
    "pos": "RB",
    "pts": 288.4,
    "team": 8,
-   "keeperCost": 23
+   "keeperCost": 23,
+   "nfl": 30
   },
   "4240021": {
    "name": "Cam Akers",
    "pos": "RB",
    "pts": 46.7,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 16,
+   "injury": "QUESTIONABLE"
   },
   "4240600": {
    "name": "Kadarius Toney",
    "pos": "WR",
    "pts": 53.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 12
   },
   "4241372": {
    "name": "Marquise Brown",
    "pos": "WR",
    "pts": 134.7,
    "team": 7,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 12,
+   "injury": "QUESTIONABLE"
   },
   "4241389": {
    "name": "CeeDee Lamb",
    "pos": "WR",
    "pts": 431.2,
    "team": 6,
-   "keeperCost": 35
+   "keeperCost": 35,
+   "nfl": 6
   },
   "4241416": {
    "name": "Chuba Hubbard",
    "pos": "RB",
    "pts": 183.5,
    "team": 1,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 29
   },
   "4241457": {
    "name": "Najee Harris",
    "pos": "RB",
    "pts": 197.5,
    "team": 8,
-   "keeperCost": 2
+   "keeperCost": 2,
+   "nfl": 23
   },
   "4241463": {
    "name": "Jerry Jeudy",
    "pos": "WR",
    "pts": 141.8,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 5
   },
   "4241474": {
    "name": "Brian Robinson Jr.",
    "pos": "RB",
    "pts": 203.1,
    "team": 2,
-   "keeperCost": 4
+   "keeperCost": 4,
+   "nfl": 28
   },
   "4241478": {
    "name": "DeVonta Smith",
    "pos": "WR",
    "pts": 235.6,
    "team": 3,
-   "keeperCost": 24
+   "keeperCost": 24,
+   "nfl": 21
   },
   "4241479": {
    "name": "Tua Tagovailoa",
    "pos": "QB",
    "pts": 390.36,
    "team": 2,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 15
   },
   "4241985": {
    "name": "J.K. Dobbins",
    "pos": "RB",
    "pts": 11.7,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 33,
+   "injury": "QUESTIONABLE"
   },
   "4242335": {
    "name": "Jonathan Taylor",
    "pos": "RB",
    "pts": 158.4,
    "team": 8,
-   "keeperCost": 25
+   "keeperCost": 25,
+   "nfl": 11
   },
   "4242355": {
    "name": "Jake Ferguson",
    "pos": "TE",
    "pts": 177.1,
    "team": 5,
-   "keeperCost": 3
+   "keeperCost": 3,
+   "nfl": 6
   },
   "4242431": {
    "name": "Ty Chandler",
    "pos": "RB",
    "pts": 102.0,
    "team": 4,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 16
   },
   "4242433": {
    "name": "Joshua Palmer",
    "pos": "WR",
    "pts": 114.7,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 24,
+   "injury": "QUESTIONABLE"
   },
   "4243331": {
    "name": "Cade Otton",
    "pos": "TE",
    "pts": 116.5,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 27
   },
   "4243371": {
    "name": "Riley Patterson",
    "pos": "K",
    "pts": 84.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 30
   },
   "4243537": {
    "name": "Gabe Davis",
    "pos": "WR",
    "pts": 172.4,
    "team": 3,
-   "keeperCost": 3
+   "keeperCost": 3,
+   "nfl": 30
   },
   "4248528": {
    "name": "Christian Watson",
    "pos": "WR",
    "pts": 101.3,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 9
   },
   "4249087": {
    "name": "Matt Gay",
    "pos": "K",
    "pts": 130.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 11
   },
   "4258173": {
    "name": "Nico Collins",
    "pos": "WR",
    "pts": 279.4,
    "team": 9,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 34
   },
   "4258195": {
    "name": "Donovan Peoples-Jones",
    "pos": "WR",
    "pts": 28.5,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 8
   },
   "4258595": {
    "name": "Cole Kmet",
    "pos": "TE",
    "pts": 184.1,
    "team": 6,
-   "keeperCost": 5
+   "keeperCost": 5,
+   "nfl": 3,
+   "injury": "QUESTIONABLE"
   },
   "4259545": {
    "name": "D'Andre Swift",
    "pos": "RB",
    "pts": 201.3,
    "team": 7,
-   "keeperCost": 50
+   "keeperCost": 50,
+   "nfl": 3
   },
   "4262921": {
    "name": "Justin Jefferson",
    "pos": "WR",
    "pts": 219.2,
    "team": 10,
-   "keeperCost": 59
+   "keeperCost": 59,
+   "nfl": 16
   },
   "4360234": {
    "name": "Evan McPherson",
    "pos": "K",
    "pts": 120.0,
    "team": 10,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 4
   },
   "4360238": {
    "name": "Dameon Pierce",
    "pos": "RB",
    "pts": 82.7,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 34
   },
   "4360248": {
    "name": "Kyle Pitts",
    "pos": "TE",
    "pts": 137.3,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 1
   },
   "4360294": {
    "name": "Antonio Gibson",
    "pos": "RB",
    "pts": 127.4,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 17
   },
   "4360310": {
    "name": "Trevor Lawrence",
    "pos": "QB",
    "pts": 364.04,
    "team": 6,
-   "keeperCost": 10
+   "keeperCost": 10,
+   "nfl": 30
   },
   "4360438": {
    "name": "Brandon Aiyuk",
    "pos": "WR",
    "pts": 272.2,
    "team": 10,
-   "keeperCost": 4
+   "keeperCost": 4,
+   "nfl": 25
   },
   "4360797": {
    "name": "Tutu Atwell",
    "pos": "WR",
    "pts": 115.4,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 14
   },
   "4361050": {
    "name": "Isaiah Likely",
    "pos": "TE",
    "pts": 103.1,
    "team": 8,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 33
   },
   "4361307": {
    "name": "Trey McBride",
    "pos": "TE",
    "pts": 187.5,
    "team": 10,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 22
   },
   "4361370": {
    "name": "Chris Olave",
    "pos": "WR",
    "pts": 246.3,
    "team": 2,
-   "keeperCost": 33
+   "keeperCost": 33,
+   "nfl": 18
   },
   "4361409": {
    "name": "Jahan Dotson",
    "pos": "WR",
    "pts": 127.8,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 28
   },
   "4361411": {
    "name": "Pat Freiermuth",
    "pos": "TE",
    "pts": 79.8,
    "team": 7,
-   "keeperCost": 3
+   "keeperCost": 3,
+   "nfl": 23
   },
   "4361418": {
    "name": "Will Levis",
    "pos": "QB",
    "pts": 144.27,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 10,
+   "injury": "QUESTIONABLE"
   },
   "4361432": {
    "name": "Romeo Doubs",
    "pos": "WR",
    "pts": 174.4,
    "team": 1,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 9
   },
   "4361529": {
    "name": "Isiah Pacheco",
    "pos": "RB",
    "pts": 217.9,
    "team": 1,
-   "keeperCost": 5
+   "keeperCost": 5,
+   "nfl": 12
   },
   "4361579": {
    "name": "Javonte Williams",
    "pos": "RB",
    "pts": 179.2,
    "team": 9,
-   "keeperCost": 3
+   "keeperCost": 3,
+   "nfl": 7
   },
   "4361741": {
    "name": "Brock Purdy",
    "pos": "QB",
    "pts": 387.6,
    "team": 3,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 25
   },
   "4361777": {
    "name": "Zamir White",
    "pos": "RB",
    "pts": 75.9,
    "team": 5,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 13
   },
   "4362019": {
    "name": "A.T. Perry",
    "pos": "WR",
    "pts": 60.6,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 18
   },
   "4362081": {
    "name": "Cameron Dicker",
    "pos": "K",
    "pts": 133.0,
    "team": 1,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 24
   },
   "4362087": {
    "name": "Keaontay Ingram",
    "pos": "RB",
    "pts": 14.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 12
   },
   "4362249": {
    "name": "Jayden Reed",
    "pos": "WR",
    "pts": 220.2,
    "team": 5,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 9
   },
   "4362478": {
    "name": "Emari Demercado",
    "pos": "RB",
    "pts": 74.3,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 22
   },
   "4362628": {
    "name": "Ja'Marr Chase",
    "pos": "WR",
    "pts": 283.97,
    "team": 6,
-   "keeperCost": 54
+   "keeperCost": 54,
+   "nfl": 4
   },
   "4362887": {
    "name": "Justin Fields",
    "pos": "QB",
    "pts": 290.93,
    "team": 4,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 23
   },
   "4366031": {
    "name": "Tank Dell",
    "pos": "WR",
    "pts": 177.0,
    "team": 1,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 34,
+   "injury": "QUESTIONABLE"
   },
   "4371733": {
    "name": "Kenneth Gainwell",
    "pos": "RB",
    "pts": 97.63,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 21
   },
   "4372016": {
    "name": "Jaylen Waddle",
    "pos": "WR",
    "pts": 209.6,
    "team": 7,
-   "keeperCost": 25
+   "keeperCost": 25,
+   "nfl": 15
   },
   "4372019": {
    "name": "Jerome Ford",
    "pos": "RB",
    "pts": 217.2,
    "team": 6,
-   "keeperCost": 41
+   "keeperCost": 41,
+   "nfl": 5
   },
   "4372066": {
    "name": "Jake Moody",
    "pos": "K",
    "pts": 117.0,
    "team": 7,
-   "keeperCost": 2
+   "keeperCost": 2,
+   "nfl": 25
   },
   "4372414": {
    "name": "Elijah Moore",
    "pos": "WR",
    "pts": 132.1,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 5
   },
   "4373626": {
    "name": "Tyler Allgeier",
    "pos": "RB",
    "pts": 139.6,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 1
   },
   "4374302": {
    "name": "Amon-Ra St. Brown",
    "pos": "WR",
    "pts": 359.9,
    "team": 1,
-   "keeperCost": 50
+   "keeperCost": 50,
+   "nfl": 8
   },
   "4379399": {
    "name": "James Cook",
    "pos": "RB",
    "pts": 235.7,
    "team": 3,
-   "keeperCost": 3
+   "keeperCost": 3,
+   "nfl": 2
   },
   "4385690": {
    "name": "Dalton Kincaid",
    "pos": "TE",
    "pts": 150.3,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 2
   },
   "4426354": {
    "name": "George Pickens",
    "pos": "WR",
    "pts": 230.8,
    "team": 9,
-   "keeperCost": 5
+   "keeperCost": 5,
+   "nfl": 23
   },
   "4426385": {
    "name": "Zach Charbonnet",
    "pos": "RB",
    "pts": 106.1,
    "team": 10,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 26
   },
   "4426386": {
    "name": "Roschon Johnson",
    "pos": "RB",
    "pts": 102.1,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 3
   },
   "4426388": {
    "name": "Jameson Williams",
    "pos": "WR",
    "pts": 81.3,
    "team": 1,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 8
   },
   "4426502": {
    "name": "Drake London",
    "pos": "WR",
    "pts": 180.63,
    "team": 1,
-   "keeperCost": 5
+   "keeperCost": 5,
+   "nfl": 1
   },
   "4426515": {
    "name": "Puka Nacua",
    "pos": "WR",
    "pts": 321.5,
    "team": 9,
-   "keeperCost": 3
+   "keeperCost": 3,
+   "nfl": 14
   },
   "4426875": {
    "name": "Sam Howell",
    "pos": "QB",
    "pts": 361.54,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 26
   },
   "4427095": {
    "name": "DeMario Douglas",
    "pos": "WR",
    "pts": 107.2,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 17
   },
   "4427366": {
    "name": "Breece Hall",
    "pos": "RB",
    "pts": 299.5,
    "team": 10,
-   "keeperCost": 20
+   "keeperCost": 20,
+   "nfl": 20
   },
   "4428085": {
    "name": "Luke Musgrave",
    "pos": "TE",
    "pts": 75.2,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 9
   },
   "4428331": {
    "name": "Rashee Rice",
    "pos": "WR",
    "pts": 218.5,
    "team": 4,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 12
   },
   "4428557": {
    "name": "Tyjae Spears",
    "pos": "RB",
    "pts": 153.8,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 10
   },
   "4429013": {
    "name": "Tank Bigsby",
    "pos": "RB",
    "pts": 22.8,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 30
   },
   "4429025": {
    "name": "Quentin Johnston",
    "pos": "WR",
    "pts": 94.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 24
   },
   "4429084": {
    "name": "Anthony Richardson",
    "pos": "QB",
    "pts": 85.18,
    "team": 2,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 11,
+   "injury": "QUESTIONABLE"
   },
   "4429160": {
    "name": "De'Von Achane",
    "pos": "RB",
    "pts": 199.7,
    "team": 1,
-   "keeperCost": 65
+   "keeperCost": 65,
+   "nfl": 15
   },
   "4429205": {
    "name": "Jordan Addison",
    "pos": "WR",
    "pts": 232.3,
    "team": 6,
-   "keeperCost": 4
+   "keeperCost": 4,
+   "nfl": 16
   },
   "4429615": {
    "name": "Zay Flowers",
    "pos": "WR",
    "pts": 211.4,
    "team": 6,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 33
   },
   "4429795": {
    "name": "Jahmyr Gibbs",
    "pos": "RB",
    "pts": 244.1,
    "team": 8,
-   "keeperCost": 29
+   "keeperCost": 29,
+   "nfl": 8
   },
   "4430027": {
    "name": "Sam LaPorta",
    "pos": "TE",
    "pts": 243.3,
    "team": 7,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 8
   },
   "4430191": {
    "name": "Skyy Moore",
    "pos": "WR",
    "pts": 53.7,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 12
   },
   "4430737": {
    "name": "Kyren Williams",
    "pos": "RB",
    "pts": 261.0,
    "team": 5,
-   "keeperCost": 64
+   "keeperCost": 64,
+   "nfl": 14,
+   "injury": "QUESTIONABLE"
   },
   "4430807": {
    "name": "Bijan Robinson",
    "pos": "RB",
    "pts": 253.3,
    "team": 10,
-   "keeperCost": 50
+   "keeperCost": 50,
+   "nfl": 1
   },
   "4430878": {
    "name": "Jaxon Smith-Njigba",
    "pos": "WR",
    "pts": 149.8,
    "team": 1,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 26
   },
   "4432577": {
    "name": "C.J. Stroud",
    "pos": "QB",
    "pts": 376.77,
    "team": 5,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 34
   },
   "4432620": {
    "name": "Parker Washington",
    "pos": "WR",
    "pts": 39.2,
    "team": 4,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 30
   },
   "4567048": {
    "name": "Kenneth Walker III",
    "pos": "RB",
    "pts": 202.4,
    "team": 3,
-   "keeperCost": 9
+   "keeperCost": 9,
+   "nfl": 26
   },
   "4567156": {
    "name": "Treylon Burks",
    "pos": "WR",
    "pts": 39.9,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 10
   },
   "4569173": {
    "name": "Rhamondre Stevenson",
    "pos": "RB",
    "pts": 147.7,
    "team": 2,
-   "keeperCost": 1
+   "keeperCost": 1,
+   "nfl": 17,
+   "injury": "QUESTIONABLE"
   },
   "4569618": {
    "name": "Garrett Wilson",
    "pos": "WR",
    "pts": 221.2,
    "team": 4,
-   "keeperCost": 41
+   "keeperCost": 41,
+   "nfl": 20
   },
   "4569987": {
    "name": "Jaylen Warren",
    "pos": "RB",
    "pts": 200.4,
    "team": 9,
-   "keeperCost": 10
+   "keeperCost": 10,
+   "nfl": 23
   },
   "4685035": {
    "name": "Zach Evans",
    "pos": "RB",
    "pts": 1.9,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 14
   },
   "4686472": {
    "name": "Marvin Mims Jr.",
    "pos": "WR",
    "pts": 75.7,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 7
   },
   "4688813": {
    "name": "Josh Downs",
    "pos": "WR",
    "pts": 162.1,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 11
   },
   "4697815": {
    "name": "Rachaad White",
    "pos": "RB",
    "pts": 270.9,
    "team": 7,
-   "keeperCost": 9
+   "keeperCost": 9,
+   "nfl": 27
   },
   "4722893": {
    "name": "Jaleel McLaughlin",
    "pos": "RB",
    "pts": 106.0,
    "team": 0,
-   "keeperCost": 0
+   "keeperCost": 0,
+   "nfl": 7,
+   "injury": "QUESTIONABLE"
   }
- }
+ },
+ "proTeams": {
+  "11": {
+   "abbrev": "Ind",
+   "bye": 11,
+   "games": {
+    "1": 1694365200000,
+    "2": 1694970000000,
+    "3": 1695574800000,
+    "4": 1696179600000,
+    "5": 1696784400000,
+    "6": 1697389200000,
+    "7": 1697994000000,
+    "8": 1698598800000,
+    "9": 1699218300000,
+    "10": 1699799400000,
+    "12": 1701021600000,
+    "13": 1701626400000,
+    "14": 1702231200000,
+    "15": 1702762200000,
+    "16": 1703440800000,
+    "17": 1704045600000,
+    "18": 1704590100000
+   }
+  },
+  "12": {
+   "abbrev": "KC",
+   "bye": 10,
+   "games": {
+    "1": 1694132400000,
+    "2": 1694970000000,
+    "3": 1695587100000,
+    "4": 1696206000000,
+    "5": 1696796700000,
+    "6": 1697156100000,
+    "7": 1698006300000,
+    "8": 1698611100000,
+    "9": 1699194600000,
+    "11": 1700529300000,
+    "12": 1701033900000,
+    "13": 1701652800000,
+    "14": 1702243500000,
+    "15": 1702836000000,
+    "16": 1703527200000,
+    "17": 1704057900000,
+    "18": 1704662700000
+   }
+  },
+  "13": {
+   "abbrev": "LV",
+   "bye": 13,
+   "games": {
+    "1": 1694377500000,
+    "2": 1694970000000,
+    "3": 1695601200000,
+    "4": 1696190700000,
+    "5": 1696896900000,
+    "6": 1697400300000,
+    "7": 1697994000000,
+    "8": 1698711300000,
+    "9": 1699219500000,
+    "10": 1699838400000,
+    "11": 1700416800000,
+    "12": 1701033900000,
+    "14": 1702242300000,
+    "15": 1702602900000,
+    "16": 1703527200000,
+    "17": 1704045600000,
+    "18": 1704662700000
+   }
+  },
+  "14": {
+   "abbrev": "LAR",
+   "bye": 10,
+   "games": {
+    "1": 1694377500000,
+    "2": 1694981100000,
+    "3": 1695687300000,
+    "4": 1696179600000,
+    "5": 1696795500000,
+    "6": 1697401500000,
+    "7": 1698005100000,
+    "8": 1698598800000,
+    "9": 1699207200000,
+    "11": 1700429100000,
+    "12": 1701032700000,
+    "13": 1701638700000,
+    "14": 1702231200000,
+    "15": 1702847100000,
+    "16": 1703207700000,
+    "17": 1704045600000,
+    "18": 1704662700000
+   }
+  },
+  "15": {
+   "abbrev": "Mia",
+   "bye": 10,
+   "games": {
+    "1": 1694377500000,
+    "2": 1694996400000,
+    "3": 1695574800000,
+    "4": 1696179600000,
+    "5": 1696784400000,
+    "6": 1697389200000,
+    "7": 1698020400000,
+    "8": 1698598800000,
+    "9": 1699194600000,
+    "11": 1700416800000,
+    "12": 1700856000000,
+    "13": 1701626400000,
+    "14": 1702343700000,
+    "15": 1702836000000,
+    "16": 1703453100000,
+    "17": 1704045600000,
+    "18": 1704676800000
+   }
+  },
+  "16": {
+   "abbrev": "Min",
+   "bye": 13,
+   "games": {
+    "1": 1694365200000,
+    "2": 1694736900000,
+    "3": 1695574800000,
+    "4": 1696179600000,
+    "5": 1696796700000,
+    "6": 1697389200000,
+    "7": 1698106500000,
+    "8": 1698598800000,
+    "9": 1699207200000,
+    "10": 1699812000000,
+    "11": 1700443200000,
+    "12": 1701134100000,
+    "14": 1702242300000,
+    "15": 1702749600000,
+    "16": 1703440800000,
+    "17": 1704072000000,
+    "18": 1704650400000
+   }
+  },
+  "17": {
+   "abbrev": "NE",
+   "bye": 11,
+   "games": {
+    "1": 1694377500000,
+    "2": 1694996400000,
+    "3": 1695574800000,
+    "4": 1696191900000,
+    "5": 1696784400000,
+    "6": 1697400300000,
+    "7": 1697994000000,
+    "8": 1698598800000,
+    "9": 1699207200000,
+    "10": 1699799400000,
+    "12": 1701021600000,
+    "13": 1701626400000,
+    "14": 1701998100000,
+    "15": 1702836000000,
+    "16": 1703466900000,
+    "17": 1704045600000,
+    "18": 1704650400000
+   }
+  },
+  "18": {
+   "abbrev": "NO",
+   "bye": 11,
+   "games": {
+    "1": 1694365200000,
+    "2": 1695078900000,
+    "3": 1695574800000,
+    "4": 1696179600000,
+    "5": 1696784400000,
+    "6": 1697389200000,
+    "7": 1697760900000,
+    "8": 1698598800000,
+    "9": 1699207200000,
+    "10": 1699812000000,
+    "12": 1701021600000,
+    "13": 1701626400000,
+    "14": 1702231200000,
+    "15": 1702836000000,
+    "16": 1703207700000,
+    "17": 1704045600000,
+    "18": 1704650400000
+   }
+  },
+  "19": {
+   "abbrev": "NYG",
+   "bye": 13,
+   "games": {
+    "1": 1694391600000,
+    "2": 1694981100000,
+    "3": 1695341700000,
+    "4": 1696292100000,
+    "5": 1696784400000,
+    "6": 1697415600000,
+    "7": 1697994000000,
+    "8": 1698598800000,
+    "9": 1699219500000,
+    "10": 1699824300000,
+    "11": 1700416800000,
+    "12": 1701021600000,
+    "14": 1702343700000,
+    "15": 1702836000000,
+    "16": 1703539800000,
+    "17": 1704045600000,
+    "18": 1704662700000
+   }
+  },
+  "20": {
+   "abbrev": "NYJ",
+   "bye": 7,
+   "games": {
+    "1": 1694477700000,
+    "2": 1694982300000,
+    "3": 1695574800000,
+    "4": 1696206000000,
+    "5": 1696796700000,
+    "6": 1697401500000,
+    "8": 1698598800000,
+    "9": 1699319700000,
+    "10": 1699838400000,
+    "11": 1700429100000,
+    "12": 1700856000000,
+    "13": 1701626400000,
+    "14": 1702231200000,
+    "15": 1702836000000,
+    "16": 1703440800000,
+    "17": 1703812500000,
+    "18": 1704650400000
+   }
+  },
+  "21": {
+   "abbrev": "Phi",
+   "bye": 10,
+   "games": {
+    "1": 1694377500000,
+    "2": 1694736900000,
+    "3": 1695683700000,
+    "4": 1696179600000,
+    "5": 1696795500000,
+    "6": 1697401500000,
+    "7": 1698020400000,
+    "8": 1698598800000,
+    "9": 1699219500000,
+    "11": 1700529300000,
+    "12": 1701033900000,
+    "13": 1701638700000,
+    "14": 1702257600000,
+    "15": 1702948500000,
+    "16": 1703539800000,
+    "17": 1704045600000,
+    "18": 1704662700000
+   }
+  },
+  "22": {
+   "abbrev": "Ari",
+   "bye": 14,
+   "games": {
+    "1": 1694365200000,
+    "2": 1694981100000,
+    "3": 1695587100000,
+    "4": 1696191900000,
+    "5": 1696795500000,
+    "6": 1697401500000,
+    "7": 1698005100000,
+    "8": 1698611100000,
+    "9": 1699207200000,
+    "10": 1699823100000,
+    "11": 1700416800000,
+    "12": 1701032700000,
+    "13": 1701626400000,
+    "15": 1702847100000,
+    "16": 1703453100000,
+    "17": 1704045600000,
+    "18": 1704662700000
+   }
+  },
+  "23": {
+   "abbrev": "Pit",
+   "bye": 6,
+   "games": {
+    "1": 1694365200000,
+    "2": 1695082500000,
+    "3": 1695601200000,
+    "4": 1696179600000,
+    "5": 1696784400000,
+    "7": 1698005100000,
+    "8": 1698598800000,
+    "9": 1698970500000,
+    "10": 1699812000000,
+    "11": 1700416800000,
+    "12": 1701021600000,
+    "13": 1701626400000,
+    "14": 1701998100000,
+    "15": 1702762200000,
+    "16": 1703367000000,
+    "17": 1704056700000,
+    "18": 1704576600000
+   }
+  },
+  "24": {
+   "abbrev": "LAC",
+   "bye": 5,
+   "games": {
+    "1": 1694377500000,
+    "2": 1694970000000,
+    "3": 1695574800000,
+    "4": 1696190700000,
+    "6": 1697501700000,
+    "7": 1698006300000,
+    "8": 1698625200000,
+    "9": 1699319700000,
+    "10": 1699823100000,
+    "11": 1700416800000,
+    "12": 1701048000000,
+    "13": 1701626400000,
+    "14": 1702243500000,
+    "15": 1702602900000,
+    "16": 1703379600000,
+    "17": 1704057900000,
+    "18": 1704662700000
+   }
+  },
+  "25": {
+   "abbrev": "SF",
+   "bye": 9,
+   "games": {
+    "1": 1694365200000,
+    "2": 1694981100000,
+    "3": 1695341700000,
+    "4": 1696191900000,
+    "5": 1696810800000,
+    "6": 1697389200000,
+    "7": 1698106500000,
+    "8": 1698611100000,
+    "10": 1699812000000,
+    "11": 1700427900000,
+    "12": 1700788800000,
+    "13": 1701638700000,
+    "14": 1702242300000,
+    "15": 1702847100000,
+    "16": 1703553300000,
+    "17": 1704045600000,
+    "18": 1704662700000
+   }
+  },
+  "26": {
+   "abbrev": "Sea",
+   "bye": 5,
+   "games": {
+    "1": 1694377500000,
+    "2": 1694970000000,
+    "3": 1695585900000,
+    "4": 1696292100000,
+    "6": 1697389200000,
+    "7": 1698005100000,
+    "8": 1698609900000,
+    "9": 1699207200000,
+    "10": 1699824300000,
+    "11": 1700429100000,
+    "12": 1700788800000,
+    "13": 1701393300000,
+    "14": 1702242300000,
+    "15": 1702948500000,
+    "16": 1703440800000,
+    "17": 1704056700000,
+    "18": 1704662700000
+   }
+  },
+  "27": {
+   "abbrev": "TB",
+   "bye": 5,
+   "games": {
+    "1": 1694365200000,
+    "2": 1694970000000,
+    "3": 1695683700000,
+    "4": 1696179600000,
+    "6": 1697401500000,
+    "7": 1697994000000,
+    "8": 1698365700000,
+    "9": 1699207200000,
+    "10": 1699812000000,
+    "11": 1700427900000,
+    "12": 1701021600000,
+    "13": 1701637500000,
+    "14": 1702231200000,
+    "15": 1702836000000,
+    "16": 1703451900000,
+    "17": 1704045600000,
+    "18": 1704650400000
+   }
+  },
+  "28": {
+   "abbrev": "Wsh",
+   "bye": 14,
+   "games": {
+    "1": 1694365200000,
+    "2": 1694982300000,
+    "3": 1695574800000,
+    "4": 1696179600000,
+    "5": 1696551300000,
+    "6": 1697389200000,
+    "7": 1697994000000,
+    "8": 1698598800000,
+    "9": 1699207200000,
+    "10": 1699824300000,
+    "11": 1700416800000,
+    "12": 1700775000000,
+    "13": 1701626400000,
+    "15": 1702847100000,
+    "16": 1703440800000,
+    "17": 1704045600000,
+    "18": 1704662700000
+   }
+  },
+  "29": {
+   "abbrev": "Car",
+   "bye": 7,
+   "games": {
+    "1": 1694365200000,
+    "2": 1695078900000,
+    "3": 1695585900000,
+    "4": 1696179600000,
+    "5": 1696784400000,
+    "6": 1697389200000,
+    "8": 1698598800000,
+    "9": 1699218300000,
+    "10": 1699578900000,
+    "11": 1700416800000,
+    "12": 1701021600000,
+    "13": 1701637500000,
+    "14": 1702231200000,
+    "15": 1702836000000,
+    "16": 1703440800000,
+    "17": 1704045600000,
+    "18": 1704650400000
+   }
+  },
+  "30": {
+   "abbrev": "Jax",
+   "bye": 9,
+   "games": {
+    "1": 1694365200000,
+    "2": 1694970000000,
+    "3": 1695574800000,
+    "4": 1696167000000,
+    "5": 1696771800000,
+    "6": 1697389200000,
+    "7": 1697760900000,
+    "8": 1698598800000,
+    "10": 1699812000000,
+    "11": 1700416800000,
+    "12": 1701021600000,
+    "13": 1701738900000,
+    "14": 1702231200000,
+    "15": 1702862400000,
+    "16": 1703451900000,
+    "17": 1704045600000,
+    "18": 1704650400000
+   }
+  },
+  "33": {
+   "abbrev": "Bal",
+   "bye": 13,
+   "games": {
+    "1": 1694365200000,
+    "2": 1694970000000,
+    "3": 1695574800000,
+    "4": 1696179600000,
+    "5": 1696784400000,
+    "6": 1697376600000,
+    "7": 1697994000000,
+    "8": 1698611100000,
+    "9": 1699207200000,
+    "10": 1699812000000,
+    "11": 1700183700000,
+    "12": 1701048000000,
+    "14": 1702231200000,
+    "15": 1702862400000,
+    "16": 1703553300000,
+    "17": 1704045600000,
+    "18": 1704576600000
+   }
+  },
+  "34": {
+   "abbrev": "Hou",
+   "bye": 7,
+   "games": {
+    "1": 1694365200000,
+    "2": 1694970000000,
+    "3": 1695574800000,
+    "4": 1696179600000,
+    "5": 1696784400000,
+    "6": 1697389200000,
+    "8": 1698598800000,
+    "9": 1699207200000,
+    "10": 1699812000000,
+    "11": 1700416800000,
+    "12": 1701021600000,
+    "13": 1701626400000,
+    "14": 1702231200000,
+    "15": 1702836000000,
+    "16": 1703440800000,
+    "17": 1704045600000,
+    "18": 1704590100000
+   }
+  },
+  "1": {
+   "abbrev": "Atl",
+   "bye": 11,
+   "games": {
+    "1": 1694365200000,
+    "2": 1694970000000,
+    "3": 1695574800000,
+    "4": 1696167000000,
+    "5": 1696784400000,
+    "6": 1697389200000,
+    "7": 1697994000000,
+    "8": 1698598800000,
+    "9": 1699207200000,
+    "10": 1699823100000,
+    "12": 1701021600000,
+    "13": 1701626400000,
+    "14": 1702231200000,
+    "15": 1702836000000,
+    "16": 1703440800000,
+    "17": 1704045600000,
+    "18": 1704650400000
+   }
+  },
+  "2": {
+   "abbrev": "Buf",
+   "bye": 13,
+   "games": {
+    "1": 1694477700000,
+    "2": 1694970000000,
+    "3": 1695574800000,
+    "4": 1696179600000,
+    "5": 1696771800000,
+    "6": 1697415600000,
+    "7": 1697994000000,
+    "8": 1698365700000,
+    "9": 1699233600000,
+    "10": 1699924500000,
+    "11": 1700429100000,
+    "12": 1701033900000,
+    "14": 1702243500000,
+    "15": 1702848300000,
+    "16": 1703379600000,
+    "17": 1704045600000,
+    "18": 1704676800000
+   }
+  },
+  "3": {
+   "abbrev": "Chi",
+   "bye": 13,
+   "games": {
+    "1": 1694377500000,
+    "2": 1694970000000,
+    "3": 1695587100000,
+    "4": 1696179600000,
+    "5": 1696551300000,
+    "6": 1697389200000,
+    "7": 1697994000000,
+    "8": 1698625200000,
+    "9": 1699207200000,
+    "10": 1699578900000,
+    "11": 1700416800000,
+    "12": 1701134100000,
+    "14": 1702231200000,
+    "15": 1702836000000,
+    "16": 1703453100000,
+    "17": 1704045600000,
+    "18": 1704662700000
+   }
+  },
+  "4": {
+   "abbrev": "Cin",
+   "bye": 7,
+   "games": {
+    "1": 1694365200000,
+    "2": 1694970000000,
+    "3": 1695687300000,
+    "4": 1696179600000,
+    "5": 1696795500000,
+    "6": 1697389200000,
+    "8": 1698611100000,
+    "9": 1699233600000,
+    "10": 1699812000000,
+    "11": 1700183700000,
+    "12": 1701021600000,
+    "13": 1701738900000,
+    "14": 1702231200000,
+    "15": 1702749600000,
+    "16": 1703367000000,
+    "17": 1704057900000,
+    "18": 1704650400000
+   }
+  },
+  "5": {
+   "abbrev": "Cle",
+   "bye": 5,
+   "games": {
+    "1": 1694365200000,
+    "2": 1695082500000,
+    "3": 1695574800000,
+    "4": 1696179600000,
+    "6": 1697389200000,
+    "7": 1697994000000,
+    "8": 1698609900000,
+    "9": 1699207200000,
+    "10": 1699812000000,
+    "11": 1700416800000,
+    "12": 1701032700000,
+    "13": 1701638700000,
+    "14": 1702231200000,
+    "15": 1702836000000,
+    "16": 1703440800000,
+    "17": 1703812500000,
+    "18": 1704650400000
+   }
+  },
+  "6": {
+   "abbrev": "Dal",
+   "bye": 7,
+   "games": {
+    "1": 1694391600000,
+    "2": 1694982300000,
+    "3": 1695587100000,
+    "4": 1696191900000,
+    "5": 1696810800000,
+    "6": 1697501700000,
+    "8": 1698598800000,
+    "9": 1699219500000,
+    "10": 1699824300000,
+    "11": 1700416800000,
+    "12": 1700775000000,
+    "13": 1701393300000,
+    "14": 1702257600000,
+    "15": 1702848300000,
+    "16": 1703453100000,
+    "17": 1703985300000,
+    "18": 1704662700000
+   }
+  },
+  "7": {
+   "abbrev": "Den",
+   "bye": 9,
+   "games": {
+    "1": 1694377500000,
+    "2": 1694982300000,
+    "3": 1695574800000,
+    "4": 1696179600000,
+    "5": 1696796700000,
+    "6": 1697156100000,
+    "7": 1698006300000,
+    "8": 1698611100000,
+    "10": 1699924500000,
+    "11": 1700443200000,
+    "12": 1701032700000,
+    "13": 1701626400000,
+    "14": 1702243500000,
+    "15": 1702775700000,
+    "16": 1703466900000,
+    "17": 1704057900000,
+    "18": 1704662700000
+   }
+  },
+  "8": {
+   "abbrev": "Det",
+   "bye": 9,
+   "games": {
+    "1": 1694132400000,
+    "2": 1694970000000,
+    "3": 1695574800000,
+    "4": 1695946500000,
+    "5": 1696784400000,
+    "6": 1697401500000,
+    "7": 1697994000000,
+    "8": 1698711300000,
+    "10": 1699823100000,
+    "11": 1700416800000,
+    "12": 1700760600000,
+    "13": 1701626400000,
+    "14": 1702231200000,
+    "15": 1702775700000,
+    "16": 1703440800000,
+    "17": 1703985300000,
+    "18": 1704650400000
+   }
+  },
+  "9": {
+   "abbrev": "GB",
+   "bye": 6,
+   "games": {
+    "1": 1694377500000,
+    "2": 1694970000000,
+    "3": 1695574800000,
+    "4": 1695946500000,
+    "5": 1696896900000,
+    "7": 1698006300000,
+    "8": 1698598800000,
+    "9": 1699207200000,
+    "10": 1699812000000,
+    "11": 1700416800000,
+    "12": 1700760600000,
+    "13": 1701652800000,
+    "14": 1702343700000,
+    "15": 1702836000000,
+    "16": 1703440800000,
+    "17": 1704072000000,
+    "18": 1704662700000
+   }
+  },
+  "10": {
+   "abbrev": "Ten",
+   "bye": 7,
+   "games": {
+    "1": 1694365200000,
+    "2": 1694970000000,
+    "3": 1695574800000,
+    "4": 1696179600000,
+    "5": 1696784400000,
+    "6": 1697376600000,
+    "8": 1698598800000,
+    "9": 1698970500000,
+    "10": 1699812000000,
+    "11": 1700416800000,
+    "12": 1701021600000,
+    "13": 1701626400000,
+    "14": 1702343700000,
+    "15": 1702836000000,
+    "16": 1703440800000,
+    "17": 1704045600000,
+    "18": 1704650400000
+   }
+  }
+ },
+ "lineupFlags": {}
 }
