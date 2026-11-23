@@ -484,10 +484,20 @@ def player_info(entry, season):
 
 
 def pro_team_byes(data):
-    """{proTeamId: {"abbrev", "bye"}} from the proTeamSchedules view."""
-    teams = data.get("settings", {}).get("proTeams", [])
-    return {str(t["id"]): {"abbrev": t.get("abbrev", ""), "bye": t.get("byeWeek", 0)}
-            for t in teams if t.get("id")}
+    """{proTeamId: {"abbrev", "bye", "games": {week: kickoff ms}}} from the
+    proTeamSchedules view. Kickoff times let the site tell which players
+    have yet to play."""
+    out = {}
+    for t in data.get("settings", {}).get("proTeams", []):
+        if not t.get("id"):
+            continue
+        games = {}
+        for week, gs in (t.get("proGamesByScoringPeriod") or {}).items():
+            if gs and gs[0].get("date"):
+                games[str(week)] = gs[0]["date"]
+        out[str(t["id"])] = {"abbrev": t.get("abbrev", ""), "bye": t.get("byeWeek", 0),
+                             "games": dict(sorted(games.items(), key=lambda kv: int(kv[0])))}
+    return out
 
 
 def fetch_players(season, ids):

@@ -147,8 +147,12 @@ class PlayerInfoTests(unittest.TestCase):
         self.assertEqual(info, {"name": "Test Player", "pos": "RB", "pts": 101.23, "team": 3, "keeperCost": 9, "nfl": 12})
 
     def test_pro_team_byes(self):
-        data = {"settings": {"proTeams": [{"id": 0, "abbrev": "FA", "byeWeek": 0}, {"id": 12, "abbrev": "KC", "byeWeek": 5}]}}
-        self.assertEqual(s.pro_team_byes(data), {"12": {"abbrev": "KC", "bye": 5}})
+        data = {"settings": {"proTeams": [
+            {"id": 0, "abbrev": "FA", "byeWeek": 0},
+            {"id": 12, "abbrev": "KC", "byeWeek": 5, "proGamesByScoringPeriod": {
+                "12": [{"date": 1795742400000}], "2": [{"date": 1789000000000}], "6": []}},
+        ]}}
+        self.assertEqual(s.pro_team_byes(data), {"12": {"abbrev": "KC", "bye": 5, "games": {"2": 1789000000000, "12": 1795742400000}}})
 
 
 class SeasonWrapUpTests(unittest.TestCase):
