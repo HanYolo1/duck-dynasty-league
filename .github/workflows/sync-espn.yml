@@ -1,0 +1,47 @@
+name: Sync ESPN Fantasy League Data
+
+on:
+  schedule:
+    # Sundays during NFL games (every 30 mins, 1:00 PM - 11:30 PM ET)
+    - cron: "*/30 18-23 * * 0"
+    - cron: "*/30 0-4 * * 1"
+    # Monday Night Football & Thursday Night Football (every 30 mins, 8:00 PM - 11:30 PM ET)
+    - cron: "*/30 1-4 * * 2,5"
+    # Tuesday morning finalization after MNF (7:00 AM ET)
+    - cron: "0 12 * * 2"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Fetch latest 2026 ESPN data
+        env:
+          ESPN_LEAGUE_ID: "52568337"
+          ESPN_SEASON_ID: "2026"
+          ESPN_S2: ${{ secrets.ESPN_S2 }}
+          SWID: ${{ secrets.SWID }}
+        run: python scripts/sync_espn.py
+
+      - name: Commit & push updated standings
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/2026.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: auto-sync 2026 ESPN standings & matchups"
+            git push
+          fi
