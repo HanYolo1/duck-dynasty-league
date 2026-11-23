@@ -113,6 +113,20 @@ def transform(data):
 def main():
     raw = fetch_espn_data()
     payload = transform(raw)
+
+    # Skip the write when nothing but the timestamp would change, so the
+    # workflow doesn't commit on every scheduled run.
+    try:
+        with open(OUTPUT_PATH, encoding="utf-8") as f:
+            existing = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        existing = None
+    if existing is not None:
+        strip = lambda d: {k: v for k, v in d.items() if k != "syncedAt"}
+        if strip(existing) == strip(payload):
+            print(f"No changes for Season {payload['seasonId']} (Week {payload['currentMatchupPeriod']}); leaving {OUTPUT_PATH} untouched.")
+            return
+
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(payload, f, indent=2)
