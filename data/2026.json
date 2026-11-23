@@ -2,7 +2,7 @@
  "seasonId": 2026,
  "scoringPeriodId": 11,
  "currentMatchupPeriod": 11,
- "syncedAt": "2026-11-23T04:26:47Z",
+ "syncedAt": "2026-11-23T13:59:55Z",
  "teams": [
   {
    "id": 1,
@@ -18,7 +18,7 @@
    "streakLength": 1,
    "playoffSeed": 6,
    "rankCalculatedFinal": 0,
-   "playoffPct": 71.2
+   "playoffPct": 72.5
   },
   {
    "id": 2,
@@ -50,7 +50,7 @@
    "streakLength": 1,
    "playoffSeed": 5,
    "rankCalculatedFinal": 0,
-   "playoffPct": 83.3
+   "playoffPct": 84.0
   },
   {
    "id": 4,
@@ -66,7 +66,7 @@
    "streakLength": 1,
    "playoffSeed": 4,
    "rankCalculatedFinal": 0,
-   "playoffPct": 68.0
+   "playoffPct": 66.8
   },
   {
    "id": 5,
@@ -82,7 +82,7 @@
    "streakLength": 1,
    "playoffSeed": 10,
    "rankCalculatedFinal": 0,
-   "playoffPct": 1.1
+   "playoffPct": 1.8
   },
   {
    "id": 6,
@@ -98,7 +98,7 @@
    "streakLength": 2,
    "playoffSeed": 8,
    "rankCalculatedFinal": 0,
-   "playoffPct": 32.8
+   "playoffPct": 35.5
   },
   {
    "id": 7,
@@ -114,7 +114,7 @@
    "streakLength": 3,
    "playoffSeed": 7,
    "rankCalculatedFinal": 0,
-   "playoffPct": 56.5
+   "playoffPct": 54.7
   },
   {
    "id": 8,
@@ -130,7 +130,7 @@
    "streakLength": 3,
    "playoffSeed": 3,
    "rankCalculatedFinal": 0,
-   "playoffPct": 79.2
+   "playoffPct": 77.9
   },
   {
    "id": 9,
@@ -146,7 +146,7 @@
    "streakLength": 2,
    "playoffSeed": 9,
    "rankCalculatedFinal": 0,
-   "playoffPct": 7.8
+   "playoffPct": 6.9
   },
   {
    "id": 10,

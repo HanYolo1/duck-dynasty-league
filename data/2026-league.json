@@ -1,6 +1,6 @@
 {
  "seasonId": 2026,
- "syncedAt": "2026-11-23T06:11:16Z",
+ "syncedAt": "2026-11-23T13:59:57Z",
  "settings": {
   "teams": 10,
   "draftType": "AUCTION",
@@ -6794,7 +6794,8 @@
    "pts": 97.0,
    "team": 10,
    "keeperCost": 3,
-   "nfl": 30
+   "nfl": 30,
+   "injury": "QUESTIONABLE"
   },
   "4686422": {
    "name": "Xavier Hutchinson",
@@ -7042,7 +7043,8 @@
    "pts": 156.8,
    "team": 2,
    "keeperCost": 17,
-   "nfl": 30
+   "nfl": 30,
+   "injury": "QUESTIONABLE"
   },
   "4887558": {
    "name": "Emanuel Wilson",
