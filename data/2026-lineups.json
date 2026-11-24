@@ -1,6 +1,6 @@
 {
  "seasonId": 2026,
- "syncedAt": "2026-11-23T06:10:42Z",
+ "syncedAt": "2026-11-24T09:36:50Z",
  "slots": {
   "QB": 0,
   "RB": 2,
@@ -15185,8 +15185,8 @@
     ]
    },
    "3": {
-    "actual": 106.4,
-    "best": 138.76,
+    "actual": 129.21,
+    "best": 140.11,
     "players": [
      {
       "id": 4426348,
@@ -15194,8 +15194,9 @@
       "pos": "QB",
       "slot": 0,
       "nfl": 28,
-      "pts": 0.0,
-      "proj": 25.76
+      "pts": 22.81,
+      "proj": 25.76,
+      "opt": 1
      },
      {
       "id": 4702555,
@@ -15282,8 +15283,7 @@
       "slot": 20,
       "nfl": 29,
       "pts": 21.46,
-      "proj": 23.26,
-      "opt": 1
+      "proj": 23.26
      },
      {
       "id": 4685472,
@@ -15335,8 +15335,8 @@
     ]
    },
    "10": {
-    "actual": 115.71,
-    "best": 130.71,
+    "actual": 144.71,
+    "best": 146.51,
     "players": [
      {
       "id": 3139477,
@@ -15364,8 +15364,9 @@
       "pos": "RB",
       "slot": 2,
       "nfl": 4,
-      "pts": 0.0,
-      "proj": 15.8
+      "pts": 8.6,
+      "proj": 15.8,
+      "opt": 1
      },
      {
       "id": 4361370,
@@ -15383,8 +15384,9 @@
       "pos": "WR",
       "slot": 4,
       "nfl": 4,
-      "pts": 0.0,
-      "proj": 17.55
+      "pts": 12.3,
+      "proj": 17.55,
+      "opt": 1
      },
      {
       "id": 4361307,
@@ -15422,7 +15424,7 @@
       "pos": "WR",
       "slot": 23,
       "nfl": 4,
-      "pts": 0.0,
+      "pts": 8.1,
       "proj": 26.81
      },
      {
@@ -15442,8 +15444,7 @@
       "slot": 20,
       "nfl": 3,
       "pts": 3.3,
-      "proj": 15.81,
-      "opt": 1
+      "proj": 15.81
      },
      {
       "id": 4608686,
@@ -15452,8 +15453,7 @@
       "slot": 20,
       "nfl": 3,
       "pts": 1.8,
-      "proj": 9.03,
-      "opt": 1
+      "proj": 9.03
      },
      {
       "id": 4870653,
@@ -15936,7 +15936,7 @@
    },
    "8": {
     "actual": 99.19,
-    "best": 108.79,
+    "best": 117.49,
     "players": [
      {
       "id": 4360310,
@@ -16027,6 +16027,16 @@
       "opt": 1
      },
      {
+      "id": 4575131,
+      "name": "Jacory Croskey-Merritt",
+      "pos": "RB",
+      "slot": 20,
+      "nfl": 28,
+      "pts": 15.7,
+      "proj": 7.65,
+      "opt": 1
+     },
+     {
       "id": 14880,
       "name": "Kirk Cousins",
       "pos": "QB",
@@ -16052,8 +16062,7 @@
       "slot": 20,
       "nfl": 13,
       "pts": 7.0,
-      "proj": 10.02,
-      "opt": 1
+      "proj": 10.02
      },
      {
       "id": 4430878,
@@ -16069,18 +16078,9 @@
       "name": "Brandon Aiyuk",
       "pos": "WR",
       "slot": 20,
-      "nfl": 25,
+      "nfl": 0,
       "pts": 0.0,
       "proj": 0.0
-     },
-     {
-      "id": 4575131,
-      "name": "Jacory Croskey-Merritt",
-      "pos": "RB",
-      "slot": 20,
-      "nfl": 28,
-      "pts": 0.0,
-      "proj": 7.65
      }
     ]
    },
@@ -16235,8 +16235,8 @@
     ]
    },
    "2": {
-    "actual": 117.4,
-    "best": 133.5,
+    "actual": 145.3,
+    "best": 161.4,
     "players": [
      {
       "id": 3915511,
@@ -16244,7 +16244,7 @@
       "pos": "QB",
       "slot": 0,
       "nfl": 4,
-      "pts": 0.0,
+      "pts": 27.9,
       "proj": 31.2,
       "opt": 1
      },
@@ -16385,8 +16385,8 @@
     ]
    },
    "6": {
-    "actual": 128.66,
-    "best": 133.46,
+    "actual": 137.16,
+    "best": 137.16,
     "players": [
      {
       "id": 3046779,
@@ -16434,8 +16434,9 @@
       "pos": "WR",
       "slot": 4,
       "nfl": 28,
-      "pts": 0.0,
-      "proj": 13.32
+      "pts": 8.5,
+      "proj": 13.32,
+      "opt": 1
      },
      {
       "id": 4430027,
@@ -16484,8 +16485,7 @@
       "slot": 20,
       "nfl": 24,
       "pts": 4.8,
-      "proj": 7.19,
-      "opt": 1
+      "proj": 7.19
      },
      {
       "id": 4429160,
@@ -16531,6 +16531,1508 @@
       "nfl": 28,
       "pts": 0.0,
       "proj": 7.79
+     }
+    ]
+   }
+  },
+  "12": {
+   "3": {
+    "actual": 0.0,
+    "best": 0.0,
+    "players": [
+     {
+      "id": 4426348,
+      "name": "Jayden Daniels",
+      "pos": "QB",
+      "slot": 0,
+      "nfl": 28,
+      "pts": 0.0,
+      "proj": 28.37,
+      "opt": 1
+     },
+     {
+      "id": 4379399,
+      "name": "James Cook III",
+      "pos": "RB",
+      "slot": 2,
+      "nfl": 2,
+      "pts": 0.0,
+      "proj": 14.91,
+      "opt": 1
+     },
+     {
+      "id": 4702555,
+      "name": "Jonah Coleman",
+      "pos": "RB",
+      "slot": 2,
+      "nfl": 7,
+      "pts": 0.0,
+      "proj": 16.27
+     },
+     {
+      "id": 4262921,
+      "name": "Justin Jefferson",
+      "pos": "WR",
+      "slot": 4,
+      "nfl": 16,
+      "pts": 0.0,
+      "proj": 21.24,
+      "opt": 1
+     },
+     {
+      "id": 4432620,
+      "name": "Parker Washington",
+      "pos": "WR",
+      "slot": 4,
+      "nfl": 30,
+      "pts": 0.0,
+      "proj": 18.82,
+      "opt": 1
+     },
+     {
+      "id": 4432665,
+      "name": "Brock Bowers",
+      "pos": "TE",
+      "slot": 6,
+      "nfl": 13,
+      "pts": 0.0,
+      "proj": 15.73,
+      "opt": 1
+     },
+     {
+      "id": -16030,
+      "name": "Jaguars D/ST",
+      "pos": "D/ST",
+      "slot": 16,
+      "nfl": 30,
+      "pts": 0.0,
+      "proj": 6.86,
+      "opt": 1
+     },
+     {
+      "id": 3150744,
+      "name": "Chase McLaughlin",
+      "pos": "K",
+      "slot": 17,
+      "nfl": 27,
+      "pts": 0.0,
+      "proj": 8.3,
+      "opt": 1
+     },
+     {
+      "id": 4685382,
+      "name": "Omarion Hampton",
+      "pos": "RB",
+      "slot": 23,
+      "nfl": 24,
+      "pts": 0.0,
+      "proj": 13.94
+     },
+     {
+      "id": 4567048,
+      "name": "Kenneth Walker III",
+      "pos": "RB",
+      "slot": 20,
+      "nfl": 12,
+      "pts": 0.0,
+      "proj": 22.39,
+      "opt": 1
+     },
+     {
+      "id": 4685472,
+      "name": "Tetairoa McMillan",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 29,
+      "pts": 0.0,
+      "proj": 14.03,
+      "opt": 1
+     },
+     {
+      "id": 3126486,
+      "name": "Deebo Samuel Sr.",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 25,
+      "pts": 0.0,
+      "proj": 11.03
+     },
+     {
+      "id": 3054850,
+      "name": "Alvin Kamara",
+      "pos": "RB",
+      "slot": 20,
+      "nfl": 18,
+      "pts": 0.0,
+      "proj": 4.81
+     },
+     {
+      "id": 4685720,
+      "name": "Bryce Young",
+      "pos": "QB",
+      "slot": 20,
+      "nfl": 29,
+      "pts": 0.0,
+      "proj": 20.01
+     },
+     {
+      "id": 3117256,
+      "name": "Dalton Schultz",
+      "pos": "TE",
+      "slot": 20,
+      "nfl": 34,
+      "pts": 0.0,
+      "proj": 7.8
+     }
+    ]
+   },
+   "4": {
+    "actual": 0.0,
+    "best": 0.0,
+    "players": [
+     {
+      "id": 4361741,
+      "name": "Brock Purdy",
+      "pos": "QB",
+      "slot": 0,
+      "nfl": 25,
+      "pts": 0.0,
+      "proj": 25.12,
+      "opt": 1
+     },
+     {
+      "id": 4430807,
+      "name": "Bijan Robinson",
+      "pos": "RB",
+      "slot": 2,
+      "nfl": 1,
+      "pts": 0.0,
+      "proj": 18.28,
+      "opt": 1
+     },
+     {
+      "id": 4696981,
+      "name": "Cam Skattebo",
+      "pos": "RB",
+      "slot": 2,
+      "nfl": 19,
+      "pts": 0.0,
+      "proj": 17.82
+     },
+     {
+      "id": 16737,
+      "name": "Mike Evans",
+      "pos": "WR",
+      "slot": 4,
+      "nfl": 25,
+      "pts": 0.0,
+      "proj": 15.68,
+      "opt": 1
+     },
+     {
+      "id": 4047650,
+      "name": "DK Metcalf",
+      "pos": "WR",
+      "slot": 4,
+      "nfl": 23,
+      "pts": 0.0,
+      "proj": 9.82,
+      "opt": 1
+     },
+     {
+      "id": 4361050,
+      "name": "Isaiah Likely",
+      "pos": "TE",
+      "slot": 6,
+      "nfl": 19,
+      "pts": 0.0,
+      "proj": 12.63,
+      "opt": 1
+     },
+     {
+      "id": -16016,
+      "name": "Vikings D/ST",
+      "pos": "D/ST",
+      "slot": 16,
+      "nfl": 16,
+      "pts": 0.0,
+      "proj": 6.3,
+      "opt": 1
+     },
+     {
+      "id": 4363538,
+      "name": "Chad Ryland",
+      "pos": "K",
+      "slot": 17,
+      "nfl": 22,
+      "pts": 0.0,
+      "proj": 6.35,
+      "opt": 1
+     },
+     {
+      "id": 4047365,
+      "name": "Josh Jacobs",
+      "pos": "RB",
+      "slot": 23,
+      "nfl": 9,
+      "pts": 0.0,
+      "proj": 0.0,
+      "opt": 1
+     },
+     {
+      "id": 4047646,
+      "name": "A.J. Brown",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 17,
+      "pts": 0.0,
+      "proj": 0.0,
+      "opt": 1
+     },
+     {
+      "id": 4360761,
+      "name": "Michael Wilson",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 22,
+      "pts": 0.0,
+      "proj": 0.0
+     },
+     {
+      "id": 15818,
+      "name": "Keenan Allen",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 25,
+      "pts": 0.0,
+      "proj": 6.95
+     },
+     {
+      "id": 4035538,
+      "name": "David Montgomery",
+      "pos": "RB",
+      "slot": 20,
+      "nfl": 34,
+      "pts": 0.0,
+      "proj": 11.46
+     },
+     {
+      "id": 4832955,
+      "name": "Emmett Johnson",
+      "pos": "RB",
+      "slot": 20,
+      "nfl": 12,
+      "pts": 0.0,
+      "proj": 7.8
+     },
+     {
+      "id": -16007,
+      "name": "Broncos D/ST",
+      "pos": "D/ST",
+      "slot": 20,
+      "nfl": 7,
+      "pts": 0.0,
+      "proj": 6.18
+     }
+    ]
+   },
+   "7": {
+    "actual": 0.0,
+    "best": 0.0,
+    "players": [
+     {
+      "id": 4360689,
+      "name": "Tyler Shough",
+      "pos": "QB",
+      "slot": 0,
+      "nfl": 18,
+      "pts": 0.0,
+      "proj": 21.18,
+      "opt": 1
+     },
+     {
+      "id": 4259545,
+      "name": "D'Andre Swift",
+      "pos": "RB",
+      "slot": 2,
+      "nfl": 3,
+      "pts": 0.0,
+      "proj": 14.19,
+      "opt": 1
+     },
+     {
+      "id": 4241985,
+      "name": "J.K. Dobbins",
+      "pos": "RB",
+      "slot": 2,
+      "nfl": 7,
+      "pts": 0.0,
+      "proj": 3.44
+     },
+     {
+      "id": 4429615,
+      "name": "Zay Flowers",
+      "pos": "WR",
+      "slot": 4,
+      "nfl": 33,
+      "pts": 0.0,
+      "proj": 15.46,
+      "opt": 1
+     },
+     {
+      "id": 4366031,
+      "name": "Tank Dell",
+      "pos": "WR",
+      "slot": 4,
+      "nfl": 34,
+      "pts": 0.0,
+      "proj": 9.06
+     },
+     {
+      "id": 3040151,
+      "name": "George Kittle",
+      "pos": "TE",
+      "slot": 6,
+      "nfl": 25,
+      "pts": 0.0,
+      "proj": 13.4,
+      "opt": 1
+     },
+     {
+      "id": -16004,
+      "name": "Bengals D/ST",
+      "pos": "D/ST",
+      "slot": 16,
+      "nfl": 4,
+      "pts": 0.0,
+      "proj": 6.72,
+      "opt": 1
+     },
+     {
+      "id": 3917232,
+      "name": "Tyler Bass",
+      "pos": "K",
+      "slot": 17,
+      "nfl": 2,
+      "pts": 0.0,
+      "proj": 9.96,
+      "opt": 1
+     },
+     {
+      "id": 4372016,
+      "name": "Jaylen Waddle",
+      "pos": "WR",
+      "slot": 23,
+      "nfl": 7,
+      "pts": 0.0,
+      "proj": 10.48
+     },
+     {
+      "id": 4248528,
+      "name": "Christian Watson",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 9,
+      "pts": 0.0,
+      "proj": 14.87,
+      "opt": 1
+     },
+     {
+      "id": 4832800,
+      "name": "Denzel Boston",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 5,
+      "pts": 0.0,
+      "proj": 13.41,
+      "opt": 1
+     },
+     {
+      "id": 4569173,
+      "name": "Rhamondre Stevenson",
+      "pos": "RB",
+      "slot": 20,
+      "nfl": 17,
+      "pts": 0.0,
+      "proj": 13.22,
+      "opt": 1
+     },
+     {
+      "id": 4685512,
+      "name": "Jadarian Price",
+      "pos": "RB",
+      "slot": 20,
+      "nfl": 26,
+      "pts": 0.0,
+      "proj": 8.09
+     },
+     {
+      "id": 4431452,
+      "name": "Drake Maye",
+      "pos": "QB",
+      "slot": 20,
+      "nfl": 17,
+      "pts": 0.0,
+      "proj": 0.0
+     },
+     {
+      "id": 4870808,
+      "name": "Jeremiyah Love",
+      "pos": "RB",
+      "slot": 20,
+      "nfl": 22,
+      "pts": 0.0,
+      "proj": 0.0
+     }
+    ]
+   },
+   "9": {
+    "actual": 0.0,
+    "best": 0.0,
+    "players": [
+     {
+      "id": 3918298,
+      "name": "Josh Allen",
+      "pos": "QB",
+      "slot": 0,
+      "nfl": 2,
+      "pts": 0.0,
+      "proj": 24.56,
+      "opt": 1
+     },
+     {
+      "id": 3929630,
+      "name": "Saquon Barkley",
+      "pos": "RB",
+      "slot": 2,
+      "nfl": 21,
+      "pts": 0.0,
+      "proj": 14.52,
+      "opt": 1
+     },
+     {
+      "id": 4038815,
+      "name": "Rico Dowdle",
+      "pos": "RB",
+      "slot": 2,
+      "nfl": 23,
+      "pts": 0.0,
+      "proj": 8.82
+     },
+     {
+      "id": 4258173,
+      "name": "Nico Collins",
+      "pos": "WR",
+      "slot": 4,
+      "nfl": 34,
+      "pts": 0.0,
+      "proj": 15.83,
+      "opt": 1
+     },
+     {
+      "id": 4427095,
+      "name": "DeMario Douglas",
+      "pos": "WR",
+      "slot": 4,
+      "nfl": 17,
+      "pts": 0.0,
+      "proj": 9.16
+     },
+     {
+      "id": 5083076,
+      "name": "Harold Fannin Jr.",
+      "pos": "TE",
+      "slot": 6,
+      "nfl": 5,
+      "pts": 0.0,
+      "proj": 11.38,
+      "opt": 1
+     },
+     {
+      "id": -16008,
+      "name": "Lions D/ST",
+      "pos": "D/ST",
+      "slot": 16,
+      "nfl": 8,
+      "pts": 0.0,
+      "proj": 5.49,
+      "opt": 1
+     },
+     {
+      "id": 2971573,
+      "name": "Ka'imi Fairbairn",
+      "pos": "K",
+      "slot": 17,
+      "nfl": 34,
+      "pts": 0.0,
+      "proj": 8.75,
+      "opt": 1
+     },
+     {
+      "id": 4612826,
+      "name": "Ladd McConkey",
+      "pos": "WR",
+      "slot": 23,
+      "nfl": 24,
+      "pts": 0.0,
+      "proj": 12.62,
+      "opt": 1
+     },
+     {
+      "id": 4426515,
+      "name": "Puka Nacua",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 14,
+      "pts": 0.0,
+      "proj": 0.0,
+      "opt": 1
+     },
+     {
+      "id": 4431611,
+      "name": "Caleb Williams",
+      "pos": "QB",
+      "slot": 20,
+      "nfl": 3,
+      "pts": 0.0,
+      "proj": 22.29
+     },
+     {
+      "id": 4429059,
+      "name": "Woody Marks",
+      "pos": "RB",
+      "slot": 20,
+      "nfl": 34,
+      "pts": 0.0,
+      "proj": 8.52,
+      "opt": 1
+     },
+     {
+      "id": 4869645,
+      "name": "Caleb Douglas",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 15,
+      "pts": 0.0,
+      "proj": 10.94
+     },
+     {
+      "id": 4385690,
+      "name": "Dalton Kincaid",
+      "pos": "TE",
+      "slot": 20,
+      "nfl": 2,
+      "pts": 0.0,
+      "proj": 8.74
+     },
+     {
+      "id": 3128429,
+      "name": "Courtland Sutton",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 7,
+      "pts": 0.0,
+      "proj": 8.07
+     }
+    ]
+   },
+   "5": {
+    "actual": 0.0,
+    "best": 0.0,
+    "players": [
+     {
+      "id": 4432577,
+      "name": "C.J. Stroud",
+      "pos": "QB",
+      "slot": 0,
+      "nfl": 34,
+      "pts": 0.0,
+      "proj": 27.56,
+      "opt": 1
+     },
+     {
+      "id": 4361579,
+      "name": "Javonte Williams",
+      "pos": "RB",
+      "slot": 2,
+      "nfl": 6,
+      "pts": 0.0,
+      "proj": 17.47,
+      "opt": 1
+     },
+     {
+      "id": 3042519,
+      "name": "Aaron Jones Sr.",
+      "pos": "RB",
+      "slot": 2,
+      "nfl": 16,
+      "pts": 0.0,
+      "proj": 10.44
+     },
+     {
+      "id": 4426354,
+      "name": "George Pickens",
+      "pos": "WR",
+      "slot": 4,
+      "nfl": 6,
+      "pts": 0.0,
+      "proj": 15.67,
+      "opt": 1
+     },
+     {
+      "id": 4241478,
+      "name": "DeVonta Smith",
+      "pos": "WR",
+      "slot": 4,
+      "nfl": 21,
+      "pts": 0.0,
+      "proj": 15.09,
+      "opt": 1
+     },
+     {
+      "id": 4036133,
+      "name": "T.J. Hockenson",
+      "pos": "TE",
+      "slot": 6,
+      "nfl": 16,
+      "pts": 0.0,
+      "proj": 11.07,
+      "opt": 1
+     },
+     {
+      "id": -16002,
+      "name": "Bills D/ST",
+      "pos": "D/ST",
+      "slot": 16,
+      "nfl": 2,
+      "pts": 0.0,
+      "proj": 3.41,
+      "opt": 1
+     },
+     {
+      "id": 4689936,
+      "name": "Jake Bates",
+      "pos": "K",
+      "slot": 17,
+      "nfl": 8,
+      "pts": 0.0,
+      "proj": 8.44,
+      "opt": 1
+     },
+     {
+      "id": 3915416,
+      "name": "DJ Moore",
+      "pos": "WR",
+      "slot": 23,
+      "nfl": 2,
+      "pts": 0.0,
+      "proj": 13.51,
+      "opt": 1
+     },
+     {
+      "id": 4430737,
+      "name": "Kyren Williams",
+      "pos": "RB",
+      "slot": 20,
+      "nfl": 14,
+      "pts": 0.0,
+      "proj": 17.06,
+      "opt": 1
+     },
+     {
+      "id": 4695883,
+      "name": "Jalen Coker",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 29,
+      "pts": 0.0,
+      "proj": 9.24
+     },
+     {
+      "id": 4723820,
+      "name": "Omar Cooper Jr.",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 20,
+      "pts": 0.0,
+      "proj": 9.2
+     },
+     {
+      "id": 4870795,
+      "name": "Makai Lemon",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 21,
+      "pts": 0.0,
+      "proj": 7.41
+     },
+     {
+      "id": 4430539,
+      "name": "Brenton Strange",
+      "pos": "TE",
+      "slot": 20,
+      "nfl": 30,
+      "pts": 0.0,
+      "proj": 8.69
+     },
+     {
+      "id": 4686422,
+      "name": "Xavier Hutchinson",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 34,
+      "pts": 0.0,
+      "proj": 9.04
+     }
+    ]
+   },
+   "10": {
+    "actual": 0.0,
+    "best": 0.0,
+    "players": [
+     {
+      "id": 3139477,
+      "name": "Patrick Mahomes",
+      "pos": "QB",
+      "slot": 0,
+      "nfl": 12,
+      "pts": 0.0,
+      "proj": 25.01
+     },
+     {
+      "id": 4362238,
+      "name": "Chase Brown",
+      "pos": "RB",
+      "slot": 2,
+      "nfl": 4,
+      "pts": 0.0,
+      "proj": 16.95,
+      "opt": 1
+     },
+     {
+      "id": 4241416,
+      "name": "Chuba Hubbard",
+      "pos": "RB",
+      "slot": 2,
+      "nfl": 29,
+      "pts": 0.0,
+      "proj": 17.39,
+      "opt": 1
+     },
+     {
+      "id": 4361370,
+      "name": "Chris Olave",
+      "pos": "WR",
+      "slot": 4,
+      "nfl": 18,
+      "pts": 0.0,
+      "proj": 15.2,
+      "opt": 1
+     },
+     {
+      "id": 4239993,
+      "name": "Tee Higgins",
+      "pos": "WR",
+      "slot": 4,
+      "nfl": 4,
+      "pts": 0.0,
+      "proj": 18.07,
+      "opt": 1
+     },
+     {
+      "id": 4361307,
+      "name": "Trey McBride",
+      "pos": "TE",
+      "slot": 6,
+      "nfl": 22,
+      "pts": 0.0,
+      "proj": 15.17,
+      "opt": 1
+     },
+     {
+      "id": -16023,
+      "name": "Steelers D/ST",
+      "pos": "D/ST",
+      "slot": 16,
+      "nfl": 23,
+      "pts": 0.0,
+      "proj": 6.43,
+      "opt": 1
+     },
+     {
+      "id": 4686361,
+      "name": "Cam Little",
+      "pos": "K",
+      "slot": 17,
+      "nfl": 30,
+      "pts": 0.0,
+      "proj": 11.23,
+      "opt": 1
+     },
+     {
+      "id": 4362628,
+      "name": "Ja'Marr Chase",
+      "pos": "WR",
+      "slot": 23,
+      "nfl": 4,
+      "pts": 0.0,
+      "proj": 27.38,
+      "opt": 1
+     },
+     {
+      "id": 4688813,
+      "name": "Josh Downs",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 12,
+      "pts": 0.0,
+      "proj": 8.12
+     },
+     {
+      "id": 4685278,
+      "name": "Luther Burden III",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 3,
+      "pts": 0.0,
+      "proj": 13.52
+     },
+     {
+      "id": 4870653,
+      "name": "KC Concepcion",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 5,
+      "pts": 0.0,
+      "proj": 12.09
+     },
+     {
+      "id": 4429096,
+      "name": "Blake Corum",
+      "pos": "RB",
+      "slot": 20,
+      "nfl": 14,
+      "pts": 0.0,
+      "proj": 14.08
+     },
+     {
+      "id": 4036378,
+      "name": "Jordan Love",
+      "pos": "QB",
+      "slot": 20,
+      "nfl": 9,
+      "pts": 0.0,
+      "proj": 20.66,
+      "opt": 1
+     },
+     {
+      "id": 4608686,
+      "name": "Kyle Monangai",
+      "pos": "RB",
+      "slot": 20,
+      "nfl": 3,
+      "pts": 0.0,
+      "proj": 7.87
+     }
+    ]
+   },
+   "6": {
+    "actual": 0.0,
+    "best": 0.0,
+    "players": [
+     {
+      "id": 3046779,
+      "name": "Jared Goff",
+      "pos": "QB",
+      "slot": 0,
+      "nfl": 8,
+      "pts": 0.0,
+      "proj": 23.33,
+      "opt": 1
+     },
+     {
+      "id": 3916148,
+      "name": "Tony Pollard",
+      "pos": "RB",
+      "slot": 2,
+      "nfl": 10,
+      "pts": 0.0,
+      "proj": 14.61,
+      "opt": 1
+     },
+     {
+      "id": 4427366,
+      "name": "Breece Hall",
+      "pos": "RB",
+      "slot": 2,
+      "nfl": 20,
+      "pts": 0.0,
+      "proj": 14.02
+     },
+     {
+      "id": 4241389,
+      "name": "CeeDee Lamb",
+      "pos": "WR",
+      "slot": 4,
+      "nfl": 6,
+      "pts": 0.0,
+      "proj": 21.53,
+      "opt": 1
+     },
+     {
+      "id": 2976212,
+      "name": "Stefon Diggs",
+      "pos": "WR",
+      "slot": 4,
+      "nfl": 28,
+      "pts": 0.0,
+      "proj": 14.23
+     },
+     {
+      "id": 4430027,
+      "name": "Sam LaPorta",
+      "pos": "TE",
+      "slot": 6,
+      "nfl": 8,
+      "pts": 0.0,
+      "proj": 11.06,
+      "opt": 1
+     },
+     {
+      "id": -16025,
+      "name": "49ers D/ST",
+      "pos": "D/ST",
+      "slot": 16,
+      "nfl": 25,
+      "pts": 0.0,
+      "proj": 7.54
+     },
+     {
+      "id": 3953687,
+      "name": "Brandon Aubrey",
+      "pos": "K",
+      "slot": 17,
+      "nfl": 6,
+      "pts": 0.0,
+      "proj": 9.25,
+      "opt": 1
+     },
+     {
+      "id": 4569987,
+      "name": "Jaylen Warren",
+      "pos": "RB",
+      "slot": 23,
+      "nfl": 23,
+      "pts": 0.0,
+      "proj": 15.12,
+      "opt": 1
+     },
+     {
+      "id": 4429160,
+      "name": "De'Von Achane",
+      "pos": "RB",
+      "slot": 20,
+      "nfl": 15,
+      "pts": 0.0,
+      "proj": 0.0,
+      "opt": 1
+     },
+     {
+      "id": 4701936,
+      "name": "Matthew Golden",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 9,
+      "pts": 0.0,
+      "proj": 17.74,
+      "opt": 1
+     },
+     {
+      "id": -16014,
+      "name": "Rams D/ST",
+      "pos": "D/ST",
+      "slot": 20,
+      "nfl": 14,
+      "pts": 0.0,
+      "proj": 7.77,
+      "opt": 1
+     },
+     {
+      "id": 16800,
+      "name": "Davante Adams",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 14,
+      "pts": 0.0,
+      "proj": 0.0
+     },
+     {
+      "id": 4697815,
+      "name": "Rachaad White",
+      "pos": "RB",
+      "slot": 20,
+      "nfl": 28,
+      "pts": 0.0,
+      "proj": 8.39
+     },
+     {
+      "id": 4686612,
+      "name": "Tre' Harris",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 24,
+      "pts": 0.0,
+      "proj": 6.94
+     }
+    ]
+   },
+   "1": {
+    "actual": 0.0,
+    "best": 0.0,
+    "players": [
+     {
+      "id": 2577417,
+      "name": "Dak Prescott",
+      "pos": "QB",
+      "slot": 0,
+      "nfl": 6,
+      "pts": 0.0,
+      "proj": 25.7,
+      "opt": 1
+     },
+     {
+      "id": 4596448,
+      "name": "Bucky Irving",
+      "pos": "RB",
+      "slot": 2,
+      "nfl": 27,
+      "pts": 0.0,
+      "proj": 21.45,
+      "opt": 1
+     },
+     {
+      "id": 4890973,
+      "name": "Ashton Jeanty",
+      "pos": "RB",
+      "slot": 2,
+      "nfl": 13,
+      "pts": 0.0,
+      "proj": 15.63,
+      "opt": 1
+     },
+     {
+      "id": 4567750,
+      "name": "Emeka Egbuka",
+      "pos": "WR",
+      "slot": 4,
+      "nfl": 27,
+      "pts": 0.0,
+      "proj": 10.63,
+      "opt": 1
+     },
+     {
+      "id": 4374302,
+      "name": "Amon-Ra St. Brown",
+      "pos": "WR",
+      "slot": 4,
+      "nfl": 8,
+      "pts": 0.0,
+      "proj": 18.73,
+      "opt": 1
+     },
+     {
+      "id": 4723086,
+      "name": "Colston Loveland",
+      "pos": "TE",
+      "slot": 6,
+      "nfl": 3,
+      "pts": 0.0,
+      "proj": 10.7,
+      "opt": 1
+     },
+     {
+      "id": -16020,
+      "name": "Jets D/ST",
+      "pos": "D/ST",
+      "slot": 16,
+      "nfl": 20,
+      "pts": 0.0,
+      "proj": 6.47
+     },
+     {
+      "id": 4567104,
+      "name": "Will Reichard",
+      "pos": "K",
+      "slot": 17,
+      "nfl": 16,
+      "pts": 0.0,
+      "proj": 9.72,
+      "opt": 1
+     },
+     {
+      "id": 4635008,
+      "name": "Keon Coleman",
+      "pos": "WR",
+      "slot": 23,
+      "nfl": 2,
+      "pts": 0.0,
+      "proj": 5.18
+     },
+     {
+      "id": 4685702,
+      "name": "Quinshon Judkins",
+      "pos": "RB",
+      "slot": 20,
+      "nfl": 5,
+      "pts": 0.0,
+      "proj": 15.56,
+      "opt": 1
+     },
+     {
+      "id": 4572680,
+      "name": "Tucker Kraft",
+      "pos": "TE",
+      "slot": 20,
+      "nfl": 9,
+      "pts": 0.0,
+      "proj": 9.4
+     },
+     {
+      "id": 12483,
+      "name": "Matthew Stafford",
+      "pos": "QB",
+      "slot": 20,
+      "nfl": 14,
+      "pts": 0.0,
+      "proj": 21.32
+     },
+     {
+      "id": -16026,
+      "name": "Seahawks D/ST",
+      "pos": "D/ST",
+      "slot": 20,
+      "nfl": 26,
+      "pts": 0.0,
+      "proj": 4.45,
+      "opt": 1
+     },
+     {
+      "id": 4426385,
+      "name": "Zach Charbonnet",
+      "pos": "RB",
+      "slot": 20,
+      "nfl": 26,
+      "pts": 0.0,
+      "proj": 11.88
+     },
+     {
+      "id": 4373626,
+      "name": "Tyler Allgeier",
+      "pos": "RB",
+      "slot": 20,
+      "nfl": 22,
+      "pts": 0.0,
+      "proj": 8.81
+     }
+    ]
+   },
+   "2": {
+    "actual": 0.0,
+    "best": 0.0,
+    "players": [
+     {
+      "id": 3915511,
+      "name": "Joe Burrow",
+      "pos": "QB",
+      "slot": 0,
+      "nfl": 4,
+      "pts": 0.0,
+      "proj": 33.07,
+      "opt": 1
+     },
+     {
+      "id": 3117251,
+      "name": "Christian McCaffrey",
+      "pos": "RB",
+      "slot": 2,
+      "nfl": 25,
+      "pts": 0.0,
+      "proj": 18.33,
+      "opt": 1
+     },
+     {
+      "id": 3043078,
+      "name": "Derrick Henry",
+      "pos": "RB",
+      "slot": 2,
+      "nfl": 33,
+      "pts": 0.0,
+      "proj": 14.75,
+      "opt": 1
+     },
+     {
+      "id": 4426388,
+      "name": "Jameson Williams",
+      "pos": "WR",
+      "slot": 4,
+      "nfl": 8,
+      "pts": 0.0,
+      "proj": 12.76,
+      "opt": 1
+     },
+     {
+      "id": 4426502,
+      "name": "Drake London",
+      "pos": "WR",
+      "slot": 4,
+      "nfl": 1,
+      "pts": 0.0,
+      "proj": 14.88,
+      "opt": 1
+     },
+     {
+      "id": 15847,
+      "name": "Travis Kelce",
+      "pos": "TE",
+      "slot": 6,
+      "nfl": 12,
+      "pts": 0.0,
+      "proj": 12.38,
+      "opt": 1
+     },
+     {
+      "id": -16034,
+      "name": "Texans D/ST",
+      "pos": "D/ST",
+      "slot": 16,
+      "nfl": 34,
+      "pts": 0.0,
+      "proj": 7.26,
+      "opt": 1
+     },
+     {
+      "id": 3124679,
+      "name": "Jason Sanders",
+      "pos": "K",
+      "slot": 17,
+      "nfl": 20,
+      "pts": 0.0,
+      "proj": 8.93,
+      "opt": 1
+     },
+     {
+      "id": 4595348,
+      "name": "Malik Nabers",
+      "pos": "WR",
+      "slot": 23,
+      "nfl": 19,
+      "pts": 0.0,
+      "proj": 17.38
+     },
+     {
+      "id": 4569618,
+      "name": "Garrett Wilson",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 20,
+      "pts": 0.0,
+      "proj": 14.71,
+      "opt": 1
+     },
+     {
+      "id": 4431299,
+      "name": "Rome Odunze",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 3,
+      "pts": 0.0,
+      "proj": 11.22
+     },
+     {
+      "id": 4882093,
+      "name": "Bhayshul Tuten",
+      "pos": "RB",
+      "slot": 20,
+      "nfl": 30,
+      "pts": 0.0,
+      "proj": 19.1
+     },
+     {
+      "id": 4685261,
+      "name": "Germie Bernard",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 23,
+      "pts": 0.0,
+      "proj": 6.51
+     },
+     {
+      "id": 4239996,
+      "name": "Travis Etienne Jr.",
+      "pos": "RB",
+      "slot": 20,
+      "nfl": 18,
+      "pts": 0.0,
+      "proj": 11.91
+     },
+     {
+      "id": 4360248,
+      "name": "Kyle Pitts Sr.",
+      "pos": "TE",
+      "slot": 20,
+      "nfl": 1,
+      "pts": 0.0,
+      "proj": 8.42
+     }
+    ]
+   },
+   "8": {
+    "actual": 0.0,
+    "best": 0.0,
+    "players": [
+     {
+      "id": 4360310,
+      "name": "Trevor Lawrence",
+      "pos": "QB",
+      "slot": 0,
+      "nfl": 30,
+      "pts": 0.0,
+      "proj": 29.41,
+      "opt": 1
+     },
+     {
+      "id": 4429795,
+      "name": "Jahmyr Gibbs",
+      "pos": "RB",
+      "slot": 2,
+      "nfl": 8,
+      "pts": 0.0,
+      "proj": 26.31,
+      "opt": 1
+     },
+     {
+      "id": 4711533,
+      "name": "Ollie Gordon II",
+      "pos": "RB",
+      "slot": 2,
+      "nfl": 15,
+      "pts": 0.0,
+      "proj": 14.29
+     },
+     {
+      "id": 4430878,
+      "name": "Jaxon Smith-Njigba",
+      "pos": "WR",
+      "slot": 4,
+      "nfl": 26,
+      "pts": 0.0,
+      "proj": 22.98,
+      "opt": 1
+     },
+     {
+      "id": 4871023,
+      "name": "Carnell Tate",
+      "pos": "WR",
+      "slot": 4,
+      "nfl": 10,
+      "pts": 0.0,
+      "proj": 12.25,
+      "opt": 1
+     },
+     {
+      "id": 4431459,
+      "name": "Tyler Warren",
+      "pos": "TE",
+      "slot": 6,
+      "nfl": 11,
+      "pts": 0.0,
+      "proj": 7.58,
+      "opt": 1
+     },
+     {
+      "id": -16012,
+      "name": "Chiefs D/ST",
+      "pos": "D/ST",
+      "slot": 16,
+      "nfl": 12,
+      "pts": 0.0,
+      "proj": 5.13,
+      "opt": 1
+     },
+     {
+      "id": 4362081,
+      "name": "Cameron Dicker",
+      "pos": "K",
+      "slot": 17,
+      "nfl": 24,
+      "pts": 0.0,
+      "proj": 8.39,
+      "opt": 1
+     },
+     {
+      "id": 4428331,
+      "name": "Rashee Rice",
+      "pos": "WR",
+      "slot": 23,
+      "nfl": 12,
+      "pts": 0.0,
+      "proj": 11.21,
+      "opt": 1
+     },
+     {
+      "id": 4242335,
+      "name": "Jonathan Taylor",
+      "pos": "RB",
+      "slot": 20,
+      "nfl": 11,
+      "pts": 0.0,
+      "proj": 14.42,
+      "opt": 1
+     },
+     {
+      "id": 4880281,
+      "name": "Jordyn Tyson",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 18,
+      "pts": 0.0,
+      "proj": 10.61
+     },
+     {
+      "id": 14880,
+      "name": "Kirk Cousins",
+      "pos": "QB",
+      "slot": 20,
+      "nfl": 16,
+      "pts": 0.0,
+      "proj": 23.94
+     },
+     {
+      "id": 4428718,
+      "name": "Tre Tucker",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 13,
+      "pts": 0.0,
+      "proj": 7.97
+     },
+     {
+      "id": 4360438,
+      "name": "Brandon Aiyuk",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 0,
+      "pts": 0.0,
+      "proj": 0.0
+     },
+     {
+      "id": 4575131,
+      "name": "Jacory Croskey-Merritt",
+      "pos": "RB",
+      "slot": 20,
+      "nfl": 28,
+      "pts": 0.0,
+      "proj": 8.6
      }
     ]
    }
