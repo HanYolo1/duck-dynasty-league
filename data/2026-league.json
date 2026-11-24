@@ -1,6 +1,6 @@
 {
  "seasonId": 2026,
- "syncedAt": "2026-11-24T09:36:51Z",
+ "syncedAt": "2026-11-24T20:59:28Z",
  "settings": {
   "teams": 10,
   "draftType": "AUCTION",
@@ -1515,21 +1515,21 @@
    -16007
   ],
   "7": [
-   4360689,
-   4259545,
-   4241985,
    4429615,
-   4366031,
-   3040151,
-   -16004,
-   3917232,
-   4372016,
    4248528,
    4832800,
+   4372016,
+   4259545,
+   3040151,
    4569173,
+   4360689,
+   -16004,
+   3917232,
    4685512,
    4431452,
-   4870808
+   4366031,
+   4870808,
+   4241985
   ],
   "9": [
    3918298,
@@ -1550,7 +1550,7 @@
   ],
   "5": [
    4432577,
-   4361579,
+   4430737,
    3042519,
    4426354,
    4241478,
@@ -1558,7 +1558,7 @@
    -16002,
    4689936,
    3915416,
-   4430737,
+   4361579,
    4695883,
    4723820,
    4870795,
@@ -1584,18 +1584,18 @@
   ],
   "6": [
    3046779,
-   3916148,
+   4569987,
    4427366,
    4241389,
-   2976212,
+   4701936,
    4430027,
    -16025,
    3953687,
-   4569987,
+   3916148,
    4429160,
-   4701936,
    -16014,
    16800,
+   2976212,
    4697815,
    4686612
   ],
@@ -1619,16 +1619,16 @@
   "2": [
    3915511,
    3117251,
-   3043078,
+   4882093,
    4426388,
-   4426502,
+   4595348,
    15847,
    -16034,
    3124679,
-   4595348,
+   3043078,
    4569618,
+   4426502,
    4431299,
-   4882093,
    4685261,
    4239996,
    4360248
@@ -5647,7 +5647,7 @@
    "team": 0,
    "keeperCost": 0,
    "nfl": 26,
-   "injury": "OUT"
+   "injury": "QUESTIONABLE"
   },
   "3915416": {
    "name": "DJ Moore",
@@ -5705,7 +5705,7 @@
    "team": 0,
    "keeperCost": 0,
    "nfl": 16,
-   "injury": "OUT"
+   "injury": "QUESTIONABLE"
   },
   "3918298": {
    "name": "Josh Allen",
@@ -5815,7 +5815,7 @@
    "team": 4,
    "keeperCost": 5,
    "nfl": 9,
-   "injury": "OUT"
+   "injury": "QUESTIONABLE"
   },
   "4047646": {
    "name": "A.J. Brown",
@@ -5906,7 +5906,7 @@
    "team": 0,
    "keeperCost": 0,
    "nfl": 6,
-   "injury": "OUT"
+   "injury": "QUESTIONABLE"
   },
   "4248528": {
    "name": "Christian Watson",
@@ -6192,7 +6192,7 @@
    "team": 9,
    "keeperCost": 1,
    "nfl": 2,
-   "injury": "OUT"
+   "injury": "QUESTIONABLE"
   },
   "4426338": {
    "name": "Bo Nix",
@@ -6333,7 +6333,7 @@
    "team": 9,
    "keeperCost": 20,
    "nfl": 34,
-   "injury": "OUT"
+   "injury": "QUESTIONABLE"
   },
   "4429096": {
    "name": "Blake Corum",
@@ -6359,7 +6359,7 @@
    "team": 0,
    "keeperCost": 0,
    "nfl": 16,
-   "injury": "OUT"
+   "injury": "DOUBTFUL"
   },
   "4429615": {
    "name": "Zay Flowers",
@@ -6491,7 +6491,7 @@
    "team": 3,
    "keeperCost": 8,
    "nfl": 13,
-   "injury": "OUT"
+   "injury": "QUESTIONABLE"
   },
   "4432708": {
    "name": "Marvin Harrison Jr.",
@@ -6500,7 +6500,7 @@
    "team": 0,
    "keeperCost": 0,
    "nfl": 34,
-   "injury": "OUT"
+   "injury": "QUESTIONABLE"
   },
   "4432710": {
    "name": "TreVeyon Henderson",
@@ -6526,7 +6526,7 @@
    "team": 3,
    "keeperCost": 9,
    "nfl": 12,
-   "injury": "OUT"
+   "injury": "QUESTIONABLE"
   },
   "4567104": {
    "name": "Will Reichard",
@@ -6951,7 +6951,7 @@
    "team": 5,
    "keeperCost": 11,
    "nfl": 20,
-   "injury": "OUT"
+   "injury": "QUESTIONABLE"
   },
   "4819231": {
    "name": "Kaleb Johnson",
@@ -6967,7 +6967,8 @@
    "pts": 108.3,
    "team": 7,
    "keeperCost": 15,
-   "nfl": 5
+   "nfl": 5,
+   "injury": "QUESTIONABLE"
   },
   "4832955": {
    "name": "Emmett Johnson",
