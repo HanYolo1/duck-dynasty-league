@@ -4,15 +4,17 @@ on:
   schedule:
     # Cron runs in UTC; windows are wide enough for both EDT (Sep–early Nov)
     # and EST. Runs that change nothing make no commit.
+    # Minutes are deliberately off :00/:30: GitHub delays or drops scheduled
+    # runs at those busy times, so these use :07 and :37.
     # Sunday games: 1:00 PM ET kickoff through the end of Sunday Night Football
-    - cron: "*/30 17-23 * * 0"
-    - cron: "*/30 0-4 * * 1"
+    - cron: "7,37 17-23 * * 0"
+    - cron: "7,37 0-4 * * 1"
     # Monday & Thursday night games (8:15 PM ET kickoffs)
-    - cron: "*/30 0-4 * * 2,5"
+    - cron: "7,37 0-4 * * 2,5"
     # Tuesday morning finalization after MNF (~7:00 AM ET)
-    - cron: "0 11,12 * * 2"
+    - cron: "7 11,12 * * 2"
     # Injury news during the week (practice reports): ~10 AM and ~6 PM ET, Wed-Sat
-    - cron: "0 14,22 * * 3,4,5,6"
+    - cron: "7 14,22 * * 3,4,5,6"
   workflow_dispatch:
     inputs:
       season:
