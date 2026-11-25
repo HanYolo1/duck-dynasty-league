@@ -1,6 +1,6 @@
 {
  "seasonId": 2026,
- "syncedAt": "2026-11-24T20:59:28Z",
+ "syncedAt": "2026-11-25T23:00:28Z",
  "settings": {
   "teams": 10,
   "draftType": "AUCTION",
@@ -1485,17 +1485,16 @@
    4379399,
    4702555,
    4262921,
-   4432620,
-   4432665,
+   4248528,
+   3040151,
    -16030,
    3150744,
-   4685382,
+   4432620,
    4567048,
-   4685472,
    3126486,
    3054850,
    4685720,
-   3117256
+   4360635
   ],
   "4": [
    4361741,
@@ -1505,28 +1504,28 @@
    4047650,
    4361050,
    -16016,
-   4363538,
-   4047365,
+   5082424,
+   4832955,
    4047646,
    4360761,
    15818,
    4035538,
-   4832955,
-   -16007
+   -16007,
+   4361579
   ],
   "7": [
-   4429615,
-   4248528,
-   4832800,
-   4372016,
-   4259545,
-   3040151,
-   4569173,
    4360689,
+   4259545,
+   4685382,
+   4429615,
+   4685472,
+   4432665,
    -16004,
    3917232,
+   4832800,
+   4372016,
+   4569173,
    4685512,
-   4431452,
    4366031,
    4870808,
    4241985
@@ -1538,7 +1537,7 @@
    4258173,
    4427095,
    5083076,
-   -16008,
+   -16028,
    2971573,
    4612826,
    4426515,
@@ -1558,25 +1557,25 @@
    -16002,
    4689936,
    3915416,
-   4361579,
    4695883,
    4723820,
    4870795,
    4430539,
-   4686422
+   4686422,
+   4047365
   ],
   "10": [
    3139477,
    4362238,
    4241416,
-   4361370,
    4239993,
+   4685278,
    4361307,
    -16023,
    4686361,
    4362628,
+   4361370,
    4688813,
-   4685278,
    4870653,
    4429096,
    4036378,
@@ -1596,24 +1595,24 @@
    -16014,
    16800,
    2976212,
-   4697815,
-   4686612
+   3916433,
+   4371733
   ],
   "1": [
    2577417,
-   4596448,
    4890973,
+   4685702,
    4567750,
    4374302,
    4723086,
    -16020,
    4567104,
-   4635008,
-   4685702,
+   4596448,
    4572680,
    12483,
    -16026,
    4426385,
+   4635008,
    4373626
   ],
   "2": [
@@ -1625,13 +1624,13 @@
    15847,
    -16034,
    3124679,
-   3043078,
-   4569618,
    4426502,
+   4569618,
+   3043078,
    4431299,
-   4685261,
    4239996,
-   4360248
+   4360248,
+   5081432
   ],
   "8": [
    4360310,
@@ -1642,16 +1641,142 @@
    4431459,
    -16012,
    4362081,
-   4428331,
    4242335,
+   4428331,
    4880281,
    14880,
-   4428718,
    4360438,
-   4575131
+   4575131,
+   4361411
   ]
  },
  "transactions": [
+  {
+   "id": "85156926-004f-4f3d-bda3-ff6e1a06b975",
+   "week": 12,
+   "date": 1795626028526,
+   "type": "WAIVER",
+   "teamId": 3,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4360635
+    },
+    {
+     "type": "DROP",
+     "playerId": 3117256
+    }
+   ]
+  },
+  {
+   "id": "29b4a8d3-b592-4312-889a-8b1ae2bbe704",
+   "week": 12,
+   "date": 1795626028526,
+   "type": "WAIVER",
+   "teamId": 8,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4361411
+    },
+    {
+     "type": "DROP",
+     "playerId": 4428718
+    }
+   ]
+  },
+  {
+   "id": "187839d8-20c9-43d5-a8d1-5cd6377b0c46",
+   "week": 12,
+   "date": 1795626028525,
+   "type": "WAIVER",
+   "teamId": 9,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16028
+    },
+    {
+     "type": "DROP",
+     "playerId": -16008
+    }
+   ]
+  },
+  {
+   "id": "f3e990eb-c15d-462f-a9b3-628e0be7f6d2",
+   "week": 12,
+   "date": 1795626028525,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 5082424
+    },
+    {
+     "type": "DROP",
+     "playerId": 4363538
+    }
+   ]
+  },
+  {
+   "id": "3481abbe-ed42-4c1e-8812-1f11a9b886aa",
+   "week": 12,
+   "date": 1795626028525,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 2,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4371733
+    },
+    {
+     "type": "DROP",
+     "playerId": 4697815
+    }
+   ]
+  },
+  {
+   "id": "7395c2bd-dc74-468c-b0ff-1a51cdd2f814",
+   "week": 12,
+   "date": 1795626028524,
+   "type": "WAIVER",
+   "teamId": 2,
+   "bid": 10,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 5081432
+    },
+    {
+     "type": "DROP",
+     "playerId": 4685261
+    }
+   ]
+  },
+  {
+   "id": "621934fc-82cc-4b61-9724-e57b95ba967a",
+   "week": 12,
+   "date": 1795626028524,
+   "type": "WAIVER",
+   "teamId": 6,
+   "bid": 3,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3916433
+    },
+    {
+     "type": "DROP",
+     "playerId": 4686612
+    }
+   ]
+  },
   {
    "id": "c7c6943f-802f-4ea4-bf11-05476e8dbaee",
    "week": 11,
@@ -5112,6 +5237,73 @@
      "to": 9
     }
    ]
+  },
+  {
+   "week": 12,
+   "teams": [
+    3,
+    7
+   ],
+   "moves": [
+    {
+     "playerId": 4248528,
+     "name": "Christian Watson",
+     "pos": "WR",
+     "from": 7,
+     "to": 3
+    },
+    {
+     "playerId": 3040151,
+     "name": "George Kittle",
+     "pos": "TE",
+     "from": 7,
+     "to": 3
+    },
+    {
+     "playerId": 4685382,
+     "name": "Omarion Hampton",
+     "pos": "RB",
+     "from": 3,
+     "to": 7
+    },
+    {
+     "playerId": 4685472,
+     "name": "Tetairoa McMillan",
+     "pos": "WR",
+     "from": 3,
+     "to": 7
+    },
+    {
+     "playerId": 4432665,
+     "name": "Brock Bowers",
+     "pos": "TE",
+     "from": 3,
+     "to": 7
+    }
+   ]
+  },
+  {
+   "week": 12,
+   "teams": [
+    4,
+    5
+   ],
+   "moves": [
+    {
+     "playerId": 4361579,
+     "name": "Javonte Williams",
+     "pos": "RB",
+     "from": 5,
+     "to": 4
+    },
+    {
+     "playerId": 4047365,
+     "name": "Josh Jacobs",
+     "pos": "RB",
+     "from": 4,
+     "to": 5
+    }
+   ]
   }
  ],
  "players": {
@@ -5151,8 +5343,8 @@
    "name": "Commanders D/ST",
    "pos": "D/ST",
    "pts": 49.0,
-   "team": 0,
-   "keeperCost": 0,
+   "team": 9,
+   "keeperCost": 1,
    "nfl": 28
   },
   "-16027": {
@@ -5263,8 +5455,8 @@
    "name": "Lions D/ST",
    "pos": "D/ST",
    "pts": 57.0,
-   "team": 9,
-   "keeperCost": 1,
+   "team": 0,
+   "keeperCost": 0,
    "nfl": 8
   },
   "-16007": {
@@ -5313,7 +5505,7 @@
    "pts": 205.74,
    "team": 0,
    "keeperCost": 0,
-   "nfl": 23
+   "nfl": 0
   },
   "12483": {
    "name": "Matthew Stafford",
@@ -5361,7 +5553,8 @@
    "pts": 117.9,
    "team": 4,
    "keeperCost": 1,
-   "nfl": 25
+   "nfl": 25,
+   "injury": "QUESTIONABLE"
   },
   "16800": {
    "name": "Davante Adams",
@@ -5442,7 +5635,8 @@
    "pts": 119.1,
    "team": 6,
    "keeperCost": 3,
-   "nfl": 28
+   "nfl": 28,
+   "injury": "QUESTIONABLE"
   },
   "2977187": {
    "name": "Cooper Kupp",
@@ -5456,7 +5650,7 @@
    "name": "George Kittle",
    "pos": "TE",
    "pts": 148.1,
-   "team": 7,
+   "team": 3,
    "keeperCost": 7,
    "nfl": 25
   },
@@ -5474,7 +5668,8 @@
    "pts": 182.63,
    "team": 2,
    "keeperCost": 40,
-   "nfl": 33
+   "nfl": 33,
+   "injury": "QUESTIONABLE"
   },
   "3046439": {
    "name": "Hunter Henry",
@@ -5561,8 +5756,8 @@
    "name": "Dalton Schultz",
    "pos": "TE",
    "pts": 84.6,
-   "team": 3,
-   "keeperCost": 1,
+   "team": 0,
+   "keeperCost": 0,
    "nfl": 34
   },
   "3121023": {
@@ -5571,8 +5766,7 @@
    "pts": 79.8,
    "team": 0,
    "keeperCost": 0,
-   "nfl": 21,
-   "injury": "QUESTIONABLE"
+   "nfl": 21
   },
   "3121422": {
    "name": "Terry McLaurin",
@@ -5686,9 +5880,10 @@
    "name": "Jakobi Meyers",
    "pos": "WR",
    "pts": 94.5,
-   "team": 0,
-   "keeperCost": 0,
-   "nfl": 30
+   "team": 6,
+   "keeperCost": 3,
+   "nfl": 30,
+   "injury": "QUESTIONABLE"
   },
   "3917232": {
    "name": "Tyler Bass",
@@ -5721,8 +5916,7 @@
    "pts": 72.2,
    "team": 9,
    "keeperCost": 67,
-   "nfl": 21,
-   "injury": "QUESTIONABLE"
+   "nfl": 21
   },
   "3929645": {
    "name": "Juwan Johnson",
@@ -5812,7 +6006,7 @@
    "name": "Josh Jacobs",
    "pos": "RB",
    "pts": 43.8,
-   "team": 4,
+   "team": 5,
    "keeperCost": 5,
    "nfl": 9,
    "injury": "QUESTIONABLE"
@@ -5889,7 +6083,8 @@
    "pts": 62.5,
    "team": 7,
    "keeperCost": 1,
-   "nfl": 7
+   "nfl": 7,
+   "injury": "SUSPENSION"
   },
   "4242335": {
    "name": "Jonathan Taylor",
@@ -5906,13 +6101,13 @@
    "team": 0,
    "keeperCost": 0,
    "nfl": 6,
-   "injury": "QUESTIONABLE"
+   "injury": "OUT"
   },
   "4248528": {
    "name": "Christian Watson",
    "pos": "WR",
    "pts": 200.6,
-   "team": 7,
+   "team": 3,
    "keeperCost": 3,
    "nfl": 9
   },
@@ -5997,6 +6192,14 @@
    "keeperCost": 0,
    "nfl": 16
   },
+  "4360635": {
+   "name": "Chig Okonkwo",
+   "pos": "TE",
+   "pts": 61.9,
+   "team": 3,
+   "keeperCost": 1,
+   "nfl": 28
+  },
   "4360689": {
    "name": "Tyler Shough",
    "pos": "QB",
@@ -6020,7 +6223,8 @@
    "pts": 166.0,
    "team": 4,
    "keeperCost": 2,
-   "nfl": 19
+   "nfl": 19,
+   "injury": "QUESTIONABLE"
   },
   "4361307": {
    "name": "Trey McBride",
@@ -6042,8 +6246,8 @@
    "name": "Pat Freiermuth",
    "pos": "TE",
    "pts": 99.5,
-   "team": 0,
-   "keeperCost": 0,
+   "team": 8,
+   "keeperCost": 1,
    "nfl": 23
   },
   "4361432": {
@@ -6068,7 +6272,7 @@
    "name": "Javonte Williams",
    "pos": "RB",
    "pts": 193.4,
-   "team": 5,
+   "team": 4,
    "keeperCost": 32,
    "nfl": 6
   },
@@ -6078,7 +6282,8 @@
    "pts": 285.66,
    "team": 4,
    "keeperCost": 5,
-   "nfl": 25
+   "nfl": 25,
+   "injury": "QUESTIONABLE"
   },
   "4362081": {
    "name": "Cameron Dicker",
@@ -6125,8 +6330,8 @@
    "name": "Chad Ryland",
    "pos": "K",
    "pts": 82.0,
-   "team": 4,
-   "keeperCost": 1,
+   "team": 0,
+   "keeperCost": 0,
    "nfl": 22
   },
   "4366031": {
@@ -6141,8 +6346,8 @@
    "name": "Kenny Gainwell",
    "pos": "RB",
    "pts": 74.5,
-   "team": 0,
-   "keeperCost": 0,
+   "team": 6,
+   "keeperCost": 2,
    "nfl": 27
   },
   "4372016": {
@@ -6288,8 +6493,8 @@
    "name": "Tre Tucker",
    "pos": "WR",
    "pts": 126.2,
-   "team": 8,
-   "keeperCost": 2,
+   "team": 0,
+   "keeperCost": 0,
    "nfl": 13
   },
   "4428850": {
@@ -6383,8 +6588,7 @@
    "pts": 104.9,
    "team": 6,
    "keeperCost": 1,
-   "nfl": 8,
-   "injury": "QUESTIONABLE"
+   "nfl": 8
   },
   "4430539": {
    "name": "Brenton Strange",
@@ -6438,8 +6642,8 @@
    "name": "Drake Maye",
    "pos": "QB",
    "pts": 233.45,
-   "team": 7,
-   "keeperCost": 1,
+   "team": 0,
+   "keeperCost": 0,
    "nfl": 17,
    "injury": "OUT"
   },
@@ -6457,8 +6661,7 @@
    "pts": 20.7,
    "team": 0,
    "keeperCost": 0,
-   "nfl": 21,
-   "injury": "QUESTIONABLE"
+   "nfl": 21
   },
   "4431611": {
    "name": "Caleb Williams",
@@ -6488,7 +6691,7 @@
    "name": "Brock Bowers",
    "pos": "TE",
    "pts": 158.8,
-   "team": 3,
+   "team": 7,
    "keeperCost": 8,
    "nfl": 13,
    "injury": "QUESTIONABLE"
@@ -6526,7 +6729,7 @@
    "team": 3,
    "keeperCost": 9,
    "nfl": 12,
-   "injury": "QUESTIONABLE"
+   "injury": "OUT"
   },
   "4567104": {
    "name": "Will Reichard",
@@ -6728,8 +6931,8 @@
    "name": "Germie Bernard",
    "pos": "WR",
    "pts": 77.8,
-   "team": 2,
-   "keeperCost": 1,
+   "team": 0,
+   "keeperCost": 0,
    "nfl": 23
   },
   "4685278": {
@@ -6744,7 +6947,7 @@
    "name": "Omarion Hampton",
    "pos": "RB",
    "pts": 97.0,
-   "team": 3,
+   "team": 7,
    "keeperCost": 1,
    "nfl": 24
   },
@@ -6760,9 +6963,10 @@
    "name": "Tetairoa McMillan",
    "pos": "WR",
    "pts": 156.1,
-   "team": 3,
+   "team": 7,
    "keeperCost": 40,
-   "nfl": 29
+   "nfl": 29,
+   "injury": "QUESTIONABLE"
   },
   "4685512": {
    "name": "Jadarian Price",
@@ -6817,8 +7021,8 @@
    "name": "Tre' Harris",
    "pos": "WR",
    "pts": 65.6,
-   "team": 6,
-   "keeperCost": 3,
+   "team": 0,
+   "keeperCost": 0,
    "nfl": 24
   },
   "4688813": {
@@ -6883,8 +7087,8 @@
    "name": "Rachaad White",
    "pos": "RB",
    "pts": 75.9,
-   "team": 6,
-   "keeperCost": 5,
+   "team": 0,
+   "keeperCost": 0,
    "nfl": 28
   },
   "4701936": {
@@ -7072,16 +7276,16 @@
    "name": "Antonio Williams",
    "pos": "WR",
    "pts": 96.8,
-   "team": 0,
-   "keeperCost": 0,
+   "team": 2,
+   "keeperCost": 10,
    "nfl": 28
   },
   "5082424": {
    "name": "Dominic Zvada",
    "pos": "K",
    "pts": 75.0,
-   "team": 0,
-   "keeperCost": 0,
+   "team": 4,
+   "keeperCost": 1,
    "nfl": 19
   },
   "5083076": {
@@ -7090,7 +7294,8 @@
    "pts": 121.4,
    "team": 9,
    "keeperCost": 10,
-   "nfl": 5
+   "nfl": 5,
+   "injury": "QUESTIONABLE"
   },
   "5083315": {
    "name": "Kenyon Sadiq",

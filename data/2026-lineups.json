@@ -1,6 +1,6 @@
 {
  "seasonId": 2026,
- "syncedAt": "2026-11-24T20:59:27Z",
+ "syncedAt": "2026-11-25T23:00:27Z",
  "slots": {
   "QB": 0,
   "RB": 2,
@@ -16567,7 +16567,7 @@
       "slot": 2,
       "nfl": 7,
       "pts": 0.0,
-      "proj": 16.3
+      "proj": 17.18
      },
      {
       "id": 4262921,
@@ -16580,23 +16580,22 @@
       "opt": 1
      },
      {
-      "id": 4432620,
-      "name": "Parker Washington",
+      "id": 4248528,
+      "name": "Christian Watson",
       "pos": "WR",
       "slot": 4,
-      "nfl": 30,
+      "nfl": 9,
       "pts": 0.0,
-      "proj": 18.83,
-      "opt": 1
+      "proj": 14.87
      },
      {
-      "id": 4432665,
-      "name": "Brock Bowers",
+      "id": 3040151,
+      "name": "George Kittle",
       "pos": "TE",
       "slot": 6,
-      "nfl": 13,
+      "nfl": 25,
       "pts": 0.0,
-      "proj": 15.73,
+      "proj": 13.41,
       "opt": 1
      },
      {
@@ -16620,13 +16619,14 @@
       "opt": 1
      },
      {
-      "id": 4685382,
-      "name": "Omarion Hampton",
-      "pos": "RB",
+      "id": 4432620,
+      "name": "Parker Washington",
+      "pos": "WR",
       "slot": 23,
-      "nfl": 24,
+      "nfl": 30,
       "pts": 0.0,
-      "proj": 13.95
+      "proj": 18.83,
+      "opt": 1
      },
      {
       "id": 4567048,
@@ -16635,17 +16635,7 @@
       "slot": 20,
       "nfl": 12,
       "pts": 0.0,
-      "proj": 21.8,
-      "opt": 1
-     },
-     {
-      "id": 4685472,
-      "name": "Tetairoa McMillan",
-      "pos": "WR",
-      "slot": 20,
-      "nfl": 29,
-      "pts": 0.0,
-      "proj": 14.03,
+      "proj": 0.0,
       "opt": 1
      },
      {
@@ -16655,7 +16645,8 @@
       "slot": 20,
       "nfl": 25,
       "pts": 0.0,
-      "proj": 11.03
+      "proj": 11.03,
+      "opt": 1
      },
      {
       "id": 3054850,
@@ -16676,13 +16667,13 @@
       "proj": 20.03
      },
      {
-      "id": 3117256,
-      "name": "Dalton Schultz",
+      "id": 4360635,
+      "name": "Chig Okonkwo",
       "pos": "TE",
       "slot": 20,
-      "nfl": 34,
+      "nfl": 28,
       "pts": 0.0,
-      "proj": 7.8
+      "proj": 9.61
      }
     ]
    },
@@ -16717,7 +16708,8 @@
       "slot": 2,
       "nfl": 19,
       "pts": 0.0,
-      "proj": 17.83
+      "proj": 17.83,
+      "opt": 1
      },
      {
       "id": 16737,
@@ -16736,7 +16728,7 @@
       "slot": 4,
       "nfl": 23,
       "pts": 0.0,
-      "proj": 9.83,
+      "proj": 10.19,
       "opt": 1
      },
      {
@@ -16756,28 +16748,27 @@
       "slot": 16,
       "nfl": 16,
       "pts": 0.0,
-      "proj": 6.39,
+      "proj": 6.47,
       "opt": 1
      },
      {
-      "id": 4363538,
-      "name": "Chad Ryland",
+      "id": 5082424,
+      "name": "Dominic Zvada",
       "pos": "K",
       "slot": 17,
-      "nfl": 22,
+      "nfl": 19,
       "pts": 0.0,
-      "proj": 6.27,
+      "proj": 9.06,
       "opt": 1
      },
      {
-      "id": 4047365,
-      "name": "Josh Jacobs",
+      "id": 4832955,
+      "name": "Emmett Johnson",
       "pos": "RB",
       "slot": 23,
-      "nfl": 9,
+      "nfl": 12,
       "pts": 0.0,
-      "proj": 0.0,
-      "opt": 1
+      "proj": 18.0
      },
      {
       "id": 4047646,
@@ -16814,16 +16805,7 @@
       "slot": 20,
       "nfl": 34,
       "pts": 0.0,
-      "proj": 11.47
-     },
-     {
-      "id": 4832955,
-      "name": "Emmett Johnson",
-      "pos": "RB",
-      "slot": 20,
-      "nfl": 12,
-      "pts": 0.0,
-      "proj": 7.62
+      "proj": 11.46
      },
      {
       "id": -16007,
@@ -16832,39 +16814,106 @@
       "slot": 20,
       "nfl": 7,
       "pts": 0.0,
-      "proj": 6.18
+      "proj": 5.68
+     },
+     {
+      "id": 4361579,
+      "name": "Javonte Williams",
+      "pos": "RB",
+      "slot": 20,
+      "nfl": 6,
+      "pts": 0.0,
+      "proj": 17.47
      }
     ]
    },
    "7": {
-    "actual": 0,
+    "actual": 0.0,
     "best": 0.0,
     "players": [
+     {
+      "id": 4360689,
+      "name": "Tyler Shough",
+      "pos": "QB",
+      "slot": 0,
+      "nfl": 18,
+      "pts": 0.0,
+      "proj": 21.42,
+      "opt": 1
+     },
+     {
+      "id": 4259545,
+      "name": "D'Andre Swift",
+      "pos": "RB",
+      "slot": 2,
+      "nfl": 3,
+      "pts": 0.0,
+      "proj": 14.2,
+      "opt": 1
+     },
+     {
+      "id": 4685382,
+      "name": "Omarion Hampton",
+      "pos": "RB",
+      "slot": 2,
+      "nfl": 24,
+      "pts": 0.0,
+      "proj": 13.95
+     },
      {
       "id": 4429615,
       "name": "Zay Flowers",
       "pos": "WR",
-      "slot": 20,
+      "slot": 4,
       "nfl": 33,
       "pts": 0.0,
       "proj": 15.47,
       "opt": 1
      },
      {
-      "id": 4248528,
-      "name": "Christian Watson",
+      "id": 4685472,
+      "name": "Tetairoa McMillan",
       "pos": "WR",
-      "slot": 20,
-      "nfl": 9,
+      "slot": 4,
+      "nfl": 29,
       "pts": 0.0,
-      "proj": 14.87,
+      "proj": 14.03
+     },
+     {
+      "id": 4432665,
+      "name": "Brock Bowers",
+      "pos": "TE",
+      "slot": 6,
+      "nfl": 13,
+      "pts": 0.0,
+      "proj": 15.73,
+      "opt": 1
+     },
+     {
+      "id": -16004,
+      "name": "Bengals D/ST",
+      "pos": "D/ST",
+      "slot": 16,
+      "nfl": 4,
+      "pts": 0.0,
+      "proj": 6.56,
+      "opt": 1
+     },
+     {
+      "id": 3917232,
+      "name": "Tyler Bass",
+      "pos": "K",
+      "slot": 17,
+      "nfl": 2,
+      "pts": 0.0,
+      "proj": 9.03,
       "opt": 1
      },
      {
       "id": 4832800,
       "name": "Denzel Boston",
       "pos": "WR",
-      "slot": 20,
+      "slot": 23,
       "nfl": 5,
       "pts": 0.0,
       "proj": 13.41,
@@ -16877,26 +16926,7 @@
       "slot": 20,
       "nfl": 7,
       "pts": 0.0,
-      "proj": 10.49
-     },
-     {
-      "id": 4259545,
-      "name": "D'Andre Swift",
-      "pos": "RB",
-      "slot": 20,
-      "nfl": 3,
-      "pts": 0.0,
-      "proj": 14.2,
-      "opt": 1
-     },
-     {
-      "id": 3040151,
-      "name": "George Kittle",
-      "pos": "TE",
-      "slot": 20,
-      "nfl": 25,
-      "pts": 0.0,
-      "proj": 13.41,
+      "proj": 10.48,
       "opt": 1
      },
      {
@@ -16910,36 +16940,6 @@
       "opt": 1
      },
      {
-      "id": 4360689,
-      "name": "Tyler Shough",
-      "pos": "QB",
-      "slot": 20,
-      "nfl": 18,
-      "pts": 0.0,
-      "proj": 21.42,
-      "opt": 1
-     },
-     {
-      "id": -16004,
-      "name": "Bengals D/ST",
-      "pos": "D/ST",
-      "slot": 20,
-      "nfl": 4,
-      "pts": 0.0,
-      "proj": 6.48,
-      "opt": 1
-     },
-     {
-      "id": 3917232,
-      "name": "Tyler Bass",
-      "pos": "K",
-      "slot": 20,
-      "nfl": 2,
-      "pts": 0.0,
-      "proj": 9.03,
-      "opt": 1
-     },
-     {
       "id": 4685512,
       "name": "Jadarian Price",
       "pos": "RB",
@@ -16947,15 +16947,6 @@
       "nfl": 26,
       "pts": 0.0,
       "proj": 8.09
-     },
-     {
-      "id": 4431452,
-      "name": "Drake Maye",
-      "pos": "QB",
-      "slot": 20,
-      "nfl": 17,
-      "pts": 0.0,
-      "proj": 0.0
      },
      {
       "id": 4366031,
@@ -16982,7 +16973,7 @@
       "slot": 20,
       "nfl": 7,
       "pts": 0.0,
-      "proj": 3.45
+      "proj": 0.0
      }
     ]
    },
@@ -17017,7 +17008,7 @@
       "slot": 2,
       "nfl": 23,
       "pts": 0.0,
-      "proj": 8.83
+      "proj": 8.85
      },
      {
       "id": 4258173,
@@ -17049,13 +17040,13 @@
       "opt": 1
      },
      {
-      "id": -16008,
-      "name": "Lions D/ST",
+      "id": -16028,
+      "name": "Commanders D/ST",
       "pos": "D/ST",
       "slot": 16,
-      "nfl": 8,
+      "nfl": 28,
       "pts": 0.0,
-      "proj": 5.43,
+      "proj": 8.9,
       "opt": 1
      },
      {
@@ -17095,7 +17086,7 @@
       "slot": 20,
       "nfl": 3,
       "pts": 0.0,
-      "proj": 22.3
+      "proj": 22.31
      },
      {
       "id": 4429059,
@@ -17132,7 +17123,7 @@
       "slot": 20,
       "nfl": 7,
       "pts": 0.0,
-      "proj": 8.08
+      "proj": 7.54
      }
     ]
    },
@@ -17167,7 +17158,8 @@
       "slot": 2,
       "nfl": 16,
       "pts": 0.0,
-      "proj": 10.45
+      "proj": 10.45,
+      "opt": 1
      },
      {
       "id": 4426354,
@@ -17206,7 +17198,7 @@
       "slot": 16,
       "nfl": 2,
       "pts": 0.0,
-      "proj": 3.66,
+      "proj": 4.08,
       "opt": 1
      },
      {
@@ -17227,16 +17219,6 @@
       "nfl": 2,
       "pts": 0.0,
       "proj": 12.95,
-      "opt": 1
-     },
-     {
-      "id": 4361579,
-      "name": "Javonte Williams",
-      "pos": "RB",
-      "slot": 20,
-      "nfl": 6,
-      "pts": 0.0,
-      "proj": 17.47,
       "opt": 1
      },
      {
@@ -17283,6 +17265,15 @@
       "nfl": 34,
       "pts": 0.0,
       "proj": 9.04
+     },
+     {
+      "id": 4047365,
+      "name": "Josh Jacobs",
+      "pos": "RB",
+      "slot": 20,
+      "nfl": 9,
+      "pts": 0.0,
+      "proj": 0.0
      }
     ]
    },
@@ -17297,7 +17288,7 @@
       "slot": 0,
       "nfl": 12,
       "pts": 0.0,
-      "proj": 23.68
+      "proj": 23.9
      },
      {
       "id": 4362238,
@@ -17320,16 +17311,6 @@
       "opt": 1
      },
      {
-      "id": 4361370,
-      "name": "Chris Olave",
-      "pos": "WR",
-      "slot": 4,
-      "nfl": 18,
-      "pts": 0.0,
-      "proj": 15.28,
-      "opt": 1
-     },
-     {
       "id": 4239993,
       "name": "Tee Higgins",
       "pos": "WR",
@@ -17338,6 +17319,15 @@
       "pts": 0.0,
       "proj": 16.57,
       "opt": 1
+     },
+     {
+      "id": 4685278,
+      "name": "Luther Burden III",
+      "pos": "WR",
+      "slot": 4,
+      "nfl": 3,
+      "pts": 0.0,
+      "proj": 13.53
      },
      {
       "id": 4361307,
@@ -17380,22 +17370,23 @@
       "opt": 1
      },
      {
+      "id": 4361370,
+      "name": "Chris Olave",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 18,
+      "pts": 0.0,
+      "proj": 15.28,
+      "opt": 1
+     },
+     {
       "id": 4688813,
       "name": "Josh Downs",
       "pos": "WR",
       "slot": 20,
       "nfl": 12,
       "pts": 0.0,
-      "proj": 7.77
-     },
-     {
-      "id": 4685278,
-      "name": "Luther Burden III",
-      "pos": "WR",
-      "slot": 20,
-      "nfl": 3,
-      "pts": 0.0,
-      "proj": 13.53
+      "proj": 8.4
      },
      {
       "id": 4870653,
@@ -17432,7 +17423,7 @@
       "slot": 20,
       "nfl": 3,
       "pts": 0.0,
-      "proj": 7.87
+      "proj": 7.88
      }
     ]
    },
@@ -17457,7 +17448,7 @@
       "slot": 2,
       "nfl": 23,
       "pts": 0.0,
-      "proj": 15.13,
+      "proj": 15.12,
       "opt": 1
      },
      {
@@ -17567,22 +17558,22 @@
       "proj": 13.01
      },
      {
-      "id": 4697815,
-      "name": "Rachaad White",
-      "pos": "RB",
-      "slot": 20,
-      "nfl": 28,
-      "pts": 0.0,
-      "proj": 1.73
-     },
-     {
-      "id": 4686612,
-      "name": "Tre' Harris",
+      "id": 3916433,
+      "name": "Jakobi Meyers",
       "pos": "WR",
       "slot": 20,
-      "nfl": 24,
+      "nfl": 30,
       "pts": 0.0,
-      "proj": 6.95
+      "proj": 12.74
+     },
+     {
+      "id": 4371733,
+      "name": "Kenny Gainwell",
+      "pos": "RB",
+      "slot": 20,
+      "nfl": 27,
+      "pts": 0.0,
+      "proj": 9.32
      }
     ]
    },
@@ -17601,16 +17592,6 @@
       "opt": 1
      },
      {
-      "id": 4596448,
-      "name": "Bucky Irving",
-      "pos": "RB",
-      "slot": 2,
-      "nfl": 27,
-      "pts": 0.0,
-      "proj": 21.47,
-      "opt": 1
-     },
-     {
       "id": 4890973,
       "name": "Ashton Jeanty",
       "pos": "RB",
@@ -17618,6 +17599,16 @@
       "nfl": 13,
       "pts": 0.0,
       "proj": 15.63,
+      "opt": 1
+     },
+     {
+      "id": 4685702,
+      "name": "Quinshon Judkins",
+      "pos": "RB",
+      "slot": 2,
+      "nfl": 5,
+      "pts": 0.0,
+      "proj": 15.58,
       "opt": 1
      },
      {
@@ -17647,7 +17638,7 @@
       "slot": 6,
       "nfl": 3,
       "pts": 0.0,
-      "proj": 10.7,
+      "proj": 10.71,
       "opt": 1
      },
      {
@@ -17657,7 +17648,7 @@
       "slot": 16,
       "nfl": 20,
       "pts": 0.0,
-      "proj": 6.48
+      "proj": 6.56
      },
      {
       "id": 4567104,
@@ -17670,22 +17661,13 @@
       "opt": 1
      },
      {
-      "id": 4635008,
-      "name": "Keon Coleman",
-      "pos": "WR",
-      "slot": 23,
-      "nfl": 2,
-      "pts": 0.0,
-      "proj": 4.97
-     },
-     {
-      "id": 4685702,
-      "name": "Quinshon Judkins",
+      "id": 4596448,
+      "name": "Bucky Irving",
       "pos": "RB",
-      "slot": 20,
-      "nfl": 5,
+      "slot": 23,
+      "nfl": 27,
       "pts": 0.0,
-      "proj": 15.58,
+      "proj": 21.47,
       "opt": 1
      },
      {
@@ -17724,6 +17706,15 @@
       "nfl": 26,
       "pts": 0.0,
       "proj": 11.88
+     },
+     {
+      "id": 4635008,
+      "name": "Keon Coleman",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 2,
+      "pts": 0.0,
+      "proj": 4.97
      },
      {
       "id": 4373626,
@@ -17795,7 +17786,7 @@
       "slot": 6,
       "nfl": 12,
       "pts": 0.0,
-      "proj": 11.9,
+      "proj": 11.88,
       "opt": 1
      },
      {
@@ -17819,13 +17810,13 @@
       "opt": 1
      },
      {
-      "id": 3043078,
-      "name": "Derrick Henry",
-      "pos": "RB",
+      "id": 4426502,
+      "name": "Drake London",
+      "pos": "WR",
       "slot": 23,
-      "nfl": 33,
+      "nfl": 1,
       "pts": 0.0,
-      "proj": 14.77,
+      "proj": 14.89,
       "opt": 1
      },
      {
@@ -17839,13 +17830,13 @@
       "opt": 1
      },
      {
-      "id": 4426502,
-      "name": "Drake London",
-      "pos": "WR",
+      "id": 3043078,
+      "name": "Derrick Henry",
+      "pos": "RB",
       "slot": 20,
-      "nfl": 1,
+      "nfl": 33,
       "pts": 0.0,
-      "proj": 14.89,
+      "proj": 14.77,
       "opt": 1
      },
      {
@@ -17856,15 +17847,6 @@
       "nfl": 3,
       "pts": 0.0,
       "proj": 11.23
-     },
-     {
-      "id": 4685261,
-      "name": "Germie Bernard",
-      "pos": "WR",
-      "slot": 20,
-      "nfl": 23,
-      "pts": 0.0,
-      "proj": 6.51
      },
      {
       "id": 4239996,
@@ -17883,6 +17865,15 @@
       "nfl": 1,
       "pts": 0.0,
       "proj": 8.43
+     },
+     {
+      "id": 5081432,
+      "name": "Antonio Williams",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 28,
+      "pts": 0.0,
+      "proj": 11.9
      }
     ]
    },
@@ -17956,7 +17947,7 @@
       "slot": 16,
       "nfl": 12,
       "pts": 0.0,
-      "proj": 5.26,
+      "proj": 5.18,
       "opt": 1
      },
      {
@@ -17970,23 +17961,23 @@
       "opt": 1
      },
      {
-      "id": 4428331,
-      "name": "Rashee Rice",
-      "pos": "WR",
-      "slot": 23,
-      "nfl": 12,
-      "pts": 0.0,
-      "proj": 10.73,
-      "opt": 1
-     },
-     {
       "id": 4242335,
       "name": "Jonathan Taylor",
       "pos": "RB",
-      "slot": 20,
+      "slot": 23,
       "nfl": 11,
       "pts": 0.0,
       "proj": 14.41,
+      "opt": 1
+     },
+     {
+      "id": 4428331,
+      "name": "Rashee Rice",
+      "pos": "WR",
+      "slot": 20,
+      "nfl": 12,
+      "pts": 0.0,
+      "proj": 11.37,
       "opt": 1
      },
      {
@@ -18008,15 +17999,6 @@
       "proj": 23.96
      },
      {
-      "id": 4428718,
-      "name": "Tre Tucker",
-      "pos": "WR",
-      "slot": 20,
-      "nfl": 13,
-      "pts": 0.0,
-      "proj": 7.98
-     },
-     {
       "id": 4360438,
       "name": "Brandon Aiyuk",
       "pos": "WR",
@@ -18033,6 +18015,15 @@
       "nfl": 28,
       "pts": 0.0,
       "proj": 11.67
+     },
+     {
+      "id": 4361411,
+      "name": "Pat Freiermuth",
+      "pos": "TE",
+      "slot": 20,
+      "nfl": 23,
+      "pts": 0.0,
+      "proj": 7.72
      }
     ]
    }
