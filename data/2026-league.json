@@ -1,6 +1,6 @@
 {
  "seasonId": 2026,
- "syncedAt": "2026-11-25T23:00:28Z",
+ "syncedAt": "2026-11-26T22:54:22Z",
  "settings": {
   "teams": 10,
   "draftType": "AUCTION",
@@ -1484,8 +1484,8 @@
    4426348,
    4379399,
    4702555,
-   4262921,
    4248528,
+   4262921,
    3040151,
    -16030,
    3150744,
@@ -1494,24 +1494,25 @@
    3126486,
    3054850,
    4685720,
-   4360635
+   4360635,
+   4360569
   ],
   "4": [
    4361741,
    4430807,
    4696981,
    16737,
-   4047650,
+   4569618,
    4361050,
    -16016,
    5082424,
    4832955,
    4047646,
+   4047650,
    4360761,
    15818,
    4035538,
-   -16007,
-   4361579
+   -16007
   ],
   "7": [
    4360689,
@@ -1540,8 +1541,8 @@
    -16028,
    2971573,
    4612826,
-   4426515,
    4431611,
+   4426515,
    4429059,
    4869645,
    4385690,
@@ -1551,15 +1552,15 @@
    4432577,
    4430737,
    3042519,
-   4426354,
    4241478,
+   4426354,
    4036133,
-   -16002,
+   -16019,
    4689936,
    3915416,
-   4695883,
-   4723820,
    4870795,
+   4695883,
+   -16002,
    4430539,
    4686422,
    4047365
@@ -1568,31 +1569,31 @@
    3139477,
    4362238,
    4241416,
-   4239993,
    4685278,
+   4239993,
    4361307,
    -16023,
    4686361,
    4362628,
+   4429096,
+   4608686,
+   4036378,
    4361370,
    4688813,
-   4870653,
-   4429096,
-   4036378,
-   4608686
+   4870653
   ],
   "6": [
    3046779,
    4569987,
    4427366,
-   4241389,
    4701936,
+   4241389,
    4430027,
    -16025,
    3953687,
    3916148,
-   4429160,
    -16014,
+   4429160,
    16800,
    2976212,
    3916433,
@@ -1602,14 +1603,14 @@
    2577417,
    4890973,
    4685702,
-   4567750,
    4374302,
+   4567750,
    4723086,
    -16020,
    4567104,
    4596448,
-   4572680,
    12483,
+   4572680,
    -16026,
    4426385,
    4635008,
@@ -1617,17 +1618,17 @@
   ],
   "2": [
    3915511,
+   4361579,
    3117251,
-   4882093,
    4426388,
    4595348,
    15847,
    -16034,
    3124679,
-   4426502,
-   4569618,
-   3043078,
+   4882093,
    4431299,
+   3043078,
+   4426502,
    4239996,
    4360248,
    5081432
@@ -1651,6 +1652,38 @@
   ]
  },
  "transactions": [
+  {
+   "id": "88083f85-faaa-41e2-b3a6-8613d4469c3a",
+   "week": 12,
+   "date": 1795712403300,
+   "type": "WAIVER",
+   "teamId": 3,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 4360569
+    }
+   ]
+  },
+  {
+   "id": "033adefb-a6e7-4b53-a6c5-962666e7cb62",
+   "week": 12,
+   "date": 1795712403300,
+   "type": "WAIVER",
+   "teamId": 5,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": -16019
+    },
+    {
+     "type": "DROP",
+     "playerId": 4723820
+    }
+   ]
+  },
   {
    "id": "85156926-004f-4f3d-bda3-ff6e1a06b975",
    "week": 12,
@@ -5241,6 +5274,38 @@
   {
    "week": 12,
    "teams": [
+    2,
+    4
+   ],
+   "moves": [
+    {
+     "playerId": 4569618,
+     "name": "Garrett Wilson",
+     "pos": "WR",
+     "from": 2,
+     "to": 4
+    }
+   ]
+  },
+  {
+   "week": 12,
+   "teams": [
+    2,
+    5
+   ],
+   "moves": [
+    {
+     "playerId": 4361579,
+     "name": "Javonte Williams",
+     "pos": "RB",
+     "from": 5,
+     "to": 2
+    }
+   ]
+  },
+  {
+   "week": 12,
+   "teams": [
     3,
     7
    ],
@@ -5289,13 +5354,6 @@
     5
    ],
    "moves": [
-    {
-     "playerId": 4361579,
-     "name": "Javonte Williams",
-     "pos": "RB",
-     "from": 5,
-     "to": 4
-    },
     {
      "playerId": 4047365,
      "name": "Josh Jacobs",
@@ -5390,7 +5448,7 @@
   "-16021": {
    "name": "Eagles D/ST",
    "pos": "D/ST",
-   "pts": 28.0,
+   "pts": 32.0,
    "team": 0,
    "keeperCost": 0,
    "nfl": 21
@@ -5402,6 +5460,14 @@
    "team": 1,
    "keeperCost": 3,
    "nfl": 20
+  },
+  "-16019": {
+   "name": "Giants D/ST",
+   "pos": "D/ST",
+   "pts": 61.0,
+   "team": 5,
+   "keeperCost": 1,
+   "nfl": 19
   },
   "-16017": {
    "name": "Patriots D/ST",
@@ -5422,7 +5488,7 @@
   "-16014": {
    "name": "Rams D/ST",
    "pos": "D/ST",
-   "pts": 64.0,
+   "pts": 76.0,
    "team": 6,
    "keeperCost": 8,
    "nfl": 14
@@ -5446,7 +5512,7 @@
   "-16009": {
    "name": "Packers D/ST",
    "pos": "D/ST",
-   "pts": 71.0,
+   "pts": 73.0,
    "team": 0,
    "keeperCost": 0,
    "nfl": 9
@@ -5486,7 +5552,7 @@
   "-16003": {
    "name": "Bears D/ST",
    "pos": "D/ST",
-   "pts": 84.0,
+   "pts": 80.0,
    "team": 0,
    "keeperCost": 0,
    "nfl": 3
@@ -5510,7 +5576,7 @@
   "12483": {
    "name": "Matthew Stafford",
    "pos": "QB",
-   "pts": 229.62,
+   "pts": 237.22,
    "team": 1,
    "keeperCost": 3,
    "nfl": 14
@@ -5576,7 +5642,7 @@
   "17427": {
    "name": "Cairo Santos",
    "pos": "K",
-   "pts": 76.0,
+   "pts": 83.0,
    "team": 0,
    "keeperCost": 0,
    "nfl": 3
@@ -5595,12 +5661,13 @@
    "pts": 90.5,
    "team": 0,
    "keeperCost": 0,
-   "nfl": 29
+   "nfl": 29,
+   "injury": "QUESTIONABLE"
   },
   "2577417": {
    "name": "Dak Prescott",
    "pos": "QB",
-   "pts": 312.76,
+   "pts": 321.76,
    "team": 1,
    "keeperCost": 8,
    "nfl": 6
@@ -5624,7 +5691,7 @@
   "2973405": {
    "name": "Kalif Raymond",
    "pos": "WR",
-   "pts": 74.1,
+   "pts": 79.1,
    "team": 0,
    "keeperCost": 0,
    "nfl": 3
@@ -5635,8 +5702,7 @@
    "pts": 119.1,
    "team": 6,
    "keeperCost": 3,
-   "nfl": 28,
-   "injury": "QUESTIONABLE"
+   "nfl": 28
   },
   "2977187": {
    "name": "Cooper Kupp",
@@ -5682,7 +5748,7 @@
   "3046779": {
    "name": "Jared Goff",
    "pos": "QB",
-   "pts": 258.39,
+   "pts": 281.46,
    "team": 6,
    "keeperCost": 4,
    "nfl": 8
@@ -5758,15 +5824,17 @@
    "pts": 84.6,
    "team": 0,
    "keeperCost": 0,
-   "nfl": 34
+   "nfl": 34,
+   "injury": "QUESTIONABLE"
   },
   "3121023": {
    "name": "Dallas Goedert",
    "pos": "TE",
-   "pts": 79.8,
+   "pts": 81.7,
    "team": 0,
    "keeperCost": 0,
-   "nfl": 21
+   "nfl": 21,
+   "injury": "QUESTIONABLE"
   },
   "3121422": {
    "name": "Terry McLaurin",
@@ -5840,8 +5908,7 @@
    "pts": 126.07,
    "team": 0,
    "keeperCost": 0,
-   "nfl": 26,
-   "injury": "QUESTIONABLE"
+   "nfl": 26
   },
   "3915416": {
    "name": "DJ Moore",
@@ -5913,10 +5980,11 @@
   "3929630": {
    "name": "Saquon Barkley",
    "pos": "RB",
-   "pts": 72.2,
+   "pts": 72.9,
    "team": 9,
    "keeperCost": 67,
-   "nfl": 21
+   "nfl": 21,
+   "injury": "QUESTIONABLE"
   },
   "3929645": {
    "name": "Juwan Johnson",
@@ -5930,7 +5998,7 @@
   "3953687": {
    "name": "Brandon Aubrey",
    "pos": "K",
-   "pts": 90.0,
+   "pts": 92.0,
    "team": 6,
    "keeperCost": 7,
    "nfl": 6
@@ -5957,8 +6025,7 @@
    "pts": 15.9,
    "team": 0,
    "keeperCost": 0,
-   "nfl": 23,
-   "injury": "INJURY_RESERVE"
+   "nfl": 23
   },
   "4036133": {
    "name": "T.J. Hockenson",
@@ -5971,7 +6038,7 @@
   "4036378": {
    "name": "Jordan Love",
    "pos": "QB",
-   "pts": 262.82,
+   "pts": 275.69,
    "team": 10,
    "keeperCost": 5,
    "nfl": 9
@@ -6009,7 +6076,7 @@
    "team": 5,
    "keeperCost": 5,
    "nfl": 9,
-   "injury": "QUESTIONABLE"
+   "injury": "OUT"
   },
   "4047646": {
    "name": "A.J. Brown",
@@ -6047,7 +6114,7 @@
   "4241389": {
    "name": "CeeDee Lamb",
    "pos": "WR",
-   "pts": 268.2,
+   "pts": 272.0,
    "team": 6,
    "keeperCost": 35,
    "nfl": 6
@@ -6072,7 +6139,7 @@
   "4241478": {
    "name": "DeVonta Smith",
    "pos": "WR",
-   "pts": 81.1,
+   "pts": 88.6,
    "team": 5,
    "keeperCost": 22,
    "nfl": 21
@@ -6106,10 +6173,11 @@
   "4248528": {
    "name": "Christian Watson",
    "pos": "WR",
-   "pts": 200.6,
+   "pts": 217.1,
    "team": 3,
    "keeperCost": 3,
-   "nfl": 9
+   "nfl": 9,
+   "injury": "QUESTIONABLE"
   },
   "4249087": {
    "name": "Matt Gay",
@@ -6130,7 +6198,7 @@
   "4259545": {
    "name": "D'Andre Swift",
    "pos": "RB",
-   "pts": 166.7,
+   "pts": 195.9,
    "team": 7,
    "keeperCost": 16,
    "nfl": 3
@@ -6188,8 +6256,8 @@
    "name": "Jordan Mason",
    "pos": "RB",
    "pts": 37.5,
-   "team": 0,
-   "keeperCost": 0,
+   "team": 3,
+   "keeperCost": 1,
    "nfl": 16
   },
   "4360635": {
@@ -6271,8 +6339,8 @@
   "4361579": {
    "name": "Javonte Williams",
    "pos": "RB",
-   "pts": 193.4,
-   "team": 4,
+   "pts": 205.0,
+   "team": 2,
    "keeperCost": 32,
    "nfl": 6
   },
@@ -6377,7 +6445,7 @@
   "4374302": {
    "name": "Amon-Ra St. Brown",
    "pos": "WR",
-   "pts": 206.1,
+   "pts": 230.7,
    "team": 1,
    "keeperCost": 64,
    "nfl": 8
@@ -6418,7 +6486,7 @@
   "4426354": {
    "name": "George Pickens",
    "pos": "WR",
-   "pts": 180.6,
+   "pts": 185.2,
    "team": 5,
    "keeperCost": 9,
    "nfl": 6
@@ -6434,7 +6502,7 @@
   "4426388": {
    "name": "Jameson Williams",
    "pos": "WR",
-   "pts": 139.0,
+   "pts": 153.0,
    "team": 2,
    "keeperCost": 16,
    "nfl": 8
@@ -6518,7 +6586,7 @@
   "4429023": {
    "name": "MarShawn Lloyd",
    "pos": "RB",
-   "pts": 58.7,
+   "pts": 61.3,
    "team": 0,
    "keeperCost": 0,
    "nfl": 9
@@ -6543,7 +6611,7 @@
   "4429096": {
    "name": "Blake Corum",
    "pos": "RB",
-   "pts": 116.5,
+   "pts": 146.0,
    "team": 10,
    "keeperCost": 3,
    "nfl": 14
@@ -6577,7 +6645,7 @@
   "4429795": {
    "name": "Jahmyr Gibbs",
    "pos": "RB",
-   "pts": 286.2,
+   "pts": 338.4,
    "team": 8,
    "keeperCost": 29,
    "nfl": 8
@@ -6585,7 +6653,7 @@
   "4430027": {
    "name": "Sam LaPorta",
    "pos": "TE",
-   "pts": 104.9,
+   "pts": 119.3,
    "team": 6,
    "keeperCost": 1,
    "nfl": 8
@@ -6601,7 +6669,7 @@
   "4430737": {
    "name": "Kyren Williams",
    "pos": "RB",
-   "pts": 164.3,
+   "pts": 180.8,
    "team": 5,
    "keeperCost": 29,
    "nfl": 14
@@ -6620,12 +6688,13 @@
    "pts": 293.41,
    "team": 8,
    "keeperCost": 62,
-   "nfl": 26
+   "nfl": 26,
+   "injury": "QUESTIONABLE"
   },
   "4431299": {
    "name": "Rome Odunze",
    "pos": "WR",
-   "pts": 97.3,
+   "pts": 125.0,
    "team": 2,
    "keeperCost": 15,
    "nfl": 3
@@ -6658,7 +6727,7 @@
   "4431545": {
    "name": "Will Shipley",
    "pos": "RB",
-   "pts": 20.7,
+   "pts": 22.5,
    "team": 0,
    "keeperCost": 0,
    "nfl": 21
@@ -6666,10 +6735,11 @@
   "4431611": {
    "name": "Caleb Williams",
    "pos": "QB",
-   "pts": 165.93,
+   "pts": 200.73,
    "team": 9,
    "keeperCost": 9,
-   "nfl": 3
+   "nfl": 3,
+   "injury": "QUESTIONABLE"
   },
   "4432577": {
    "name": "C.J. Stroud",
@@ -6685,7 +6755,8 @@
    "pts": 169.1,
    "team": 3,
    "keeperCost": 7,
-   "nfl": 30
+   "nfl": 30,
+   "injury": "QUESTIONABLE"
   },
   "4432665": {
    "name": "Brock Bowers",
@@ -6702,8 +6773,7 @@
    "pts": 37.5,
    "team": 0,
    "keeperCost": 0,
-   "nfl": 34,
-   "injury": "QUESTIONABLE"
+   "nfl": 34
   },
   "4432710": {
    "name": "TreVeyon Henderson",
@@ -6785,7 +6855,7 @@
    "name": "Garrett Wilson",
    "pos": "WR",
    "pts": 145.2,
-   "team": 2,
+   "team": 4,
    "keeperCost": 13,
    "nfl": 20
   },
@@ -6816,7 +6886,7 @@
   "4572680": {
    "name": "Tucker Kraft",
    "pos": "TE",
-   "pts": 93.3,
+   "pts": 96.7,
    "team": 1,
    "keeperCost": 12,
    "nfl": 9
@@ -6873,7 +6943,7 @@
   "4608686": {
    "name": "Kyle Monangai",
    "pos": "RB",
-   "pts": 65.1,
+   "pts": 81.0,
    "team": 10,
    "keeperCost": 1,
    "nfl": 3
@@ -6938,7 +7008,7 @@
   "4685278": {
    "name": "Luther Burden III",
    "pos": "WR",
-   "pts": 144.6,
+   "pts": 152.1,
    "team": 10,
    "keeperCost": 9,
    "nfl": 3
@@ -7045,7 +7115,7 @@
   "4689936": {
    "name": "Jake Bates",
    "pos": "K",
-   "pts": 83.0,
+   "pts": 91.0,
    "team": 5,
    "keeperCost": 1,
    "nfl": 8
@@ -7094,7 +7164,7 @@
   "4701936": {
    "name": "Matthew Golden",
    "pos": "WR",
-   "pts": 187.9,
+   "pts": 192.8,
    "team": 6,
    "keeperCost": 3,
    "nfl": 9
@@ -7119,7 +7189,7 @@
   "4710855": {
    "name": "Konata Mumpfield",
    "pos": "WR",
-   "pts": 45.3,
+   "pts": 56.2,
    "team": 0,
    "keeperCost": 0,
    "nfl": 14
@@ -7143,24 +7213,25 @@
   "4723086": {
    "name": "Colston Loveland",
    "pos": "TE",
-   "pts": 95.2,
+   "pts": 94.7,
    "team": 1,
    "keeperCost": 2,
-   "nfl": 3
+   "nfl": 3,
+   "injury": "QUESTIONABLE"
   },
   "4723820": {
    "name": "Omar Cooper Jr.",
    "pos": "WR",
    "pts": 69.6,
-   "team": 5,
-   "keeperCost": 11,
+   "team": 0,
+   "keeperCost": 0,
    "nfl": 20,
    "injury": "QUESTIONABLE"
   },
   "4819231": {
    "name": "Kaleb Johnson",
    "pos": "RB",
-   "pts": 27.4,
+   "pts": 31.6,
    "team": 0,
    "keeperCost": 0,
    "nfl": 9
@@ -7185,7 +7256,7 @@
   "4869461": {
    "name": "Trey Smack",
    "pos": "K",
-   "pts": 55.0,
+   "pts": 63.0,
    "team": 0,
    "keeperCost": 0,
    "nfl": 9
@@ -7209,7 +7280,7 @@
   "4870795": {
    "name": "Makai Lemon",
    "pos": "WR",
-   "pts": 75.0,
+   "pts": 79.6,
    "team": 5,
    "keeperCost": 1,
    "nfl": 21
@@ -7294,8 +7365,7 @@
    "pts": 121.4,
    "team": 9,
    "keeperCost": 10,
-   "nfl": 5,
-   "injury": "QUESTIONABLE"
+   "nfl": 5
   },
   "5083315": {
    "name": "Kenyon Sadiq",
