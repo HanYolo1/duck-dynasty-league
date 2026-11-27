@@ -1,6 +1,6 @@
 {
  "seasonId": 2026,
- "syncedAt": "2026-11-27T08:08:55Z",
+ "syncedAt": "2026-11-27T22:36:55Z",
  "settings": {
   "teams": 10,
   "draftType": "AUCTION",
@@ -1507,12 +1507,12 @@
    -16016,
    5082424,
    4832955,
-   4047646,
    4047650,
+   4047646,
    4360761,
    15818,
    4035538,
-   -16007
+   3122840
   ],
   "7": [
    4360689,
@@ -1533,8 +1533,8 @@
   ],
   "9": [
    3918298,
-   3929630,
    4038815,
+   3929630,
    4258173,
    4427095,
    5083076,
@@ -1543,10 +1543,10 @@
    4612826,
    4431611,
    4385690,
+   3128429,
    4426515,
    4429059,
-   4869645,
-   3128429
+   4869645
   ],
   "5": [
    4432577,
@@ -1625,10 +1625,10 @@
    15847,
    -16034,
    3124679,
-   4882093,
+   4426502,
    4431299,
    3043078,
-   4426502,
+   4882093,
    4239996,
    4360248,
    5081432
@@ -1639,19 +1639,37 @@
    4711533,
    4430878,
    4871023,
-   4431459,
+   4361411,
    -16012,
    4362081,
-   4242335,
+   4575131,
    4428331,
+   4431459,
+   4242335,
    4880281,
    14880,
-   4360438,
-   4575131,
-   4361411
+   4360438
   ]
  },
  "transactions": [
+  {
+   "id": "3c93ecc6-db94-4c6e-81d5-459ef37e462e",
+   "week": 12,
+   "date": 1795798805615,
+   "type": "WAIVER",
+   "teamId": 4,
+   "bid": 1,
+   "items": [
+    {
+     "type": "ADD",
+     "playerId": 3122840
+    },
+    {
+     "type": "DROP",
+     "playerId": -16007
+    }
+   ]
+  },
   {
    "id": "88083f85-faaa-41e2-b3a6-8613d4469c3a",
    "week": 12,
@@ -5440,7 +5458,7 @@
   "-16023": {
    "name": "Steelers D/ST",
    "pos": "D/ST",
-   "pts": 73.0,
+   "pts": 98.0,
    "team": 10,
    "keeperCost": 2,
    "nfl": 23
@@ -5528,9 +5546,9 @@
   "-16007": {
    "name": "Broncos D/ST",
    "pos": "D/ST",
-   "pts": 68.0,
-   "team": 4,
-   "keeperCost": 4,
+   "pts": 76.0,
+   "team": 0,
+   "keeperCost": 0,
    "nfl": 7
   },
   "-16005": {
@@ -5634,7 +5652,7 @@
   "17372": {
    "name": "Chris Boswell",
    "pos": "K",
-   "pts": 82.0,
+   "pts": 91.0,
    "team": 0,
    "keeperCost": 0,
    "nfl": 23
@@ -5734,8 +5752,7 @@
    "pts": 182.63,
    "team": 2,
    "keeperCost": 40,
-   "nfl": 33,
-   "injury": "QUESTIONABLE"
+   "nfl": 33
   },
   "3046439": {
    "name": "Hunter Henry",
@@ -5824,8 +5841,7 @@
    "pts": 84.6,
    "team": 0,
    "keeperCost": 0,
-   "nfl": 34,
-   "injury": "QUESTIONABLE"
+   "nfl": 34
   },
   "3121023": {
    "name": "Dallas Goedert",
@@ -5844,6 +5860,14 @@
    "keeperCost": 0,
    "nfl": 28,
    "injury": "INJURY_RESERVE"
+  },
+  "3122840": {
+   "name": "Deshaun Watson",
+   "pos": "QB",
+   "pts": 192.32,
+   "team": 4,
+   "keeperCost": 1,
+   "nfl": 5
   },
   "3124679": {
    "name": "Jason Sanders",
@@ -5864,7 +5888,7 @@
   "3128429": {
    "name": "Courtland Sutton",
    "pos": "WR",
-   "pts": 63.6,
+   "pts": 65.0,
    "team": 9,
    "keeperCost": 1,
    "nfl": 7
@@ -5949,8 +5973,7 @@
    "pts": 94.5,
    "team": 6,
    "keeperCost": 3,
-   "nfl": 30,
-   "injury": "QUESTIONABLE"
+   "nfl": 30
   },
   "3917232": {
    "name": "Tyler Bass",
@@ -5966,8 +5989,7 @@
    "pts": 99.58,
    "team": 0,
    "keeperCost": 0,
-   "nfl": 16,
-   "injury": "QUESTIONABLE"
+   "nfl": 16
   },
   "3918298": {
    "name": "Josh Allen",
@@ -5993,7 +6015,7 @@
    "team": 0,
    "keeperCost": 0,
    "nfl": 18,
-   "injury": "QUESTIONABLE"
+   "injury": "OUT"
   },
   "3953687": {
    "name": "Brandon Aubrey",
@@ -6022,7 +6044,7 @@
   "4035687": {
    "name": "Michael Pittman Jr.",
    "pos": "WR",
-   "pts": 15.9,
+   "pts": 17.6,
    "team": 0,
    "keeperCost": 0,
    "nfl": 23
@@ -6046,7 +6068,7 @@
   "4038815": {
    "name": "Rico Dowdle",
    "pos": "RB",
-   "pts": 57.4,
+   "pts": 63.0,
    "team": 9,
    "keeperCost": 1,
    "nfl": 23
@@ -6058,7 +6080,7 @@
    "team": 0,
    "keeperCost": 0,
    "nfl": 24,
-   "injury": "QUESTIONABLE"
+   "injury": "OUT"
   },
   "4040715": {
    "name": "Jalen Hurts",
@@ -6085,12 +6107,12 @@
    "team": 4,
    "keeperCost": 59,
    "nfl": 17,
-   "injury": "DOUBTFUL"
+   "injury": "OUT"
   },
   "4047650": {
    "name": "DK Metcalf",
    "pos": "WR",
-   "pts": 97.5,
+   "pts": 110.1,
    "team": 4,
    "keeperCost": 12,
    "nfl": 23
@@ -6101,7 +6123,8 @@
    "pts": 192.7,
    "team": 10,
    "keeperCost": 18,
-   "nfl": 4
+   "nfl": 4,
+   "injury": "QUESTIONABLE"
   },
   "4239996": {
    "name": "Travis Etienne Jr.",
@@ -6292,8 +6315,7 @@
    "pts": 166.0,
    "team": 4,
    "keeperCost": 2,
-   "nfl": 19,
-   "injury": "QUESTIONABLE"
+   "nfl": 19
   },
   "4361307": {
    "name": "Trey McBride",
@@ -6314,7 +6336,7 @@
   "4361411": {
    "name": "Pat Freiermuth",
    "pos": "TE",
-   "pts": 99.5,
+   "pts": 100.6,
    "team": 8,
    "keeperCost": 1,
    "nfl": 23
@@ -6352,7 +6374,7 @@
    "team": 4,
    "keeperCost": 5,
    "nfl": 25,
-   "injury": "QUESTIONABLE"
+   "injury": "OUT"
   },
   "4362081": {
    "name": "Cameron Dicker",
@@ -6422,7 +6444,7 @@
   "4372016": {
    "name": "Jaylen Waddle",
    "pos": "WR",
-   "pts": 94.1,
+   "pts": 104.4,
    "team": 7,
    "keeperCost": 1,
    "nfl": 7
@@ -6470,7 +6492,7 @@
   "4426338": {
    "name": "Bo Nix",
    "pos": "QB",
-   "pts": 194.55,
+   "pts": 203.51,
    "team": 0,
    "keeperCost": 0,
    "nfl": 7
@@ -6605,8 +6627,7 @@
    "pts": 78.4,
    "team": 9,
    "keeperCost": 20,
-   "nfl": 34,
-   "injury": "QUESTIONABLE"
+   "nfl": 34
   },
   "4429096": {
    "name": "Blake Corum",
@@ -6632,7 +6653,7 @@
    "team": 0,
    "keeperCost": 0,
    "nfl": 16,
-   "injury": "DOUBTFUL"
+   "injury": "OUT"
   },
   "4429615": {
    "name": "Zay Flowers",
@@ -6688,8 +6709,7 @@
    "pts": 293.41,
    "team": 8,
    "keeperCost": 62,
-   "nfl": 26,
-   "injury": "QUESTIONABLE"
+   "nfl": 26
   },
   "4431299": {
    "name": "Rome Odunze",
@@ -6756,7 +6776,7 @@
    "team": 3,
    "keeperCost": 7,
    "nfl": 30,
-   "injury": "QUESTIONABLE"
+   "injury": "OUT"
   },
   "4432665": {
    "name": "Brock Bowers",
@@ -6870,7 +6890,7 @@
   "4569987": {
    "name": "Jaylen Warren",
    "pos": "RB",
-   "pts": 162.8,
+   "pts": 167.3,
    "team": 6,
    "keeperCost": 5,
    "nfl": 23
@@ -6922,7 +6942,7 @@
    "team": 0,
    "keeperCost": 0,
    "nfl": 24,
-   "injury": "QUESTIONABLE"
+   "injury": "OUT"
   },
   "4596448": {
    "name": "Bucky Irving",
@@ -7000,7 +7020,7 @@
   "4685261": {
    "name": "Germie Bernard",
    "pos": "WR",
-   "pts": 77.8,
+   "pts": 84.6,
    "team": 0,
    "keeperCost": 0,
    "nfl": 23
@@ -7172,7 +7192,7 @@
   "4702555": {
    "name": "Jonah Coleman",
    "pos": "RB",
-   "pts": 98.8,
+   "pts": 114.0,
    "team": 3,
    "keeperCost": 1,
    "nfl": 7
@@ -7217,7 +7237,7 @@
    "team": 1,
    "keeperCost": 2,
    "nfl": 3,
-   "injury": "QUESTIONABLE"
+   "injury": "DOUBTFUL"
   },
   "4723820": {
    "name": "Omar Cooper Jr.",
@@ -7226,7 +7246,7 @@
    "team": 0,
    "keeperCost": 0,
    "nfl": 20,
-   "injury": "QUESTIONABLE"
+   "injury": "OUT"
   },
   "4819231": {
    "name": "Kaleb Johnson",
@@ -7317,7 +7337,7 @@
    "team": 2,
    "keeperCost": 17,
    "nfl": 30,
-   "injury": "QUESTIONABLE"
+   "injury": "OUT"
   },
   "4887558": {
    "name": "Emanuel Wilson",
@@ -8130,12 +8150,22 @@
      "playerId": 4432665,
      "name": "Brock Bowers",
      "status": "OUT"
+    },
+    {
+     "playerId": 4432620,
+     "name": "Parker Washington",
+     "status": "OUT"
     }
    ],
    "4": [
     {
      "playerId": 4047365,
      "name": "Josh Jacobs",
+     "status": "OUT"
+    },
+    {
+     "playerId": 4361741,
+     "name": "Brock Purdy",
      "status": "OUT"
     }
    ]
