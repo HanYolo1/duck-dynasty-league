@@ -1,6 +1,6 @@
 {
  "seasonId": 2026,
- "syncedAt": "2026-11-26T22:54:22Z",
+ "syncedAt": "2026-11-27T08:08:55Z",
  "settings": {
   "teams": 10,
   "draftType": "AUCTION",
@@ -1542,10 +1542,10 @@
    2971573,
    4612826,
    4431611,
+   4385690,
    4426515,
    4429059,
    4869645,
-   4385690,
    3128429
   ],
   "5": [
@@ -1559,8 +1559,8 @@
    4689936,
    3915416,
    4870795,
-   4695883,
    -16002,
+   4695883,
    4430539,
    4686422,
    4047365
@@ -1578,16 +1578,16 @@
    4429096,
    4608686,
    4036378,
-   4361370,
    4688813,
+   4361370,
    4870653
   ],
   "6": [
    3046779,
    4569987,
    4427366,
-   4701936,
    4241389,
+   4701936,
    4430027,
    -16025,
    3953687,
@@ -5448,7 +5448,7 @@
   "-16021": {
    "name": "Eagles D/ST",
    "pos": "D/ST",
-   "pts": 32.0,
+   "pts": 35.0,
    "team": 0,
    "keeperCost": 0,
    "nfl": 21
@@ -5496,7 +5496,7 @@
   "-16012": {
    "name": "Chiefs D/ST",
    "pos": "D/ST",
-   "pts": 67.0,
+   "pts": 78.0,
    "team": 8,
    "keeperCost": 3,
    "nfl": 12
@@ -5560,7 +5560,7 @@
   "-16002": {
    "name": "Bills D/ST",
    "pos": "D/ST",
-   "pts": 61.0,
+   "pts": 67.0,
    "team": 5,
    "keeperCost": 1,
    "nfl": 2
@@ -5600,7 +5600,7 @@
   "15847": {
    "name": "Travis Kelce",
    "pos": "TE",
-   "pts": 132.7,
+   "pts": 143.8,
    "team": 2,
    "keeperCost": 6,
    "nfl": 12
@@ -5667,7 +5667,7 @@
   "2577417": {
    "name": "Dak Prescott",
    "pos": "QB",
-   "pts": 321.76,
+   "pts": 343.05,
    "team": 1,
    "keeperCost": 8,
    "nfl": 6
@@ -5772,7 +5772,7 @@
   "3055899": {
    "name": "Harrison Butker",
    "pos": "K",
-   "pts": 66.0,
+   "pts": 68.0,
    "team": 0,
    "keeperCost": 0,
    "nfl": 12
@@ -5872,7 +5872,7 @@
   "3139477": {
    "name": "Patrick Mahomes",
    "pos": "QB",
-   "pts": 265.86,
+   "pts": 277.02,
    "team": 10,
    "keeperCost": 7,
    "nfl": 12
@@ -5913,7 +5913,7 @@
   "3915416": {
    "name": "DJ Moore",
    "pos": "WR",
-   "pts": 107.0,
+   "pts": 110.5,
    "team": 5,
    "keeperCost": 28,
    "nfl": 2
@@ -5955,7 +5955,7 @@
   "3917232": {
    "name": "Tyler Bass",
    "pos": "K",
-   "pts": 102.0,
+   "pts": 111.0,
    "team": 7,
    "keeperCost": 1,
    "nfl": 2
@@ -5972,7 +5972,7 @@
   "3918298": {
    "name": "Josh Allen",
    "pos": "QB",
-   "pts": 289.68,
+   "pts": 295.72,
    "team": 9,
    "keeperCost": 45,
    "nfl": 2
@@ -5998,7 +5998,7 @@
   "3953687": {
    "name": "Brandon Aubrey",
    "pos": "K",
-   "pts": 92.0,
+   "pts": 97.0,
    "team": 6,
    "keeperCost": 7,
    "nfl": 6
@@ -6114,7 +6114,7 @@
   "4241389": {
    "name": "CeeDee Lamb",
    "pos": "WR",
-   "pts": 272.0,
+   "pts": 291.6,
    "team": 6,
    "keeperCost": 35,
    "nfl": 6
@@ -6139,10 +6139,11 @@
   "4241478": {
    "name": "DeVonta Smith",
    "pos": "WR",
-   "pts": 88.6,
+   "pts": 131.1,
    "team": 5,
    "keeperCost": 22,
-   "nfl": 21
+   "nfl": 21,
+   "injury": "QUESTIONABLE"
   },
   "4241985": {
    "name": "J.K. Dobbins",
@@ -6339,7 +6340,7 @@
   "4361579": {
    "name": "Javonte Williams",
    "pos": "RB",
-   "pts": 205.0,
+   "pts": 227.7,
    "team": 2,
    "keeperCost": 32,
    "nfl": 6
@@ -6437,7 +6438,7 @@
   "4373678": {
    "name": "Khalil Shakir",
    "pos": "WR",
-   "pts": 102.0,
+   "pts": 108.3,
    "team": 0,
    "keeperCost": 0,
    "nfl": 2
@@ -6453,7 +6454,7 @@
   "4379399": {
    "name": "James Cook III",
    "pos": "RB",
-   "pts": 194.3,
+   "pts": 214.8,
    "team": 3,
    "keeperCost": 3,
    "nfl": 2
@@ -6461,11 +6462,10 @@
   "4385690": {
    "name": "Dalton Kincaid",
    "pos": "TE",
-   "pts": 95.7,
+   "pts": 99.0,
    "team": 9,
    "keeperCost": 1,
-   "nfl": 2,
-   "injury": "QUESTIONABLE"
+   "nfl": 2
   },
   "4426338": {
    "name": "Bo Nix",
@@ -6486,7 +6486,7 @@
   "4426354": {
    "name": "George Pickens",
    "pos": "WR",
-   "pts": 185.2,
+   "pts": 192.3,
    "team": 5,
    "keeperCost": 9,
    "nfl": 6
@@ -6543,7 +6543,7 @@
   "4428331": {
    "name": "Rashee Rice",
    "pos": "WR",
-   "pts": 90.7,
+   "pts": 94.6,
    "team": 8,
    "keeperCost": 48,
    "nfl": 12
@@ -6727,7 +6727,7 @@
   "4431545": {
    "name": "Will Shipley",
    "pos": "RB",
-   "pts": 22.5,
+   "pts": 25.3,
    "team": 0,
    "keeperCost": 0,
    "nfl": 21
@@ -7098,7 +7098,7 @@
   "4688813": {
    "name": "Josh Downs",
    "pos": "WR",
-   "pts": 100.3,
+   "pts": 102.6,
    "team": 10,
    "keeperCost": 1,
    "nfl": 12
@@ -7205,7 +7205,7 @@
   "4715355": {
    "name": "Darius Cooper",
    "pos": "WR",
-   "pts": 68.9,
+   "pts": 71.3,
    "team": 0,
    "keeperCost": 0,
    "nfl": 21
@@ -7248,7 +7248,7 @@
   "4832955": {
    "name": "Emmett Johnson",
    "pos": "RB",
-   "pts": 127.2,
+   "pts": 146.8,
    "team": 4,
    "keeperCost": 16,
    "nfl": 12
@@ -7280,7 +7280,7 @@
   "4870795": {
    "name": "Makai Lemon",
    "pos": "WR",
-   "pts": 79.6,
+   "pts": 91.1,
    "team": 5,
    "keeperCost": 1,
    "nfl": 21
